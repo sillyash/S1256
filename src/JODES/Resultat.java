@@ -1,8 +1,9 @@
 package JODES;
 
+import java.time.Duration;
 import java.util.*;
 
-public class Résultat extends Entité {
+public class Resultat extends Entite {
 
 	ArrayList<Epreuve> sesResultats;
 	protected float score;

@@ -1,14 +1,16 @@
 package JODES;
 
+import java.util.ArrayList;
+
 public class Administrateur extends Utilisateur {
 
-	Modification sonAdmin;
+	ArrayList<Modification> sesModifications;
 
 	/**
 	 * 
 	 * @param entiteModifiee
 	 */
-	protected void enregisterModification(Entité entiteModifiee) {
+	protected void enregisterModification(Entite entiteModifiee) {
 		// TODO - implement Administrateur.enregisterModification
 		throw new UnsupportedOperationException();
 	}
@@ -17,7 +19,7 @@ public class Administrateur extends Utilisateur {
 	 * 
 	 * @param entite
 	 */
-	protected void modifierEntite(Entité entite) {
+	protected void modifierEntite(Entite entite) {
 		// TODO - implement Administrateur.modifierEntite
 		throw new UnsupportedOperationException();
 	}
@@ -31,7 +33,7 @@ public class Administrateur extends Utilisateur {
 		throw new UnsupportedOperationException();
 	}
 
-	protected Entité creerEntite() {
+	protected Entite creerEntite() {
 		// TODO - implement Administrateur.creerEntite
 		throw new UnsupportedOperationException();
 	}
@@ -40,7 +42,7 @@ public class Administrateur extends Utilisateur {
 	 * 
 	 * @param entite
 	 */
-	protected void supprimerEntite(Entité entite) {
+	protected void supprimerEntite(Entite entite) {
 		// TODO - implement Administrateur.supprimerEntite
 		throw new UnsupportedOperationException();
 	}

@@ -1,8 +1,6 @@
 package JODES;
 
-public class CompteAthlète extends Utilisateur {
-
-	Athlète sonCompte;
+public class CompteAthlete extends Utilisateur {
 
 	protected void afficherPlanning() {
 		// TODO - implement CompteAthlète.afficherPlanning

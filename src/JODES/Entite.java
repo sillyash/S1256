@@ -2,12 +2,17 @@ package JODES;
 
 import java.util.*;
 
-public class Entité {
+public class Entite {
 
-	Modification sonEntite;
-	ArrayList<JO2024> sesEntites;
+	protected static int lastNum = 0;
 	protected final int idEntite;
 	protected String nom;
+
+	public Entite(int idEntite, String nom) {
+		super();
+		this.idEntite = idEntite;
+		this.nom = nom;
+	}
 
 	protected void menuModification() {
 		// TODO - implement Entité.menuModification

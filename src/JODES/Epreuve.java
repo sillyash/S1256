@@ -1,16 +1,38 @@
 package JODES;
 
-public class Epreuve extends Entité {
+import java.time.LocalDate;
+import java.time.LocalTime;
 
-	protected int lastNum = 0;
+public class Epreuve extends Entite {
+	
 	protected LocalDate date;
 	protected LocalTime horaireDebut;
 	protected LocalTime horaireFin;
 	protected String session;
-	protected final String FINALE = "finale";
-	protected final String DEMIE = "demie-finale";
-	protected final String QUART = "quart de finale";
-	protected final String HUITIEME = "huitième de finale";
-	protected final String QUALIF = "qualification";
+	protected Saison saSaison;
+	public static final String FINALE = "finale";
+	public static final String DEMIE = "demie-finale";
+	public static final String QUART = "quart de finale";
+	public static final String HUITIEME = "huitième de finale";
+	public static final String QUALIF = "qualification";
+	protected Lieu sonLieu;
+	protected Discipline saDiscipline;
+	
+	public LocalDate getDate() {return date;}
+	public void setDate(LocalDate date) {this.date = date;}
+	public LocalTime getHoraireDebut() {return horaireDebut;}
+	public void setHoraireDebut(LocalTime horaireDebut) {this.horaireDebut = horaireDebut;}
+	public LocalTime getHoraireFin() {return horaireFin;}
+	public void setHoraireFin(LocalTime horaireFin) {this.horaireFin = horaireFin;}
+	public String getSession() {return session;}
+	public void setSession(String session) {this.session = session;}
+	public Saison getSaSaison() {return saSaison;}
+	public void setSaSaison(Saison saSaison) {this.saSaison = saSaison;}
+	public Lieu getSonLieu() {return sonLieu;}
+	public void setSonLieu(Lieu sonLieu) {this.sonLieu = sonLieu;}
+	public Discipline getSaDiscipline() {return saDiscipline;}
+	public void setSaDiscipline(Discipline saDiscipline) {this.saDiscipline = saDiscipline;}
+	
+	
 
 }

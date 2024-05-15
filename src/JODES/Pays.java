@@ -1,8 +1,6 @@
 package JODES;
 
-public class Pays extends Entité {
+public class Pays extends Entite {
 
-	Athlète sonPays;
-	protected int lastNum = 0;
 
 }

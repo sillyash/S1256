@@ -2,8 +2,8 @@ package JODES;
 
 import java.util.*;
 
-public class Equipe extends Entité {
+public class Equipe extends Entite {
 
-	ArrayList<Athlète> sesEquipes;
+	protected ArrayList<Athlete> sesAthlètes;
 
 }

@@ -2,10 +2,9 @@ package JODES;
 
 import java.util.*;
 
-public class Médaille extends Entité {
+public class Medaille extends Entite {
 
-	ArrayList<Résultat> médailles;
-	ArrayList<Athlète> sesMédailles;
+	protected Athlete sonAthlète;
 	protected static final String OR = "Or";
 	protected static final String ARGENT = "Argent";
 	protected static final String BRONZE = "Bronze";

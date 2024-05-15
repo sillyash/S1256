@@ -2,11 +2,14 @@ package JODES;
 
 import java.util.*;
 
-public class Athlète extends Entité {
+public class Athlete extends Entite {
 
-	ArrayList<Equipe> sesAthlètes;
-	Médaille sonAthlète;
+	protected ArrayList<Medaille> sesMédailles;
+	protected ArrayList<Equipe> sesEquipes;
 	protected String biographie;
 	protected String prenom;
+	protected CompteAthlete sonCompte;
+	protected ArrayList<Discipline> sesDisciplines;
+	protected Pays sonPays;
 
 }

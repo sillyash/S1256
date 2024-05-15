@@ -1,9 +1,9 @@
 package JODES;
 
-public class Saison extends Entité {
+import java.time.LocalDate;
 
-	Epreuve saSaison;
-	protected int lastNum = 0;
+public class Saison extends Entite {
+
 	protected LocalDate dateDebut;
 	protected LocalDate dateFin;
 

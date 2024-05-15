@@ -2,10 +2,8 @@ package JODES;
 
 import java.util.*;
 
-public class Discipline extends Entité {
+public class Discipline extends Entite {
 
-	Epreuve saDiscipline;
-	ArrayList<Athlète> sesDisciplines;
 	protected String description;
 
 }

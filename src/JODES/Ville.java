@@ -1,9 +1,7 @@
 package JODES;
 
-public class Ville extends Entité {
+public class Ville extends Entite {
 
-	Lieu saVille;
-	protected int lastNum = 0;
 	protected int codePostal;
 
 }
