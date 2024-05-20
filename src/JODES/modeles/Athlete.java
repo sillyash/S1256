@@ -1,4 +1,4 @@
-package JODES;
+package JODES.modeles;
 
 import java.util.*;
 

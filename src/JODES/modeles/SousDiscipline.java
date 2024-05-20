@@ -1,20 +1,14 @@
-package JODES;
+package JODES.modeles;
 
-import java.util.*;
-
-public class Discipline extends Entite {
+public class SousDiscipline extends Discipline {
 
 	protected String description;
 	
 	// ----------- Constructors -----------
 	
-	public Discipline(String nom, String description) {
-		super(nom);
-		this.description = description;
-	}
-	
-	public Discipline(String nom) {
-		this(nom, "");
+	public SousDiscipline(String nom, String description, String description2) {
+		super(nom, description);
+		description = description2;
 	}
 	
 	// ----------- Getters & setters -----------

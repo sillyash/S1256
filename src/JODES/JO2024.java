@@ -1,6 +1,7 @@
 package JODES;
 
 import java.util.ArrayList;
+import JODES.modeles.*;
 
 public class JO2024 {
 
@@ -43,20 +44,17 @@ public class JO2024 {
 		// TODO - implement JO2024.rechercheEntite
 		throw new UnsupportedOperationException();
 	}
-
-
+	
 	protected Utilisateur rechercheUtilisateur(String login) {
 		// TODO - implement JO2024.rechercheUtilisateur
 		throw new UnsupportedOperationException();
 	}
 
-
 	protected Entite rechercheEntite(String nomEntite, String typeEntite) {
 		// TODO - implement JO2024.rechercheEntite
 		throw new UnsupportedOperationException();
 	}
-
-
+	
 	protected void afficherPlanningSemaine(int numeroSemaine) {
 		// TODO - implement JO2024.afficherPlanningSemaine
 		throw new UnsupportedOperationException();
