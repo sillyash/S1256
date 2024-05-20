@@ -9,5 +9,15 @@ public class Medaille extends Entite {
 	protected static final String ARGENT = "Argent";
 	protected static final String BRONZE = "Bronze";
 	protected static final String PARTICIPATION = "Participation";
+	
+	// ----------- Constructors -----------
+	
+	
+	
+	// ----------- Getters & setters -----------
+	
+	
+	
+	// ----------- Methods -----------
 
 }

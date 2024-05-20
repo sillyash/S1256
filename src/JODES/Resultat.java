@@ -9,4 +9,14 @@ public class Resultat extends Entite {
 	protected float score;
 	protected Duration temps;
 
+	// ----------- Constructors -----------
+	
+	
+	
+	// ----------- Getters & setters -----------
+	
+	
+	
+	// ----------- Methods -----------
+	
 }

@@ -10,6 +10,16 @@ public class Modification {
 	protected LocalTime heureModif;
 	protected Entite sonEntite;
 	protected Administrateur sonAdmin;
+	
+	// ----------- Constructors -----------
+	
+	
+	
+	// ----------- Getters & setters -----------
+	
+	
+	
+	// ----------- Methods -----------
 
 	protected void envoyerModifServeur() {
 		// TODO - implement Modification.envoyerModifServeur
