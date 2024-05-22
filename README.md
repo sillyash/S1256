@@ -36,8 +36,11 @@ L’application "Bourses" utilisait la même technologie qu’OCEAN et l’archi
 >66 * 342 = 22572 (coût) \
 >22572 / 342 = 66 (coût unitaire)
 
->Exemple de calcul : Diffusion \
->TODO : Calcul
+>Exemple de calcul : Pilotage \
+>Coût unitaire : \
+>15% -> (15 * 66) / 100 = 10 (arrondi) \
+>Coût : \
+>(15 * 22572) / 100 = 3385 (arrondi)
 
 |          Nom          |Ratio (%)| Coût | Coût unitaire |
 |:---------------------:|:-------:|:----:|:-------------:|
@@ -56,12 +59,24 @@ L’application "Bourses" utilisait la même technologie qu’OCEAN et l’archi
 >3385 + 4514 + 22572 + 7900 + 2257 + 6771 = 47399 J.H
 
 #### Q3 - Sachant que nous pouvons estimer un degré d’incertitude de :
+<b>
+
 - \+ ou – ```20J.H``` par activité
 - \+ ou – ```50``` activités
 
+</b>
+
 #### Calculer la fourchette d'estimation minimale, moyenne, maximale.
 
->a
+>Minimale : \
+>(138 - 20) * (342 - 50) = 34456
+
+>Maximale : \
+>(138 + 20) * (342 + 50) = 61936
+
+>Moyenne : \
+>Correspond au calcul Q2 (coût total) : \
+>= 47399
 
 <br><br>
 
