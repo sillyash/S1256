@@ -25,13 +25,21 @@ public class Administrateur extends Utilisateur {
 	
 	// ----------- Methods -----------
 	
-	protected void enregisterModification(Entite entiteModifiee) {
+	protected void enregisterModifications() {
 		// TODO - implement Administrateur.enregisterModification
+		for (sesModifications : Modification){
+			modification.envoyerModifServeur();
+		}
 		throw new UnsupportedOperationException();
 	}
 
 	protected void modifierEntite(Entite entite) {
 		// TODO - implement Administrateur.modifierEntite
+		Entite newEntite= entite;
+		newEntite.menuModif();
+		Modification Modif = new modification(newEntite,this);
+		sesModifications.add(Modif);
+
 		throw new UnsupportedOperationException();
 	}
 
