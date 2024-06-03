@@ -5,46 +5,39 @@ import JODES.modeles.*;
 
 public class JO2024 {
 
-	public ArrayList<Entite> sesEntites;
-	protected ArrayList<Utilisateur> sesUtilisateurs;
-	
-	// ----------- Constructors -----------
-	
-	public JO2024() {
-		this.sesEntites = new ArrayList<Entite>();
-		this.sesUtilisateurs = new ArrayList<Utilisateur>();
-	}
+	public static ArrayList<Entite> sesEntites = new ArrayList<Entite>();
+	protected static ArrayList<Utilisateur> sesUtilisateurs = new ArrayList<Utilisateur>();
 	
 	// ----------- Getters & setters -----------
 	
-	public ArrayList<Entite> getSesEntites() {
+	public static ArrayList<Entite> getSesEntites() {
 		return sesEntites;
 	}
 
-	public void setSesEntites(ArrayList<Entite> sesEntites) {
-		this.sesEntites = sesEntites;
+	public static void setSesEntites(ArrayList<Entite> sesEntites) {
+		JO2024.sesEntites = sesEntites;
 	}
 
-	public ArrayList<Utilisateur> getSesUtilisateurs() {
+	public static ArrayList<Utilisateur> getSesUtilisateurs() {
 		return sesUtilisateurs;
 	}
 
-	public void setSesUtilisateurs(ArrayList<Utilisateur> sesUtilisateurs) {
-		this.sesUtilisateurs = sesUtilisateurs;
+	public static void setSesUtilisateurs(ArrayList<Utilisateur> sesUtilisateurs) {
+		JO2024.sesUtilisateurs = sesUtilisateurs;
 	}
 	
-	public void addEntite(Entite entite) {
-		this.sesEntites.add(entite);
+	public static void addEntite(Entite entite) {
+		sesEntites.add(entite);
 	}
 	
-	public void removeEntite(Entite entite) {
-		this.sesEntites.remove(entite);
+	public static void removeEntite(Entite entite) {
+		sesEntites.remove(entite);
 	}
 	
 	// ----------- Methods -----------
 	
-	protected int demandeConnexion(String login, String motDePasse) {
-		for (Utilisateur user : this.sesUtilisateurs)
+	public static int demandeConnexion(String login, String motDePasse) {
+		for (Utilisateur user : sesUtilisateurs)
 		{
 			if (user.getLogin() == login)
 			{
@@ -57,9 +50,9 @@ public class JO2024 {
 		return 0;
 	}
 
-	protected Entite rechercheEntite(String nomEntite) {
+	public static Entite rechercheEntite(String nomEntite) {
 		nomEntite = nomEntite.toUpperCase();
-		for (Entite entite : this.sesEntites) {
+		for (Entite entite : sesEntites) {
 			if (entite.getNom().toUpperCase().contains(nomEntite))
 			{
 				return entite;
@@ -68,14 +61,24 @@ public class JO2024 {
 		return null;
 	}
 	
-	protected Utilisateur rechercheUtilisateur(String login) {
+	public static Entite rechercheEntite(int idEntite) {
+		for (Entite entite : sesEntites) {
+			if (entite.getIdEntite() == idEntite)
+			{
+				return entite;
+			}
+		}
+		return null;
+	}
+	
+	public static Utilisateur rechercheUtilisateur(String login) {
 		// TODO - implement JO2024.rechercheUtilisateur
 		throw new UnsupportedOperationException();
 	}
 
-	protected Entite rechercheEntite(String nomEntite, String typeEntite) {
+	public static Entite rechercheEntite(String nomEntite, String typeEntite) {
 		nomEntite = nomEntite.toUpperCase();
-		for (Entite entite : this.sesEntites) {
+		for (Entite entite : sesEntites) {
 			System.out.println(entite.getClass());
 			if (entite.getClass().toString() == typeEntite)
 			{
@@ -84,12 +87,11 @@ public class JO2024 {
 					return entite;
 				}
 			}
-			
 		}
 		return null;
 	}
 	
-	protected void afficherPlanningSemaine(int numeroSemaine) {
+	public static void afficherPlanningSemaine(int numeroSemaine) {
 		// TODO - implement JO2024.afficherPlanningSemaine
 		throw new UnsupportedOperationException();
 	}

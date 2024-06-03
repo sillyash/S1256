@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.*;
 
+import JODES.JO2024;
+
 public class Modification {
 
 	protected LocalDate dateModif;
@@ -86,7 +88,12 @@ public class Modification {
 
 	
 	protected void envoyerModifServeur() {
-		// TODO - implement Modification.envoyerModifServeur
-		throw new UnsupportedOperationException();
+		int index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
+		if (this.typeModif == DELETE) {
+			JO2024.sesEntites.remove(index);
+		}
+		else {
+			JO2024.sesEntites.set(index, sonEntite);
+		}
 	}
 }
