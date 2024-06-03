@@ -88,6 +88,7 @@ public class Modification {
 
 	
 	protected void envoyerModifServeur() {
+		// Ash M
 		int index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 		if (this.typeModif == DELETE) {
 			JO2024.sesEntites.remove(index);

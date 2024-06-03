@@ -41,8 +41,8 @@ public abstract class Entite {
 		return "Entite [idEntite=" + idEntite + ", nom=" + nom + "]";
 	}
 
-	// Ash M
 	protected int getNumberOfFields() {
+		// Ash M
 		return this.getClass().getDeclaredFields().length;
 	}
 

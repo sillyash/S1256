@@ -37,6 +37,7 @@ public class JO2024 {
 	// ----------- Methods -----------
 	
 	public static int demandeConnexion(String login, String motDePasse) {
+		// Ash M
 		for (Utilisateur user : sesUtilisateurs)
 		{
 			if (user.getLogin() == login)
@@ -51,6 +52,7 @@ public class JO2024 {
 	}
 
 	public static Entite rechercheEntite(String nomEntite) {
+		// Ash M
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
 			if (entite.getNom().toUpperCase().contains(nomEntite))
@@ -62,6 +64,7 @@ public class JO2024 {
 	}
 	
 	public static Entite rechercheEntite(int idEntite) {
+		// Ash M
 		for (Entite entite : sesEntites) {
 			if (entite.getIdEntite() == idEntite)
 			{
@@ -77,6 +80,7 @@ public class JO2024 {
 	}
 
 	public static Entite rechercheEntite(String nomEntite, String typeEntite) {
+		// Ash M
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
 			System.out.println(entite.getClass());
@@ -98,13 +102,12 @@ public class JO2024 {
 	
 	public static void main(String args[])
 	{
-		JO2024 JO = new JO2024();
+		// Ash M
 		Pays FRA = new Pays("France", "FRA");
 		Athlete Alain = new Athlete("Alain", "Sandoz", FRA);
 		
-		JO.addEntite(Alain);
-		
-		JO.rechercheEntite("alain", "");
+		JO2024.addEntite(Alain);
+		JO2024.rechercheEntite("alain", "");
 	}
 
 }
