@@ -5,7 +5,7 @@ import JODES.modeles.*;
 
 public class JO2024 {
 
-	ArrayList<Entite> sesEntites;
+	public ArrayList<Entite> sesEntites;
 	protected ArrayList<Utilisateur> sesUtilisateurs;
 	
 	// ----------- Constructors -----------
@@ -44,8 +44,17 @@ public class JO2024 {
 	// ----------- Methods -----------
 	
 	protected int demandeConnexion(String login, String motDePasse) {
-		// TODO - implement JO2024.demandeConnexion
-		throw new UnsupportedOperationException();
+		for (Utilisateur user : this.sesUtilisateurs)
+		{
+			if (user.getLogin() == login)
+			{
+				if (user.connexion(motDePasse)) {
+					return 1;
+				}
+				else return -1;
+			}
+		}
+		return 0;
 	}
 
 	protected Entite rechercheEntite(String nomEntite) {

@@ -7,13 +7,13 @@ public class Utilisateur {
 	protected final int idUtilisateur;
 	protected static int lastId = 1;
 	protected String login;
-	protected int password;
+	protected String password;
 	protected String prenom;
 	protected String nom;
 
 	// ----------- Constructors -----------
 	
-	public Utilisateur(String login, int password, String prenom, String nom) {
+	public Utilisateur(String login, String password, String prenom, String nom) {
 		this.idUtilisateur = lastId++;
 		this.login = login;
 		this.password = password;
@@ -31,11 +31,11 @@ public class Utilisateur {
 		this.login = login;
 	}
 
-	public int getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(int password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -67,9 +67,8 @@ public class Utilisateur {
 				+ ", prenom=" + prenom + ", nom=" + nom + "]";
 	}
 
-	protected boolean connexion(String motDePasse) {
-		// TODO - implement Utilisateur.connexion
-		throw new UnsupportedOperationException();
+	public boolean connexion(String motDePasse) {
+		return motDePasse == this.password;
 	}
 
 }

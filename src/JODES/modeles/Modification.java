@@ -9,7 +9,12 @@ public class Modification {
 	protected LocalDate dateModif;
 	protected LocalTime heureModif;
 	protected Entite sonEntite;
+	protected int idEntite;
 	protected Administrateur sonAdmin;
+	protected String typeModif;
+	public static final String DELETE = "DELETE";
+	public static final String UPDATE = "UPDATE";
+	public static final String CREATE = "CREATE";
 	
 	// ----------- Constructors -----------
 	
@@ -61,8 +66,25 @@ public class Modification {
 		this.sonAdmin = sonAdmin;
 	}
 	
+	public int getIdEntite() {
+		return idEntite;
+	}
+
+	public void setIdEntite(int idEntite) {
+		this.idEntite = idEntite;
+	}
+
+	public String getTypeModif() {
+		return typeModif;
+	}
+
+	public void setTypeModif(String typeModif) {
+		this.typeModif = typeModif;
+	}
+	
 	// ----------- Methods -----------
 
+	
 	protected void envoyerModifServeur() {
 		// TODO - implement Modification.envoyerModifServeur
 		throw new UnsupportedOperationException();
