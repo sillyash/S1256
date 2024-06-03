@@ -26,7 +26,7 @@ public class Administrateur extends Utilisateur {
 	// ----------- Methods -----------
 	
 	protected void enregisterModifications() {
-		// TODO - implement Administrateur.enregisterModification
+		// - Nicolas Vouilloux
 		for (sesModifications : Modification){
 			modification.envoyerModifServeur();
 		}
@@ -34,7 +34,7 @@ public class Administrateur extends Utilisateur {
 	}
 
 	protected void modifierEntite(Entite entite) {
-		// TODO - implement Administrateur.modifierEntite
+		// - Nicolas Vouilloux
 		Entite newEntite= entite;
 		newEntite.menuModif();
 		Modification Modif = new modification(newEntite,this);
