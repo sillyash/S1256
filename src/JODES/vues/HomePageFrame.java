@@ -1,7 +1,8 @@
-package vues;
+package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 
+// ESCOFFIER Emma
 public class HomePageFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JFrame fenetre = new JFrame ("JODES");
