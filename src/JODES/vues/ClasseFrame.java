@@ -1,4 +1,4 @@
-package interface_graphique;
+package JODES.vues;
 
 import javax.swing.*;
 import java.awt.*;

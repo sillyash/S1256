@@ -1,4 +1,4 @@
-package vues;
+package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 
