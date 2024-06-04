@@ -20,18 +20,20 @@ public class Modification {
 	
 	// ----------- Constructors -----------
 	
-	public Modification(LocalDate dateModif, LocalTime heureModif, Entite sonEntite, Administrateur sonAdmin) {
-		this.dateModif = dateModif;
-		this.heureModif = heureModif;
-		this.sonEntite = sonEntite;
-		this.sonAdmin = sonAdmin;
-	}
-	
-	public Modification(Entite sonEntite, Administrateur sonAdmin) {
+	public Modification(Entite sonEntite, Administrateur sonAdmin, String typeModif) {
 		this.dateModif = LocalDate.now();
 		this.heureModif = LocalTime.now();
 		this.sonEntite = sonEntite;
 		this.sonAdmin = sonAdmin;
+		this.typeModif = typeModif;
+	}
+	
+	public Modification(int idEntite, Administrateur sonAdmin) {
+		this.dateModif = LocalDate.now();
+		this.heureModif = LocalTime.now();
+		this.idEntite = idEntite;
+		this.sonAdmin = sonAdmin;
+		this.typeModif = DELETE;
 	}
 	
 	// ----------- Getters & setters -----------
