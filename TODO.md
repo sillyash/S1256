@@ -25,6 +25,7 @@
 
 ## Others
 
-- [ ] .doc (voir sujet)
+- [ ] mettre noms sur classes/méthodes (Ctrl+alt+j author)
+- [ ] javadoc (voir sujet)
 - [ ] javadoc ?? (Ash)
 - [ ] analyse budget
