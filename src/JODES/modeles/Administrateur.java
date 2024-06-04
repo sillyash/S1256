@@ -1,9 +1,9 @@
 package JODES.modeles;
-//- Nicolas Vouilloux
 import java.util.ArrayList;
 
 public class Administrateur extends Utilisateur {
 
+	private static final long serialVersionUID = 1L;
 	ArrayList<Modification> sesModifications;
 	
 	// ----------- Constructors -----------
@@ -60,5 +60,4 @@ public class Administrateur extends Utilisateur {
 		Modification modif = new Modification(idEntite,this);
 		this.sesModifications.add(modif);
 	}
-
 }
