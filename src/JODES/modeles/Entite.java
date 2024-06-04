@@ -52,7 +52,8 @@ public abstract class Entite implements Saveable {
 	}
 	
 	public File createFile() {
-		String nomFichier = "entite-" + this.nom + ".dat";
+		String nomentite = this.nom.toLowerCase().replaceAll("\\s","");
+		String nomFichier = "entite-" + nomentite + ".dat";
 		File f = new File(nomFichier);
 		if (!f.exists()) {
 			// Si le fichier favoris.dat n'existe pas 
@@ -63,12 +64,11 @@ public abstract class Entite implements Saveable {
 					+ "Génération d'un nom de fichier valide...");
 			int i = 1;
 			while (f.exists()) {
-				nomFichier = "entite-" + this.nom + i + ".dat";
+				nomFichier = "entite-" + nomentite+ i + ".dat";
 				f = new File(nomFichier);
 				i++;
 			}
 		}
-		System.out.println("Fichier " + nomFichier + " sauvegardé.");
 		return f;
 	}
 	
@@ -85,6 +85,7 @@ public abstract class Entite implements Saveable {
 			e.printStackTrace();
 			return -1;
 		}
+		System.out.println ("Sauvegarde du fichier " + f.getName() + " réussie.");
 		return 0;
 	}
 
