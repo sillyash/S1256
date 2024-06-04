@@ -1,6 +1,8 @@
 package JODES;
 
 import java.util.ArrayList;
+import java.util.Locale;
+
 import JODES.modeles.*;
 
 public class JO2024 {
@@ -75,8 +77,13 @@ public class JO2024 {
 	}
 	
 	public static Utilisateur rechercheUtilisateur(String login) {
-		// TODO - implement JO2024.rechercheUtilisateur
-		throw new UnsupportedOperationException();
+		Locale unicode = Locale.FRANCE;
+		for (Utilisateur user : sesUtilisateurs) {
+			if(user.getLogin().toUpperCase(unicode) == login.toUpperCase(unicode)) {
+				return user;
+			}
+		}
+		return null;
 	}
 
 	public static Entite rechercheEntite(String nomEntite, String typeEntite) {

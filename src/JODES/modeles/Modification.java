@@ -20,18 +20,20 @@ public class Modification {
 	
 	// ----------- Constructors -----------
 	
-	public Modification(LocalDate dateModif, LocalTime heureModif, Entite sonEntite, Administrateur sonAdmin) {
-		this.dateModif = dateModif;
-		this.heureModif = heureModif;
-		this.sonEntite = sonEntite;
-		this.sonAdmin = sonAdmin;
-	}
-	
-	public Modification(Entite sonEntite, Administrateur sonAdmin) {
+	public Modification(Entite sonEntite, Administrateur sonAdmin, String typeModif) {
 		this.dateModif = LocalDate.now();
 		this.heureModif = LocalTime.now();
 		this.sonEntite = sonEntite;
 		this.sonAdmin = sonAdmin;
+		this.typeModif = typeModif;
+	}
+	
+	public Modification(int idEntite, Administrateur sonAdmin) {
+		this.dateModif = LocalDate.now();
+		this.heureModif = LocalTime.now();
+		this.idEntite = idEntite;
+		this.sonAdmin = sonAdmin;
+		this.typeModif = DELETE;
 	}
 	
 	// ----------- Getters & setters -----------
@@ -89,12 +91,15 @@ public class Modification {
 	
 	protected void envoyerModifServeur() {
 		// Ash M
-		int index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
+		int index;
 		if (this.typeModif == DELETE) {
+			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 			JO2024.sesEntites.remove(index);
 		}
-		else {
+		else if (this.typeModif == UPDATE) {
+			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 			JO2024.sesEntites.set(index, sonEntite);
 		}
+		else JO2024.sesEntites.add(this.sonEntite);
 	}
 }
