@@ -91,12 +91,15 @@ public class Modification {
 	
 	protected void envoyerModifServeur() {
 		// Ash M
-		int index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
+		int index;
 		if (this.typeModif == DELETE) {
+			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 			JO2024.sesEntites.remove(index);
 		}
-		else {
+		else if (this.typeModif == UPDATE) {
+			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 			JO2024.sesEntites.set(index, sonEntite);
 		}
+		else JO2024.sesEntites.add(this.sonEntite);
 	}
 }

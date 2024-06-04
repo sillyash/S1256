@@ -6,7 +6,7 @@ public class CompteAthlete extends Utilisateur {
 	
 	// ----------- Constructors -----------
 	
-	public CompteAthlete(String login, int password, String prenom, String nom, Athlete sonAthlete) {
+	public CompteAthlete(String login, String password, String prenom, String nom, Athlete sonAthlete) {
 		super(login, password, prenom, nom);
 		this.sonAthlete = sonAthlete;
 	}
