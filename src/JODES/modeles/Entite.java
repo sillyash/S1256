@@ -6,7 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
-public abstract class Entite implements Saveable {
+public abstract class Entite {
 	
 	private static final long serialVersionUID = 1L;
 	protected static int lastNum = 1;
