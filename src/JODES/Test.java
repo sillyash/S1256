@@ -9,6 +9,8 @@ public class Test {
 		Pays FRA = new Pays("France", "FRA");
 		Athlete ash = new Athlete("Ash", "Merienne", FRA);
 		
+		ash.menuModification();
+		
 		ash.saveToDisk();
 	}
 	
