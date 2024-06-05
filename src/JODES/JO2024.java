@@ -39,10 +39,11 @@ public class JO2024 {
 	// ----------- Methods -----------
 	
 	public static int demandeConnexion(String login, String motDePasse) {
-		// Ash M
+		// Ash M /modif unicode nicolas V
+		Locale unicode = Locale.FRANCE;
 		for (Utilisateur user : sesUtilisateurs)
 		{
-			if (user.getLogin() == login)
+			if (user.getLogin().toUpperCase(unicode) == login.toUpperCase(unicode))
 			{
 				if (user.connexion(motDePasse)) {
 					return 1;
@@ -77,6 +78,7 @@ public class JO2024 {
 	}
 	
 	public static Utilisateur rechercheUtilisateur(String login) {
+		//NicolasVOuilloux
 		Locale unicode = Locale.FRANCE;
 		for (Utilisateur user : sesUtilisateurs) {
 			if(user.getLogin().toUpperCase(unicode) == login.toUpperCase(unicode)) {
