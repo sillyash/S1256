@@ -1,14 +1,14 @@
 package JODES.modeles;
-
 import java.util.ArrayList;
 
 public class Administrateur extends Utilisateur {
 
+	private static final long serialVersionUID = 1L;
 	ArrayList<Modification> sesModifications;
 	
 	// ----------- Constructors -----------
 	
-	public Administrateur(String login, int password, String prenom, String nom) {
+	public Administrateur(String login, String password, String prenom, String nom) {
 		super(login, password, prenom, nom);
 		this.sesModifications = new ArrayList<Modification>();
 	}
@@ -27,35 +27,37 @@ public class Administrateur extends Utilisateur {
 	
 	protected void enregisterModifications() {
 		// - Nicolas Vouilloux
-		for (sesModifications : Modification){
-			modification.envoyerModifServeur();
+		for (Modification modif : sesModifications){
+			modif.envoyerModifServeur();
 		}
-		throw new UnsupportedOperationException();
 	}
 
 	protected void modifierEntite(Entite entite) {
 		// - Nicolas Vouilloux
-		Entite newEntite= entite;
-		newEntite.menuModif();
-		Modification Modif = new modification(newEntite,this);
+		Entite newEntite = entite;
+		newEntite.menuModification();
+		Modification Modif = new Modification(newEntite,this,Modification.UPDATE);
 		sesModifications.add(Modif);
-
-		throw new UnsupportedOperationException();
 	}
 
 	protected void annulerModification(Modification modification) {
-		// TODO - implement Administrateur.annulerModification
-		throw new UnsupportedOperationException();
+		// - Nicolas Vouilloux
+		for (Modification modif : sesModifications){
+			if (modif == modification)
+				sesModifications.remove(modif);
+		}
 	}
 
-	protected Entite creerEntite() {
-		// TODO - implement Administrateur.creerEntite
-		throw new UnsupportedOperationException();
+	protected void creerEntite(Entite entite) {
+		// - Nicolas Vouilloux
+		entite.menuModification();
+		Modification modif = new Modification(entite,this,Modification.UPDATE);
+		this.sesModifications.add(modif);
 	}
 
-	protected void supprimerEntite(Entite entite) {
-		// TODO - implement Administrateur.supprimerEntite
-		throw new UnsupportedOperationException();
+	protected void supprimerEntite(int idEntite) {
+		// - Nicolas Vouilloux
+		Modification modif = new Modification(idEntite,this);
+		this.sesModifications.add(modif);
 	}
-
 }
