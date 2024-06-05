@@ -5,6 +5,9 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public abstract class Entite implements Saveable {
 	
@@ -36,7 +39,23 @@ public abstract class Entite implements Saveable {
 	
 	// ----------- Methods -----------
 	
-	protected void menuModification() {
+	protected Field[] getFields() {
+		return this.getClass().getDeclaredFields();
+	}
+	
+	public ArrayList<String> getFieldNames() {
+		Field[] fields = this.getFields();
+	    ArrayList<String> fieldNames = new ArrayList<>();
+	    for (Field field : fields)
+	      fieldNames.add(field.getName());
+	    return fieldNames;
+	}
+	
+	public void menuModification() {
+		
+	}
+
+	public void menuModification(boolean visualMode) {
 		// TODO - implement Entité.menuModification
 		throw new UnsupportedOperationException();
 	}
