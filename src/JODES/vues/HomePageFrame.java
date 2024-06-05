@@ -16,7 +16,7 @@ public class HomePageFrame extends JFrame {
 	JButton epreuves = new JButton("Epreuves");
 
 	HomePageFrame(){
-		fenetre.setSize (300, 300);
+		fenetre.setSize (800, 450);
 		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		fenetre.setLayout(new BorderLayout());
 		
