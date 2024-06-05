@@ -12,7 +12,7 @@ public class PanelButton extends JPanel {
 
     public PanelButton() {
         boutonAfficher = new JButton("Afficher");
-        boutonCreer = new JButton("Modifier");
+        boutonModifier = new JButton("Modifier");
         boutonAjouter = new JButton("Ajouter");
         boutonSupprimer = new JButton("Supprimer");
 
