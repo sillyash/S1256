@@ -5,14 +5,14 @@ import java.awt.*;
 
 public class PanelButton extends JPanel {
 
-    JButton boutonAfficher;
-    JButton boutonModifier;
-    JButton boutonAjouter;
-    JButton boutonSupprimer;
+    protected JButton boutonAfficher;
+    protected JButton boutonModifier;
+    protected JButton boutonAjouter;
+    protected JButton boutonSupprimer;
 
     public PanelButton() {
         boutonAfficher = new JButton("Afficher");
-        boutonCreer = new JButton("Modifier");
+        boutonModifier = new JButton("Modifier");
         boutonAjouter = new JButton("Ajouter");
         boutonSupprimer = new JButton("Supprimer");
 

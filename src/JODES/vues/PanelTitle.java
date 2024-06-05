@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class PanelTitle extends JPanel{
 	private static final long serialVersionUID = 1L;
-	JLabel title;
+	protected JLabel title;
 	
 	PanelTitle(String titleText){
 		title = new JLabel(titleText);

@@ -2,6 +2,8 @@ package JODES.modeles;
 
 import java.util.*;
 
+import JODES.JO2024;
+
 public class Utilisateur {
 
 	protected final int idUtilisateur;
@@ -15,7 +17,7 @@ public class Utilisateur {
 	
 	public Utilisateur(String login, String password, String prenom, String nom) {
 		this.idUtilisateur = lastId++;
-		this.login = login;
+		setLogin(login);
 		this.password = password;
 		this.prenom = prenom;
 		this.nom = nom;
@@ -28,6 +30,14 @@ public class Utilisateur {
 	}
 
 	public void setLogin(String login) {
+		//Nicolas VOuilloux
+		Locale unicode = Locale.FRANCE;
+		for (Utilisateur user : JO2024.getSesUtilisateurs()) {
+			if(login.toUpperCase(unicode)==user.login.toUpperCase(unicode)) {
+				System.out.println("erreur login deja existant");
+				return;
+			}
+		}
 		this.login = login;
 	}
 
