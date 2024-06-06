@@ -155,9 +155,6 @@ public class Athlete extends Entite {
 		return;
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 	
 }

@@ -31,9 +31,6 @@ public class Ville extends Entite {
 		return;
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 
 }

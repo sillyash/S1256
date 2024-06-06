@@ -1,6 +1,8 @@
 package JODES.modeles;
 import java.util.*;
 
+import JODES.vues.AjouterEquipe;
+
 /**
  * @author Visual Paradigm
  */
@@ -35,12 +37,7 @@ public class Equipe extends Entite {
 
 	@Override
 	public void menuModification() {
-		return;
-	}
-
-	@Override
-	public void menuModificationVisuel() {
-		return;
+		new AjouterEquipe();
 	}
 
 }

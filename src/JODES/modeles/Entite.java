@@ -54,8 +54,6 @@ public abstract class Entite implements Saveable {
 	
 	public abstract void menuModification();
 
-	public abstract void menuModificationVisuel();
-
 	@Override
 	public String toString() {
 		return "Entite [idEntite=" + idEntite + ", nom=" + nom + "]";

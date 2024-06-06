@@ -34,10 +34,5 @@ public class Discipline extends Entite {
 	public void menuModification() {
 		return;
 	}
-
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
 	
 }

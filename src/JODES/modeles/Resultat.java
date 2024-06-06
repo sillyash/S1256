@@ -53,9 +53,6 @@ public class Resultat extends Entite {
 		return;
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 	
 }

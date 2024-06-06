@@ -40,10 +40,7 @@ public class Saison extends Entite {
 		return;
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 	
 	// ----------- Methods -----------
 }

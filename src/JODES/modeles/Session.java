@@ -3,6 +3,8 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.temporal.ChronoField;
 
+import JODES.vues.AjouterSession;
+
 /**
  * @author Visual Paradigm
  */
@@ -121,12 +123,9 @@ public class Session extends Entite {
 
 	@Override
 	public void menuModification() {
-		return;
+		new AjouterSession();
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 
 }

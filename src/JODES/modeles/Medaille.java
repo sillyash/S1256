@@ -47,8 +47,5 @@ public class Medaille extends Entite {
 		return;
 	}
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 }
