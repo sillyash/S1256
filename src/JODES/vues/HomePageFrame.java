@@ -1,11 +1,15 @@
+// ESCOFFIER Emma
 package JODES.vues;
 import javax.swing.*;
-import java.awt.*;
 
-// ESCOFFIER Emma
+import JODES.controleurs.ControleurBtnPlanning;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class HomePageFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
-	JFrame fenetre = new JFrame ("JODES");
 	JPanel p = new JPanel();
 	
 	PanelTitle title = new PanelTitle("JODES");
@@ -16,11 +20,12 @@ public class HomePageFrame extends JFrame {
 	JButton epreuves = new JButton("Epreuves");
 
 	HomePageFrame(){
-		fenetre.setSize (300, 300);
-		fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		fenetre.setLayout(new BorderLayout());
+		setTitle("JODES");
+		setSize (800, 450);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLayout(new BorderLayout());
 		
-		fenetre.add(title, BorderLayout.NORTH);
+		add(title, BorderLayout.NORTH);
 		
 		setButtonColors(planning);
 		setButtonColors(equipes);
@@ -33,8 +38,13 @@ public class HomePageFrame extends JFrame {
 		p.add(sessions);
 		p.add(epreuves);
 		
-		fenetre.add(p);
-		fenetre.setVisible(true);
+		add(p);
+		
+		ControleurBtnPlanning ctrlBtn = new ControleurBtnPlanning(this);
+		// Add action listener to the planning button
+		planning.addActionListener(ctrlBtn);
+		
+		setVisible(true);
 	}
 	
 	protected void setButtonColors(JButton button) {
@@ -44,5 +54,5 @@ public class HomePageFrame extends JFrame {
 
 	public static void main(String[] args) {
 		HomePageFrame testAffichage = new HomePageFrame();
-	}
+		}
 }

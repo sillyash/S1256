@@ -8,9 +8,11 @@ import javax.swing.JFrame;
 public class ControleurBTNRetour extends Controleur implements ActionListener {
 	
 	protected RetourVue _vue;
-
+	
 	public ControleurBTNRetour(JFrame vue) {
 		super(null, vue);
+		//Nicolas
+		this._vue = (RetourVue) vue;
 	}
 	
 	@Override
