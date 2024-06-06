@@ -12,7 +12,7 @@ public class SessionFrame extends JFrame implements RetourVue{
     public SessionFrame() {
         // Create main frame
         super("Gestion des Sessions - Paris 2024");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Create panels
