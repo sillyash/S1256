@@ -5,7 +5,9 @@ package JODES.modeles;
  */
 public class Medaille extends Entite {
 
-	protected Athlete sonAthlète;
+	private static final long serialVersionUID = 1L;
+	
+	protected Athlete sonAthlete;
 	protected String valeur;
 	public static final String OR = "Or";
 	public static final String ARGENT = "Argent";
@@ -14,20 +16,20 @@ public class Medaille extends Entite {
 	
 	// ----------- Constructors -----------
 	
-	public Medaille(String nom, String valeur, Athlete sonAthlète) {
+	public Medaille(String nom, String valeur, Athlete sonAthlete) {
 		super(nom);
 		this.valeur = valeur;
-		this.sonAthlète = sonAthlète;
+		this.sonAthlete = sonAthlete;
 	}
 	
 	// ----------- Getters & setters -----------
 	
-	public Athlete getSonAthlète() {
-		return sonAthlète;
+	public Athlete getSonAthlete() {
+		return sonAthlete;
 	}
 
-	public void setSonAthlète(Athlete sonAthlète) {
-		this.sonAthlète = sonAthlète;
+	public void setSonAthlete(Athlete sonAthlete) {
+		this.sonAthlete = sonAthlete;
 	}
 
 	public String getValeur() {
