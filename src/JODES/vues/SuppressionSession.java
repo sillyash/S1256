@@ -1,4 +1,5 @@
-package interface_graphique;
+//correct package - Emma
+package JODES.vues;
 
 import java.awt.*;
 import javax.swing.*;
@@ -17,7 +18,7 @@ public class SuppressionSession extends JFrame {
     public SuppressionSession() {
         // Create main frame
         super("Gestion des Sessions - Session");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Initialize elements

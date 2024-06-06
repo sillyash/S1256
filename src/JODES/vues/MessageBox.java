@@ -1,4 +1,5 @@
-package interface_graphique;
+//correct package - Emma
+package JODES.vues;
 
 import javax.swing.*;
 

@@ -13,7 +13,7 @@ public class EpreuveFrame extends JFrame implements RetourVue{
 	public EpreuveFrame() {
         // Create main frame
         super("Gestion des Epreuves - Paris 2024");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Create panels

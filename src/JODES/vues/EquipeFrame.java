@@ -12,7 +12,7 @@ public class EquipeFrame extends JFrame implements RetourVue{
     public EquipeFrame() {
         // Create main frame
         super("Gestion des Équipes - Paris 2024");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Create panels

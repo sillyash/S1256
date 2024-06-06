@@ -1,9 +1,11 @@
-package interface_graphique;
+//correct package - Emma
+package JODES.vues;
 
 import java.awt.*;
 import javax.swing.*;
 
-public class SuppresionEpreuves extends JFrame {
+//correct naming of class - Emma
+public class SuppressionEpreuve extends JFrame {
     /**
      * 
      */
@@ -14,10 +16,10 @@ public class SuppresionEpreuves extends JFrame {
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
 
-    public SuppresionEpreuves() {
+    public SuppressionEpreuve() {
         // Create main frame
         super("Gestion des Epreuves - Epreuve");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Initialize elements
@@ -58,7 +60,7 @@ public class SuppresionEpreuves extends JFrame {
     }
 
     public static void main(String[] args) {
-        new SuppresionEpreuves();
+        new SuppressionEpreuve();
     }
 }
 
