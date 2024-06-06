@@ -56,4 +56,12 @@ public class DataParser {
     public static boolean isLieu(Entite e) {
         return e instanceof Lieu;
     }
+
+    public static boolean isDiscipline(Entite e) {
+        return e instanceof Discipline;
+    }
+
+    public static boolean isEpreuve(Entite e) {
+        return e instanceof Epreuve;
+    }
 }

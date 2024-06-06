@@ -157,7 +157,7 @@ public class JO2024 {
 		ArrayList<Epreuve> epreuves = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
-			if (DataParser.isSession(e))
+			if (DataParser.isEpreuve(e))
 			{
 				epreuves.add((Epreuve)e);
 			}
@@ -170,7 +170,7 @@ public class JO2024 {
 		ArrayList<Pays> pays = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
-			if (DataParser.isSession(e))
+			if (DataParser.isPays(e))
 			{
 				pays.add((Pays)e);
 			}
@@ -183,7 +183,7 @@ public class JO2024 {
 		ArrayList<Discipline> disciplines = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
-			if (DataParser.isSession(e))
+			if (DataParser.isDiscipline(e))
 			{
 				disciplines.add((Discipline)e);
 			}
