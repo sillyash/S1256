@@ -18,7 +18,7 @@ public class ControleurBtnHomePage extends Controleur implements ActionListener 
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		((Entite) this._modele).menuModification(true);
+		((Entite) this._modele).menuModification();
 	}
 
 }
