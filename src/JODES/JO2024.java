@@ -11,6 +11,10 @@ public class JO2024 {
 
 	public static ArrayList<Entite> sesEntites = new ArrayList<Entite>();
 	protected static ArrayList<Utilisateur> sesUtilisateurs = new ArrayList<Utilisateur>();
+	
+	public static final ArrayList<Pays> PAYS = new ArrayList<>();
+	public static final ArrayList<Discipline> DISCIPLINES = new ArrayList<>();
+	
 	public static final LocalDate dateDebutJO = LocalDate.of(2024, Month.JULY, 12);
 	public static final LocalDate dateFinJO = LocalDate.of(2024, Month.JULY, 30);
 	public static final Saison Paris2024 = new Saison("2024 Paris Summer Olympics", dateDebutJO, dateFinJO);
