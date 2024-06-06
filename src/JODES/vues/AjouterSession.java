@@ -9,7 +9,6 @@ import java.awt.*;
 
 public class AjouterSession extends JFrame implements RetourVue{
 
-
 	public AjouterSession() {
         // Create main frame
         super("Gestion des Session - Paris 2024");

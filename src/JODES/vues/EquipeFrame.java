@@ -20,8 +20,10 @@ public class EquipeFrame extends JFrame implements RetourVue{
         
         //Emma ESCOFFIER
         ControleurBtnSupprEquipe ctrlSupprEqu = new ControleurBtnSupprEquipe(null, this);
+        ControleurBtnAjEquipe ctrlAjEqu = new ControleurBtnAjEquipe(null, this);
         
         panelButton.boutonSupprimer.addActionListener(ctrlSupprEqu);
+        panelButton.boutonAjouter.addActionListener(ctrlAjEqu);
         
         //Nicolas 
         JButton button = new JButton("retour");

@@ -12,7 +12,6 @@ import java.awt.*;
 
 public class EpreuveFrame extends JFrame implements RetourVue{
 
-
 	public EpreuveFrame() {
         // Create main frame
         super("Gestion des Epreuves - Paris 2024");
@@ -22,13 +21,17 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         // Create panels
         PanelTitle panelTitle = new PanelTitle("Epreuves");
         PanelButton panelButton = new PanelButton();
+        
         // Add panels to frame
         add(panelTitle, BorderLayout.NORTH);
         add(panelButton, BorderLayout.CENTER);
         
         //Emma ESCOFFIER
-        ControleurBtnSupprEpreuve ctrlBtnEpr = new ControleurBtnSupprEpreuve(null,this);
-        panelButton.boutonSupprimer.addActionListener(ctrlBtnEpr);
+        ControleurBtnSupprEpreuve ctrlSupprEpr = new ControleurBtnSupprEpreuve(null,this);
+        ControleurBtnAjEpreuve ctrlAjEq = new ControleurBtnAjEpreuve(null, this);
+        
+        panelButton.boutonSupprimer.addActionListener(ctrlSupprEpr);
+        panelButton.boutonAjouter.addActionListener(ctrlAjEq);
         
         //Nicolas 
         JButton button = new JButton("retour");
