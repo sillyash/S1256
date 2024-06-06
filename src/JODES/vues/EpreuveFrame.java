@@ -19,18 +19,17 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         // Create panels
         PanelTitle panelTitle = new PanelTitle("Epreuves");
         PanelButton panelButton = new PanelButton();
-        JButton button = new JButton("retour");
         // Add panels to frame
-        add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
         add(panelButton, BorderLayout.CENTER);
-        //Nicolas Vouilloux
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
-        button.addActionListener(btnretour);
-        //Pas Nicolas vouilloux
+        //Nicolas 
+        JButton button = new JButton("retour");
+        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        button.addActionListener(BtnRetour);
+        add(button, BorderLayout.SOUTH);
+        //pas Nicolas
         // Make the frame visible
         setVisible(true);
-
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
@@ -44,6 +43,6 @@ public class EpreuveFrame extends JFrame implements RetourVue{
 	@Override
 	public void retour() {
 		new HomePageFrame();
-		(this).dispose();
+		this.dispose();
 	}
 }

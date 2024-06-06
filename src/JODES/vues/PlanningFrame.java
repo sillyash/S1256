@@ -1,9 +1,13 @@
 package JODES.vues;
 
 import javax.swing.*;
+
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.RetourVue;
+
 import java.awt.*;
 
-public class PlanningFrame extends JFrame{
+public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
 
 	    JFrame fenetre;
@@ -25,7 +29,6 @@ public class PlanningFrame extends JFrame{
 	        for (int i = 0; i < 20; i++) {
 	        	gradTable.setValueAt(hours[i], i, 0);
 	        }
-	        
 	        fenetre.add(graduation, BorderLayout.WEST);
 
 	        String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
@@ -50,16 +53,30 @@ public class PlanningFrame extends JFrame{
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" }
 	            }; // will have to replace with proper data to be imported 
+	        //Nicolas 
+	        JButton button = new JButton("retour");
+	        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+	        button.addActionListener(BtnRetour);
+	        fenetre.add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
+	        //pas Nicolas
 	        Planning = new JTable(data, columnNames); // 18 rows = every 30min from 9h to 18h | 7 cols days of week
 	        Planning.setBounds(100, 100, 600, 600);
 	        JScrollPane scrollPane = new JScrollPane(Planning);
 	        fenetre.add(scrollPane, BorderLayout.CENTER);
 	        fenetre.setSize(800, 450);
 	        fenetre.setVisible(true);
+
 	    }
 	    
 	    public static void main(String[] args) {
 	    	PlanningFrame testAffichage = new PlanningFrame();
 	    }
 	    // ca compile ca marche bien mais le scrollPane ne s'applique 
+
+	    //Nicolas
+		@Override
+		public void retour() {
+			new HomePageFrame();
+			this.dispose();
+		}
 	}
