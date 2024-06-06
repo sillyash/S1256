@@ -47,6 +47,12 @@ public class SuppressionSession extends JFrame implements RetourVue{
         // Add panelDel and panelIndication to frame
         add(panelIndication);
         add(panelDel);
+        //Nicolas 
+        JButton button = new JButton("retour");
+        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        button.addActionListener(BtnRetour);
+        add(button);//TODO mettre le bouton au bon endroit
+        //pas Nicolas
 
         // Make the frame visible
         setVisible(true);
@@ -57,18 +63,12 @@ public class SuppressionSession extends JFrame implements RetourVue{
         
         // Pack the frame to fit its components
         pack();
-        //Nicolas 
-        JButton button = new JButton("retour");
-        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
-        button.addActionListener(BtnRetour);
-        add(button);//TODO mettre le bouton au bon endroit
-        //pas Nicolas
     }
 
     public static void main(String[] args) {
         new SuppressionSession();
     }
-//Nicolas
+    //Nicolas
 	@Override
 	public void retour() {
 		new SessionFrame();
