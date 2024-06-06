@@ -4,7 +4,7 @@ import javax.swing.JFrame;
 
 import JODES.modeles.Entite;
 
-public abstract class Controleur {
+public abstract class Controleur  {
 	protected Object _modele;
 	protected JFrame _vue;
 

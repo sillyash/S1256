@@ -17,9 +17,10 @@
 
 ## Emma
 
-- [ ] JTable
+- [X] JTable
 - [ ] Planning (classe)
-- [ ] Planning (Visuel)
+- [X] Planning (Visuel)
+- [ ] Boutons Navigation
 
 ## Nico
 
