@@ -19,5 +19,9 @@ public class ComboBoxPays extends JComboBox<String> {
             this.addItem(p.getNom());
         }
     }
+
+    public ArrayList<Pays> getItemList() {
+        return listePays;
+    }
     
 }

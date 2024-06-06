@@ -160,14 +160,14 @@ public class JO2024 {
 	/**
 	 * @author Ash Merienne
 	 */
-	public static ArrayList<Session> getEpreuves()
+	public static ArrayList<Epreuve> getEpreuves()
 	{
-		ArrayList<Session> epreuves = new ArrayList<>();
+		ArrayList<Epreuve> epreuves = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
 			if (DataParser.isEpreuve(e))
 			{
-				epreuves.add((Session)e);
+				epreuves.add((Epreuve)e);
 			}
 		}
 		return epreuves;

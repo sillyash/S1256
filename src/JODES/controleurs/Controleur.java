@@ -1,26 +1,27 @@
 package JODES.controleurs;
 import javax.swing.JFrame;
+import JODES.modeles.Entite;
 
 /**
  * @author Ash Merienne
  */
 public abstract class Controleur  {
-	protected Object _modele;
+	protected Entite _modele;
 	protected JFrame _vue;
 
 	// ----------- Constructors -----------
 	
-	public Controleur(Object modele, JFrame vue) {
+	public Controleur(Entite modele, JFrame vue) {
 		this._modele = modele;
 		this._vue = vue;
 	
 	}
 
-	public Object get_modele() {
+	public Entite get_modele() {
 		return _modele;
 	}
 
-	public void set_modele(Object _modele) {
+	public void set_modele(Entite _modele) {
 		this._modele = _modele;
 	}
 

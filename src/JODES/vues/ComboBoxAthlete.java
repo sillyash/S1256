@@ -20,5 +20,9 @@ public class ComboBoxAthlete extends JComboBox<String> {
             this.addItem(a.getPrenom() + " " + a.getNom());
         }
     }
+
+    public ArrayList<Athlete> getItemList() {
+        return listeAthletes;
+    }
     
 }

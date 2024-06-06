@@ -22,5 +22,9 @@ public class ComboBoxSession extends JComboBox<String> {
                 s.getDate().toString());
         }
     }
+
+    public ArrayList<Session> getItemList() {
+        return listeSessions;
+    }
     
 }

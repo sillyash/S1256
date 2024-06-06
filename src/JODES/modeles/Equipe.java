@@ -32,6 +32,14 @@ public class Equipe extends Entite {
 	public void setSesAthletes(ArrayList<Athlete> sesAthletes) {
 		this.sesAthletes = sesAthletes;
 	}
+
+	public Pays getSonPays() {
+		return sonPays;
+	}
+
+	public void setSonPays(Pays sonPays) {
+		this.sonPays = sonPays;
+	}
 	
 	// ----------- Methods -----------
 
