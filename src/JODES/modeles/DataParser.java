@@ -35,14 +35,4 @@ public class DataParser {
         }
         return true;
     }
-
-    public static boolean isFloat(String s) {
-        try {
-            Float.parseFloat(s);
-        } catch (NumberFormatException e) {
-            return false;
-        }
-        return true;
-    }
-
 }
