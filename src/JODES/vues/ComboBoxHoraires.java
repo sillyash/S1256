@@ -7,21 +7,17 @@ public class ComboBoxHoraires extends JComboBox<String> {
     
     protected ArrayList<String> horaires = new ArrayList<>();
 
-    public ComboBoxAthlete(ArrayList<Athlete> listeAthletes) {
-        this.horaires.add("8:00");
-        this.horaires.add("8:30");
-        this.horaires.add("9:00");
-        this.horaires.add("9:30");
-        this.horaires.add("10:00");
-        this.horaires.add("10:30");
-        addItems();
+    public ComboBoxHoraires() {
+      
+        this.addItem("09:00");this.addItem("09:30");
+        this.addItem("10:00");this.addItem("10:30");
+        this.addItem("11:00");this.addItem("11:30");
+        this.addItem("12:00");this.addItem("12:30");
+        this.addItem("13:00");this.addItem("13:30");
+        this.addItem("14:00");this.addItem("14:30");
+        this.addItem("15:00");this.addItem("15:30");
+        this.addItem("16:00");this.addItem("16:30");
+        this.addItem("17:00");this.addItem("17:30");
+        this.addItem("18:00");
     }
-
-    protected void addItems() {
-        for (String h : horaires)
-        {
-            this.addItem(h);
-        }
-    }
-    
 }

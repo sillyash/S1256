@@ -2,18 +2,19 @@ package JODES.vues;
 
 import javax.swing.*;
 
+import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 public class AjouterEpreuve extends JFrame implements RetourVue{
-
-	
 
 	public AjouterEpreuve() {
         
         super("Gestion des Epreuves - Paris 2024");
+        
         
         PanelTitle panelTitle = new PanelTitle("Epreuves Création");
         JButton button = new JButton("retour");
@@ -34,12 +35,10 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbb"),new JLabel("aaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbb"),new JLabel("aaaaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbbbbbbb"),new JLabel("aaaaaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbbbb"),new JLabel("a")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bb"),new JLabel("aaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbb"),new JLabel("aaaaa")));
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
+	
 		add(panelDuMilieu,BorderLayout.CENTER);
         
       

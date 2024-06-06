@@ -20,7 +20,12 @@ public class Epreuve extends Entite {
 		this.session = session;
 		this.saSaison = saSaison;
 	}
-	
+	public Epreuve(String nom, LocalTime horaireDebut, LocalTime horaireFin, Session session) {
+		super(nom);
+		this.horaireDebut = horaireDebut;
+		this.horaireFin = horaireFin;
+		this.session = session;
+	}
 	// ----------- Getters & setters -----------
 	
 	public LocalTime getHoraireDebut() {
