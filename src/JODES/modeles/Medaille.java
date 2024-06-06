@@ -1,7 +1,5 @@
 package JODES.modeles;
 
-import java.util.*;
-
 public class Medaille extends Entite {
 
 	protected Athlete sonAthlète;
