@@ -1,4 +1,5 @@
 package JODES.modeles;
+import JODES.modeles.*;
 /**
  * @author Ash Merienne
  */
@@ -34,5 +35,25 @@ public class DataParser {
             return false;
         }
         return true;
+    }
+        
+    public static boolean isSession(Entite e) {
+        return e instanceof Session;
+    }
+
+    public static boolean isAthlete(Entite e) {
+        return e instanceof Athlete;
+    }
+
+    public static boolean isPays(Entite e) {
+        return e instanceof Pays;
+    }
+
+    public static boolean isVille(Entite e) {
+        return e instanceof Ville;
+    }
+
+    public static boolean isLieu(Entite e) {
+        return e instanceof Lieu;
     }
 }
