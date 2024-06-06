@@ -20,7 +20,7 @@
 - [X] JTable
 - [ ] Planning (classe)
 - [X] Planning (Visuel)
-- [ ] Boutons Navigation
+- [X] Boutons Navigation
 
 ## Nico
 

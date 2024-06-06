@@ -1,71 +1,71 @@
 package JODES.modeles;
-import java.time.LocalTime;
 
 /**
- * @author Visual Paradigm
+ * @author Ash Merienne
  */
 public class Epreuve extends Entite {
+    
+	public static final String FINALE = "finale";
+	public static final String DEMIE = "demie finale";
+	public static final String QUART = "quart de finale";
+	public static final String HUITIEME = "huitième de finale";
+	public static final String QUALIF = "qualifications";
+    public static final String AMICAL = "amical";
+	protected Lieu sonLieu;
+	protected Discipline saDiscipline;
+    protected String statut;
+    
+    // ----------- Constructors -----------
 
-	protected LocalTime horaireDebut;
-	protected LocalTime horaireFin;
-	protected Session session;
-	protected Saison saSaison;
+    public Epreuve(String nom, Lieu sonLieu, Discipline saDiscipline, String statut) {
+        super(nom);
+        this.sonLieu = sonLieu;
+        this.saDiscipline = saDiscipline;
+        setStatut(statut);
+    }
 
-	// ----------- Constructors -----------
-	
-	public Epreuve(String nom, LocalTime horaireDebut, LocalTime horaireFin, Session session, Saison saSaison) {
-		super(nom);
-		this.horaireDebut = horaireDebut;
-		this.horaireFin = horaireFin;
-		this.session = session;
-		this.saSaison = saSaison;
-	}
-	public Epreuve(String nom, LocalTime horaireDebut, LocalTime horaireFin, Session session) {
-		super(nom);
-		this.horaireDebut = horaireDebut;
-		this.horaireFin = horaireFin;
-		this.session = session;
-	}
-	// ----------- Getters & setters -----------
-	
-	public LocalTime getHoraireDebut() {
-		return horaireDebut;
-	}
-	
-	public void setHoraireDebut(LocalTime horaireDebut) {
-		this.horaireDebut = horaireDebut;
-	}
-	
-	public LocalTime getHoraireFin() {
-		return horaireFin;
-	}
-	
-	public void setHoraireFin(LocalTime horaireFin) {
-		this.horaireFin = horaireFin;
-	}
-	
-	public void setSession(Session session) {
-		this.session = session;
-	}
-	
-	public Saison getSaSaison() {
-		return saSaison;
-	}
-	
-	public void setSaSaison(Saison saSaison) {
-		this.saSaison = saSaison;
-	}
-	
-	// ----------- Methods -----------
+    // ----------- Getters & setters -----------
 
-	@Override
-	public void menuModification() {
-		return;
-	}
+    public Lieu getSonLieu() {
+        return sonLieu;
+    }
 
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+    public void setSonLieu(Lieu sonLieu) {
+        this.sonLieu = sonLieu;
+    }
 
+    public Discipline getSaDiscipline() {
+        return saDiscipline;
+    }
+
+    public void setSaDiscipline(Discipline saDiscipline) {
+        this.saDiscipline = saDiscipline;
+    }
+
+    /**
+	 * @author Ash Merienne
+	 */
+    public void setStatut(String statut) {
+        if (statut == QUALIF || statut == HUITIEME || statut == QUART
+            || statut == DEMIE || statut == FINALE)
+            this.statut = statut;
+        else this.statut = AMICAL;
+    }
+
+    public String getStatut() {
+        return this.statut;
+    }
+
+    // ----------- Methods ----------
+
+    @Override
+    public void menuModification() {
+        return;
+    }
+
+    @Override
+    public void menuModificationVisuel() {
+        return;
+    }
+    
 }

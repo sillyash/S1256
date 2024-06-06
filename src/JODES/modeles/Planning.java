@@ -2,9 +2,11 @@ package JODES.modeles;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 import JODES.JO2024;
@@ -12,8 +14,7 @@ import JODES.JO2024;
 public class Planning {
 
     protected int numSemaine;
-    protected ArrayList<LocalDate> days = new ArrayList<>();
-    protected ArrayList<Session> sessions = new ArrayList<>();
+    protected ArrayList<List<LocalTime>> days = new ArrayList<>();
 
     // ----------- Constructors -----------
 
@@ -32,20 +33,16 @@ public class Planning {
         this.numSemaine = numSemaine;
     }
 
-    public ArrayList<LocalDate> getDays() {
+    public ArrayList<List<LocalTime>> getDays() {
         return days;
     }
 
-    public void setDays(ArrayList<LocalDate> days) {
+    public void setDays(ArrayList<List<LocalTime>> days) {
         this.days = days;
     }
 
-    public ArrayList<Session> getSessions() {
-        return sessions;
-    }
-
-    public void setSessions(ArrayList<Session> sessions) {
-        this.sessions = sessions;
+    public List<LocalTime> getDay(int dayNum) {
+        if (dayNum < 0 || dayNum > 6) return new List<LocalTime>();
     }
 
     // ----------- Methods -----------
@@ -71,12 +68,9 @@ public class Planning {
     }
 
     public void initializeDaysOfWeek() {
-        Calendar cal = Calendar.getInstance();
-        cal.set(Calendar.WEEK_OF_YEAR, this.numSemaine);
-        cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);
-
-        this.days.add(cal.getFirstDayOfWeek());
-
+        WeekFields week = WeekFields.of(Locale.FRANCE);
+        LocaleDate date;
+        this.days.
     }
     
 }

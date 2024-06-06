@@ -152,14 +152,14 @@ public class JO2024 {
 		return sessions;
 	}
 
-	public static ArrayList<Epreuve> getEpreuves()
+	public static ArrayList<Session> getEpreuves()
 	{
-		ArrayList<Epreuve> epreuves = new ArrayList<>();
+		ArrayList<Session> epreuves = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
 			if (DataParser.isEpreuve(e))
 			{
-				epreuves.add((Epreuve)e);
+				epreuves.add((Session)e);
 			}
 		}
 		return epreuves;

@@ -10,7 +10,7 @@ public class EquipeFrame extends JFrame implements RetourVue{
 
     public EquipeFrame() {
         // Create main frame
-        super("Gestion des Équipes - Paris 2024");
+        super("JODES");
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -28,7 +28,7 @@ public class EquipeFrame extends JFrame implements RetourVue{
         panelButton.boutonModifier.addActionListener(ctrlModEq);
         
         //Nicolas 
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
