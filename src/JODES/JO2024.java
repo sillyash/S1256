@@ -3,6 +3,9 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Locale;
+
+import javax.xml.crypto.Data;
+
 import JODES.modeles.*;
 
 /**
@@ -121,5 +124,70 @@ public class JO2024 {
 			}
 		}
 		return null;
+	}
+
+	public static ArrayList<Athlete> getAthletes()
+	{
+		ArrayList<Athlete> athletes = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isAthlete(e))
+			{
+				athletes.add((Athlete)e);
+			}
+		}
+		return athletes;
+	}
+
+	public static ArrayList<Session> getSessions()
+	{
+		ArrayList<Session> sessions = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isSession(e))
+			{
+				sessions.add((Session)e);
+			}
+		}
+		return sessions;
+	}
+
+	public static ArrayList<Epreuve> getEpreuves()
+	{
+		ArrayList<Epreuve> epreuves = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isSession(e))
+			{
+				epreuves.add((Epreuve)e);
+			}
+		}
+		return epreuves;
+	}
+
+	public static ArrayList<Pays> getPays()
+	{
+		ArrayList<Pays> pays = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isSession(e))
+			{
+				pays.add((Pays)e);
+			}
+		}
+		return pays;
+	}
+
+	public static ArrayList<Discipline> getDisciplines()
+	{
+		ArrayList<Discipline> disciplines = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isSession(e))
+			{
+				disciplines.add((Discipline)e);
+			}
+		}
+		return disciplines;
 	}
 }
