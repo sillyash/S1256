@@ -7,17 +7,17 @@ import JODES.controleurs.RetourVue;
 
 import java.awt.*;
 
-public class AjouterEpreuve extends JFrame implements RetourVue{
+public class AjouterSession extends JFrame implements RetourVue{
 
 
-	public AjouterEpreuve() {
+	public AjouterSession() {
         // Create main frame
-        super("Gestion des Epreuves - Paris 2024");
+        super("Gestion des Session - Paris 2024");
         setSize(800, 450);
         
 
         // Create panels
-        PanelTitle panelTitle = new PanelTitle("Epreuves Création");
+        PanelTitle panelTitle = new PanelTitle("Session Création");
         JButton button = new JButton("retour");
         // Add panels to frame
         add(button, BorderLayout.SOUTH);
@@ -36,12 +36,12 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 
     public static void main(String[] args) {
     	//Create the mainEpreuve frame
-        AjouterEpreuve Epreuve = new AjouterEpreuve();
+        AjouterSession creaSession = new AjouterSession();
     }
     //Nicolas
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new SessionFrame();
 		(this).dispose();
 	}
 }
