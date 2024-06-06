@@ -9,26 +9,24 @@ import java.awt.*;
 
 public class ModifierEpreuve extends JFrame implements RetourVue{
 
-
 	public ModifierEpreuve() {
         super("Modification des Epreuves - Paris 2024");
-        setSize(800, 450);
 
         PanelTitle panelTitle = new PanelTitle("Epreuves Modification");
         JButton button = new JButton("retour");
+        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+        
         add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
-        
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         button.addActionListener(btnretour);
         
+        setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
     }
 
     public static void main(String[] args) {
-        ModifierEpreuve Epreuve = new ModifierEpreuve();
+        ModifierEpreuve testAffichage = new ModifierEpreuve();
     }
     //Nicolas
 	@Override
