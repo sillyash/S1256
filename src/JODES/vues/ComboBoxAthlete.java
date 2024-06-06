@@ -17,6 +17,7 @@ public class ComboBoxAthlete extends JComboBox<String> {
         {
             this.addItem(a.getPrenom() + " " + a.getNom());
         }
+        this.addItem("Créer un nouvel athlète");
     }
     
 }

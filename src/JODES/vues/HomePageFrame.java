@@ -17,7 +17,7 @@ public class HomePageFrame extends JFrame {
 	JButton sessions = new JButton("Sessions");
 	JButton epreuves = new JButton("Epreuves");
 
-	HomePageFrame(){
+	public HomePageFrame(){
 		setTitle("JODES");
 		setSize (800, 450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

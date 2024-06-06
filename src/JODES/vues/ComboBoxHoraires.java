@@ -1,14 +1,12 @@
 package JODES.vues;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
-import JODES.modeles.*;
 
 public class ComboBoxHoraires extends JComboBox<String> {
     
     protected ArrayList<String> horaires = new ArrayList<>();
 
     public ComboBoxHoraires() {
-      
         this.addItem("09:00");this.addItem("09:30");
         this.addItem("10:00");this.addItem("10:30");
         this.addItem("11:00");this.addItem("11:30");

@@ -6,15 +6,15 @@ import JODES.vues.*;
 /**
  * @author Ash Merienne
  */
-public class Test {
+public class App {
 	
 	public static void main(String args[])
 	{
 		Pays FRA = new Pays("France", "FRA");
-		Pays BEL = new Pays("Belgium", "BEL");
+		Pays BEL = new Pays("Belgique", "BEL");
 		
 		Athlete Alain = new Athlete("Alain", "Sandoz", FRA);
-		Athlete Ash = new Athlete("Ash", "Merienne", FRA);
+		Athlete Ash = new Athlete("Ashley", "Merienne", FRA);
 		
 		JO2024.addEntite(Alain);
 		JO2024.addEntite(Ash);
@@ -26,7 +26,7 @@ public class Test {
 		Ash.menuModification();		
 		Ash.saveToDisk();
 
-		JFrame app = new JFrame("TEST");
+		JFrame app = new HomePageFrame();
 		app.add(new ComboBoxPays(JO2024.getPays()));
 		app.setSize(800, 450);
         app.setVisible(true);

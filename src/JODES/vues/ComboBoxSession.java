@@ -19,6 +19,7 @@ public class ComboBoxSession extends JComboBox<String> {
                 s.getSaDiscipline().getNom() +
                 s.getDate().toString());
         }
+        this.addItem("Créer une nouvelle session");
     }
     
 }
