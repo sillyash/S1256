@@ -1,9 +1,10 @@
 package JODES.modeles;
-
 import java.util.*;
-
 import JODES.JO2024;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class Utilisateur {
 
 	protected final int idUtilisateur;

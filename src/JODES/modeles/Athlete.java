@@ -1,7 +1,9 @@
 package JODES.modeles;
-
 import java.util.*;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Athlete extends Entite {
 
 	protected ArrayList<Medaille> sesMedailles;
@@ -14,7 +16,9 @@ public class Athlete extends Entite {
 	protected Pays sonPays;
 	
 	// ----------- Constructors -----------
-	
+	/**
+	 * @author Ash Merienne
+	 */
 	public Athlete (String prenom, String nom, Pays sonPays, String biographie,
 			ArrayList<Medaille> sesMedailles, ArrayList<Equipe> sesEquipes,
 			ArrayList<Discipline> sesDisciplines) {
@@ -132,12 +136,16 @@ public class Athlete extends Entite {
 				+ sonCompte + ", sonPays=" + sonPays + "]";
 	}
 
-	// Ash M
+	/**
+	 * @author Ash Merienne
+	 */
 	public void addEquipe(Equipe equipe) {
 		this.sesEquipes.add(equipe);
 	}
 	
-	// Ash M
+	/**
+	 * @author Ash Merienne
+	 */
 	public void addDiscipline(Discipline discipline) {
 		this.sesDisciplines.add(discipline);
 	}

@@ -1,5 +1,8 @@
 package JODES.modeles;
 
+/**
+ * @author Visual Paradigm
+ */
 public class CompteAthlete extends Utilisateur {
 	
 	protected Athlete sonAthlete;

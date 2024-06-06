@@ -1,10 +1,11 @@
 package JODES.controleurs;
-
 import javax.swing.JFrame;
-
 import JODES.modeles.Entite;
 
-public abstract class Controleur {
+/**
+ * @author Ash Merienne
+ */
+public abstract class Controleur  {
 	protected Object _modele;
 	protected JFrame _vue;
 

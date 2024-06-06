@@ -1,14 +1,15 @@
 package JODES.modeles;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
-import java.util.Scanner;
 
+/**
+ * @author Ash Merienne
+ */
 public abstract class Entite implements Saveable {
 	
 	private static final long serialVersionUID = 1L;

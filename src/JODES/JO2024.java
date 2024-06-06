@@ -1,12 +1,13 @@
 package JODES;
-
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
 import java.util.Locale;
-
 import JODES.modeles.*;
 
+/**
+ * @author Ash Merienne
+ */
 public class JO2024 {
 
 	public static ArrayList<Entite> sesEntites = new ArrayList<Entite>();
@@ -46,9 +47,10 @@ public class JO2024 {
 	}
 	
 	// ----------- Methods -----------
-	
+	/**
+	 * @author Nicolas Vouilloux
+	 */
 	public static int demandeConnexion(String login, String motDePasse) {
-		// Ash M /modif unicode nicolas V
 		Locale unicode = Locale.FRANCE;
 		for (Utilisateur user : sesUtilisateurs)
 		{
@@ -63,8 +65,10 @@ public class JO2024 {
 		return 0;
 	}
 
+	/**
+	 * @author Ash Merienne
+	 */
 	public static Entite rechercheEntite(String nomEntite) {
-		// Ash M
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
 			if (entite.getNom().toUpperCase().contains(nomEntite))
@@ -75,8 +79,10 @@ public class JO2024 {
 		return null;
 	}
 	
+	/**
+	 * @author Ash Merienne
+	 */
 	public static Entite rechercheEntite(int idEntite) {
-		// Ash M
 		for (Entite entite : sesEntites) {
 			if (entite.getIdEntite() == idEntite)
 			{
@@ -86,8 +92,10 @@ public class JO2024 {
 		return null;
 	}
 	
+	/**
+	 * @author Nicolas Vouilloux
+	 */
 	public static Utilisateur rechercheUtilisateur(String login) {
-		//NicolasVOuilloux
 		Locale unicode = Locale.FRANCE;
 		for (Utilisateur user : sesUtilisateurs) {
 			if(user.getLogin().toUpperCase(unicode) == login.toUpperCase(unicode)) {
@@ -97,8 +105,10 @@ public class JO2024 {
 		return null;
 	}
 
+	/**
+	 * @author Ash Merienne
+	 */
 	public static Entite rechercheEntite(String nomEntite, String typeEntite) {
-		// Ash M
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
 			System.out.println(entite.getClass());
@@ -111,10 +121,5 @@ public class JO2024 {
 			}
 		}
 		return null;
-	}
-	
-	public static void afficherPlanningSemaine(int numeroSemaine) {
-		// TODO - implement JO2024.afficherPlanningSemaine
-		throw new UnsupportedOperationException();
 	}
 }

@@ -1,8 +1,10 @@
 package JODES.modeles;
-
 import java.time.Duration;
 import java.util.*;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Resultat extends Entite {
 
 	ArrayList<Epreuve> sesResultats;
