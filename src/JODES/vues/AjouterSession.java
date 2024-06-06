@@ -10,10 +10,10 @@ import java.awt.*;
 public class AjouterSession extends JFrame implements RetourVue{
 
 	public AjouterSession() {
-        super("Gestion des Session - Paris 2024");
+        super("JODES");
         
         PanelTitle panelTitle = new PanelTitle("Session Création");
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         
         add(button, BorderLayout.SOUTH);

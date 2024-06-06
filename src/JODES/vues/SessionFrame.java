@@ -10,7 +10,7 @@ public class SessionFrame extends JFrame implements RetourVue{
 
     public SessionFrame() {
         // Create main frame
-        super("Gestion des Sessions - Paris 2024");
+        super("JODES");
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -32,7 +32,7 @@ public class SessionFrame extends JFrame implements RetourVue{
         panelButton.boutonModifier.addActionListener(ctrlModSes);
         
         //Nicolas 
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit

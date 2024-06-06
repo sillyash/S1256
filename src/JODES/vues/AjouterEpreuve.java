@@ -13,10 +13,10 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 
 	public AjouterEpreuve() {
         
-        super("Gestion des Epreuves - Paris 2024");
+        super("JODES");
         
         PanelTitle panelTitle = new PanelTitle("Epreuves Création");
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
 
         add(button, BorderLayout.SOUTH);

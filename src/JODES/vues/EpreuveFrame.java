@@ -14,7 +14,7 @@ public class EpreuveFrame extends JFrame implements RetourVue{
 
 	public EpreuveFrame() {
         // Create main frame
-        super("Gestion des Epreuves - Paris 2024");
+        super("JODES");
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -36,7 +36,7 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         panelButton.boutonModifier.addActionListener(ctrlModEpr);
         
         //Nicolas 
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button, BorderLayout.SOUTH);

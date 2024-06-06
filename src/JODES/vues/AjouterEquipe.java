@@ -10,10 +10,10 @@ import java.awt.*;
 public class AjouterEquipe extends JFrame implements RetourVue{
 
 	public AjouterEquipe() {
-        super("Gestion des Equipe - Paris 2024");
+        super("JODES");
         
         PanelTitle panelTitle = new PanelTitle("Equipe Création");
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         
         add(button, BorderLayout.SOUTH);
