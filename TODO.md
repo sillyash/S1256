@@ -4,33 +4,30 @@
 
 ## Ash
 
-- [ ] Serializing
-- [ ] Implémentations d'interfaces (Emma & Kincy mettez juste les interfaces à implémenter sur vos classes et je m'en occuppe)
+- [ ] JavaDoc
+- [ ] Methodes abstraites Entite
 
 <br>
 
 ## Kincy
 
-- [ ] Checkbox
-- [ ] Checkbox
+- [ ] Rapport
 
 <br>
 
 ## Emma
 
 - [ ] JTable
-- [ ] 
+- [ ] Planning (classe)
+- [ ] Planning (Visuel)
 
 ## Nico
 
-- [ ] Checkbox
-- [ ] Checkbox
+- [ ] Boutons retour
+- [ ] JFrame Entites
 
 <br>
 
 ## Others
 
-- [ ] mettre noms sur classes/méthodes (Ctrl+alt+j author)
-- [ ] javadoc (voir sujet)
-- [ ] javadoc ?? (Ash)
-- [ ] analyse budget
+- [ ] Budget
