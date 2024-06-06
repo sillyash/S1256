@@ -48,7 +48,7 @@ public class SuppressionSession extends JFrame implements RetourVue{
         add(panelIndication);
         add(panelDel);
         //Nicolas 
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button);//TODO mettre le bouton au bon endroit

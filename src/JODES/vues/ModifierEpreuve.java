@@ -13,7 +13,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
         super("Modification des Epreuves - Paris 2024");
 
         PanelTitle panelTitle = new PanelTitle("Epreuves Modification");
-        JButton button = new JButton("retour");
+        JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         
         add(button, BorderLayout.SOUTH);

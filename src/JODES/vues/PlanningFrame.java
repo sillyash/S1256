@@ -19,8 +19,8 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        title = new PanelTitle("Planning");
 	        
 	        JPanel navBar = new JPanel();
-	        JButton nextWeek = new JButton("==>");
-	        JButton previousWeek = new JButton("<==");
+	        JButton nextWeek = new JButton("\u25BA");
+	        JButton previousWeek = new JButton("\u25C4");
 	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(null, this);
 	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(null, this);
 	        previousWeek.addActionListener(ctrlFlecheBack);
@@ -80,7 +80,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.setVisible(true);
 
 	        //Nicolas 
-	        JButton button = new JButton("retour");
+	        JButton button = new JButton("Retour" + "\u21A9");
 	        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
 	        button.addActionListener(BtnRetour);
 	        fenetre.add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
@@ -97,4 +97,4 @@ public class PlanningFrame extends JFrame implements RetourVue{
 			fenetre.dispose();
 		}
 	}
-//TODO add an extra row for specific dates
+//TODO add an extra row for specific dates, which will also be updated with planning
