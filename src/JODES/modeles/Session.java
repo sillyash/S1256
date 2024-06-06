@@ -53,6 +53,9 @@ public class Session extends Entite {
         this.date = date;
     }
 
+    /**
+	 * @author Ash Merienne
+	 */
     public void setStatut(String statut) {
         if (statut == QUALIF || statut == HUITIEME || statut == QUART
             || statut == DEMIE || statut == FINALE)
