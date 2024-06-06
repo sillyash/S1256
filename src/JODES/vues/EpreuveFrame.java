@@ -28,10 +28,12 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         
         //Emma ESCOFFIER
         ControleurBtnSupprEpreuve ctrlSupprEpr = new ControleurBtnSupprEpreuve(null,this);
-        ControleurBtnAjEpreuve ctrlAjEq = new ControleurBtnAjEpreuve(null, this);
+        ControleurBtnAjEpreuve ctrlAjEpr = new ControleurBtnAjEpreuve(null, this);
+        ControleurBtnModEpreuve ctrlModEpr = new ControleurBtnModEpreuve(null, this);
         
         panelButton.boutonSupprimer.addActionListener(ctrlSupprEpr);
-        panelButton.boutonAjouter.addActionListener(ctrlAjEq);
+        panelButton.boutonAjouter.addActionListener(ctrlAjEpr);
+        panelButton.boutonModifier.addActionListener(ctrlModEpr);
         
         //Nicolas 
         JButton button = new JButton("retour");
@@ -43,8 +45,7 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         // Make the frame visible
         setVisible(true);
         // Exit the application when the frame is closed
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }
 
     public static void main(String[] args) {

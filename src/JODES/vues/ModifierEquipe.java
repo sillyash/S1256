@@ -9,34 +9,24 @@ import java.awt.*;
 
 public class ModifierEquipe extends JFrame implements RetourVue{
 
-
 	public ModifierEquipe() {
-        // Create main frame
         super("Modification des Equipe - Paris 2024");
-        setSize(800, 450);
         
-
-        // Create panels
         PanelTitle panelTitle = new PanelTitle("Equipe Modification");
         JButton button = new JButton("retour");
-        // Add panels to frame
+        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+
         add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
-
-        
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         button.addActionListener(btnretour);
         
-        // Make the frame visible
+        setSize(800, 450);
         setVisible(true);
-        // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
     }
 
     public static void main(String[] args) {
-    	//Create the mainEpreuve frame
-        ModifierEquipe creaEquipe = new ModifierEquipe();
+        ModifierEquipe testAffichage = new ModifierEquipe();
     }
     //Nicolas
 	@Override
