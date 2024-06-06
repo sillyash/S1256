@@ -15,7 +15,7 @@ public class ControleurBtnSupprEpreuve extends Controleur implements ActionListe
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SuppressionEpreuve();
-		
+		((JFrame) _vue).dispose();
 	}
 
 }

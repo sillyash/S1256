@@ -23,7 +23,7 @@ public class SessionFrame extends JFrame implements RetourVue{
         add(panelButton, BorderLayout.CENTER);
         
         //Emma ESCOFFIER
-        ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(null, this);
+        ControleurBtnSupprSession ctrlBtnSes = new ControleurBtnSupprSession(null, this);
         panelButton.boutonSupprimer.addActionListener(ctrlBtnSes);
         
         //Nicolas 
