@@ -1,11 +1,16 @@
 package JODES.vues;
 
 import javax.swing.*;
+
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.RetourVue;
+
 import java.awt.*;
 
-public class EpreuveFrame extends JFrame {
+public class EpreuveFrame extends JFrame implements RetourVue{
 
-    public EpreuveFrame() {
+
+	public EpreuveFrame() {
         // Create main frame
         super("Gestion des Epreuves - Paris 2024");
         setSize(400, 400);
@@ -14,11 +19,15 @@ public class EpreuveFrame extends JFrame {
         // Create panels
         PanelTitle panelTitle = new PanelTitle("Epreuves");
         PanelButton panelButton = new PanelButton();
-
+        JButton button = new JButton("retour");
         // Add panels to frame
+        add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
         add(panelButton, BorderLayout.CENTER);
-
+        //Nicolas Vouilloux
+        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+        button.addActionListener(btnretour);
+        //Pas Nicolas vouilloux
         // Make the frame visible
         setVisible(true);
 
@@ -31,4 +40,10 @@ public class EpreuveFrame extends JFrame {
     	//Create the mainEpreuve frame
         EpreuveFrame Epreuve = new EpreuveFrame();
     }
+    //Nicolas
+	@Override
+	public void retour() {
+		new HomePageFrame();
+		(this).dispose();
+	}
 }

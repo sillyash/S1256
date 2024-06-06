@@ -10,7 +10,7 @@ public class PlanningFrame extends JFrame{
 	    PanelTitle title;
 	    JTable Planning;
 	    
-	    PlanningFrame(){
+	    public PlanningFrame(){
 	        fenetre = new JFrame ("JODES");
 	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        fenetre.setLayout(new BorderLayout());
