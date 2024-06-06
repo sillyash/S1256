@@ -1,5 +1,4 @@
 package JODES.modeles;
-import JODES.modeles.*;
 /**
  * @author Ash Merienne
  */

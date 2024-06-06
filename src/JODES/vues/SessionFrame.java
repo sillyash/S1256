@@ -1,9 +1,6 @@
 package JODES.vues;
-
 import javax.swing.*;
-
 import JODES.controleurs.*;
-
 import java.awt.*;
 
 public class SessionFrame extends JFrame implements RetourVue{

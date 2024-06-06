@@ -1,6 +1,5 @@
 // Emma ESCOFFIER
 package JODES.vues;
-
 import javax.swing.*;
 import java.awt.*;
 import JODES.controleurs.*;

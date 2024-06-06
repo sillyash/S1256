@@ -1,13 +1,8 @@
 package JODES.vues;
-
 import javax.swing.*;
-
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
-
-
 import JODES.controleurs.*;
-
 import java.awt.*;
 
 public class EpreuveFrame extends JFrame implements RetourVue{

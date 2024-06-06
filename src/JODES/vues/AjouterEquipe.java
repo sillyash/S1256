@@ -1,11 +1,8 @@
 package JODES.vues;
-
 import javax.swing.*;
-
 import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
-
 import java.awt.*;
 
 public class AjouterEquipe extends JFrame implements RetourVue{

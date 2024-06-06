@@ -1,6 +1,5 @@
 package JODES.controleurs;
 import javax.swing.JFrame;
-import JODES.modeles.Entite;
 
 /**
  * @author Ash Merienne

@@ -1,6 +1,5 @@
 package JODES;
 import javax.swing.*;
-import JODES.modeles.*;
 import JODES.vues.*;
 
 /**

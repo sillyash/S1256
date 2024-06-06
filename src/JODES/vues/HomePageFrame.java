@@ -1,10 +1,8 @@
 // ESCOFFIER Emma
 package JODES.vues;
-
 import javax.swing.*;
 import JODES.controleurs.*;
 import java.awt.*;
-
 
 public class HomePageFrame extends JFrame {
 	private static final long serialVersionUID = 1L;

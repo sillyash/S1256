@@ -1,16 +1,12 @@
 //correct package - Emma
 package JODES.vues;
-
 import java.awt.*;
 import javax.swing.*;
-
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
-import javax.swing.*;   
+
 public class SuppressionSession extends JFrame implements RetourVue{
-    /**
-     * 
-     */
+
     private static final long serialVersionUID = 1L;
     protected JTextField sessionDel;
     protected JButton valider;
