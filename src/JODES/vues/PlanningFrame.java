@@ -1,11 +1,9 @@
 package JODES.vues;
 
 import javax.swing.*;
-
-import JODES.controleurs.ControleurBTNRetour;
-import JODES.controleurs.RetourVue;
-
 import java.awt.*;
+import JODES.controleurs.*;
+
 
 public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
@@ -19,6 +17,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        fenetre.setLayout(new BorderLayout());
 	        title = new PanelTitle("Planning");
+	        title.add(JButton nextWeek);
 	        fenetre.add(title, BorderLayout.NORTH);
 	        
 	        JPanel graduation = new JPanel();
@@ -78,3 +77,6 @@ public class PlanningFrame extends JFrame implements RetourVue{
 			fenetre.dispose();
 		}
 	}
+//TODO add not modifiable clasue to each cell of the JTable
+//TODO add an extra row for specific dates
+//TODO arrow buttons to go from one page of planning to the next

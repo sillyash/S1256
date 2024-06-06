@@ -42,23 +42,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 		panelDuMilieu.add(new GridFormField(new JTextField("bbbb"),new JLabel("aaaaa")));
 		add(panelDuMilieu,BorderLayout.CENTER);
         
-        JPanel panelSaveRetour = new JPanel();
-        panelSaveRetour.setLayout(new GridLayout(2,1));
-        panelSaveRetour.add(buttonSave);
-        panelSaveRetour.add(button);
-        add(panelSaveRetour,BorderLayout.SOUTH);
-        
-        
-        JPanel panelDuMilieu = new JPanel();
-        panelDuMilieu.setLayout(new GridLayout(3,2));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbb"),new JLabel("aaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbb"),new JLabel("aaaaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbbbbbbb"),new JLabel("aaaaaaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbbbbbbb"),new JLabel("a")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bb"),new JLabel("aaaa")));
-		panelDuMilieu.add(new GridFormField(new JTextField("bbbb"),new JLabel("aaaaa")));
-		add(panelDuMilieu,BorderLayout.CENTER);
-        
+      
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
