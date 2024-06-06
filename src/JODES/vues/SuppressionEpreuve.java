@@ -4,8 +4,11 @@ package JODES.vues;
 import java.awt.*;
 import javax.swing.*;
 
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.RetourVue;
+
 //correct naming of class - Emma
-public class SuppressionEpreuve extends JFrame {
+public class SuppressionEpreuve extends JFrame implements RetourVue{
     /**
      * 
      */
@@ -20,13 +23,14 @@ public class SuppressionEpreuve extends JFrame {
         // Create main frame
         super("Gestion des Epreuves - Epreuve");
         setSize(800, 450);
-        setLayout(new BorderLayout());
+        setLayout(new GridLayout (4,1));
 
         // Initialize elements
+        PanelTitle panelTitle = new PanelTitle("Epreuves");
+        add(panelTitle); 
         valider = new JButton("✔");
         epreuveDel = new JTextField("Id...",15);
         indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à supprimer",JLabel.CENTER);
-        
 
         // Initialize the panels
         panelDel = new JPanel();
@@ -42,9 +46,15 @@ public class SuppressionEpreuve extends JFrame {
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
-        add(panelIndication,BorderLayout.CENTER);
-        add(panelDel, BorderLayout.SOUTH);
+        add(panelIndication);
+        add(panelDel);
 
+        //Nicolas 
+        JButton button = new JButton("retour");
+        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        button.addActionListener(BtnRetour);
+        add(button);//TODO mettre le bouton au bon endroit
+        //pas Nicolas
         // Make the frame visible
         setVisible(true);
 
@@ -52,8 +62,6 @@ public class SuppressionEpreuve extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         // Création d'un nouveau panelTitle 
-        PanelTitle panelTitle = new PanelTitle("Epreuves");
-        add(panelTitle, BorderLayout.NORTH); 
         
         // Pack the frame to fit its components
         pack();
@@ -62,6 +70,12 @@ public class SuppressionEpreuve extends JFrame {
     public static void main(String[] args) {
         new SuppressionEpreuve();
     }
+
+	@Override
+	public void retour() {
+		new EpreuveFrame();
+		this.dispose();
+	}
 }
 
 

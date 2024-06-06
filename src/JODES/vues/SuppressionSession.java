@@ -4,7 +4,10 @@ package JODES.vues;
 import java.awt.*;
 import javax.swing.*;
 
-public class SuppressionSession extends JFrame {
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.RetourVue;
+import javax.swing.*;   
+public class SuppressionSession extends JFrame implements RetourVue{
     /**
      * 
      */
@@ -17,15 +20,16 @@ public class SuppressionSession extends JFrame {
 
     public SuppressionSession() {
         // Create main frame
+    	// Création d'un nouveau panelTitle 
         super("Gestion des Sessions - Session");
         setSize(800, 450);
-        setLayout(new BorderLayout());
-
+        setLayout(new GridLayout (4,1));
         // Initialize elements
+        PanelTitle panelTitle = new PanelTitle("Sessions");
+        add(panelTitle); 
         valider = new JButton("✔");
         sessionDel = new JTextField("Id...",15);
-        indicationDelete = new JLabel("Veuillez saisir l'Id de la session à supprimer",JLabel.CENTER);
-        
+        indicationDelete = new JLabel("Veuillez saisir l'Id de la session à supprimer");
 
         // Initialize the panels
         panelDel = new JPanel();
@@ -41,8 +45,8 @@ public class SuppressionSession extends JFrame {
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
-        add(panelIndication,BorderLayout.CENTER);
-        add(panelDel, BorderLayout.SOUTH);
+        add(panelIndication);
+        add(panelDel);
 
         // Make the frame visible
         setVisible(true);
@@ -50,16 +54,25 @@ public class SuppressionSession extends JFrame {
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Création d'un nouveau panelTitle 
-        PanelTitle panelTitle = new PanelTitle("Sessions");
-        add(panelTitle, BorderLayout.NORTH); 
         
         // Pack the frame to fit its components
         pack();
+        //Nicolas 
+        JButton button = new JButton("retour");
+        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        button.addActionListener(BtnRetour);
+        add(button);//TODO mettre le bouton au bon endroit
+        //pas Nicolas
     }
 
     public static void main(String[] args) {
         new SuppressionSession();
     }
+//Nicolas
+	@Override
+	public void retour() {
+		new SessionFrame();
+		this.dispose();
+	}
 }
 

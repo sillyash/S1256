@@ -77,6 +77,6 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		@Override
 		public void retour() {
 			new HomePageFrame();
-			this.dispose();
+			fenetre.dispose();
 		}
 	}
