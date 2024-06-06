@@ -7,11 +7,14 @@ public class Test {
 	public static void main(String args[])
 	{
 		Pays FRA = new Pays("France", "FRA");
-		Athlete ash = new Athlete("Ash", "Merienne", FRA);
+		Athlete Alain = new Athlete("Alain", "Sandoz", FRA);
+		Athlete Ash = new Athlete("Ash", "Merienne", FRA);
 		
-		ash.menuModification();
+		JO2024.addEntite(Alain);
+		JO2024.rechercheEntite("alain", "");
 		
-		ash.saveToDisk();
+		Ash.menuModification();		
+		Ash.saveToDisk();
 	}
 	
 }

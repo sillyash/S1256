@@ -5,15 +5,22 @@ import javax.swing.*;
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
 
+
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.RetourVue;
+
 import java.awt.*;
+
+public class EpreuveFrame extends JFrame implements RetourVue{
 
 public class EpreuveFrame extends JFrame implements RetourVue{
 
 
 	public EpreuveFrame() {
+	public EpreuveFrame() {
         // Create main frame
         super("Gestion des Epreuves - Paris 2024");
-        setSize(400, 400);
+        setSize(800, 450);
         setLayout(new BorderLayout());
 
         // Create panels
@@ -30,7 +37,6 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         //Pas Nicolas vouilloux
         // Make the frame visible
         setVisible(true);
-
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         

@@ -32,6 +32,16 @@ public class Saison extends Entite {
 	public void setDateFin(LocalDate dateFin) {
 		this.dateFin = dateFin;
 	}
+
+	@Override
+	public void menuModification() {
+		return;
+	}
+
+	@Override
+	public void menuModificationVisuel() {
+		return;
+	}
 	
 	// ----------- Methods -----------
 }
