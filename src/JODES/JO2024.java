@@ -1,5 +1,7 @@
 package JODES;
 
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -9,6 +11,9 @@ public class JO2024 {
 
 	public static ArrayList<Entite> sesEntites = new ArrayList<Entite>();
 	protected static ArrayList<Utilisateur> sesUtilisateurs = new ArrayList<Utilisateur>();
+	public static final LocalDate dateDebutJO = LocalDate.of(2024, Month.JULY, 12);
+	public static final LocalDate dateFinJO = LocalDate.of(2024, Month.JULY, 30);
+	public static final Saison Paris2024 = new Saison("2024 Paris Summer Olympics", dateDebutJO, dateFinJO);
 	
 	// ----------- Getters & setters -----------
 	
@@ -108,15 +113,4 @@ public class JO2024 {
 		// TODO - implement JO2024.afficherPlanningSemaine
 		throw new UnsupportedOperationException();
 	}
-	
-	public static void main(String args[])
-	{
-		// Ash M
-		Pays FRA = new Pays("France", "FRA");
-		Athlete Alain = new Athlete("Alain", "Sandoz", FRA);
-		
-		JO2024.addEntite(Alain);
-		JO2024.rechercheEntite("alain", "");
-	}
-
 }
