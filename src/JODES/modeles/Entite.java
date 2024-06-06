@@ -51,23 +51,13 @@ public abstract class Entite implements Saveable {
 	    return fieldNames;
 	}
 	
-	public void menuModification() {
-		
-	}
+	public abstract void menuModification();
 
-	public void menuModification(boolean visualMode) {
-		// TODO - implement Entité.menuModification
-		throw new UnsupportedOperationException();
-	}
+	public abstract void menuModificationVisuel();
 
 	@Override
 	public String toString() {
 		return "Entite [idEntite=" + idEntite + ", nom=" + nom + "]";
-	}
-
-	public int getNumberOfFields() {
-		// Ash M
-		return this.getClass().getDeclaredFields().length;
 	}
 	
 	public File createFile() {
