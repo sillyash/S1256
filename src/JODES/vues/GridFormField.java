@@ -14,8 +14,8 @@ public class GridFormField extends JPanel {
         this.input = input;
         this.label = label;
         this.grid = new GridLayout(1,2);
-        this.add(label);
-        this.add(input);
+        this.add(label).setPreferredSize(new Dimension(200, 25));
+        this.add(input).setPreferredSize(new Dimension(200, 25));
     }
 
     // ----------- Getters & setters -----------

@@ -9,7 +9,6 @@ import java.awt.*;
 
 public class ModifierSession extends JFrame implements RetourVue{
 
-
 	public ModifierSession() {
         super("Modification des Session - Paris 2024");
         
