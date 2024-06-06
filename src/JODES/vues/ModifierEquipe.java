@@ -7,22 +7,23 @@ import JODES.controleurs.RetourVue;
 
 import java.awt.*;
 
-public class AjouterEpreuve extends JFrame implements RetourVue{
+public class ModifierEquipe extends JFrame implements RetourVue{
 
 
-	public AjouterEpreuve() {
+	public ModifierEquipe() {
         // Create main frame
-        super("Gestion des Epreuves - Paris 2024");
+        super("Modification des Equipe - Paris 2024");
         setSize(800, 450);
         
 
         // Create panels
-        PanelTitle panelTitle = new PanelTitle("Epreuves Création");
+        PanelTitle panelTitle = new PanelTitle("Equipe Modification");
         JButton button = new JButton("retour");
         // Add panels to frame
         add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
 
+        
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         button.addActionListener(btnretour);
         
@@ -35,12 +36,12 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 
     public static void main(String[] args) {
     	//Create the mainEpreuve frame
-        AjouterEpreuve Epreuve = new AjouterEpreuve();
+        ModifierEquipe creaEquipe = new ModifierEquipe();
     }
     //Nicolas
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new EquipeFrame();
 		(this).dispose();
 	}
 }

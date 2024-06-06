@@ -1,3 +1,4 @@
+
 package JODES.vues;
 
 import javax.swing.*;
@@ -7,17 +8,17 @@ import JODES.controleurs.RetourVue;
 
 import java.awt.*;
 
-public class AjouterEpreuve extends JFrame implements RetourVue{
+public class ModifierEpreuve extends JFrame implements RetourVue{
 
 
-	public AjouterEpreuve() {
+	public ModifierEpreuve() {
         // Create main frame
-        super("Gestion des Epreuves - Paris 2024");
+        super("Modification des Epreuves - Paris 2024");
         setSize(800, 450);
         
 
         // Create panels
-        PanelTitle panelTitle = new PanelTitle("Epreuves Création");
+        PanelTitle panelTitle = new PanelTitle("Epreuves Modification");
         JButton button = new JButton("retour");
         // Add panels to frame
         add(button, BorderLayout.SOUTH);
@@ -35,7 +36,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 
     public static void main(String[] args) {
     	//Create the mainEpreuve frame
-        AjouterEpreuve Epreuve = new AjouterEpreuve();
+        ModifierEpreuve Epreuve = new ModifierEpreuve();
     }
     //Nicolas
 	@Override
