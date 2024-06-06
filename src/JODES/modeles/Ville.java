@@ -25,15 +25,5 @@ public class Ville extends Entite {
 	}
 	
 	// ----------- Methods -----------
-	
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
 
 }

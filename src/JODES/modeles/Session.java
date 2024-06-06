@@ -118,15 +118,4 @@ public class Session extends Entite {
 		minutesFin = horaireFin.getHour()*60 + horaireFin.getMinute();
 		return (minutesFin - minutesDeb)/30;
 	}
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
-
 }

@@ -51,10 +51,6 @@ public abstract class Entite implements Saveable {
 	      fieldNames.add(field.getName());
 	    return fieldNames;
 	}
-	
-	public abstract void menuModification();
-
-	public abstract void menuModificationVisuel();
 
 	@Override
 	public String toString() {

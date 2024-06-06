@@ -150,14 +150,6 @@ public class Athlete extends Entite {
 		this.sesDisciplines.add(discipline);
 	}
 
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	@Override
-	public void menuModificationVisuel() {
-		return;
-	}
+	
 	
 }
