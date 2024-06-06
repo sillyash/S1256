@@ -1,6 +1,7 @@
 package JODES.modeles;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoField;
 
 /**
  * @author Visual Paradigm
@@ -110,6 +111,13 @@ public class Session extends Entite {
 	}
 	
 	// ----------- Methods -----------
+
+	public int getLongueurEnDemiHeure() {
+		int minutesDeb, minutesFin;
+		minutesDeb = horaireDebut.getHour()*60 + horaireDebut.getMinute();
+		minutesFin = horaireFin.getHour()*60 + horaireFin.getMinute();
+		return (minutesFin - minutesDeb)/30;
+	}
 
 	@Override
 	public void menuModification() {
