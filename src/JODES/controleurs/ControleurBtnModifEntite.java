@@ -5,7 +5,7 @@ import javax.swing.JFrame;
 import JODES.vues.*;
 import JODES.modeles.*;
 
-public class ControleurBtnHomePage extends Controleur implements ActionListener {
+public class ControleurBtnModifEntite extends Controleur implements ActionListener {
 	
 	public ControleurBtnHomePage(Entite modele, JFrame vue) {
 		super(modele, vue);
