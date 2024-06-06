@@ -20,7 +20,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
 
         add(button, BorderLayout.SOUTH);
-        JButton buttonSave = new JButton("Sauvegarder et quitter");
+        JButton buttonSave = new JButton("Sauvegarder & Quitter" + "🖉");
       
         add(panelTitle, BorderLayout.NORTH);
         button.addActionListener(btnretour);
