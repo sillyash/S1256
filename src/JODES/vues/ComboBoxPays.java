@@ -13,6 +13,7 @@ public class ComboBoxPays extends JComboBox<String> {
     }
 
     protected void addItems() {
+        this.addItem("");
         for (Pays p : listePays)
         {
             this.addItem(p.getNom());
