@@ -6,8 +6,7 @@ import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
 
 
-import JODES.controleurs.ControleurBTNRetour;
-import JODES.controleurs.RetourVue;
+import JODES.controleurs.*;
 
 import java.awt.*;
 
@@ -31,10 +30,18 @@ public class EpreuveFrame extends JFrame implements RetourVue{
         add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
         add(panelButton, BorderLayout.CENTER);
-        //Nicolas Vouilloux
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
-        button.addActionListener(btnretour);
-        //Pas Nicolas vouilloux
+        
+        //Emma ESCOFFIER
+        ControleurBtnSupprEpreuve ctrlBtnEpr = new ControleurBtnSupprEpreuve(null,this);
+        panelButton.boutonSupprimer.addActionListener(ctrlBtnEpr);
+        
+        //Nicolas 
+        JButton button = new JButton("retour");
+        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        button.addActionListener(BtnRetour);
+        add(button, BorderLayout.SOUTH);
+        //pas Nicolas
+        
         // Make the frame visible
         setVisible(true);
         // Exit the application when the frame is closed

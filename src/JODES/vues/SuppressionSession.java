@@ -26,7 +26,6 @@ public class SuppressionSession extends JFrame {
         sessionDel = new JTextField("Id...",15);
         indicationDelete = new JLabel("Veuillez saisir l'Id de la session à supprimer",JLabel.CENTER);
         
-
         // Initialize the panels
         panelDel = new JPanel();
         panelDel.setLayout(new FlowLayout());

@@ -2,8 +2,7 @@ package JODES.vues;
 
 import javax.swing.*;
 
-import JODES.controleurs.ControleurBTNRetour;
-import JODES.controleurs.RetourVue;
+import JODES.controleurs.*;
 
 import java.awt.*;
 
@@ -22,12 +21,18 @@ public class SessionFrame extends JFrame implements RetourVue{
         // Add panels to frame
         add(panelTitle, BorderLayout.NORTH);
         add(panelButton, BorderLayout.CENTER);
+        
+        //Emma ESCOFFIER
+        ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(null, this);
+        panelButton.boutonSupprimer.addActionListener(ctrlBtnSes);
+        
         //Nicolas 
         JButton button = new JButton("retour");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
         //pas Nicolas
+        
         // Make the frame visible
         setVisible(true);
 
