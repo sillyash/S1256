@@ -1,8 +1,10 @@
 //correct package - Emma
 package JODES.vues;
-
 import javax.swing.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class MessageBox {
   protected String message;
   protected String title;

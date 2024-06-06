@@ -1,7 +1,9 @@
 package JODES;
-
 import JODES.modeles.*;
 
+/**
+ * @author Ash Merienne
+ */
 public class Test {
 	
 	public static void main(String args[])
