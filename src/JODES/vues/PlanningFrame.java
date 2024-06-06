@@ -18,7 +18,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre = new JFrame ("JODES");
 	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        fenetre.setLayout(new BorderLayout());
-	        title = new PanelTitle("JODES");
+	        title = new PanelTitle("Planning");
 	        fenetre.add(title, BorderLayout.NORTH);
 	        
 	        JPanel graduation = new JPanel();
@@ -53,12 +53,6 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" }
 	            }; // will have to replace with proper data to be imported 
-	        //Nicolas 
-	        JButton button = new JButton("retour");
-	        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
-	        button.addActionListener(BtnRetour);
-	        fenetre.add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
-	        //pas Nicolas
 	        Planning = new JTable(data, columnNames); // 18 rows = every 30min from 9h to 18h | 7 cols days of week
 	        Planning.setBounds(100, 100, 600, 600);
 	        JScrollPane scrollPane = new JScrollPane(Planning);
@@ -66,12 +60,16 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.setSize(800, 450);
 	        fenetre.setVisible(true);
 
+	        //Nicolas 
+	        JButton button = new JButton("retour");
+	        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+	        button.addActionListener(BtnRetour);
+	        fenetre.add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
 	    }
 	    
 	    public static void main(String[] args) {
 	    	PlanningFrame testAffichage = new PlanningFrame();
 	    }
-	    // ca compile ca marche bien mais le scrollPane ne s'applique 
 
 	    //Nicolas
 		@Override

@@ -2,7 +2,7 @@
 package JODES.vues;
 import javax.swing.*;
 
-import JODES.controleurs.ControleurBtnPlanning;
+import JODES.controleurs.*;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -39,10 +39,16 @@ public class HomePageFrame extends JFrame {
 		p.add(epreuves);
 		
 		add(p);
+
+		ControleurBtnPlanning ctrlBtnPlann = new ControleurBtnPlanning(this);
+		ControleurBtnEpreuve ctrlBtnEpr = new ControleurBtnEpreuve(null, this);
+		ControleurBtnEquipe ctrlBtnEqu = new ControleurBtnEquipe(this);
+		ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(null, this);
 		
-		ControleurBtnPlanning ctrlBtn = new ControleurBtnPlanning(this);
-		// Add action listener to the planning button
-		planning.addActionListener(ctrlBtn);
+		epreuves.addActionListener(ctrlBtnEpr);
+		planning.addActionListener(ctrlBtnPlann);
+		equipes.addActionListener(ctrlBtnEqu);
+		sessions.addActionListener(ctrlBtnSes);
 		
 		setVisible(true);
 	}
