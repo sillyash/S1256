@@ -4,23 +4,27 @@ import java.time.LocalDate;
 /**
  * @author Ash Merienne
  */
-public class Session {
+public class Session extends Entite {
     
 	public static final String FINALE = "finale";
 	public static final String DEMIE = "demie finale";
 	public static final String QUART = "quart de finale";
 	public static final String HUITIEME = "huitième de finale";
 	public static final String QUALIF = "qualifications";
+    public static final String AMICAL = "amical";
 	protected Lieu sonLieu;
 	protected Discipline saDiscipline;
 	protected LocalDate date;
+    protected String statut;
     
     // ----------- Constructors -----------
 
-    public Session(Lieu sonLieu, Discipline saDiscipline, LocalDate date) {
+    public Session(String nom, Lieu sonLieu, Discipline saDiscipline, LocalDate date, String statut) {
+        super(nom);
         this.sonLieu = sonLieu;
         this.saDiscipline = saDiscipline;
         this.date = date;
+        setStatut(statut);
     }
 
     // ----------- Getters & setters -----------
@@ -49,7 +53,27 @@ public class Session {
         this.date = date;
     }
 
-    // ----------- Methods -----------
+    public void setStatut(String statut) {
+        if (statut == QUALIF || statut == HUITIEME || statut == QUART
+            || statut == DEMIE || statut == FINALE)
+            this.statut = statut;
+        else this.statut = AMICAL;
+    }
 
+    public String getStatut() {
+        return this.statut;
+    }
+
+    // ----------- Methods ----------
+
+    @Override
+    public void menuModification() {
+        return;
+    }
+
+    @Override
+    public void menuModificationVisuel() {
+        return;
+    }
     
 }
