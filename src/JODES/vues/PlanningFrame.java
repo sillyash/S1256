@@ -1,9 +1,9 @@
+// Emma ESCOFFIER
 package JODES.vues;
 
 import javax.swing.*;
 import java.awt.*;
 import JODES.controleurs.*;
-
 
 public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
@@ -17,13 +17,29 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        fenetre.setLayout(new BorderLayout());
 	        title = new PanelTitle("Planning");
-	        title.add(JButton nextWeek);
-	        fenetre.add(title, BorderLayout.NORTH);
+	        
+	        JPanel navBar = new JPanel();
+	        JButton nextWeek = new JButton("==>");
+	        JButton previousWeek = new JButton("<==");
+	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(null, this);
+	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(null, this);
+	        previousWeek.addActionListener(ctrlFlecheBack);
+	        nextWeek.addActionListener(ctrlFlecheForw);
+	        
+	        navBar.setLayout(new BorderLayout());
+	        navBar.add(previousWeek, BorderLayout.WEST);
+	        navBar.add(title, BorderLayout.CENTER);
+	        navBar.add(nextWeek, BorderLayout.EAST);
+	        fenetre.add(navBar, BorderLayout.NORTH);
 	        
 	        JPanel graduation = new JPanel();
-	        
 	        String[] hours = {"","9", "9:30", "10", "10:30", "11", "11:30", "12", "12:30", "13", "13:30", "14", "14:30", "15", "15:30", "16", "16:30", "17", "17:30", "18"};
-	        JTable gradTable = new JTable(20,1);
+	        JTable gradTable = new JTable(20,1) {
+	        	public boolean isCellEditable(int row, int column) {
+	        		return false;
+	        	}
+	        };
+	        
 	        graduation.add(gradTable);
 	        for (int i = 0; i < 20; i++) {
 	        	gradTable.setValueAt(hours[i], i, 0);
@@ -52,7 +68,11 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" }
 	            }; // will have to replace with proper data to be imported 
-	        Planning = new JTable(data, columnNames); // 18 rows = every 30min from 9h to 18h | 7 cols days of week
+	        Planning = new JTable(data, columnNames) {
+	        	public boolean isCellEditable(int row, int column) {
+	        		return false;
+	        	}
+	        }; // 18 rows = every 30min from 9h to 18h | 7 cols days of week
 	        Planning.setBounds(100, 100, 600, 600);
 	        JScrollPane scrollPane = new JScrollPane(Planning);
 	        fenetre.add(scrollPane, BorderLayout.CENTER);
@@ -77,6 +97,4 @@ public class PlanningFrame extends JFrame implements RetourVue{
 			fenetre.dispose();
 		}
 	}
-//TODO add not modifiable clasue to each cell of the JTable
 //TODO add an extra row for specific dates
-//TODO arrow buttons to go from one page of planning to the next
