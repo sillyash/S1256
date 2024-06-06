@@ -7,13 +7,13 @@ import java.util.*;
  */
 public class Resultat extends Entite {
 
-	ArrayList<Epreuve> sesResultats;
+	ArrayList<Session> sesResultats;
 	protected float score;
 	protected Duration temps;
 
 	// ----------- Constructors -----------
 	
-	public Resultat(String nom, ArrayList<Epreuve> sesResultats, float score, Duration temps) {
+	public Resultat(String nom, ArrayList<Session> sesResultats, float score, Duration temps) {
 		super(nom);
 		this.sesResultats = sesResultats;
 		this.score = score;
@@ -22,11 +22,11 @@ public class Resultat extends Entite {
 	
 	// ----------- Getters & setters -----------
 	
-	public ArrayList<Epreuve> getSesResultats() {
+	public ArrayList<Session> getSesResultats() {
 		return sesResultats;
 	}
 
-	public void setSesResultats(ArrayList<Epreuve> sesResultats) {
+	public void setSesResultats(ArrayList<Session> sesResultats) {
 		this.sesResultats = sesResultats;
 	}
 

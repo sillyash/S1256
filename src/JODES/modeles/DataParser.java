@@ -62,6 +62,6 @@ public class DataParser {
     }
 
     public static boolean isEpreuve(Entite e) {
-        return e instanceof Epreuve;
+        return e instanceof Session;
     }
 }
