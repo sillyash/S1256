@@ -48,6 +48,14 @@ public class Resultat extends Entite {
 	
 	// ----------- Methods -----------
 
-	
+	@Override
+	public void menuModification() {
+		return;
+	}
+
+	@Override
+	public void menuModificationVisuel() {
+		return;
+	}
 	
 }

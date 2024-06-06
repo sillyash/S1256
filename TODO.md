@@ -5,6 +5,7 @@
 ## Ash
 
 - [ ] JavaDoc
+- [ ] Methodes abstraites Entite
 
 <br>
 
