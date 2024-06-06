@@ -1,7 +1,9 @@
 package JODES.modeles;
-
 import java.time.LocalDate;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Saison extends Entite {
 
 	protected LocalDate dateDebut;

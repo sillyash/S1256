@@ -7,6 +7,9 @@ import java.io.ObjectOutputStream;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
+/**
+ * @author Ash Merienne
+ */
 public abstract class Entite implements Saveable {
 	
 	private static final long serialVersionUID = 1L;

@@ -1,5 +1,8 @@
 package JODES.modeles;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Medaille extends Entite {
 
 	protected Athlete sonAthlète;

@@ -1,10 +1,11 @@
 package JODES.modeles;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
-
 import JODES.JO2024;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class Modification {
 
 	protected LocalDate dateModif;
@@ -87,9 +88,10 @@ public class Modification {
 	
 	// ----------- Methods -----------
 
-	
+	/**
+	 * @author Ash Merienne
+	 */
 	protected void envoyerModifServeur() {
-		// Ash M
 		int index;
 		if (this.typeModif == DELETE) {
 			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();

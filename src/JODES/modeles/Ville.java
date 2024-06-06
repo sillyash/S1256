@@ -1,5 +1,8 @@
 package JODES.modeles;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Ville extends Entite {
 
 	protected int codePostal;

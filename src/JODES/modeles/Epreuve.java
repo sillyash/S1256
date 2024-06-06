@@ -1,8 +1,10 @@
 package JODES.modeles;
-
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Epreuve extends Entite {
 
 	protected LocalDate date;

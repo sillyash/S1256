@@ -2,6 +2,9 @@ package JODES.modeles;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class Administrateur extends Utilisateur implements Serializable {
 
 	private static final long serialVersionUID = 1L;

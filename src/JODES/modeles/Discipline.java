@@ -1,5 +1,8 @@
 package JODES.modeles;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Discipline extends Entite {
 
 	protected String description;

@@ -1,7 +1,9 @@
 package JODES.modeles;
-
 import java.util.*;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Equipe extends Entite {
 
 	protected ArrayList<Athlete> sesAthletes;

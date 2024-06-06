@@ -1,5 +1,8 @@
 package JODES.modeles;
 
+/**
+ * @author Visual Paradigm
+ */
 public class Pays extends Entite {
 	
 	protected String codePays; // FRA, USA, GER...
