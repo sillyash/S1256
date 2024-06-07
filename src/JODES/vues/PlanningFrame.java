@@ -174,8 +174,23 @@ public class PlanningFrame extends JFrame implements RetourVue{
 			for (Session s : sessionJour) {
 
 				int heureDeb, minuteDeb;
+				String startTime;
 				heureDeb = s.getHoraireDebut().getHour();
-				String startTime = heureDeb + " " +
+				minuteDeb = s.getHoraireDebut().getMinute();
+				
+				if (heureDeb < 10) {
+					if (minuteDeb < 10) {
+						startTime = "0" + heureDeb + ":0" + minuteDeb;
+					}
+					else startTime = "0" + heureDeb + ":" + minuteDeb;
+				}
+				else {
+					if (minuteDeb < 10) {
+						startTime = heureDeb + ":0" + minuteDeb;
+					}
+					else startTime = heureDeb + ":" + minuteDeb;
+				}
+				
 				int indexHoraire = getIndexOf(data[i], startTime);
 
 				for (int j=indexHoraire; j < s.getLongueurEnDemiHeure(); j++) {
