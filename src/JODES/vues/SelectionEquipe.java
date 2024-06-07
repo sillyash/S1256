@@ -55,15 +55,9 @@ public class SelectionEquipe extends JFrame implements RetourVue {
         add(button);//TODO mettre le bouton au bon endroit
         //pas Nicolas
         // Make the frame visible
+        setSize(800, 450);
         setVisible(true);
-
-        // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Création d'un nouveau panelTitle 
-        
-        // Pack the frame to fit its components
-        pack();
     }
 
     public static void main(String[] args) {

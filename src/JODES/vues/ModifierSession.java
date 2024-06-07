@@ -30,7 +30,6 @@ public class ModifierSession extends JFrame implements RetourVue{
         panelSaveRetour.add(button);
         add(panelSaveRetour,BorderLayout.SOUTH);
         
-        
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
 		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));

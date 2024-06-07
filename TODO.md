@@ -28,6 +28,7 @@
 - [X] Boutons retour
 - [X] JFrame Entites
 - [ ] Conflit Ajouter / Modifier
+- [ ] Checkbox Button for Creation
 
 <br>
 
