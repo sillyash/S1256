@@ -11,7 +11,7 @@ public class ModifierSession extends JFrame implements RetourVue{
 
     protected Session sessionModele;
 
-	public ModifierSession(Session sessionModele) {
+	public ModifierSession(Session sessionModele,boolean isNew) {
         super("JODES");
         this.sessionModele = sessionModele;
         
