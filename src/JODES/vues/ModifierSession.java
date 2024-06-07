@@ -34,7 +34,8 @@ public class ModifierSession extends JFrame implements RetourVue{
         panelDuMilieu.setLayout(new GridLayout(3,2));
 		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
+		//panelDuMilieu.add(new GridFormField(new DatePicker(),new JLabel("Date :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxStatutSession(),new JLabel("Statut :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
