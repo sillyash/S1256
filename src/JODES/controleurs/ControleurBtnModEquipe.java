@@ -3,6 +3,7 @@ package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import JODES.vues.SelectionEquipe;
 
 import JODES.modeles.Entite;
 import JODES.modeles.Equipe;
@@ -17,7 +18,7 @@ public class ControleurBtnModEquipe implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new SelectionnerEquipe();
+		new SelectionEquipe();
 		((JFrame) _vue).dispose();
 	}
 // TODO this needs to go to selectionnerEquipe Vue , which then goes to modif equipe specific vue.
