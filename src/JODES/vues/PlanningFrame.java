@@ -6,138 +6,188 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-
 import JODES.JO2024;
 import JODES.controleurs.*;
 import JODES.modeles.Planning;
 import JODES.modeles.Session;
 
 public class PlanningFrame extends JFrame implements RetourVue{
+
 	private static final long serialVersionUID = 1L;
+	String[][] data = {
+		{ "0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0" }, // row for dates
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4",		 "5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7"		},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1",		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
+		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	}
+	};
+	String[] hours = {"", "",  "09:00 -", "09:30 -", "10:00 -", "10:30 -",
+					"11:00 -", "11:30 -", "12:00 -", "12:30 -", "13:00 -",
+					"13:30 -", "14:00 -", "14:30 -", "15:00 -", "15:30 -",
+					"16:00 -", "16:30 -", "17:00 -", "17:30 -", "18:00 -"};
+	JTable gradTable;
+	JPanel graduation = new JPanel();
+	JButton nextWeek = new JButton("\u25BA");
+	JButton previousWeek = new JButton("\u25C4");
+	JButton button = new JButton("Retour" + "\u21A9");
+	ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+	JPanel navBar = new JPanel();
+    JFrame fenetre;
+    PanelTitle title;
+    JTable planning;
+	Planning _modele;
+	String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
+	JScrollPane scrollPane;
 
-	    JFrame fenetre;
-	    PanelTitle title;
-	    JTable planning;
-	    protected Planning _modele;
-	    
-	    public Planning get_modele() {
-	    	return _modele;
-	    }
+	// --------------------------- Constructor -----------------------------------
 
-		public PlanningFrame(){
-	        fenetre = new JFrame ("JODES");
-	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	        fenetre.setLayout(new BorderLayout());
-	        title = new PanelTitle("Planning");
-	        
-	        if (JO2024.getSessions().size() != 0) {
-	        	Session firstSession = JO2024.getSessions().get(0);
-	        	_modele = new Planning(firstSession.getDate());
-	        } else _modele = new Planning(LocalDate.now());
-	        
-	        JPanel navBar = new JPanel();
-	        JButton nextWeek = new JButton("\u25BA");
-	        JButton previousWeek = new JButton("\u25C4");
-	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(_modele, this);
-	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(_modele, this);
-	        previousWeek.addActionListener(ctrlFlecheBack);
-	        nextWeek.addActionListener(ctrlFlecheForw);
-	        
-	        navBar.setLayout(new BorderLayout());
-	        navBar.add(previousWeek, BorderLayout.WEST);
-	        navBar.add(title, BorderLayout.CENTER);
-	        navBar.add(nextWeek, BorderLayout.EAST);
-	        fenetre.add(navBar, BorderLayout.NORTH);
-	        
-	        JPanel graduation = new JPanel();
-	        String[] hours = {"", "", "9", "9:30", "10", "10:30", "11", "11:30", "12", "12:30", "13", "13:30", "14", "14:30", "15", "15:30", "16", "16:30", "17", "17:30", "18"};
-	        JTable gradTable = new JTable(21,1) {
-	        	public boolean isCellEditable(int row, int column) {
-	        		return false;
-	        	}
-	        };
-	        
-	        graduation.add(gradTable);
-	        for (int i = 0; i < 21; i++) {
-	        	gradTable.setValueAt(hours[i], i, 0);
-	        }
-	        fenetre.add(graduation, BorderLayout.WEST);
+	public PlanningFrame() {
+        if (JO2024.getSessions().size() != 0) {
+        	Session firstSession = JO2024.getSessions().get(0);
+        	_modele = new Planning(firstSession.getDate());
+        } else _modele = new Planning(LocalDate.now());
+        
+        fenetre = new JFrame ("JODES");
+        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fenetre.setLayout(new BorderLayout());
+        title = new PanelTitle("Planning");
+        
+        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(_modele, this);
+        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(_modele, this);
+        previousWeek.addActionListener(ctrlFlecheBack);
+        nextWeek.addActionListener(ctrlFlecheForw);
+        
+        gradTable = new JTable(hours.length,1) {
+        	public boolean isCellEditable(int row, int column) {
+        		return false;
+        	}
+        };
+        
+        initializePlanningTable();
+        initializeNavBar();
+		initializeHours();
+		initializeDays();
+		initializeGradTable();
+        
+        graduation.add(gradTable);
+        fenetre.add(graduation, BorderLayout.WEST);
 
-	        String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
-	        String[][] data = {
-	                { "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0" }, // row for dates
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" },
-	                { "1", "2", "3", "4", "5", "6", "7" }
-	            };
+		parseSessions();
+        
+        planning.setBounds(100, 100, 600, 600);
+	    scrollPane = new JScrollPane(planning);
+	    fenetre.add(scrollPane, BorderLayout.CENTER);
+	    fenetre.setSize(800, 450);
+	    fenetre.setVisible(true);
 
-	        	for (int j = 0; j < 7; j++) {
-	        			data[0][j] = _modele.getDays().get(j).toString();
-	        		} // to display dates on top row
-	        		
-        		for (int j = 0; j < 7; j++) {
-        			List<Session> sessionJour = _modele.getSessions().get(j);
-        			for (Session s : sessionJour) {
-        				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-        				String startTime = formatter.format(s.getHoraireDebut());
-        				// compare startTime to graduation???
-        				//get equivalent index of said horaire and then do the following loop
-        				for (int k = 2; k <= s.getLongueurEnDemiHeure(); k ++) {
-        					data[j][k] =  "" + s.getStatut() + "\n" + s.getSaDiscipline();
-        				}
-        				// k+indexhoraire 
-        			}
-        		}
-	        	
+        //Nicolas 
+        button.addActionListener(BtnRetour);
+        fenetre.add(button,BorderLayout.SOUTH); //TODO mettre le bouton au bon endroit
+    }
 
-	        
-	        planning = new JTable(data, columnNames) {
-	        	public boolean isCellEditable(int row, int column) {
-	        		return false;
-	        	}
-	        };
-	        
-	        planning.setBounds(100, 100, 600, 600);
-	        JScrollPane scrollPane = new JScrollPane(planning);
-	        fenetre.add(scrollPane, BorderLayout.CENTER);
-	        fenetre.setSize(800, 450);
-	        fenetre.setVisible(true);
+	// ------------------------- Methods ----------------------------
 
-	        //Nicolas 
-	        JButton button = new JButton("Retour" + "\u21A9");
-	        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
-	        button.addActionListener(BtnRetour);
-	        fenetre.add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
-	    }
-	    
-	    public static void main(String[] args) {
-	    	PlanningFrame testAffichage = new PlanningFrame();
-	    	LocalTime s = LocalTime.now();
-			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-			String horaireDebut = formatter.format(s);
-	    	System.out.println(horaireDebut);
-	    }
+	public Planning get_modele() {
+		return _modele;
+	}
 
-	    //Nicolas
-		@Override
-		public void retour() {
-			new HomePageFrame();
-			fenetre.dispose();
+	public void initializeHours() {
+        for (int i=2; i < hours.length; i++) {
+        	this.gradTable.setValueAt(hours[i], i, 0);
+        }
+	}
+	
+	public void initializePlanningTable() {
+		planning = new JTable(data, columnNames) {
+        	public boolean isCellEditable(int row, int column) {
+        		return false;
+        	}
+        };
+	}
+
+	public void initializeGradTable() {
+		gradTable.setShowVerticalLines(false);
+		gradTable.setShowHorizontalLines(false);
+		gradTable.setBackground(getForeground());
+	}
+
+	public void initializeDays() {
+		for (int j = 0; j < 7; j++) {
+			this.data[0][j] = _modele.getDays().get(j).toString();
 		}
 	}
+
+	public int[] getIndexOf(String[][] tab, String s) {
+		int[] result = new int[2];
+		if (tab.length == 0) result[0] = -1;
+		for (int i=0; i<tab.length; i++) {
+			for (int j=0; j<tab[i].length; j++) {
+				if (tab[i][j] == s) {
+					result[0] = i;
+					result[1] = j;
+				}
+			}
+		}
+		return result;
+	}
+
+	public void initializeNavBar() {
+		navBar.setLayout(new BorderLayout());
+        navBar.add(previousWeek, BorderLayout.WEST);
+        navBar.add(title, BorderLayout.CENTER);
+        navBar.add(nextWeek, BorderLayout.EAST);
+        fenetre.add(navBar, BorderLayout.NORTH);
+	}
+
+	public int getIndexOf(String[] tab, String s) {
+		if (tab.length == 0) return -1;
+		for (int i=0; i<tab.length; i++) {
+			if (tab[i] == s) return i;
+		}
+		return -1;
+	}
+	
+	public void parseSessions() {
+		for (int i = 0; i<7; i++) {
+			List<Session> sessionJour = _modele.getSessions().get(i);
+
+			for (Session s : sessionJour) {
+
+				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+				String startTime = formatter.format(s.getHoraireDebut());
+				int indexHoraire = getIndexOf(data[i], startTime);
+
+				for (int j=indexHoraire; j < s.getLongueurEnDemiHeure(); j++) {
+					data[i][j] =  s.getSaDiscipline().getNom() + " " + s.getStatut();
+				}
+			}
+		}
+	}
+    
+    public static void main(String[] args) {
+    	
+    	new PlanningFrame();
+    }
+
+    //Nicolas
+	@Override
+	public void retour() {
+		new HomePageFrame();
+		fenetre.dispose();
+	}
+}
