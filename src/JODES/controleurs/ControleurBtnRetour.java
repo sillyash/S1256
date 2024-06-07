@@ -6,11 +6,11 @@ import javax.swing.JFrame;
 /**
  * @author Nicolas Vouilloux
  */
-public class ControleurBTNRetour extends Controleur implements ActionListener {
+public class ControleurBtnRetour extends Controleur implements ActionListener {
 	
 	protected RetourVue _vue;
 	
-	public ControleurBTNRetour(JFrame vue) {
+	public ControleurBtnRetour(JFrame vue) {
 		super(null, vue);
 		//Nicolas
 		this._vue = (RetourVue) vue;

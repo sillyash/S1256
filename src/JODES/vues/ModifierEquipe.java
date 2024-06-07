@@ -2,12 +2,15 @@ package JODES.vues;
 import javax.swing.*;
 
 import JODES.JO2024;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
+import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SauvegarderQuitter;
+
 import java.awt.*;
 import JODES.modeles.Equipe;
 
-public class ModifierEquipe extends JFrame implements RetourVue{
+public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
@@ -18,11 +21,12 @@ public class ModifierEquipe extends JFrame implements RetourVue{
         
         PanelTitle panelTitle = new PanelTitle("Modifier equipe");
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+        ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         
         add(button, BorderLayout.SOUTH);
         JButton buttonSave = new JButton("Sauvegarder et quitter");
-      
+        ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
+        buttonSave.addActionListener(btnSaveQuit);
         add(panelTitle, BorderLayout.NORTH);
         button.addActionListener(btnretour);
         
@@ -66,5 +70,10 @@ public class ModifierEquipe extends JFrame implements RetourVue{
 	public void retour() {
 		new EquipeFrame();
 		(this).dispose();
+	}
+	@Override
+	public void SauvegarderQuitter() {
+		// TODO Auto-generated method stub
+		
 	}
 }

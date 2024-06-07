@@ -1,7 +1,7 @@
 //correct package - Emma
 package JODES.vues;
 import JODES.JO2024;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.RetourVue;
 import java.awt.*;
@@ -48,7 +48,7 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
 
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
         button.addActionListener(BtnRetour);
         add(button,BorderLayout.SOUTH);
         

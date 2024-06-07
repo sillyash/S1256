@@ -1,13 +1,14 @@
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SauvegarderQuitter;
 import JODES.modeles.Session;
 
 import java.awt.*;
 
-public class ModifierSession extends JFrame implements RetourVue{
+public class ModifierSession extends JFrame implements RetourVue, SauvegarderQuitter{
 
     protected Session sessionModele;
 
@@ -17,7 +18,7 @@ public class ModifierSession extends JFrame implements RetourVue{
         this.sessionModele = sessionModele;
         PanelTitle panelTitle = new PanelTitle("Session Création");
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+        ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         
         add(button, BorderLayout.SOUTH);
         JButton buttonSave = new JButton("Sauvegarder et quitter");
@@ -53,5 +54,11 @@ public class ModifierSession extends JFrame implements RetourVue{
 	public void retour() {
 		new SessionFrame();
 		(this).dispose();
+	}
+
+	@Override
+	public void SauvegarderQuitter() {
+		// TODO Auto-generated method stub
+		
 	}
 }

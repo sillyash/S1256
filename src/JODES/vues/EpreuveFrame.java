@@ -1,6 +1,6 @@
 package JODES.vues;
 import javax.swing.*;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.*;
 import java.awt.*;
@@ -32,7 +32,7 @@ public class EpreuveFrame extends JFrame implements RetourVue {
         
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
         button.addActionListener(BtnRetour);
         add(button, BorderLayout.SOUTH);
         //pas Nicolas

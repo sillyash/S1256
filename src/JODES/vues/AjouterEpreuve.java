@@ -1,11 +1,14 @@
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
+import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SauvegarderQuitter;
+
 import java.awt.*;
 
-public class AjouterEpreuve extends JFrame implements RetourVue{
+public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
 
 	public AjouterEpreuve() {
         
@@ -13,11 +16,13 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         
         PanelTitle panelTitle = new PanelTitle("Epreuves Création");
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
-
-        add(button, BorderLayout.SOUTH);
+        ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
+        
         JButton buttonSave = new JButton("Sauvegarder & Quitter" + "🖉");
-      
+        ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
+        buttonSave.addActionListener(btnSaveQuit);
+        
+        add(button, BorderLayout.SOUTH);
         add(panelTitle, BorderLayout.NORTH);
         button.addActionListener(btnretour);
         
@@ -51,5 +56,11 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
 	public void retour() {
 		new EpreuveFrame();
 		(this).dispose();
+	}
+
+	@Override
+	public void SauvegarderQuitter() {
+		// TODO Auto-generated method stub
+		
 	}
 }

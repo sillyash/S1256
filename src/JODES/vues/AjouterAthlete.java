@@ -2,12 +2,15 @@ package JODES.vues;
 import javax.swing.*;
 
 import JODES.JO2024;
-import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnRetour;
+import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SauvegarderQuitter;
+
 import java.awt.*;
 import JODES.modeles.Equipe;
 
-public class AjouterAthlete extends JFrame{
+public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
 
@@ -16,7 +19,8 @@ public class AjouterAthlete extends JFrame{
         
         PanelTitle panelTitle = new PanelTitle("Ajouter athlete");
         JButton buttonSave = new JButton("Sauvegarder et quitter");
-      
+        ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
+        buttonSave.addActionListener(btnSaveQuit);
         add(panelTitle, BorderLayout.NORTH);
         add(buttonSave,BorderLayout.SOUTH);
         
@@ -37,5 +41,10 @@ public class AjouterAthlete extends JFrame{
         JO2024.initialize();
 		new AjouterAthlete();
     }
+	@Override
+	public void SauvegarderQuitter() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

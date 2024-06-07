@@ -26,7 +26,7 @@ public class EquipeFrame extends JFrame implements RetourVue{
         
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+        ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
         button.addActionListener(BtnRetour);
         add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
         //pas Nicolas
