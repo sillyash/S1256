@@ -30,20 +30,21 @@ public class ModifierSession extends JFrame implements RetourVue{
         panelSaveRetour.add(button);
         add(panelSaveRetour,BorderLayout.SOUTH);
         
+        
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-        panelDuMilieu.add(new GridFormField(new JTextField(sessionModele.getNom()),new JLabel("Nom Epreuve :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
-        panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
-
-        // TODO fill fields
-		
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+	public static void main(String[] args) {
+        JO2024.initialize();
+		new ModifierSession(new Session());
     }
 
     //Nicolas

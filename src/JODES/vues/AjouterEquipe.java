@@ -10,13 +10,11 @@ import JODES.modeles.Equipe;
 public class AjouterEquipe extends JFrame implements RetourVue{
 
 	private static final long serialVersionUID = 1L;
-	protected Equipe equipe;
 
-	public AjouterEquipe(Equipe equipe) {
-        super("Modification des Equipe - Paris 2024");
-        this.equipe = equipe;
+	public AjouterEquipe() {
+        super("JODES");
         
-        PanelTitle panelTitle = new PanelTitle("Equipe Création");
+        PanelTitle panelTitle = new PanelTitle("Ajouter equipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         
@@ -53,6 +51,10 @@ public class AjouterEquipe extends JFrame implements RetourVue{
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+	public static void main(String[] args) {
+        JO2024.initialize();
+		new AjouterEquipe();
     }
 
     //Nicolas

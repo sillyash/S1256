@@ -9,13 +9,10 @@ import java.awt.*;
 
 public class AjouterSession extends JFrame implements RetourVue{
 
-    protected Session sessionModele;
-
-	public AjouterSession(Session sessionModele,boolean isNew) {
+	public AjouterSession() {
         super("JODES");
-        this.sessionModele = sessionModele;
         
-        PanelTitle panelTitle = new PanelTitle("Session Création");
+        PanelTitle panelTitle = new PanelTitle("Ajouter session");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         add(button, BorderLayout.SOUTH);
@@ -32,18 +29,18 @@ public class AjouterSession extends JFrame implements RetourVue{
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-        panelDuMilieu.add(new GridFormField(new JTextField(sessionModele.getNom()),new JLabel("Nom Epreuve :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
-        panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
-
-        
-		
-		add(panelDuMilieu,BorderLayout.CENTER);
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
+		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
+		add(panelDuMilieu);
       
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+	public static void main(String[] args) {
+        JO2024.initialize();
+		new AjouterSession();
     }
 
     //Nicolas

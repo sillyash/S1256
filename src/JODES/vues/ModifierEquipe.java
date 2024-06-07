@@ -13,10 +13,10 @@ public class ModifierEquipe extends JFrame implements RetourVue{
 	protected Equipe equipe;
 
 	public ModifierEquipe(Equipe equipe) {
-        super("Modification des Equipe - Paris 2024");
+        super("JODES");
         this.equipe = equipe;
         
-        PanelTitle panelTitle = new PanelTitle("Equipe Création");
+        PanelTitle panelTitle = new PanelTitle("Modifier equipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
         
@@ -55,6 +55,10 @@ public class ModifierEquipe extends JFrame implements RetourVue{
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+	public static void main(String[] args) {
+        JO2024.initialize();
+		new ModifierEquipe(new Equipe("",null,null));
     }
 
     //Nicolas

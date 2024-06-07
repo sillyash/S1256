@@ -3,15 +3,21 @@ import javax.swing.*;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Epreuve;
+import JODES.modeles.Equipe;
+
 import java.awt.*;
 
 public class ModifierEpreuve extends JFrame implements RetourVue{
 
-	public ModifierEpreuve() {
+	private static final long serialVersionUID = 1L;
+	protected Epreuve epreuveModele;
+	
+	public ModifierEpreuve(Epreuve epreuve) {
         
         super("JODES");
         
-        PanelTitle panelTitle = new PanelTitle("Epreuves Création");
+        PanelTitle panelTitle = new PanelTitle("Ajouter epreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
 
@@ -29,10 +35,14 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
-	
+        panelDuMilieu.add(new GridFormField(new JTextField(epreuveModele.getNom()),new JLabel("Nom Epreuve :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
+        panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
+		
+		add(panelDuMilieu,BorderLayout.CENTER);
+        
+        
         // TODO fill fields
 
 		add(panelDuMilieu,BorderLayout.CENTER);
@@ -43,7 +53,8 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
     }
 
     public static void main(String[] args) {
-        ModifierEpreuve testAffichage = new ModifierEpreuve();
+    	JO2024.initialize();
+        ModifierEpreuve testAffichage = new ModifierEpreuve(new Epreuve("",new Equipe("", null)));
     }
     //Nicolas
 	@Override

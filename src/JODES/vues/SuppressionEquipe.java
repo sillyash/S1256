@@ -20,7 +20,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
 
     public SuppressionEquipe() {
         // Create main frame
-        super("Gestion des Equipes - Suppression");
+        super("JODES");
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
 

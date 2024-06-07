@@ -17,7 +17,7 @@ public class SuppressionSession extends JFrame implements RetourVue{
     public SuppressionSession() {
         // Create main frame
     	// Création d'un nouveau panelTitle 
-        super("Gestion des Sessions - Session");
+        super("JODES");
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
         // Initialize elements

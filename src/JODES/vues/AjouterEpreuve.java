@@ -27,13 +27,14 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         panelSaveRetour.add(button);
         add(panelSaveRetour,BorderLayout.SOUTH);
         
-        
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Equipe :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Date :")));
-	
+        panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Epreuve :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
+        panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
+		add(panelDuMilieu,BorderLayout.CENTER);
+        
 		add(panelDuMilieu,BorderLayout.CENTER);
         
       
