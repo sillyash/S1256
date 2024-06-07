@@ -23,6 +23,7 @@
 - [X] JTable
 - [ ] Planning (Visuel)
 - [X] Boutons Navigation
+- [ ] FIX Controleurs --> Admin et c bon
 
 ## Nico
 
