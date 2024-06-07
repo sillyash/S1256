@@ -51,11 +51,6 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public static void main(String[] args) {
-    	JO2024.initialize();
-        ModifierEpreuve testAffichage = new ModifierEpreuve(new Epreuve("",new Equipe("", null)));
-    }
     //Nicolas
 	@Override
 	public void retour() {

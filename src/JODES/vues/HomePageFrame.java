@@ -11,7 +11,6 @@ public class HomePageFrame extends JFrame {
 	JPanel p = new JPanel();
 	
 	PanelTitle title = new PanelTitle("JODES");
-	
 	JButton planning = new JButton("Planning");
 	JButton equipes = new JButton("Equipes");
 	JButton sessions = new JButton("Sessions");
