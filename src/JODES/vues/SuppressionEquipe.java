@@ -56,12 +56,8 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
         //pas Nicolas
         // Make the frame visible
         setVisible(true);
-
-        // Exit the application when the frame is closed
+        setSize(800, 450);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-        // Pack the frame to fit its components
-        pack();
     }
 
     public static void main(String[] args) {

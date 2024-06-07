@@ -8,10 +8,11 @@ import java.util.ArrayList;
 public class Epreuve extends Entite {
     
 	protected ArrayList<Equipe> sesEquipes;
+    protected Session session;
     
     // ----------- Constructors -----------
 
-    public Epreuve(String nom, Equipe equipe) {
+    public Epreuve(String nom, Equipe equipe, Session session) {
         super(nom);
         this.sesEquipes = new ArrayList<Equipe>();
         this.sesEquipes.add(equipe);
