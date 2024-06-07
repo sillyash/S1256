@@ -58,5 +58,5 @@ public class HomePageFrame extends JFrame {
 	public static void main(String[] args) {
 		JO2024.initialize();
 		HomePageFrame testAffichage = new HomePageFrame();
-		}
+	}
 }
