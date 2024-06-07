@@ -29,7 +29,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
         valider = new JButton("✔");
         valider.addActionListener(new ControleurBtnSelectEquipe(equipeCMB, ControleurBtnSelectEquipe.SUPPR));
         equipeCMB = new ComboBoxEquipe(JO2024.getEquipes());
-        indicationDelete = new JLabel("Veuillez saisir l'Id de l'équipe à supprimer");
+        indicationDelete = new JLabel("Veuillez sélectionner l'équipe à supprimer :",JLabel.CENTER);
 
         // Initialize the panels
         panelDel = new JPanel();

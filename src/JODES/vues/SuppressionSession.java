@@ -25,11 +25,11 @@ public class SuppressionSession extends JFrame implements RetourVue {
         // Initialize elements
         // Création d'un nouveau panelTitle 
         PanelTitle panelTitle = new PanelTitle("Epreuve");
-        add(panelTitle); 
+        add(panelTitle);
         valider = new JButton("✔");
         valider.addActionListener(new ControleurBtnSelectSession(combo, ControleurBtnSelectSession.SUPPR));
         combo = new ComboBoxSession(JO2024.getSessions());
-        indicationDelete = new JLabel("Veuillez saisir l'Id de l'équipe à supprimer");
+        indicationDelete = new JLabel("Veuillez sélectionner la session à supprimer :",JLabel.CENTER);
 
         // Initialize the panels
         panelDel = new JPanel();
@@ -65,12 +65,12 @@ public class SuppressionSession extends JFrame implements RetourVue {
     }
 
     public static void main(String[] args) {
-        new SuppressionEpreuve();
+        new SuppressionSession();
     }
 //Nicolas
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new SessionFrame();
 		this.dispose();
 	}
 }

@@ -1,23 +1,23 @@
 //correct package - Emma
 package JODES.vues;
-import java.awt.*;
-import java.awt.event.ActionListener;
-import javax.swing.*;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.RetourVue;
+import java.awt.*;
+import javax.swing.*;
 
 //correct naming of class - Emma
 public class SelectionEpreuve extends JFrame implements RetourVue {
 
     private static final long serialVersionUID = 1L;
-    protected ComboBoxEpreuve epreuveSelect;
+    protected ComboBoxEpreuve combo;
     protected JButton valider;
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
 
-    public SelectionEpreuve(ActionListener ControleurBoutonValider) {
+    public SelectionEpreuve() {
         // Create main frame
         super("Selection d'une épreuve");
         setSize(800, 450);
@@ -27,9 +27,9 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
         PanelTitle panelTitle = new PanelTitle("Epreuves");
         add(panelTitle); 
         valider = new JButton("✔");
-        valider.addActionListener(ControleurBoutonValider);
-        epreuveSelect = new ComboBoxEpreuve(JO2024.getEpreuves());
-        indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à supprimer",JLabel.CENTER);
+        combo = new ComboBoxEpreuve(JO2024.getEpreuves());
+        valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.MODIF));
+        indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à modifier :",JLabel.CENTER);
 
         // Initialize the panels
         panelDel = new JPanel();
@@ -41,7 +41,7 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
         panelIndication.add(indicationDelete);
         
         // Add elements to panelDel
-        panelDel.add(epreuveSelect);
+        panelDel.add(combo);
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
