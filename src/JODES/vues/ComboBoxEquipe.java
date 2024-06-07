@@ -1,4 +1,5 @@
 package JODES.vues;
+import JODES.modeles.Entite;
 import JODES.modeles.Equipe;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
@@ -28,5 +29,8 @@ public class ComboBoxEquipe extends JComboBox<String> {
     		return true;
     	else 
     		return false;
+    }
+    public Entite getSelectedEntite() {
+		return this.getSelectedEntite();
     }
 }

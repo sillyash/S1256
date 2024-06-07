@@ -29,4 +29,7 @@ public class ComboBoxEpreuve extends JComboBox<String> {
     	else 
     		return false;
     }
+    public Entite getSelectedEntite() {
+		return this.getSelectedEntite();
+    }
 }

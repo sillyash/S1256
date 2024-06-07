@@ -29,6 +29,4 @@ public class ComboBoxLieu extends JComboBox<String> {
     	else 
     		return false;
     }
-    
-    
 }

@@ -35,13 +35,12 @@
 
 ## Tt le monde (????)
 
-- [ ] Méthodes dans ComboBox
-    - [ ] boolean IsSelectNull()
-    - [ ] Entite getSelectedEntity() (on remplacera Entite par Equipe, Session... dans les ComboBox propices)
+- [x] Méthodes dans ComboBox
+    - [x] boolean IsSelectNull()
+    - [x] Entite getSelectedEntity() (on remplacera Entite par Equipe, Session... dans les ComboBox propices)
 
-- [ ] Méthodes dans JTextField
-    - [ ] boolean IsTextNull() (en prenant en compte les char invisibles)
-    - [ ] boolean IsTextValid()
+- [x] Méthodes dans JTextField
+    - [x] boolean IsTextNull() (en prenant en compte les char invisibles)
 
-- [ ] Méthode pour DatePicker
-    - [ ] boolean IsValidDate()
+- [x] Méthode pour DatePicker
+    - [x] boolean IsValidDate()
