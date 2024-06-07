@@ -18,6 +18,7 @@ public class ControleurBtnFlecheForwardPlanning implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		Planning updatedPlanning = new Planning(_modele.getDays().get(0).plusDays(7));
+
 	}
 // TODO reset values of JTable when arrow is pressed
 }
