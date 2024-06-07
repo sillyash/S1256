@@ -1,5 +1,7 @@
 package JODES.vues;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 

@@ -42,10 +42,10 @@ public class AjouterEquipe extends JFrame implements RetourVue{
 
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(CMBA1,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA2,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA3,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA4,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
