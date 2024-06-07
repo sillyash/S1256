@@ -16,7 +16,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
 	public ModifierEpreuve(Epreuve epreuve) {
         
         super("JODES");
-        
+        this.epreuveModele = epreuve;
         PanelTitle panelTitle = new PanelTitle("Ajouter epreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
@@ -39,12 +39,6 @@ public class ModifierEpreuve extends JFrame implements RetourVue{
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
         panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
-		
-		add(panelDuMilieu,BorderLayout.CENTER);
-        
-        
-        // TODO fill fields
-
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);

@@ -514,4 +514,5 @@ public class JO2024 {
 		new Lieu("Vélodrome National", SQY)
 		);
 	}
+
 }

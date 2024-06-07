@@ -13,11 +13,12 @@ public class ModifierSession extends JFrame implements RetourVue{
 
 	public ModifierSession(Session sessionModele) {
         super("JODES");
-        this.sessionModele = sessionModele;
         
+        this.sessionModele = sessionModele;
         PanelTitle panelTitle = new PanelTitle("Session Création");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
+        
         add(button, BorderLayout.SOUTH);
         JButton buttonSave = new JButton("Sauvegarder et quitter");
       
