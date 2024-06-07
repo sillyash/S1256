@@ -3,6 +3,8 @@ package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 import JODES.JO2024;
 import JODES.controleurs.*;
@@ -15,9 +17,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	    JFrame fenetre;
 	    PanelTitle title;
 	    JTable planning;
-	    Planning _modele;
+	    protected Planning _modele;
 	    
-	    public PlanningFrame(){
+	    public Planning get_modele() {
+	    	return _modele;
+	    }
+
+		public PlanningFrame(){
 	        fenetre = new JFrame ("JODES");
 	        fenetre.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	        fenetre.setLayout(new BorderLayout());
@@ -78,12 +84,32 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" }
-	            }; // will have to replace with proper data to be imported 
+	            };
+
+	        	for (int j = 0; j < 7; j++) {
+	        			data[0][j] = _modele.getDays().get(j).toString();
+	        		} // to display dates on top row
+	        		
+        		for (int j = 0; j < 7; j++) {
+        			List<Session> sessionJour = _modele.getSessions().get(j);
+        			for (Session s : sessionJour) {
+        				String horaireDebut = s.getHoraireDebut().toString();
+        				//get equivalent index of said horaire and then do the following loop
+        				for (int k = 2; k <= s.getLongueurEnDemiHeure(); k ++) {
+        					data[j][k] =  "" + s.getStatut() + "\n" + s.getSaDiscipline();
+        				}
+        				// k+indexhoraire 
+        			}
+        		}
+	        	
+
+	        
 	        planning = new JTable(data, columnNames) {
 	        	public boolean isCellEditable(int row, int column) {
 	        		return false;
 	        	}
-	        }; // 18 rows = every 30min from 9h to 18h | 7 cols days of week
+	        };
+	        
 	        planning.setBounds(100, 100, 600, 600);
 	        JScrollPane scrollPane = new JScrollPane(planning);
 	        fenetre.add(scrollPane, BorderLayout.CENTER);
@@ -99,6 +125,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	    
 	    public static void main(String[] args) {
 	    	PlanningFrame testAffichage = new PlanningFrame();
+	    	LocalTime s = LocalTime.now();
+	    	String horaireDebut = s.toString();
+	    	System.out.println(horaireDebut);
 	    }
 
 	    //Nicolas
