@@ -4,15 +4,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import JODES.modeles.Planning;
+
 public class ControleurBtnFlecheBackwardsPlanning implements ActionListener{
 	protected JFrame _vue;
-	public ControleurBtnFlecheBackwardsPlanning(JFrame vue) {
+	protected Planning _modele;
+	
+	public ControleurBtnFlecheBackwardsPlanning(Planning modele, JFrame vue) {
+		this._modele = modele;
 		this._vue = vue;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		Planning updatedPlanning = new Planning(_modele.getDays().get(0).minusDays(7));
 	}
 // TODO reset values of JTable when arrow is pressed
 }

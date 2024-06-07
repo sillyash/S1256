@@ -81,7 +81,7 @@ public class Planning {
         {
             LocalDate date = LocalDate.of(year, month, day)
             .with(week.weekOfYear(), numSemaine)
-            .with(week.dayOfWeek(), i);
+            .with(week.dayOfWeek(), i+1);
             this.days.add(date);
         }
     }

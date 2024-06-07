@@ -2,14 +2,20 @@
 package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
+import java.time.LocalDate;
+
+import JODES.JO2024;
 import JODES.controleurs.*;
+import JODES.modeles.Planning;
+import JODES.modeles.Session;
 
 public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
 
 	    JFrame fenetre;
 	    PanelTitle title;
-	    JTable Planning;
+	    JTable planning;
+	    Planning _modele;
 	    
 	    public PlanningFrame(){
 	        fenetre = new JFrame ("JODES");
@@ -17,11 +23,16 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.setLayout(new BorderLayout());
 	        title = new PanelTitle("Planning");
 	        
+	        if (JO2024.getSessions().size() != 0) {
+	        	Session firstSession = JO2024.getSessions().get(0);
+	        	_modele = new Planning(firstSession.getDate());
+	        } else _modele = new Planning(LocalDate.now());
+	        
 	        JPanel navBar = new JPanel();
 	        JButton nextWeek = new JButton("\u25BA");
 	        JButton previousWeek = new JButton("\u25C4");
-	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(this);
-	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(this);
+	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(_modele, this);
+	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(_modele, this);
 	        previousWeek.addActionListener(ctrlFlecheBack);
 	        nextWeek.addActionListener(ctrlFlecheForw);
 	        
@@ -32,21 +43,22 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        fenetre.add(navBar, BorderLayout.NORTH);
 	        
 	        JPanel graduation = new JPanel();
-	        String[] hours = {"","9", "9:30", "10", "10:30", "11", "11:30", "12", "12:30", "13", "13:30", "14", "14:30", "15", "15:30", "16", "16:30", "17", "17:30", "18"};
-	        JTable gradTable = new JTable(20,1) {
+	        String[] hours = {"", "", "9", "9:30", "10", "10:30", "11", "11:30", "12", "12:30", "13", "13:30", "14", "14:30", "15", "15:30", "16", "16:30", "17", "17:30", "18"};
+	        JTable gradTable = new JTable(21,1) {
 	        	public boolean isCellEditable(int row, int column) {
 	        		return false;
 	        	}
 	        };
 	        
 	        graduation.add(gradTable);
-	        for (int i = 0; i < 20; i++) {
+	        for (int i = 0; i < 21; i++) {
 	        	gradTable.setValueAt(hours[i], i, 0);
 	        }
 	        fenetre.add(graduation, BorderLayout.WEST);
 
 	        String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
 	        String[][] data = {
+	                { "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0", "0/0/0" }, // row for dates
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" },
@@ -67,13 +79,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	                { "1", "2", "3", "4", "5", "6", "7" },
 	                { "1", "2", "3", "4", "5", "6", "7" }
 	            }; // will have to replace with proper data to be imported 
-	        Planning = new JTable(data, columnNames) {
+	        planning = new JTable(data, columnNames) {
 	        	public boolean isCellEditable(int row, int column) {
 	        		return false;
 	        	}
 	        }; // 18 rows = every 30min from 9h to 18h | 7 cols days of week
-	        Planning.setBounds(100, 100, 600, 600);
-	        JScrollPane scrollPane = new JScrollPane(Planning);
+	        planning.setBounds(100, 100, 600, 600);
+	        JScrollPane scrollPane = new JScrollPane(planning);
 	        fenetre.add(scrollPane, BorderLayout.CENTER);
 	        fenetre.setSize(800, 450);
 	        fenetre.setVisible(true);
@@ -96,4 +108,3 @@ public class PlanningFrame extends JFrame implements RetourVue{
 			fenetre.dispose();
 		}
 	}
-//TODO add an extra row for specific dates, which will also be updated with planning
