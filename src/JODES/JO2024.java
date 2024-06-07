@@ -448,7 +448,7 @@ public class JO2024 {
 		Ville Paris = new Ville("Paris", 75000);
 		Ville Marseille = new Ville("Marseille", 13000);
 		Ville Villeneuve = new Ville("Villeneuve-d\'Ascq", 59400);
-		Ville Chatearoux = new Ville("Châteauroux", 36000);
+		Ville Chateauroux = new Ville("Châteauroux", 36000);
 		Ville Tahiti = new Ville("Tahiti", 98700);
 		Ville Bourget = new Ville("Le Bourget", 93350);
 		Ville Colombes = new Ville("Colombes", 92700);
@@ -462,7 +462,7 @@ public class JO2024 {
 		Ville Guyancourt = new Ville("Guyancourt", 78286);
 
 		Collections.addAll(VILLES, Paris, Marseille, Villeneuve,
-							Chatearoux, Tahiti, Bourget, Colombes, StDenis,
+							Chateauroux, Tahiti, Bourget, Colombes, StDenis,
 							Vaires, Nanterre, Villepinte, Versailles,
 							Elancourt, SQY, Guyancourt);
 
@@ -471,7 +471,12 @@ public class JO2024 {
 		new Lieu("Arena Champ-de-Mars", Paris),
 		new Lieu("Arena Paris Nord", Paris),
 		new Lieu("Arena Paris Sud", Paris),
-		new Lieu("Arena Porte de La Chapelle", Paris)
+		new Lieu("Arena Porte de La Chapelle", Paris),
+		new Lieu("Centre Aquatique", Paris),
+		new Lieu("Centre National de Tir de Châteauroux", Chateauroux),
+		new Lieu("Château de Versailles", Versailles),
+		new Lieu("Colline d'Elancourt", Elancourt),
+		new Lieu("Grand Palais", Paris)
 		);
 	}
 }

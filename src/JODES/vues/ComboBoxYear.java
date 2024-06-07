@@ -13,7 +13,7 @@ public class ComboBoxYear extends JComboBox<String> {
 
     protected void addItems() {
         this.addItem("");
-        for (Integer i=2023; i<2027; i++) {
+        for (Integer i=2024; i<2027; i++) {
             this.addItem(String.valueOf(i));
         }
     }
@@ -23,7 +23,7 @@ public class ComboBoxYear extends JComboBox<String> {
     }
 
     public int getSelectedDay() {
-        return this.getSelectedIndex()+2022;
+        return this.getSelectedIndex()+2023;
     }
     
 }
