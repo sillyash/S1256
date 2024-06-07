@@ -21,7 +21,14 @@ public class ComboBoxAthlete extends JComboBox<String> {
             this.addItem(a.getPrenom() + " " + a.getNom());
         }
     }
-
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
+    
+    
     public ArrayList<Athlete> getItemList() {
         return listeAthletes;
     }

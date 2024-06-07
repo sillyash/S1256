@@ -23,4 +23,10 @@ public class ComboBoxEquipe extends JComboBox<String> {
     public ArrayList<Equipe> getItemList() {
         return this.listeEquipes;
     }
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }

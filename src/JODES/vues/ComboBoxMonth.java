@@ -33,5 +33,10 @@ public class ComboBoxMonth extends JComboBox<String> {
     public int getSelectedMonth() {
         return this.getSelectedIndex();
     }
-    
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }
