@@ -44,3 +44,5 @@
 
 - [x] Méthode pour DatePicker
     - [x] boolean IsValidDate()
+
+- [ ] Bouton 'HELP' '?' pour rendre l'UI plus compehensible pour l'utilisateur tavu
