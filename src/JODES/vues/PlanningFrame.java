@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import JODES.JO2024;
@@ -93,7 +94,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
         		for (int j = 0; j < 7; j++) {
         			List<Session> sessionJour = _modele.getSessions().get(j);
         			for (Session s : sessionJour) {
-        				String horaireDebut = s.getHoraireDebut().toString();
+        				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+        				String startTime = formatter.format(s.getHoraireDebut());
+        				// compare startTime to graduation???
         				//get equivalent index of said horaire and then do the following loop
         				for (int k = 2; k <= s.getLongueurEnDemiHeure(); k ++) {
         					data[j][k] =  "" + s.getStatut() + "\n" + s.getSaDiscipline();
@@ -126,7 +129,8 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	    public static void main(String[] args) {
 	    	PlanningFrame testAffichage = new PlanningFrame();
 	    	LocalTime s = LocalTime.now();
-	    	String horaireDebut = s.toString();
+			DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+			String horaireDebut = formatter.format(s);
 	    	System.out.println(horaireDebut);
 	    }
 
