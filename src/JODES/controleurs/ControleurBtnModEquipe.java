@@ -16,7 +16,7 @@ public class ControleurBtnModEquipe extends Controleur implements ActionListener
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new ModifierEquipe((Equipe) this._modele);
+		new ModifierEquipe((Equipe) this._modele, true);
 		((JFrame) _vue).dispose();
 	}
 	

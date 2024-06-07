@@ -11,8 +11,9 @@ public class ModifierEquipe extends JFrame implements RetourVue{
 
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
+	protected boolean isNew;
 
-	public ModifierEquipe(Equipe equipe) {
+	public ModifierEquipe(Equipe equipe, boolean isNew) {
         super("Modification des Equipe - Paris 2024");
         this.equipe = equipe;
         
@@ -40,8 +41,9 @@ public class ModifierEquipe extends JFrame implements RetourVue{
         ComboBoxAthlete CMBA2 = new ComboBoxAthlete(JO2024.getAthletes());
         ComboBoxAthlete CMBA3 = new ComboBoxAthlete(JO2024.getAthletes());
         ComboBoxAthlete CMBA4 = new ComboBoxAthlete(JO2024.getAthletes());
+        JTextField TXFnom = new JTextField();
 
-		panelDuMilieu.add(new GridFormField(new JTextField(equipe.getNom()),new JLabel("Nom Equipe :")));
+		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
 		panelDuMilieu.add(new GridFormField(CMBA1,new JLabel("Athlete :")));
 		panelDuMilieu.add(new GridFormField(CMBA2,new JLabel("Athlete :")));
@@ -49,11 +51,15 @@ public class ModifierEquipe extends JFrame implements RetourVue{
 		panelDuMilieu.add(new GridFormField(CMBA4,new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
 
-        CMBPays.setSelectedIndex(CMBPays.getItemList().indexOf(equipe.getSonPays())+1);
-        CMBA1.setSelectedIndex(CMBA1.getItemList().indexOf(equipe.getSesAthletes().get(0))+1);
-        CMBA1.setSelectedIndex(CMBA2.getItemList().indexOf(equipe.getSesAthletes().get(1))+1);
-        CMBA2.setSelectedIndex(CMBA3.getItemList().indexOf(equipe.getSesAthletes().get(2))+1);
-        CMBA4.setSelectedIndex(CMBA4.getItemList().indexOf(equipe.getSesAthletes().get(3))+1);
+		if (!isNew)
+		{
+			TXFnom.setText(equipe.getNom());
+	        CMBPays.setSelectedIndex(CMBPays.getItemList().indexOf(equipe.getSonPays())+1);
+	        CMBA1.setSelectedIndex(CMBA1.getItemList().indexOf(equipe.getSesAthletes().get(0))+1);
+	        CMBA1.setSelectedIndex(CMBA2.getItemList().indexOf(equipe.getSesAthletes().get(1))+1);
+	        CMBA2.setSelectedIndex(CMBA3.getItemList().indexOf(equipe.getSesAthletes().get(2))+1);
+	        CMBA4.setSelectedIndex(CMBA4.getItemList().indexOf(equipe.getSesAthletes().get(3))+1);
+        }
       
         setSize(800, 450);
         setVisible(true);
