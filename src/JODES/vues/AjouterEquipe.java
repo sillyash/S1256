@@ -8,15 +8,19 @@ import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 
 import java.awt.*;
+
+import JODES.modeles.Administrateur;
 import JODES.modeles.Equipe;
 
 public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
-
-	public AjouterEquipe() {
+	Administrateur admin;
+	
+	public AjouterEquipe(Administrateur admin) {
         super("JODES");
         
+        this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Ajouter equipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -58,13 +62,14 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
     }
 	public static void main(String[] args) {
         JO2024.initialize();
-		new AjouterEquipe();
+        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+		new AjouterEquipe(admin);
     }
 
     //Nicolas
 	@Override
 	public void retour() {
-		new EquipeFrame();
+		new EquipeFrame(admin);
 		(this).dispose();
 	}
 	@Override

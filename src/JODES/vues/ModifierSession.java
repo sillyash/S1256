@@ -4,6 +4,7 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 
 import java.awt.*;
@@ -11,10 +12,11 @@ import java.awt.*;
 public class ModifierSession extends JFrame implements RetourVue, SauvegarderQuitter{
 
     protected Session sessionModele;
+    Administrateur admin;
 
-	public ModifierSession(Session sessionModele) {
+	public ModifierSession(Session sessionModele, Administrateur admin) {
         super("JODES");
-        
+        this.admin = admin;
         this.sessionModele = sessionModele;
         PanelTitle panelTitle = new PanelTitle("Session Création");
         JButton button = new JButton("Retour" + "\u21A9");
@@ -52,7 +54,7 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
     //Nicolas
 	@Override
 	public void retour() {
-		new SessionFrame();
+		new SessionFrame(admin);
 		(this).dispose();
 	}
 

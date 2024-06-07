@@ -4,6 +4,8 @@ import javax.swing.*;
 
 import JODES.JO2024;
 import JODES.controleurs.*;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 
 public class HomePageFrame extends JFrame {
@@ -15,8 +17,10 @@ public class HomePageFrame extends JFrame {
 	JButton equipes = new JButton("Equipes");
 	JButton sessions = new JButton("Sessions");
 	JButton epreuves = new JButton("Epreuves");
+	Administrateur admin;
 
-	public HomePageFrame(){
+	public HomePageFrame(Administrateur admin){
+		this.admin = admin;
 		setTitle("JODES");
 		setSize (800, 450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -57,6 +61,7 @@ public class HomePageFrame extends JFrame {
 
 	public static void main(String[] args) {
 		JO2024.initialize();
-		HomePageFrame testAffichage = new HomePageFrame();
+		Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+		HomePageFrame testAffichage = new HomePageFrame(admin);
 		}
 }

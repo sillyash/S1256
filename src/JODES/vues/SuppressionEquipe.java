@@ -4,6 +4,8 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEquipe;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,10 +17,12 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
+    Administrateur admin;
 
-    public SuppressionEquipe() {
+    public SuppressionEquipe(Administrateur admin) {
         // Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
 
@@ -61,12 +65,13 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
     }
 
     public static void main(String[] args) {
-        new SuppressionEquipe();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SuppressionEquipe(admin);
     }
 //Nicolas
 	@Override
 	public void retour() {
-		new EquipeFrame();
+		new EquipeFrame(admin);
 		this.dispose();
 	}
 }

@@ -5,15 +5,17 @@ import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 
 import java.awt.*;
 
 public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuitter{
-
-	public AjouterSession() {
+	Administrateur admin;
+	public AjouterSession(Administrateur admin) {
         super("JODES");
         
+        this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Ajouter session");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -48,13 +50,14 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
     }
 	public static void main(String[] args) {
         JO2024.initialize();
-		new AjouterSession();
+        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+		new AjouterSession(admin);
     }
 
     //Nicolas
 	@Override
 	public void retour() {
-		new SessionFrame();
+		new SessionFrame(admin);
 		(this).dispose();
 	}
 	@Override

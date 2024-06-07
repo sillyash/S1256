@@ -5,6 +5,8 @@ import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.ControleurBtnSelectEquipe;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -17,10 +19,12 @@ public class SelectionEquipe extends JFrame implements RetourVue {
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
-
-    public SelectionEquipe() {
+    Administrateur admin;
+    
+    public SelectionEquipe(Administrateur admin) {
         // Create main frame
         super("Selection d'une équipe");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -60,12 +64,13 @@ public class SelectionEquipe extends JFrame implements RetourVue {
     }
 
     public static void main(String[] args) {
-        new SelectionEquipe();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SelectionEquipe(admin);
     }
 
 	@Override
 	public void retour() {
-		new EquipeFrame();
+		new EquipeFrame(admin);
 		this.dispose();
 	}
 }

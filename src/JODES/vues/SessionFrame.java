@@ -1,13 +1,16 @@
 package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 
 public class SessionFrame extends JFrame implements RetourVue{
-
-    public SessionFrame() {
+	Administrateur admin;
+    public SessionFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -44,13 +47,13 @@ public class SessionFrame extends JFrame implements RetourVue{
     }
 
     public static void main(String[] args) {
-    	//Create the mainSession frame
-        SessionFrame Session = new SessionFrame();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        SessionFrame Session = new SessionFrame(admin);
     }
     //Nicolas
 	@Override
 	public void retour() {
-		new HomePageFrame();
+		new HomePageFrame(admin);
 		this.dispose();
 	}
 }

@@ -8,15 +8,18 @@ import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 
 import java.awt.*;
+
+import JODES.modeles.Administrateur;
 import JODES.modeles.Equipe;
 
 public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
-
-	public AjouterAthlete() {
+	Administrateur admin;
+	public AjouterAthlete(Administrateur admin) {
         super("JODES");
         
+        this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Ajouter athlete");
         JButton buttonSave = new JButton("Sauvegarder et quitter");
         ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
@@ -39,7 +42,8 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
     }
 	public static void main(String[] args) {
         JO2024.initialize();
-		new AjouterAthlete();
+        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+		new AjouterAthlete(admin);
     }
 	@Override
 	public void SauvegarderQuitter() {

@@ -4,6 +4,8 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,10 +17,13 @@ public class SuppressionSession extends JFrame implements RetourVue {
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
+    Administrateur admin;
 
-    public SuppressionSession() {
-        // Create main frame
+
+	public SuppressionSession(Administrateur admin) {
+    	// Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
 
@@ -60,13 +65,19 @@ public class SuppressionSession extends JFrame implements RetourVue {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-        new SuppressionSession();
-    }
+	public Administrateur getAdministrateur() {
+		return admin;
+	}
+	
 //Nicolas
 	@Override
 	public void retour() {
-		new SessionFrame();
+		new SessionFrame(admin);
 		this.dispose();
 	}
+	
+    public static void main(String[] args) {
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SuppressionSession(admin);
+    }
 }

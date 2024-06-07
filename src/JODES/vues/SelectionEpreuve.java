@@ -4,6 +4,8 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -16,10 +18,12 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
+    Administrateur admin;
 
-    public SelectionEpreuve() {
+    public SelectionEpreuve(Administrateur admin) {
         // Create main frame
         super("Selection d'une épreuve");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -59,12 +63,13 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
     }
 
     public static void main(String[] args) {
-        new SelectionEpreuve();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SelectionEpreuve(admin);
     }
 
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new EpreuveFrame(admin);
 		this.dispose();
 	}
 }

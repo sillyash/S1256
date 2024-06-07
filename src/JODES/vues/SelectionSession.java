@@ -4,6 +4,8 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 import javax.swing.*;
 
@@ -15,10 +17,12 @@ public class SelectionSession extends JFrame implements RetourVue {
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
+    Administrateur admin;
 
-    public SelectionSession() {
+    public SelectionSession(Administrateur admin) {
         // Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -58,12 +62,13 @@ public class SelectionSession extends JFrame implements RetourVue {
     }
 
     public static void main(String[] args) {
-        new SelectionSession();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SelectionSession(admin);
     }
 //Nicolas
 	@Override
 	public void retour() {
-		new SessionFrame();
+		new SessionFrame(admin);
 		this.dispose();
 	}
 }

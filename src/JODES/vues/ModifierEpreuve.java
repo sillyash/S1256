@@ -5,6 +5,7 @@ import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Epreuve;
 import JODES.modeles.Equipe;
 
@@ -14,11 +15,13 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
 
 	private static final long serialVersionUID = 1L;
 	protected Epreuve epreuveModele;
+	Administrateur admin;
 	
-	public ModifierEpreuve(Epreuve epreuve) {
+	public ModifierEpreuve(Epreuve epreuve, Administrateur admin) {
         
         super("JODES");
         this.epreuveModele = epreuve;
+        this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Ajouter epreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -51,7 +54,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
     //Nicolas
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new EpreuveFrame(admin);
 		(this).dispose();
 	}
 	@Override

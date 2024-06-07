@@ -5,15 +5,17 @@ import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.modeles.Administrateur;
 
 import java.awt.*;
 
 public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
-
-	public AjouterEpreuve() {
+	Administrateur admin;
+	public AjouterEpreuve(Administrateur admin) {
         
         super("JODES");
         
+        this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Epreuves Création");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -49,12 +51,13 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
     }
 
     public static void main(String[] args) {
-        AjouterEpreuve testAffichage = new AjouterEpreuve();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        AjouterEpreuve testAffichage = new AjouterEpreuve(admin);
     }
     //Nicolas
 	@Override
 	public void retour() {
-		new EpreuveFrame();
+		new EpreuveFrame(admin);
 		(this).dispose();
 	}
 

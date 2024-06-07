@@ -1,13 +1,16 @@
 package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
+import JODES.modeles.Administrateur;
+
 import java.awt.*;
 
 public class EquipeFrame extends JFrame implements RetourVue{
-
-    public EquipeFrame() {
+	Administrateur admin;
+    public EquipeFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -43,12 +46,13 @@ public class EquipeFrame extends JFrame implements RetourVue{
     }
 
     public static void main(String[] args) {
-    	EquipeFrame Equipe = new EquipeFrame();    }
+		Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+    	EquipeFrame Equipe = new EquipeFrame(admin);    }
     
     //Nicolas
 	@Override
 	public void retour() {
-		new HomePageFrame();
+		new HomePageFrame(admin);
 		this.dispose();
 	}
 }

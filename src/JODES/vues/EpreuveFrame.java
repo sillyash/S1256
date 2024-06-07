@@ -2,14 +2,16 @@ package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.RetourVue;
+import JODES.modeles.Administrateur;
 import JODES.controleurs.*;
 import java.awt.*;
 
 public class EpreuveFrame extends JFrame implements RetourVue {
-
-	public EpreuveFrame() {
+	Administrateur admin;
+	public EpreuveFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
+        this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());
 
@@ -45,12 +47,13 @@ public class EpreuveFrame extends JFrame implements RetourVue {
 
     public static void main(String[] args) {
     	//Create the mainEpreuve frame
-        EpreuveFrame Epreuve = new EpreuveFrame();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        EpreuveFrame Epreuve = new EpreuveFrame(admin);
     }
     //Nicolas
 	@Override
 	public void retour() {
-		new HomePageFrame();
+		new HomePageFrame(admin);
 		(this).dispose();
 	}
 }
