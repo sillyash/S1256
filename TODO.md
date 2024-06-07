@@ -6,7 +6,8 @@
 
 - [ ] JavaDoc
 - [ ] Methodes parsing pour les formulaires
-- [ ] Modifer <-> Ajouter
+- [ ] Vue & Controleurs Selection Entite
+- [X] Planning (classe)
 
 <br>
 
@@ -19,14 +20,14 @@
 ## Emma
 
 - [X] JTable
-- [ ] Planning (classe)
 - [X] Planning (Visuel)
 - [X] Boutons Navigation
 
 ## Nico
 
-- [ ] Boutons retour
-- [ ] JFrame Entites
+- [X] Boutons retour
+- [X] JFrame Entites
+- [ ] Conflit Ajouter / Modifier
 
 <br>
 
