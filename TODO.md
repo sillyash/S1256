@@ -5,7 +5,8 @@
 ## Ash
 
 - [ ] JavaDoc
-- [ ] Methodes abstraites Entite
+- [ ] Methodes parsing pour les formulaires
+- [ ] Modifer <-> Ajouter
 
 <br>
 
