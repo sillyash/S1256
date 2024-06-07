@@ -1,14 +1,16 @@
 //correct package - Emma
 package JODES.vues;
+import JODES.JO2024;
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnSelectSession;
+import JODES.controleurs.RetourVue;
 import java.awt.*;
 import javax.swing.*;
-import JODES.controleurs.ControleurBTNRetour;
-import JODES.controleurs.RetourVue;
 
-public class SuppressionSession extends JFrame implements RetourVue{
-
+public class SuppressionSession extends JFrame implements RetourVue {
+    
     private static final long serialVersionUID = 1L;
-    protected JTextField sessionDel;
+    protected ComboBoxSession combo;
     protected JButton valider;
     protected JPanel panelDel;
     protected JLabel indicationDelete;
@@ -16,16 +18,18 @@ public class SuppressionSession extends JFrame implements RetourVue{
 
     public SuppressionSession() {
         // Create main frame
-    	// Création d'un nouveau panelTitle 
         super("JODES");
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
+
         // Initialize elements
-        PanelTitle panelTitle = new PanelTitle("Sessions");
+        // Création d'un nouveau panelTitle 
+        PanelTitle panelTitle = new PanelTitle("Epreuve");
         add(panelTitle); 
         valider = new JButton("✔");
-        sessionDel = new JTextField("Id...",15);
-        indicationDelete = new JLabel("Veuillez saisir l'Id de la session à supprimer");
+        valider.addActionListener(new ControleurBtnSelectSession(combo, ControleurBtnSelectSession.SUPPR));
+        combo = new ComboBoxSession(JO2024.getSessions());
+        indicationDelete = new JLabel("Veuillez saisir l'Id de l'équipe à supprimer");
 
         // Initialize the panels
         panelDel = new JPanel();
@@ -37,38 +41,36 @@ public class SuppressionSession extends JFrame implements RetourVue{
         panelIndication.add(indicationDelete);
         
         // Add elements to panelDel
-        panelDel.add(sessionDel);
+        panelDel.add(combo);
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
         add(panelIndication);
         add(panelDel);
+
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
         add(button);//TODO mettre le bouton au bon endroit
         //pas Nicolas
-
         // Make the frame visible
         setVisible(true);
 
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         
         // Pack the frame to fit its components
         pack();
     }
 
     public static void main(String[] args) {
-        new SuppressionSession();
+        new SuppressionEpreuve();
     }
-    //Nicolas
+//Nicolas
 	@Override
 	public void retour() {
-		new SessionFrame();
+		new EpreuveFrame();
 		this.dispose();
 	}
 }
-

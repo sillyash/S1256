@@ -176,6 +176,22 @@ public class JO2024 {
 	/**
 	 * @author Ash Merienne
 	 */
+	public static ArrayList<Equipe> getEquipes()
+	{
+		ArrayList<Equipe> equipes = new ArrayList<>();
+		for (Entite e : sesEntites)
+		{
+			if (DataParser.isEpreuve(e))
+			{
+				equipes.add((Equipe)e);
+			}
+		}
+		return equipes;
+	}
+
+	/**
+	 * @author Ash Merienne
+	 */
 	public static ArrayList<Pays> getPays()
 	{
 		return PAYS;

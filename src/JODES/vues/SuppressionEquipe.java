@@ -1,18 +1,16 @@
 //correct package - Emma
 package JODES.vues;
-
+import JODES.JO2024;
+import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnSelectEquipe;
+import JODES.controleurs.RetourVue;
 import java.awt.*;
 import javax.swing.*;
 
-import JODES.controleurs.ControleurBTNRetour;
-import JODES.controleurs.RetourVue;
-
 public class SuppressionEquipe extends JFrame implements RetourVue{
-    /**
-     * 
-     */
+    
     private static final long serialVersionUID = 1L;
-    protected JTextField equipeDel;
+    protected ComboBoxEquipe equipeCMB;
     protected JButton valider;
     protected JPanel panelDel;
     protected JLabel indicationDelete;
@@ -29,7 +27,8 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
         PanelTitle panelTitle = new PanelTitle("Equipe");
         add(panelTitle); 
         valider = new JButton("✔");
-        equipeDel = new JTextField("Id...",15);
+        valider.addActionListener(new ControleurBtnSelectEquipe(equipeCMB, ControleurBtnSelectEquipe.SUPPR));
+        equipeCMB = new ComboBoxEquipe(JO2024.getEquipes());
         indicationDelete = new JLabel("Veuillez saisir l'Id de l'équipe à supprimer");
 
         // Initialize the panels
@@ -42,7 +41,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
         panelIndication.add(indicationDelete);
         
         // Add elements to panelDel
-        panelDel.add(equipeDel);
+        panelDel.add(equipeCMB);
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
@@ -60,7 +59,6 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
 
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         
         // Pack the frame to fit its components
         pack();
