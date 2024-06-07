@@ -7,10 +7,11 @@ import javax.swing.*;
 
 import JODES.vues.AjouterEpreuve;
 
-public class ControleurBtnAjEpreuve extends Controleur implements ActionListener {
-
+public class ControleurBtnAjEpreuve implements ActionListener {
+	protected JFrame _vue;
+	
 	public ControleurBtnAjEpreuve(Object modele, JFrame vue) {
-		super(null, vue);
+		this._vue = vue;
 	}
 
 	@Override

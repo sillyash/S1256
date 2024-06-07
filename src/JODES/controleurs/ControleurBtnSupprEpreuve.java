@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import JODES.vues.SuppressionEpreuve;
 
-public class ControleurBtnSupprEpreuve extends Controleur implements ActionListener {
-
+public class ControleurBtnSupprEpreuve implements ActionListener {
+	protected JFrame _vue;
 	public ControleurBtnSupprEpreuve(Object modele, JFrame vue) {
-		super(null, vue);
+		this._vue = vue;
 	}
 
 	@Override
