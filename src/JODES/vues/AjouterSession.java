@@ -36,7 +36,7 @@ public class AjouterSession extends JFrame implements RetourVue{
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire debut :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire fin :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxLieu(JO2024.getLieux()),new JLabel("Lieu :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxDiscipline(JO2024.getDisciplines()),new JLabel("Lieu :")));
+		panelDuMilieu.add(new GridFormField(new ComboBoxDiscipline(JO2024.getDisciplines()),new JLabel("Discipline :")));
 		add(panelDuMilieu);
       
         setSize(800, 450);
