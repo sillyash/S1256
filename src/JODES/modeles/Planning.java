@@ -24,6 +24,7 @@ public class Planning {
         this.month = date.getMonthValue();
         this.day = date.getDayOfMonth();
         initializeDaysOfWeek();
+        getSessionsFromDataBase(this.numSemaine);
     }
 
     // ----------- Getters & setters -----------
