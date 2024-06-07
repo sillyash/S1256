@@ -38,10 +38,5 @@ public class Epreuve extends Entite {
     public void menuModification() {
         return;
     }
-
-    @Override
-    public void menuModificationVisuel() {
-        return;
-    }
     
 }
