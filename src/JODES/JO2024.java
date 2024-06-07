@@ -207,6 +207,10 @@ public class JO2024 {
 		return DISCIPLINES;
 	}
 
+	public static ArrayList<Lieu> getLieux() {
+		return LIEUX;
+	}
+
 	public static void initialize() {
 		Collections.addAll(PAYS,
 		new Pays("Afghanistan", "AFG"),
@@ -479,4 +483,5 @@ public class JO2024 {
 		new Lieu("Grand Palais", Paris)
 		);
 	}
+
 }
