@@ -6,6 +6,7 @@ import javax.swing.*;
 
 import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
+import JODES.controleurs.ControleurBtnModSession;
 import JODES.controleurs.RetourVue;
 
 //correct naming of class - Emma
@@ -20,50 +21,7 @@ public class SuppressionEpreuve extends SelectionEpreuve {
 
     public SuppressionEpreuve() {
         // Create main frame
-        super("Gestion des Epreuves - Epreuve");
-        setSize(800, 450);
-        setLayout(new GridLayout (4,1));
-
-        // Initialize elements
-        PanelTitle panelTitle = new PanelTitle("Epreuves");
-        add(panelTitle); 
-        valider = new JButton("✔");
-        epreuveDel = new ComboBoxEpreuve(JO2024.getEpreuves());
-        indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à supprimer",JLabel.CENTER);
-
-        // Initialize the panels
-        panelDel = new JPanel();
-        panelDel.setLayout(new FlowLayout());
-        panelIndication = new JPanel();
-        panelIndication.setLayout(new FlowLayout());
-
-        //Add elements to panelIndication
-        panelIndication.add(indicationDelete);
-        
-        // Add elements to panelDel
-        panelDel.add(epreuveDel);
-        panelDel.add(valider);
-
-        // Add panelDel and panelIndication to frame
-        add(panelIndication);
-        add(panelDel);
-
-        //Nicolas 
-        JButton button = new JButton("Retour" + "\u21A9");
-        ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
-        button.addActionListener(BtnRetour);
-        add(button);//TODO mettre le bouton au bon endroit
-        //pas Nicolas
-        // Make the frame visible
-        setVisible(true);
-
-        // Exit the application when the frame is closed
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        // Création d'un nouveau panelTitle 
-        
-        // Pack the frame to fit its components
-        pack();
+        super(new ControleurBtnModSession());
     }
 
     public static void main(String[] args) {
