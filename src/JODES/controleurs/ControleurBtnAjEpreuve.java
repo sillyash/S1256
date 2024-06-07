@@ -10,7 +10,7 @@ import JODES.vues.AjouterEpreuve;
 public class ControleurBtnAjEpreuve implements ActionListener {
 	protected JFrame _vue;
 	
-	public ControleurBtnAjEpreuve(Object modele, JFrame vue) {
+	public ControleurBtnAjEpreuve(JFrame vue) {
 		this._vue = vue;
 	}
 

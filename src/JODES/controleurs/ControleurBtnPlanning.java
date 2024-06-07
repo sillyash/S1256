@@ -6,10 +6,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import JODES.vues.PlanningFrame;
 
-public class ControleurBtnPlanning extends Controleur implements ActionListener {
-	
+public class ControleurBtnPlanning implements ActionListener {
+	protected JFrame _vue;
 	public ControleurBtnPlanning(JFrame vue) {
-		super(null, vue);
+		this._vue = vue;
 	}
 
 	@Override

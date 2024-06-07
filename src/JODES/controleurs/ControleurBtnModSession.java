@@ -8,15 +8,16 @@ import JODES.modeles.Session;
 
 import JODES.vues.ModifierSession;
 
-public class ControleurBtnModSession extends Controleur implements ActionListener {
-
-	public ControleurBtnModSession(Session session, JFrame vue) {
-		super(session, vue);
+public class ControleurBtnModSession implements ActionListener {
+	protected JFrame _vue;
+	
+	public ControleurBtnModSession(JFrame vue) {
+		this._vue = vue;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new ModifierSession((Session)super.get_modele());
+		new ModifierSession((Session)super.get_modele()); // will need to modif after ash and nico modif
 		((JFrame) _vue).dispose();
 	}
 }

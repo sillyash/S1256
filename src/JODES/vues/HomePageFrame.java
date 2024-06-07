@@ -37,9 +37,9 @@ public class HomePageFrame extends JFrame {
 		add(p);
 
 		ControleurBtnPlanning ctrlBtnPlann = new ControleurBtnPlanning(this);
-		ControleurBtnEpreuve ctrlBtnEpr = new ControleurBtnEpreuve(null, this);
+		ControleurBtnEpreuve ctrlBtnEpr = new ControleurBtnEpreuve(this);
 		ControleurBtnEquipe ctrlBtnEqu = new ControleurBtnEquipe(this);
-		ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(null, this);
+		ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(this);
 		
 		epreuves.addActionListener(ctrlBtnEpr);
 		planning.addActionListener(ctrlBtnPlann);

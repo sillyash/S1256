@@ -20,8 +20,8 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	        JPanel navBar = new JPanel();
 	        JButton nextWeek = new JButton("\u25BA");
 	        JButton previousWeek = new JButton("\u25C4");
-	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(null, this);
-	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(null, this);
+	        ControleurBtnFlecheBackwardsPlanning ctrlFlecheBack = new ControleurBtnFlecheBackwardsPlanning(this);
+	        ControleurBtnFlecheForwardPlanning ctrlFlecheForw = new ControleurBtnFlecheForwardPlanning(this);
 	        previousWeek.addActionListener(ctrlFlecheBack);
 	        nextWeek.addActionListener(ctrlFlecheForw);
 	        

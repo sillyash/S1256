@@ -9,7 +9,7 @@ import JODES.vues.AjouterSession;
 
 public class ControleurBtnAjSession extends Controleur implements ActionListener{
 
-	public ControleurBtnAjSession(Object modele, JFrame vue) {
+	public ControleurBtnAjSession(JFrame vue) {
 		super(null, vue);
 	}
 

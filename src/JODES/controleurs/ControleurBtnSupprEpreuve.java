@@ -8,7 +8,7 @@ import JODES.vues.SuppressionEpreuve;
 
 public class ControleurBtnSupprEpreuve implements ActionListener {
 	protected JFrame _vue;
-	public ControleurBtnSupprEpreuve(Object modele, JFrame vue) {
+	public ControleurBtnSupprEpreuve(JFrame vue) {
 		this._vue = vue;
 	}
 

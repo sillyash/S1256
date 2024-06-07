@@ -4,10 +4,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
-public class ControleurBtnFlecheForwardPlanning extends Controleur implements ActionListener{
-
-	public ControleurBtnFlecheForwardPlanning(Object modele, JFrame vue) {
-		super(null, vue);
+public class ControleurBtnFlecheForwardPlanning implements ActionListener{
+	protected JFrame _vue;
+	public ControleurBtnFlecheForwardPlanning(JFrame vue) {
+		this._vue = vue;
 	}
 
 	@Override

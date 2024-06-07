@@ -7,10 +7,10 @@ import javax.swing.*;
 
 import JODES.vues.AjouterEquipe;
 
-public class ControleurBtnAjEquipe extends Controleur implements ActionListener{
-
-	public ControleurBtnAjEquipe(Object modele, JFrame vue) {
-		super(null, vue);
+public class ControleurBtnAjEquipe implements ActionListener{
+	protected JFrame _vue;
+	public ControleurBtnAjEquipe(JFrame vue) {
+		this._vue = vue;
 	}
 
 	@Override
