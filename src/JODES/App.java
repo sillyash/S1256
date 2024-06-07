@@ -12,7 +12,6 @@ public class App {
 		JO2024.initialize();
 
 		JFrame app = new HomePageFrame();
-		app.add(new ComboBoxPays(JO2024.getPays()));
 		app.setSize(800, 450);
         app.setVisible(true);
 	}

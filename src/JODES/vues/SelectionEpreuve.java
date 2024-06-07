@@ -1,26 +1,25 @@
 //correct package - Emma
 package JODES.vues;
-
 import java.awt.*;
+import java.awt.event.ActionListener;
 import javax.swing.*;
-
 import JODES.JO2024;
 import JODES.controleurs.ControleurBTNRetour;
 import JODES.controleurs.RetourVue;
 
 //correct naming of class - Emma
-public class SuppressionEpreuve extends SelectionEpreuve {
+public class SelectionEpreuve extends JFrame implements RetourVue {
 
     private static final long serialVersionUID = 1L;
-    protected JTextField epreuveDel;
+    protected ComboBoxEpreuve epreuveSelect;
     protected JButton valider;
     protected JPanel panelDel;
     protected JLabel indicationDelete;
     protected JPanel panelIndication;
 
-    public SuppressionEpreuve() {
+    public SelectionEpreuve(ActionListener ControleurBoutonValider) {
         // Create main frame
-        super("Gestion des Epreuves - Epreuve");
+        super("Selection d'une épreuve");
         setSize(800, 450);
         setLayout(new GridLayout (4,1));
 
@@ -28,7 +27,8 @@ public class SuppressionEpreuve extends SelectionEpreuve {
         PanelTitle panelTitle = new PanelTitle("Epreuves");
         add(panelTitle); 
         valider = new JButton("✔");
-        epreuveDel = new ComboBoxEpreuve(JO2024.getEpreuves());
+        valider.addActionListener(ControleurBoutonValider);
+        epreuveSelect = new ComboBoxEpreuve(JO2024.getEpreuves());
         indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à supprimer",JLabel.CENTER);
 
         // Initialize the panels
@@ -41,7 +41,7 @@ public class SuppressionEpreuve extends SelectionEpreuve {
         panelIndication.add(indicationDelete);
         
         // Add elements to panelDel
-        panelDel.add(epreuveDel);
+        panelDel.add(epreuveSelect);
         panelDel.add(valider);
 
         // Add panelDel and panelIndication to frame
@@ -67,7 +67,7 @@ public class SuppressionEpreuve extends SelectionEpreuve {
     }
 
     public static void main(String[] args) {
-        new SuppressionEpreuve();
+        new SelectionEpreuve();
     }
 
 	@Override

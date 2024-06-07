@@ -5,7 +5,7 @@ import JODES.controleurs.RetourVue;
 import JODES.controleurs.*;
 import java.awt.*;
 
-public class EpreuveFrame extends JFrame implements RetourVue{
+public class EpreuveFrame extends JFrame implements RetourVue {
 
 	public EpreuveFrame() {
         // Create main frame
