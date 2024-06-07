@@ -32,7 +32,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Epreuve :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
-        panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
+        panelDuMilieu.add(new GridFormField(new ComboBoxSession(JO2024.getSessions()),new JLabel("Session :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
         
 		add(panelDuMilieu,BorderLayout.CENTER);
