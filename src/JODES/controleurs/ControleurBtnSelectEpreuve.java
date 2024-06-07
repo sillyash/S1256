@@ -37,7 +37,7 @@ public class ControleurBtnSelectEpreuve implements ActionListener  {
                 new ModifierEpreuve(this.epreuve);
             } else {
                 JO2024.removeEntite(epreuve);
-            };
+            }
         }
     }
     
