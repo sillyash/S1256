@@ -16,6 +16,8 @@ public class JO2024 {
 	
 	public static ArrayList<Pays> PAYS = new ArrayList<Pays>();
 	public static ArrayList<Discipline> DISCIPLINES = new ArrayList<>();
+	public static ArrayList<Ville> VILLES = new ArrayList<>();
+	public static ArrayList<Lieu> LIEUX = new ArrayList<>();
 	
 	public static final LocalDate dateDebutJO = LocalDate.of(2024, Month.JULY, 12);
 	public static final LocalDate dateFinJO = LocalDate.of(2024, Month.JULY, 30);
@@ -440,6 +442,36 @@ public class JO2024 {
         new Discipline("Hockey", "Field hockey sport played with a ball and sticks."),
         new Discipline("Baseball", "Team sport where the goal is to score runs by hitting a ball and running bases."),
         new Discipline("Softball", "Team sport similar to baseball but played with a larger ball.")
+		);
+
+
+		Ville Paris = new Ville("Paris", 75000);
+		Ville Marseille = new Ville("Marseille", 13000);
+		Ville Villeneuve = new Ville("Villeneuve-d\'Ascq", 59400);
+		Ville Chatearoux = new Ville("Châteauroux", 36000);
+		Ville Tahiti = new Ville("Tahiti", 98700);
+		Ville Bourget = new Ville("Le Bourget", 93350);
+		Ville Colombes = new Ville("Colombes", 92700);
+		Ville StDenis = new Ville("Saint-Denis", 93200);
+		Ville Vaires = new Ville("Vaires-sur-Marne", 77360);
+		Ville Nanterre = new Ville("Nanterre", 92000);
+		Ville Villepinte = new Ville("Villepinte", 93420);
+		Ville Versailles = new Ville("Versailles", 78000);
+		Ville Elancourt = new Ville("Élancourt", 78990);
+		Ville SQY = new Ville("Saint-Quentin-en-Yvelines", 78180);
+		Ville Guyancourt = new Ville("Guyancourt", 78286);
+
+		Collections.addAll(VILLES, Paris, Marseille, Villeneuve,
+							Chatearoux, Tahiti, Bourget, Colombes, StDenis,
+							Vaires, Nanterre, Villepinte, Versailles,
+							Elancourt, SQY, Guyancourt);
+
+		Collections.addAll(LIEUX,
+		new Lieu("Arena Bercy", Paris),
+		new Lieu("Arena Champ-de-Mars", Paris),
+		new Lieu("Arena Paris Nord", Paris),
+		new Lieu("Arena Paris Sud", Paris),
+		new Lieu("Arena Porte de La Chapelle", Paris)
 		);
 	}
 }
