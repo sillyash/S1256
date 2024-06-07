@@ -16,25 +16,25 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
 	String[][] data = {
 		{ "0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0" }, // row for dates
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4",		 "5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7"		},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1",		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
-		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	}
+		{ "0", 		"1", 		"2", 		"3", 		"4", 		"5", 		"6" 	},
+		{ "1", 		"", 		"", 		"",		 	"", 		"", 		"" 		},
+		{ "2", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "3", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "4", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "5", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "6", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "7", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "8", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "9", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "10",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "11",		"", 		"", 		"", 		"", 		"", 		""		},
+		{ "12",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "13", 	"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "14",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "15", 	"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "16", 	"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "17", 	"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "18", 	"", 		"", 		"", 		"", 		"", 		"" 		}
 	};
 	String[] hours = {"", "", "09:00", "09:30", "10:00", "10:30",
 					 "11:00", "11:30", "12:00", "12:30", "13:00",
@@ -78,12 +78,12 @@ public class PlanningFrame extends JFrame implements RetourVue{
         	}
         };
         
-        initializePlanningTable();
         initializeNavBar();
 		initializeHours();
 		initializeDays();
 		initializeGradTable();
 		parseSessions();
+		initializePlanningTable();
 
         //Nicolas 
         button.addActionListener(BtnRetour);
@@ -94,6 +94,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 	public Planning get_modele() {
 		return _modele;
+	}
+	
+	public void set_modele(Planning p) {
+		this._modele = p;
+		initializeDays();
+		parseSessions();
+		initializePlanningTable();
 	}
 
 	public void initializeHours() {
@@ -155,12 +162,10 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 	public int getIndexOf(String[] tab, String s) {
 		if (tab.length == 0) {
-			System.out.println("a");
 			return -1;
 		}
 		for (int i=0; i<tab.length; i++) {
-			System.out.println(tab[i] + " " + s);
-			if (tab[i] == s) {
+			if (tab[i].equals(s)) {
 				return i;
 			}
 		}
@@ -168,6 +173,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	}
 	
 	public void parseSessions() {
+		int indexJour = 0;
 		for (int i = 0; i<7; i++) {
 			List<Session> sessionJour = _modele.getSessions().get(i);
 
@@ -191,11 +197,23 @@ public class PlanningFrame extends JFrame implements RetourVue{
 					else startTime = heureDeb + ":" + minuteDeb;
 				}
 				
-				int indexHoraire = getIndexOf(data[i], startTime);
+				int indexHoraire = getIndexOf(hours, startTime);
+				
+				String titre = s.getSaDiscipline().getNom();
+				String desc = s.getStatut();
+				int longueurEvent = s.getLongueurEnDemiHeure();
+				
+				System.out.print("index=" + indexHoraire + ", long=");
+				System.out.print(longueurEvent + ", titre=");
+				System.out.println(titre + ", desc=" + desc);
 
-				for (int j=indexHoraire; j < s.getLongueurEnDemiHeure(); j++) {
-					data[i][j] =  s.getSaDiscipline().getNom() + " " + s.getStatut();
+				int j = 0;
+				while (j<longueurEvent && j<7) {
+					System.out.println("\nfeur\n");
+					data[j+indexHoraire][indexJour] = titre;
+					j++;
 				}
+				indexJour++;
 			}
 		}
 	}
@@ -205,8 +223,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
     	JO2024.addEntite(
     		new Session("Truc", Session.FINALE, JO2024.Paris2024,
     				LocalTime.parse("10:00"), LocalTime.parse("12:00"),
-    				LocalDate.now(), JO2024.getLieux().get(0),
+    				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
     				JO2024.getDisciplines().get(0)));
+    	JO2024.addEntite(
+        		new Session("Truc", Session.FINALE, JO2024.Paris2024,
+        				LocalTime.parse("14:00"), LocalTime.parse("16:00"),
+        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
+        				JO2024.getDisciplines().get(0)));
     	new PlanningFrame();
     }
 
