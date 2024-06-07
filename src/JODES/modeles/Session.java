@@ -17,7 +17,6 @@ public class Session extends Entite {
 	public static final String QUALIF = "qualifications";
     public static final String AMICAL = "amical";
     protected String statut;
-	protected Session session;
 	protected Saison saSaison;
 	protected LocalTime horaireDebut;
 	protected LocalTime horaireFin;
@@ -27,11 +26,10 @@ public class Session extends Entite {
 
 	// ----------- Constructors -----------
 
-	public Session(String nom, String statut, Session session, Saison saSaison, LocalTime horaireDebut,
+	public Session(String nom, String statut, Saison saSaison, LocalTime horaireDebut,
 			LocalTime horaireFin, LocalDate date, Lieu sonLieu, Discipline saDiscipline) {
 		super(nom);
 		this.setStatut(statut);
-		this.session = session;
 		this.saSaison = saSaison;
 		this.horaireDebut = horaireDebut;
 		this.horaireFin = horaireFin;
@@ -41,7 +39,7 @@ public class Session extends Entite {
 	}
 
 	// ----------- Getters & setters -----------
-	
+
 	public String getStatut() {
 		return statut;
 	}
@@ -56,13 +54,7 @@ public class Session extends Entite {
         else this.statut = AMICAL;
     }
 
-	public Session getSession() {
-		return session;
-	}
-
-	public void setSession(Session session) {
-		this.session = session;
-	}
+	
 
 	public Saison getSaSaison() {
 		return saSaison;

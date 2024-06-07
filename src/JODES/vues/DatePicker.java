@@ -7,18 +7,15 @@ import java.time.LocalDate;
 
 public class DatePicker extends JPanel {
 
-    private final JTextField dayTextField;
-    private final JTextField monthTextField;
-    private final JTextField yearTextField;
     private LocalDate selectedDate;
 
     public DatePicker() {
-        setLayout(new GridLayout(1,3));
+		setLayout(new GridLayout(1,3));
 
         // Create text fields for day, month, and year
-        ComboBoxDay = new ComboBoxDay();
-        ComboBoxMonth = new ComboBoxMonth();
-        ComboBoxYear = new ComboBoxYear();
+        ComboBoxDay ComboBoxDay = new ComboBoxDay();
+        ComboBoxMonth ComboBoxMonth = new ComboBoxMonth();
+        ComboBoxYear ComboBoxYear = new ComboBoxYear();
 
         
         // Add components to the panel
