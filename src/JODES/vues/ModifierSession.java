@@ -11,7 +11,7 @@ public class ModifierSession extends JFrame implements RetourVue{
 
     protected Session sessionModele;
 
-	public ModifierSession(Session sessionModele,boolean isNew) {
+	public ModifierSession(Session sessionModele) {
         super("JODES");
         this.sessionModele = sessionModele;
         
@@ -30,16 +30,16 @@ public class ModifierSession extends JFrame implements RetourVue{
         panelSaveRetour.add(button);
         add(panelSaveRetour,BorderLayout.SOUTH);
         
-        
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
         panelDuMilieu.add(new GridFormField(new JTextField(sessionModele.getNom()),new JLabel("Nom Epreuve :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
 		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
         panelDuMilieu.add(new GridFormField(new ComboBoxEpreuve(JO2024.getEpreuves()),new JLabel("Session :")));
+
+        // TODO fill fields
 		
 		add(panelDuMilieu,BorderLayout.CENTER);
-        
       
         setSize(800, 450);
         setVisible(true);

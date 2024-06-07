@@ -11,7 +11,6 @@ public class AjouterEpreuve extends JFrame implements RetourVue{
         
         super("JODES");
         
-        
         PanelTitle panelTitle = new PanelTitle("Epreuves Création");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour btnretour = new ControleurBTNRetour(this);
