@@ -36,16 +36,16 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	},
 		{ "1", 		"2", 		"3", 		"4", 		"5", 		"6", 		"7" 	}
 	};
-	String[] hours = {"", "",  "09:00 -", "09:30 -", "10:00 -", "10:30 -",
-					"11:00 -", "11:30 -", "12:00 -", "12:30 -", "13:00 -",
-					"13:30 -", "14:00 -", "14:30 -", "15:00 -", "15:30 -",
-					"16:00 -", "16:30 -", "17:00 -", "17:30 -", "18:00 -"};
+	String[] hours = {"", "", "09:00", "09:30", "10:00", "10:30",
+					 "11:00", "11:30", "12:00", "12:30", "13:00",
+					 "13:30", "14:00", "14:30", "15:00", "15:30",
+					 "16:00", "16:30", "17:00", "17:30", "18:00"};
 	JTable gradTable;
 	JPanel graduation = new JPanel();
 	JButton nextWeek = new JButton("\u25BA");
 	JButton previousWeek = new JButton("\u25C4");
 	JButton button = new JButton("Retour" + "\u21A9");
-	ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
+	ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
 	JPanel navBar = new JPanel();
     JFrame fenetre;
     PanelTitle title;
@@ -83,21 +83,11 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		initializeHours();
 		initializeDays();
 		initializeGradTable();
-        
-        graduation.add(gradTable);
-        fenetre.add(graduation, BorderLayout.WEST);
-
 		parseSessions();
-        
-        planning.setBounds(100, 100, 600, 600);
-	    scrollPane = new JScrollPane(planning);
-	    fenetre.add(scrollPane, BorderLayout.CENTER);
-	    fenetre.setSize(800, 450);
-	    fenetre.setVisible(true);
 
         //Nicolas 
         button.addActionListener(BtnRetour);
-        fenetre.add(button,BorderLayout.SOUTH); //TODO mettre le bouton au bon endroit
+        fenetre.add(button,BorderLayout.SOUTH);
     }
 
 	// ------------------------- Methods ----------------------------
@@ -118,12 +108,19 @@ public class PlanningFrame extends JFrame implements RetourVue{
         		return false;
         	}
         };
+		planning.setBounds(100, 100, 600, 600);
+	    scrollPane = new JScrollPane(planning);
+	    fenetre.add(scrollPane, BorderLayout.CENTER);
+	    fenetre.setSize(800, 450);
+	    fenetre.setVisible(true);
 	}
 
 	public void initializeGradTable() {
 		gradTable.setShowVerticalLines(false);
 		gradTable.setShowHorizontalLines(false);
 		gradTable.setBackground(getForeground());
+		graduation.add(gradTable);
+        fenetre.add(graduation, BorderLayout.WEST);
 	}
 
 	public void initializeDays() {
@@ -134,7 +131,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 	public int[] getIndexOf(String[][] tab, String s) {
 		int[] result = new int[2];
-		if (tab.length == 0) result[0] = -1;
+		if (tab.length == 0) {
+			result[0] = -1;
+		}
 		for (int i=0; i<tab.length; i++) {
 			for (int j=0; j<tab[i].length; j++) {
 				if (tab[i][j] == s) {
@@ -155,9 +154,15 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	}
 
 	public int getIndexOf(String[] tab, String s) {
-		if (tab.length == 0) return -1;
+		if (tab.length == 0) {
+			System.out.println("a");
+			return -1;
+		}
 		for (int i=0; i<tab.length; i++) {
-			if (tab[i] == s) return i;
+			System.out.println(tab[i] + " " + s);
+			if (tab[i] == s) {
+				return i;
+			}
 		}
 		return -1;
 	}
@@ -168,8 +173,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 			for (Session s : sessionJour) {
 
-				DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
-				String startTime = formatter.format(s.getHoraireDebut());
+				int heureDeb, minuteDeb;
+				heureDeb = s.getHoraireDebut().getHour();
+				String startTime = heureDeb + " " +
 				int indexHoraire = getIndexOf(data[i], startTime);
 
 				for (int j=indexHoraire; j < s.getLongueurEnDemiHeure(); j++) {
@@ -180,7 +186,12 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	}
     
     public static void main(String[] args) {
-    	
+    	JO2024.initialize();
+    	JO2024.addEntite(
+    		new Session("Truc", Session.FINALE, JO2024.Paris2024,
+    				LocalTime.parse("10:00"), LocalTime.parse("12:00"),
+    				LocalDate.now(), JO2024.getLieux().get(0),
+    				JO2024.getDisciplines().get(0)));
     	new PlanningFrame();
     }
 
