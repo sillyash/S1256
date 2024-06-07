@@ -14,7 +14,6 @@ public class ComboBoxSession extends JComboBox<String> {
 
     protected void addItems() {
         this.addItem("");
-        this.addItem("Créer une nouvelle session");
         for (Session s : listeSessions)
         {
             this.addItem(s.getNom() + " " +

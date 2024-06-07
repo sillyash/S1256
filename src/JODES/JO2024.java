@@ -16,6 +16,8 @@ public class JO2024 {
 	
 	public static ArrayList<Pays> PAYS = new ArrayList<Pays>();
 	public static ArrayList<Discipline> DISCIPLINES = new ArrayList<>();
+	public static ArrayList<Ville> VILLES = new ArrayList<>();
+	public static ArrayList<Lieu> LIEUX = new ArrayList<>();
 	
 	public static final LocalDate dateDebutJO = LocalDate.of(2024, Month.JULY, 12);
 	public static final LocalDate dateFinJO = LocalDate.of(2024, Month.JULY, 30);
@@ -203,6 +205,10 @@ public class JO2024 {
 	public static ArrayList<Discipline> getDisciplines()
 	{
 		return DISCIPLINES;
+	}
+
+	public static ArrayList<Lieu> getLieux() {
+		return LIEUX;
 	}
 
 	public static void initialize() {
@@ -441,5 +447,72 @@ public class JO2024 {
         new Discipline("Baseball", "Team sport where the goal is to score runs by hitting a ball and running bases."),
         new Discipline("Softball", "Team sport similar to baseball but played with a larger ball.")
 		);
+
+
+		Ville Paris = new Ville("Paris", 75000);
+		Ville Marseille = new Ville("Marseille", 13000);
+		Ville Villeneuve = new Ville("Villeneuve-d'Ascq", 59400);
+		Ville Chateauroux = new Ville("Châteauroux", 36000);
+		Ville Tahiti = new Ville("Tahiti", 98700);
+		Ville Bourget = new Ville("Le Bourget", 93350);
+		Ville Colombes = new Ville("Colombes", 92700);
+		Ville StDenis = new Ville("Saint-Denis", 93200);
+		Ville Vaires = new Ville("Vaires-sur-Marne", 77360);
+		Ville Nanterre = new Ville("Nanterre", 92000);
+		Ville Villepinte = new Ville("Villepinte", 93420);
+		Ville Versailles = new Ville("Versailles", 78000);
+		Ville Elancourt = new Ville("Élancourt", 78990);
+		Ville SQY = new Ville("Saint-Quentin-en-Yvelines", 78180);
+		Ville Guyancourt = new Ville("Guyancourt", 78286);
+		Ville Bordeaux = new Ville("Bordeaux", 33000);
+		Ville Nantes  = new Ville("Nantes", 44000);
+		Ville Lyon = new Ville("Lyon", 69000);
+		Ville StEtienne = new Ville("Saint-Etienne", 42100);
+		Ville Nice = new Ville("Nice", 06000);
+
+		Collections.addAll(VILLES, Paris, Marseille, Villeneuve,
+							Chateauroux, Tahiti, Bourget, Colombes, StDenis,
+							Vaires, Nanterre, Villepinte, Versailles,
+							Elancourt, SQY, Guyancourt, Bordeaux, Nantes,
+							StEtienne, Lyon, Nice);
+
+		Collections.addAll(LIEUX,
+		new Lieu("Arena Bercy", Paris),
+		new Lieu("Arena Champ-de-Mars", Paris),
+		new Lieu("Arena Paris Nord", Paris),
+		new Lieu("Arena Paris Sud", Paris),
+		new Lieu("Arena Porte de La Chapelle", Paris),
+		new Lieu("Centre Aquatique", Paris),
+		new Lieu("Centre National de Tir de Châteauroux", Chateauroux),
+		new Lieu("Château de Versailles", Versailles),
+		new Lieu("Colline d'Elancourt", Elancourt),
+		new Lieu("Grand Palais", Paris),
+		new Lieu("Hôtel de Ville", Paris),
+		new Lieu("Invalides", Paris),
+		new Lieu("La Concorde", Paris),
+		new Lieu("Golf National", Guyancourt),
+		new Lieu("Marina de Marseille", Paris),
+		new Lieu("Parc des Princes", Paris),
+		new Lieu("La Défense Arena", Paris),
+		new Lieu("Pont Alexandre III", Paris),
+		new Lieu("Site d'escalade Bourget", Bourget),
+		new Lieu("Concorde", SQY),
+		new Lieu("Stade de Bordeaux", Bordeaux),
+		new Lieu("Stade de France", StDenis),
+		new Lieu("Stade de la Beaujoire", Nantes),
+		new Lieu("Stade de Lyon", Lyon),
+		new Lieu("Stade de Marseille", Marseille),
+		new Lieu("Stade de Nice", Nice),
+		new Lieu("Stade Geoffroy-Guichard", StEtienne),
+		new Lieu("Stade Nautique de Vaires-sur-Marne", Vaires),
+		new Lieu("Stade Pierre Mauroy", Villeneuve),
+		new Lieu("Stade Roland-Garros", Paris),
+		new Lieu("Stade Tour Eiffel", Paris),
+		new Lieu("Stade Yves-du-Manoir", Colombes),
+		new Lieu("Teahupo'o", Tahiti),
+		new Lieu("Trocadéro", Paris),
+		new Lieu("Vélodrome National", SQY)
+		);
 	}
+
 }

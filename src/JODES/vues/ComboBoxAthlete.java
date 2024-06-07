@@ -1,5 +1,7 @@
 package JODES.vues;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 
@@ -14,7 +16,6 @@ public class ComboBoxAthlete extends JComboBox<String> {
 
     protected void addItems() {
         this.addItem("");
-        this.addItem("Créer un nouvel athlète");
         for (Athlete a : listeAthletes)
         {
             this.addItem(a.getPrenom() + " " + a.getNom());

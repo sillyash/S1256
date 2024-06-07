@@ -84,6 +84,8 @@ public class Planning {
             .with(week.weekOfYear(), numSemaine)
             .with(week.dayOfWeek(), i+1);
             this.days.add(date);
+
+            this.sessions.add(new ArrayList<Session>());
         }
     }
 

@@ -1,6 +1,8 @@
 // ESCOFFIER Emma
 package JODES.vues;
 import javax.swing.*;
+
+import JODES.JO2024;
 import JODES.controleurs.*;
 import java.awt.*;
 
@@ -9,7 +11,6 @@ public class HomePageFrame extends JFrame {
 	JPanel p = new JPanel();
 	
 	PanelTitle title = new PanelTitle("JODES");
-	
 	JButton planning = new JButton("Planning");
 	JButton equipes = new JButton("Equipes");
 	JButton sessions = new JButton("Sessions");
@@ -55,6 +56,7 @@ public class HomePageFrame extends JFrame {
 	}
 
 	public static void main(String[] args) {
+		JO2024.initialize();
 		HomePageFrame testAffichage = new HomePageFrame();
 		}
 }
