@@ -5,29 +5,32 @@ import javax.swing.JComboBox;
 public class ComboBoxMonth extends JComboBox<String> {
 
 	private static final long serialVersionUID = 1L;
-	protected ArrayList<Integer> days = new ArrayList<>();
+	protected ArrayList<String> months = new ArrayList<>();
 
     public ComboBoxMonth() {
         addItems();
     }
 
     protected void addItems() {
-        this.addItem("");
-        this.addItem("JAN");
-        this.addItem("FEB");
-        this.addItem("MAR");
-        this.addItem("APR");
-        this.addItem("MAY");
-        this.addItem("JUN");
-        this.addItem("JUL");
-        this.addItem("AUG");
-        this.addItem("SEP");
-        this.addItem("NOV");
-        this.addItem("DEC");
+        months.add("");
+        months.add("JAN");
+        months.add("FEB");
+        months.add("MAR");
+        months.add("APR");
+        months.add("MAY");
+        months.add("JUN");
+        months.add("JUL");
+        months.add("AUG");
+        months.add("SEP");
+        months.add("NOV");
+        months.add("DEC");
+        for (String months : months) {
+        	this.addItem(months);
+        }
     }
 
-    public ArrayList<Integer> getItemList() {
-        return days;
+    public ArrayList<String> getItemList() {
+        return months;
     }
 
     public int getSelectedMonth() {

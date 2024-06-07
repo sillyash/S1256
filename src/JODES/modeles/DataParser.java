@@ -8,6 +8,10 @@ public class DataParser {
      * @param s
      * @return boolean
      */
+	public static boolean isTextFieldNull(String text) {
+		return text.matches("[\\t ]+");
+    }
+	
     public static boolean isInt(String s) {
         try {
             Integer.parseInt(s);

@@ -22,7 +22,7 @@ public class ComboBoxYear extends JComboBox<String> {
         return days;
     }
 
-    public int getSelectedDay() {
+    public int getSelectedYear() {
         return this.getSelectedIndex()+2023;
     }
     public boolean isSelectedNull() {
