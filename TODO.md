@@ -5,33 +5,43 @@
 ## Ash
 
 - [ ] JavaDoc
-- [ ] Methodes parsing pour les formulaires
-- [ ] Vue & Controleurs Selection Entite
+- [X] Methodes parsing pour les formulaires
+- [X] Vue & Controleurs Selection Entite
 - [X] Planning (classe)
 
 <br>
 
-## Kincy
+## Kincy 💯
 
-- [ ] Rapport
+- [ ] Truc (super utile 💯💯💯)
+- [X] Rapport
 
 <br>
 
 ## Emma
 
 - [X] JTable
-- [X] Planning (Visuel)
+- [ ] Planning (Visuel)
 - [X] Boutons Navigation
 
 ## Nico
 
 - [X] Boutons retour
 - [X] JFrame Entites
-- [ ] Conflit Ajouter / Modifier
-- [ ] Checkbox Button for Creation
+- [X] Conflit Ajouter / Modifier
+- [X] Checkbox Button for Creation
 
 <br>
 
-## Others
+## Tt le monde (????)
 
-- [ ] Budget
+- [ ] Méthodes dans ComboBox
+    - [ ] boolean IsSelectNull()
+    - [ ] Entite getSelectedEntity() (on remplacera Entite par Equipe, Session... dans les ComboBox propices)
+
+- [ ] Méthodes dans JTextField
+    - [ ] boolean IsTextNull() (en prenant en compte les char invisibles)
+    - [ ] boolean IsTextValid()
+
+- [ ] Méthode pour DatePicker
+    - [ ] boolean IsValidDate()

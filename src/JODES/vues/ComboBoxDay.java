@@ -25,5 +25,10 @@ public class ComboBoxDay extends JComboBox<String> {
     public int getSelectedDay() {
         return this.getSelectedIndex();
     }
-    
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }

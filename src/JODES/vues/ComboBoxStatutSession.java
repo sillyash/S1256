@@ -24,5 +24,11 @@ public class ComboBoxStatutSession extends JComboBox {
             this.addItem(s);
         }
     }
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }
 

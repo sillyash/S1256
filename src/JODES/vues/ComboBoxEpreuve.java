@@ -23,5 +23,10 @@ public class ComboBoxEpreuve extends JComboBox<String> {
     public ArrayList<Epreuve> getItemList() {
         return listeEpreuves;
     }
-    
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }

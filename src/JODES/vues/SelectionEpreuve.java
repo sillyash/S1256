@@ -21,39 +21,37 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
         // Create main frame
         super("Selection d'une épreuve");
         setSize(800, 450);
-        setLayout(new GridLayout (4,1));
+        setLayout(new BorderLayout());
 
-        // Initialize elements
-        PanelTitle panelTitle = new PanelTitle("Epreuves");
-        add(panelTitle); 
+        // Title
+        PanelTitle panelTitle = new PanelTitle("Épreuves");
+        add(panelTitle,BorderLayout.NORTH);
+        
+        // Elements
         valider = new JButton("✔");
         combo = new ComboBoxEpreuve(JO2024.getEpreuves());
         valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.MODIF));
-        indicationDelete = new JLabel("Veuillez saisir l'Id de l'épreuve à modifier :",JLabel.CENTER);
+        indicationDelete = new JLabel("Veuillez sélectionner l'épreuve à modifier :",JLabel.CENTER);
 
-        // Initialize the panels
+        // Panel
         panelDel = new JPanel();
-        panelDel.setLayout(new FlowLayout());
-        panelIndication = new JPanel();
-        panelIndication.setLayout(new FlowLayout());
-
-        //Add elements to panelIndication
-        panelIndication.add(indicationDelete);
+        panelDel.setLayout(new GridLayout(2,1));
+        panelDel.add(indicationDelete);
         
-        // Add elements to panelDel
-        panelDel.add(combo);
-        panelDel.add(valider);
-
-        // Add panelDel and panelIndication to frame
-        add(panelIndication);
-        add(panelDel);
+        JPanel panelChoix = new JPanel(new GridLayout(2,2));
+        panelChoix.add(combo, BorderLayout.LINE_START);
+        panelChoix.add(valider, BorderLayout.PAGE_END);
+        panelChoix.add(new JLabel()); // to create empty space
+        
+        panelDel.add(panelChoix);
+        add(panelDel,BorderLayout.CENTER);
 
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBTNRetour BtnRetour = new ControleurBTNRetour(this);
         button.addActionListener(BtnRetour);
-        add(button);//TODO mettre le bouton au bon endroit
-        //pas Nicolas
+        add(button,BorderLayout.SOUTH);
+        
         // Make the frame visible
         setSize(800, 450);
         setVisible(true);

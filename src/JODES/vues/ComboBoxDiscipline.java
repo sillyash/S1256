@@ -23,5 +23,10 @@ public class ComboBoxDiscipline extends JComboBox<String> {
     public ArrayList<Discipline> getItemList() {
         return discipline;
     }
-    
+    public boolean isSelectedNull() {
+    	if (this.getSelectedItem()== "")
+    		return true;
+    	else 
+    		return false;
+    }
 }
