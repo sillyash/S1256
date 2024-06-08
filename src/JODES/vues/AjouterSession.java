@@ -32,7 +32,7 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
         CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
         DTpick = new DatePicker();
         
-        PanelTitle panelTitle = new PanelTitle("Ajouter séssion");
+        PanelTitle panelTitle = new PanelTitle("Ajouter session");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         add(button, BorderLayout.SOUTH);
