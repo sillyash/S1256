@@ -33,7 +33,7 @@ public class SelectionEquipe extends JFrame implements RetourVue, SelectionVue {
         setLayout(new BorderLayout());
 
         // Title
-        PanelTitle panelTitle = new PanelTitle("Équipes");
+        PanelTitle panelTitle = new PanelTitle("Sélectionner une équipe");
         add(panelTitle,BorderLayout.NORTH);
 
         // Initialize elements

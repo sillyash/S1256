@@ -29,7 +29,7 @@ public class SuppressionSession extends JFrame implements RetourVue,SelectionVue
         setLayout(new BorderLayout());
 
         // Title
-        PanelTitle panelTitle = new PanelTitle("Sessions");
+        PanelTitle panelTitle = new PanelTitle("Supprimer session");
         add(panelTitle,BorderLayout.NORTH);
 
         // Initialize elements

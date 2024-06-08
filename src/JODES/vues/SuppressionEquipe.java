@@ -26,7 +26,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue, SelectionVue
     
     public SuppressionEquipe(Administrateur admin) {
         // Create main frame
-        super("Selection d'une équipe");
+        super("Supprimer équipe");
         this.admin = admin;
         setSize(800, 450);
         setLayout(new BorderLayout());

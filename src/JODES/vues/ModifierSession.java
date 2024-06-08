@@ -18,7 +18,7 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
         super("JODES");
         this.admin = admin;
         this.sessionModele = session;
-        PanelTitle panelTitle = new PanelTitle("Session Création");
+        PanelTitle panelTitle = new PanelTitle("Modifier session");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         

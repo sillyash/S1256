@@ -23,7 +23,7 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
         this.equipe = equipe;
         this.admin = admin;
         
-        PanelTitle panelTitle = new PanelTitle("Modifier equipe");
+        PanelTitle panelTitle = new PanelTitle("Modifier équipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         

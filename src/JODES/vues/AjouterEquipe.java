@@ -17,7 +17,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         super("JODES");
         
         this.admin = admin;
-        PanelTitle panelTitle = new PanelTitle("Ajouter equipe");
+        PanelTitle panelTitle = new PanelTitle("Ajouter équipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         

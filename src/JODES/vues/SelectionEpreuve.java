@@ -30,7 +30,7 @@ public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
         setLayout(new BorderLayout());
 
         // Title
-        PanelTitle panelTitle = new PanelTitle("Selectionner épreuves");
+        PanelTitle panelTitle = new PanelTitle("Sélectionner une épreuve");
         add(panelTitle,BorderLayout.NORTH);
         
         // Elements

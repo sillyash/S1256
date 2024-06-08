@@ -30,7 +30,7 @@ public class SuppressionEpreuve extends JFrame implements RetourVue,SelectionVue
         setLayout(new BorderLayout());
 
         // Title
-        PanelTitle panelTitle = new PanelTitle("Supprimer épreuves");
+        PanelTitle panelTitle = new PanelTitle("Supprimer une épreuve");
         add(panelTitle,BorderLayout.NORTH);
         
         // Elements

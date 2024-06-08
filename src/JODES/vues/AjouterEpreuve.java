@@ -16,7 +16,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
         super("JODES");
         
         this.admin = admin;
-        PanelTitle panelTitle = new PanelTitle("Ajouter épreuves");
+        PanelTitle panelTitle = new PanelTitle("Ajouter épreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         
