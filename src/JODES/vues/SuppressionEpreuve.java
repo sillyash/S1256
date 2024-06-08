@@ -79,7 +79,6 @@ public class SuppressionEpreuve extends JFrame implements RetourVue,SelectionVue
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
 		else {
-			new ModifierEpreuve((Epreuve) combo.getSelectedEntite(), admin);
 			this.dispose();
 		}
 	}

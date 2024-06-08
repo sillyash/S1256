@@ -79,7 +79,6 @@ public class SuppressionEquipe extends JFrame implements RetourVue, SelectionVue
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
 		else {
-			new ModifierEquipe((Equipe) combo.getSelectedEntite(), admin);
 			this.dispose();
 		}
 	}
