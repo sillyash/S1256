@@ -34,7 +34,7 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
         // Elements
         valider = new JButton("✔");
         combo = new ComboBoxEpreuve(JO2024.getEpreuves());
-        valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.MODIF));
+        valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.MODIF, admin));
         indicationDelete = new JLabel("Veuillez sélectionner l'épreuve à modifier :",JLabel.CENTER);
 
         // Panel

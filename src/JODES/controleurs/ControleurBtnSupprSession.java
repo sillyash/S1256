@@ -9,15 +9,18 @@ import JODES.modeles.Administrateur;
 import JODES.vues.SuppressionSession;
 
 public class ControleurBtnSupprSession implements ActionListener {
+
+	Administrateur admin;
 	protected JFrame _vue;
 	
-	public ControleurBtnSupprSession(JFrame vue) {
+	public ControleurBtnSupprSession(JFrame vue, Administrateur admin) {
 		this._vue = vue;
+		this.admin = admin;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new SuppressionSession();
+		new SuppressionSession(admin);
 		((JFrame) _vue).dispose();
 	}
 }

@@ -45,14 +45,4 @@ public class Resultat extends Entite {
 	public void setTemps(Duration temps) {
 		this.temps = temps;
 	}
-	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	
-	
 }

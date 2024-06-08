@@ -1,9 +1,11 @@
 package JODES.controleurs;
 import JODES.JO2024;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 import JODES.vues.ComboBoxSession;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierSession;
+import JODES.vues.SessionFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -15,11 +17,16 @@ public class ControleurBtnSelectSession implements ActionListener  {
     protected int option;
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
+    Administrateur admin;
 
-    public ControleurBtnSelectSession(ComboBoxSession combo, int option) {
+    public ControleurBtnSelectSession(ComboBoxSession combo, Session session, Administrateur admin) {
+        this.admin = admin;
+        this.session = session;
         this.CMB = combo;
-        if (option == MODIF || option == SUPPR) this.option = option;
-        else this.option = MODIF;
+    }
+
+    public ControleurBtnSelectSession(ComboBoxSession combo, int modif2) {
+        //TODO Auto-generated constructor stub
     }
 
     @Override
@@ -34,7 +41,7 @@ public class ControleurBtnSelectSession implements ActionListener  {
             String nomEpreuve = (String)CMB.getSelectedItem();
             this.session = (Session)JO2024.rechercheEntite(nomEpreuve);
             if (this.option == MODIF) {
-                new ModifierSession(this.session);
+                new ModifierSession(this.session, null);
             } else {
                 JO2024.removeEntite(session);
             };

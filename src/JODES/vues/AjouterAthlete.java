@@ -1,16 +1,10 @@
 package JODES.vues;
 import javax.swing.*;
-
 import JODES.JO2024;
-import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
-import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
-
 import java.awt.*;
-
 import JODES.modeles.Administrateur;
-import JODES.modeles.Equipe;
 
 public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
@@ -34,8 +28,6 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 		panelDuMilieu.add(new GridFormField(new ComboBoxPays(JO2024.getPays()),new JLabel("Pays :")));
         panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Biographie en 3 mots max :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
-        
-        
       
         setSize(800, 450);
         setVisible(true);
@@ -45,6 +37,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
         Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
 		new AjouterAthlete(admin);
     }
+    
 	@Override
 	public void SauvegarderQuitter() {
 		// TODO Auto-generated method stub

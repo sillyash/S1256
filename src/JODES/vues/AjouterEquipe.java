@@ -1,16 +1,12 @@
 package JODES.vues;
 import javax.swing.*;
-
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
-
 import java.awt.*;
-
 import JODES.modeles.Administrateur;
-import JODES.modeles.Equipe;
 
 public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
 
@@ -50,10 +46,10 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);

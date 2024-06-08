@@ -35,7 +35,7 @@ public class SelectionEquipe extends JFrame implements RetourVue {
         // Initialize elements
         valider = new JButton("✔");
         combo = new ComboBoxEquipe(JO2024.getEquipes());
-        valider.addActionListener(new ControleurBtnSelectEquipe(combo, ControleurBtnSelectEquipe.MODIF));
+        valider.addActionListener(new ControleurBtnSelectEquipe(combo, ControleurBtnSelectEquipe.MODIF, admin));
         indicationDelete = new JLabel("Veuillez sélectionner l'équipe à modifier :",JLabel.CENTER);
 
         // Panel

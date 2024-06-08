@@ -29,13 +29,4 @@ public class Lieu extends Entite {
 	public void setSaVille(Ville saVille) {
 		this.saVille = saVille;
 	}
-	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	
 }

@@ -28,11 +28,4 @@ public class Discipline extends Entite {
 		this.description = description;
 	}
 	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-	
 }

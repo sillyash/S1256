@@ -23,14 +23,4 @@ public class Pays extends Entite {
 	public void setCodePays(String codePays) {
 		this.codePays = codePays;
 	}
-	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	
-
 }
