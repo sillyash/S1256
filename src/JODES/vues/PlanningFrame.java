@@ -16,25 +16,25 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	private static final long serialVersionUID = 1L;
 	String[][] data = {
 		{ "0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0" }, // row for dates
-		{ "0", 		"1", 		"2", 		"3", 		"4", 		"5", 		"6" 	},
-		{ "1", 		"", 		"", 		"",		 	"", 		"", 		"" 		},
-		{ "2", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "3", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "4", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "5", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "6", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "7", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "8", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "9", 		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "10",		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "11",		"", 		"", 		"", 		"", 		"", 		""		},
-		{ "12",		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "13", 	"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "14",		"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "15", 	"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "16", 	"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "17", 	"", 		"", 		"", 		"", 		"", 		"" 		},
-		{ "18", 	"", 		"", 		"", 		"", 		"", 		"" 		}
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"",		 	"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "",		"", 		"", 		"", 		"", 		"", 		""		},
+		{ "",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "",		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
+		{ "",	 	"", 		"", 		"", 		"", 		"", 		"" 		}
 	};
 	String[] hours = {"", "", "09:00", "09:30", "10:00", "10:30",
 					 "11:00", "11:30", "12:00", "12:30", "13:00",
@@ -72,16 +72,10 @@ public class PlanningFrame extends JFrame implements RetourVue{
         previousWeek.addActionListener(ctrlFlecheBack);
         nextWeek.addActionListener(ctrlFlecheForw);
         
-        gradTable = new JTable(hours.length,1) {
-        	public boolean isCellEditable(int row, int column) {
-        		return false;
-        	}
-        };
-        
+        initializeGradTable();
         initializeNavBar();
 		initializeHours();
 		initializeDays();
-		initializeGradTable();
 		parseSessions();
 		initializePlanningTable();
 
@@ -102,20 +96,67 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		parseSessions();
 		initializePlanningTable();
 	}
+	
+	public void parseSessions() {
+		int indexJour = 0;
+		for (int i = 0; i<7; i++) {
+			List<Session> sessionJour = _modele.getSessions().get(i);
 
+			for (Session s : sessionJour) {
+
+				int heureDeb, minuteDeb;
+				String startTime;
+				heureDeb = s.getHoraireDebut().getHour();
+				minuteDeb = s.getHoraireDebut().getMinute();
+				
+				if (heureDeb < 10) {
+					if (minuteDeb < 10) {
+						startTime = "0" + heureDeb + ":0" + minuteDeb;
+					}
+					else startTime = "0" + heureDeb + ":" + minuteDeb;
+				}
+				else {
+					if (minuteDeb < 10) {
+						startTime = heureDeb + ":0" + minuteDeb;
+					}
+					else startTime = heureDeb + ":" + minuteDeb;
+				}
+				
+				int indexHoraire = getIndexOf(hours, startTime);
+				
+				String titre = s.getSaDiscipline().getNom();
+				String desc = s.getStatut();
+				int longueurEvent = s.getLongueurEnDemiHeure();
+
+				int j = 0;
+				while (j<longueurEvent && j<hours.length) {
+					if (longueurEvent == 1) data[j+indexHoraire][indexJour] = titre+" - "+desc;
+					else if (j == 0) data[j+indexHoraire][indexJour] = titre;
+					else if (j==1) data[j+indexHoraire][indexJour] = desc;
+					else data[j+indexHoraire][indexJour] = "#############";
+					//data[j+indexHoraire][indexJour] = titre+" - "+desc;
+					j++;
+				}
+				indexJour++;
+			}
+		}
+	}
+	
 	public void initializeHours() {
+		String cellVal;
         for (int i=2; i < hours.length; i++) {
-        	this.gradTable.setValueAt(hours[i], i, 0);
+        	if (i%2==0) cellVal = "          "+hours[i]+" --";
+        	else cellVal = "                "+hours[i].substring(3)+"  -";
+        	this.gradTable.setValueAt(cellVal, i, 0);
         }
 	}
 	
 	public void initializePlanningTable() {
-		planning = new JTable(data, columnNames) {
-        	public boolean isCellEditable(int row, int column) {
-        		return false;
-        	}
-        };
+		planning = new JTable(data, columnNames);
 		planning.setBounds(100, 100, 600, 600);
+		planning.setEnabled(false);
+		planning.setBackground(getForeground());
+		planning.setGridColor(Color.BLACK);
 	    scrollPane = new JScrollPane(planning);
 	    fenetre.add(scrollPane, BorderLayout.CENTER);
 	    fenetre.setSize(800, 450);
@@ -123,9 +164,11 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	}
 
 	public void initializeGradTable() {
-		gradTable.setShowVerticalLines(false);
-		gradTable.setShowHorizontalLines(false);
+		gradTable = new JTable(hours.length,1);
+		gradTable.setShowGrid(false);
 		gradTable.setBackground(getForeground());
+		gradTable.setEnabled(false); // wont react to user interaction
+		
 		graduation.add(gradTable);
         fenetre.add(graduation, BorderLayout.WEST);
 	}
@@ -171,52 +214,6 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		}
 		return -1;
 	}
-	
-	public void parseSessions() {
-		int indexJour = 0;
-		for (int i = 0; i<7; i++) {
-			List<Session> sessionJour = _modele.getSessions().get(i);
-
-			for (Session s : sessionJour) {
-
-				int heureDeb, minuteDeb;
-				String startTime;
-				heureDeb = s.getHoraireDebut().getHour();
-				minuteDeb = s.getHoraireDebut().getMinute();
-				
-				if (heureDeb < 10) {
-					if (minuteDeb < 10) {
-						startTime = "0" + heureDeb + ":0" + minuteDeb;
-					}
-					else startTime = "0" + heureDeb + ":" + minuteDeb;
-				}
-				else {
-					if (minuteDeb < 10) {
-						startTime = heureDeb + ":0" + minuteDeb;
-					}
-					else startTime = heureDeb + ":" + minuteDeb;
-				}
-				
-				int indexHoraire = getIndexOf(hours, startTime);
-				
-				String titre = s.getSaDiscipline().getNom();
-				String desc = s.getStatut();
-				int longueurEvent = s.getLongueurEnDemiHeure();
-				
-				System.out.print("index=" + indexHoraire + ", long=");
-				System.out.print(longueurEvent + ", titre=");
-				System.out.println(titre + ", desc=" + desc);
-
-				int j = 0;
-				while (j<longueurEvent && j<7) {
-					System.out.println("\nfeur\n");
-					data[j+indexHoraire][indexJour] = titre;
-					j++;
-				}
-				indexJour++;
-			}
-		}
-	}
     
     public static void main(String[] args) {
     	JO2024.initialize();
@@ -227,9 +224,19 @@ public class PlanningFrame extends JFrame implements RetourVue{
     				JO2024.getDisciplines().get(0)));
     	JO2024.addEntite(
         		new Session("Truc", Session.FINALE, JO2024.Paris2024,
-        				LocalTime.parse("14:00"), LocalTime.parse("16:00"),
+        				LocalTime.parse("14:00"), LocalTime.parse("14:30"),
         				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
-        				JO2024.getDisciplines().get(0)));
+        				JO2024.getDisciplines().get(6)));
+    	JO2024.addEntite(
+        		new Session("Truc", Session.QUALIF, JO2024.Paris2024,
+        				LocalTime.parse("09:00"), LocalTime.parse("10:30"),
+        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
+        				JO2024.getDisciplines().get(2)));
+    	JO2024.addEntite(
+        		new Session("Truc", Session.QUART, JO2024.Paris2024,
+        				LocalTime.parse("16:00"), LocalTime.parse("18:00"),
+        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
+        				JO2024.getDisciplines().get(12)));
     	new PlanningFrame();
     }
 
