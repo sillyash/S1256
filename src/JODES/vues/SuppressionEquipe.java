@@ -4,7 +4,9 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEquipe;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Epreuve;
 
 import java.awt.*;
 import javax.swing.*;

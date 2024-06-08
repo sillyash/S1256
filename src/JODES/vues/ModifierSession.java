@@ -14,10 +14,10 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
     protected Session sessionModele;
     Administrateur admin;
 
-	public ModifierSession(Session sessionModele, Administrateur admin) {
+	public ModifierSession(Session session, Administrateur admin) {
         super("JODES");
         this.admin = admin;
-        this.sessionModele = sessionModele;
+        this.sessionModele = session;
         PanelTitle panelTitle = new PanelTitle("Session Création");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);

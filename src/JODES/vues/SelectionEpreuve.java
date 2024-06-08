@@ -3,14 +3,18 @@ package JODES.vues;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEpreuve;
+import JODES.controleurs.ControleurBtnSelection;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Entite;
+import JODES.modeles.Epreuve;
 
 import java.awt.*;
 import javax.swing.*;
 
 //correct naming of class - Emma
-public class SelectionEpreuve extends JFrame implements RetourVue {
+public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
 
     private static final long serialVersionUID = 1L;
     protected ComboBoxEpreuve combo;
@@ -33,6 +37,10 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
         
         // Elements
         valider = new JButton("✔");
+        
+        ControleurBtnSelection contr = new ControleurBtnSelection(this); 
+        valider.addActionListener(contr);
+        
         combo = new ComboBoxEpreuve(JO2024.getEpreuves());
         valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.MODIF, admin));
         indicationDelete = new JLabel("Veuillez sélectionner l'épreuve à modifier :",JLabel.CENTER);
@@ -70,6 +78,15 @@ public class SelectionEpreuve extends JFrame implements RetourVue {
 	@Override
 	public void retour() {
 		new EpreuveFrame(admin);
+		this.dispose();
+	}
+
+	@Override
+	public void selection() {
+		if (combo.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
+		else 
+			new ModifierEpreuve((Epreuve) combo.getSelectedEntite(), admin);
 		this.dispose();
 	}
 }

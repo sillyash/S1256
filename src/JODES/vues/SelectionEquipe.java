@@ -4,14 +4,18 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.ControleurBtnSelectEquipe;
+import JODES.controleurs.ControleurBtnSelection;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Epreuve;
+import JODES.modeles.Equipe;
 
 import java.awt.*;
 import javax.swing.*;
 
 //correct naming of class - Emma
-public class SelectionEquipe extends JFrame implements RetourVue {
+public class SelectionEquipe extends JFrame implements RetourVue,SelectionVue {
 
     private static final long serialVersionUID = 1L;
     protected ComboBoxEquipe combo;
@@ -34,6 +38,10 @@ public class SelectionEquipe extends JFrame implements RetourVue {
 
         // Initialize elements
         valider = new JButton("✔");
+        
+        ControleurBtnSelection contr = new ControleurBtnSelection(this); 
+        valider.addActionListener(contr);
+        
         combo = new ComboBoxEquipe(JO2024.getEquipes());
         valider.addActionListener(new ControleurBtnSelectEquipe(combo, ControleurBtnSelectEquipe.MODIF, admin));
         indicationDelete = new JLabel("Veuillez sélectionner l'équipe à modifier :",JLabel.CENTER);
@@ -73,6 +81,16 @@ public class SelectionEquipe extends JFrame implements RetourVue {
 		new EquipeFrame(admin);
 		this.dispose();
 	}
+
+	@Override
+	public void selection() {
+		if (combo.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
+		else 
+			new ModifierEquipe((Equipe) combo.getSelectedEntite(), admin);
+		this.dispose();
+	}
+	
 }
 
 
