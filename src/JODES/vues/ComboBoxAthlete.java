@@ -28,7 +28,6 @@ public class ComboBoxAthlete extends JComboBox<String> {
     		return false;
     }
     
-    
     public ArrayList<Athlete> getItemList() {
         return listeAthletes;
     }

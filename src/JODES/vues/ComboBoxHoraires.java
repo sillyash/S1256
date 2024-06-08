@@ -1,4 +1,5 @@
 package JODES.vues;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
@@ -47,5 +48,10 @@ public class ComboBoxHoraires extends JComboBox<String> {
     		return true;
     	else 
     		return false;
+    }
+
+    public LocalTime getSelectedTime() {
+        String hor = horaires.get(getSelectedIndex()-1);
+        return LocalTime.parse(hor);
     }
 }

@@ -38,11 +38,6 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
         setSize(800, 450);
         setVisible(true);
     }
-	public static void main(String[] args) {
-        JO2024.initialize();
-        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-		new AjouterAthlete(admin);
-    }
     
 	@Override
 	public void saveQuit() {
@@ -53,19 +48,26 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Prénom)");
 		else if ((CMBP).isSelectedNull())
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
-		else if (!TXBiographie.parseField())
+		else if (!TXBiographie.parseField()) {
 			a = new Athlete(
 				TXPrenom.getSelectedText(),
 				TXNom.getSelectedText(), 
 				CMBP.getSelectedEntite()
 			);
+			System.out.println(a);
+			JO2024.addEntite(a);
+			JOptionPane.showMessageDialog(null, "Athlète créé !");
+			new EpreuveFrame(admin);
+			(this).dispose();
+		}
 		else {
 			a = new Athlete(
-				TXPrenom.getSelectedText(),
-				TXNom.getSelectedText(), 
+				TXPrenom.getText(),
+				TXNom.getText(),
 				CMBP.getSelectedEntite(),
-				TXBiographie.getSelectedText()
+				TXBiographie.getText()
 			);
+			System.out.println(a);
 			JO2024.addEntite(a);
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			new EpreuveFrame(admin);

@@ -58,10 +58,6 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        AjouterEpreuve testAffichage = new AjouterEpreuve(admin);
-    }
     //Nicolas
 	@Override
 	public void retour() {
@@ -85,14 +81,13 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
 			equipes.add(CBE1.getSelectedEntite());
 			equipes.add(CBE2.getSelectedEntite());
 			e = new Epreuve(
-				TXNom.getSelectedText(),
+				TXNom.getText(),
 				equipes,
 				CBS.getSelectedEntite()
 			);
 			JO2024.addEntite(e);
 			JOptionPane.showMessageDialog(null, "Épreuve créée !");
-			new EpreuveFrame(admin);
-			(this).dispose();
+			retour();
 		}
 	}
 }

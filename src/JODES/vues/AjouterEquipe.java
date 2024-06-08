@@ -6,7 +6,10 @@ import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 import java.awt.*;
+import java.util.ArrayList;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Athlete;
+import JODES.modeles.Equipe;
 
 public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
 
@@ -43,8 +46,8 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
 
-		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
-		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
+		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe* :")));
+		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays* :")));
 		panelDuMilieu.add(new GridFormField(PCA1,new JLabel("Athlete :")));
 		panelDuMilieu.add(new GridFormField(PCA2,new JLabel("Athlete :")));
 		panelDuMilieu.add(new GridFormField(PCA3,new JLabel("Athlete :")));
@@ -55,11 +58,6 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-	public static void main(String[] args) {
-        JO2024.initialize();
-        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-		new AjouterEquipe(admin);
-    }
 
     //Nicolas
 	@Override
@@ -67,23 +65,53 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 		new EquipeFrame(admin);
 		(this).dispose();
 	}
+
 	@Override
 	public void saveQuit() {
+		Equipe e;
+		ArrayList<Athlete> athletes = new ArrayList<>();
+		boolean[] boolAthletes = new boolean[4];
+		int nbAthletesNull = 0;
+
 		if ((PCA1.getCmb()).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((PCA2.getCmb()).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((PCA3.getCmb()).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((PCA4.getCmb()).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (TXFnom.getText()=="")
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+			boolAthletes[0] = true;
+		if ((PCA2.getCmb()).isSelectedNull())
+			boolAthletes[1] = true;
+		if ((PCA3.getCmb()).isSelectedNull())
+			boolAthletes[2] = true;
+		if ((PCA4.getCmb()).isSelectedNull())
+			boolAthletes[3] = true;
+
+		for (int i=0; i<boolAthletes.length; i++) {
+			if (boolAthletes[i] == true)
+				nbAthletesNull+=1;
+		}
+
+		if (TXFnom.getText()=="")
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
 		else if (CMBPays.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else 
-			//TODO enregistrer les information
-			new EquipeFrame(admin);
-			(this).dispose();
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
+		else if (nbAthletesNull > 2)
+			JOptionPane.showMessageDialog(null,
+			"Erreur : champ(s) non rempli(s),\nil faut renseigner minimum 2 athlètes.");
+		else {
+			if (!PCA1.getCmb().isSelectedNull())
+				athletes.add(PCA1.getCmb().getSelectedEntite());
+			if (!PCA2.getCmb().isSelectedNull())
+				athletes.add(PCA2.getCmb().getSelectedEntite());
+			if (!PCA3.getCmb().isSelectedNull())
+				athletes.add(PCA3.getCmb().getSelectedEntite());
+			if (!PCA4.getCmb().isSelectedNull())
+				athletes.add(PCA4.getCmb().getSelectedEntite());
+
+			e = new Equipe(
+				TXFnom.getText(),
+				CMBPays.getSelectedEntite(),
+				athletes
+			);
+			JO2024.addEntite(e);
+			JOptionPane.showMessageDialog(null, "Équipe créée !");
+			retour();
+		}
 	}
 }

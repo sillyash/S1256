@@ -5,7 +5,6 @@ import java.time.LocalDate;
 
 public class DatePicker extends JPanel {
 
-    private LocalDate selectedDate;
     ComboBoxDay comboBoxDay = new ComboBoxDay();
     ComboBoxMonth comboBoxMonth = new ComboBoxMonth();
     ComboBoxYear comboBoxYear = new ComboBoxYear();
@@ -20,7 +19,13 @@ public class DatePicker extends JPanel {
     }
 
     public LocalDate getSelectedDate() {
-        return selectedDate;
+        int day, month, year;
+
+        day = comboBoxDay.getSelectedDay();
+        month = comboBoxMonth.getSelectedMonth();
+        year = comboBoxYear.getSelectedYear();
+
+        return LocalDate.of(year,month,day);
     }
 
     public static void main(String[] args) {
@@ -31,6 +36,7 @@ public class DatePicker extends JPanel {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
+
     public boolean isDateValid() {
 		if (comboBoxDay.isSelectedNull() || comboBoxMonth.isSelectedNull() || comboBoxYear.isSelectedNull()) {
             return false;
