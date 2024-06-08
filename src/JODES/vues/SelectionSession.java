@@ -72,6 +72,8 @@ public class SelectionSession extends JFrame implements RetourVue,SelectionVue {
 		new SessionFrame(admin);
 		this.dispose();
 	}
+	
+	@Override
 	public void selection() {
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
