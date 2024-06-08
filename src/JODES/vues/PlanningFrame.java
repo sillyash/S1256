@@ -8,6 +8,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import JODES.JO2024;
 import JODES.controleurs.*;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Planning;
 import JODES.modeles.Session;
 
@@ -36,7 +37,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
 		{ "",	 	"", 		"", 		"", 		"", 		"", 		"" 		}
 	};
-	String[] hours = {"", "", "09:00", "09:30", "10:00", "10:30",
+	String[] hours = {"09:00", "09:30", "10:00", "10:30",
 					 "11:00", "11:30", "12:00", "12:30", "13:00",
 					 "13:30", "14:00", "14:30", "15:00", "15:30",
 					 "16:00", "16:30", "17:00", "17:30", "18:00"};
@@ -53,11 +54,12 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	Planning _modele;
 	String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
 	JScrollPane scrollPane;
-
+	Administrateur admin;
 	// --------------------------- Constructor -----------------------------------
 
-	public PlanningFrame() {
-        if (JO2024.getSessions().size() != 0) {
+	public PlanningFrame(Administrateur admin) {
+        
+		if (JO2024.getSessions().size() != 0) {
         	Session firstSession = JO2024.getSessions().get(0);
         	_modele = new Planning(firstSession.getDate());
         } else _modele = new Planning(LocalDate.now());
@@ -144,7 +146,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	
 	public void initializeHours() {
 		String cellVal;
-        for (int i=2; i < hours.length; i++) {
+        for (int i=0; i < hours.length; i++) {
         	if (i%2==0) cellVal = "          "+hours[i]+" --";
         	else cellVal = "                "+hours[i].substring(3)+"  -";
         	this.gradTable.setValueAt(cellVal, i, 0);
@@ -164,12 +166,21 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	}
 
 	public void initializeGradTable() {
+		JPanel gradPanel = new JPanel();
+		JButton help = new JButton("\u24BE");
+		Font currentFont = help.getFont();
+		Font newFont = new Font(currentFont.getFontName(), currentFont.getStyle(), 17);
+		help.setFont(newFont); // make the help button more visible
+		
 		gradTable = new JTable(hours.length,1);
 		gradTable.setShowGrid(false);
 		gradTable.setBackground(getForeground());
 		gradTable.setEnabled(false); // wont react to user interaction
 		
-		graduation.add(gradTable);
+		gradPanel.setLayout(new BorderLayout());
+		gradPanel.add(gradTable, BorderLayout.SOUTH);
+		gradPanel.add(help, BorderLayout.NORTH);
+		graduation.add(gradPanel);
         fenetre.add(graduation, BorderLayout.WEST);
 	}
 
@@ -217,6 +228,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
     
     public static void main(String[] args) {
     	JO2024.initialize();
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
     	JO2024.addEntite(
     		new Session("Truc", Session.FINALE, JO2024.Paris2024,
     				LocalTime.parse("10:00"), LocalTime.parse("12:00"),
@@ -237,13 +249,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
         				LocalTime.parse("16:00"), LocalTime.parse("18:00"),
         				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
         				JO2024.getDisciplines().get(12)));
-    	new PlanningFrame();
+    	new PlanningFrame(admin);
     }
 
     //Nicolas
 	@Override
 	public void retour() {
-		new HomePageFrame();
+		new HomePageFrame(admin);
 		fenetre.dispose();
 	}
 }
