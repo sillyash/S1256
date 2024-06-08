@@ -17,6 +17,6 @@ public class ControleurBtnFlecheBackwardsPlanning implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		_vue.set_modele(new Planning(_modele.getDays().get(0).minusDays(7)));
+		// TODO fix this not working
 	}
-// TODO reset values of JTable when arrow is pressed
 }

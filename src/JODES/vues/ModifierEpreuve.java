@@ -51,6 +51,8 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
         panelDuMilieu.add(new GridFormField(CBE1,new JLabel("Équipe 1* :")));
         panelDuMilieu.add(new GridFormField(CBE2,new JLabel("Équipe 2* :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
+
+		// TODO fill fields
       
         setSize(800, 450);
         setVisible(true);

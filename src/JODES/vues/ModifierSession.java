@@ -53,6 +53,8 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 		panelDuMilieu.add(new GridFormField(CMBL,new JLabel("Lieu :")));
 		panelDuMilieu.add(new GridFormField(CMBD,new JLabel("Lieu :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
+
+        // TODO fill fields
       
         setSize(800, 450);
         setVisible(true);

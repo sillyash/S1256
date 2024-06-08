@@ -31,7 +31,7 @@ public class EquipeFrame extends JFrame implements RetourVue{
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
         button.addActionListener(BtnRetour);
-        add(button,BorderLayout.SOUTH);//TODO mettre le bouton au bon endroit
+        add(button,BorderLayout.SOUTH);
         //pas Nicolas
         
         // Add panels to frame

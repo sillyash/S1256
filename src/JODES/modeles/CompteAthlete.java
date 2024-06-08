@@ -23,11 +23,4 @@ public class CompteAthlete extends Utilisateur {
 	public void setSonAthlete(Athlete sonAthlete) {
 		this.sonAthlete = sonAthlete;
 	}
-	
-	// ----------- Methods -----------
-	
-	protected void afficherPlanning() {
-		// TODO - implement CompteAthlète.afficherPlanning
-		throw new UnsupportedOperationException();
-	}
 }
