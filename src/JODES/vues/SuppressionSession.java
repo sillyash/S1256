@@ -32,9 +32,9 @@ public class SuppressionSession extends JFrame implements RetourVue{
         PanelTitle panelTitle = new PanelTitle("Epreuve");
         add(panelTitle);
         valider = new JButton("✔");
-        
-        valider.addActionListener(new ControleurBtnSelectSession(combo, admin));
         combo = new ComboBoxSession(JO2024.getSessions());
+        valider.addActionListener(new ControleurBtnSelectSession(combo, admin));
+        
         indicationDelete = new JLabel("Veuillez sélectionner la session à supprimer :",JLabel.CENTER);
 
         // Initialize the panels
