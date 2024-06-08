@@ -6,12 +6,13 @@ import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Epreuve;
 
 import java.awt.*;
 
 public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
 	Administrateur admin;
-	JTextField TXNom = new JTextField("");
+	TXField TXNom = new TXField("");
 	ComboBoxHoraires CBH1 = new ComboBoxHoraires();
 	ComboBoxHoraires CBH2 = new ComboBoxHoraires();
 	ComboBoxSession CBS1 = new ComboBoxSession(JO2024.getSessions());
@@ -40,10 +41,10 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-        panelDuMilieu.add(new GridFormField(TXNom,new JLabel("Nom Epreuve :")));
-		panelDuMilieu.add(new GridFormField(CBH1,new JLabel("Horaire Debut :")));
-		panelDuMilieu.add(new GridFormField(CBH2,new JLabel("Horaire Fin :")));
-        panelDuMilieu.add(new GridFormField(CBS1,new JLabel("Session :")));
+        panelDuMilieu.add(new GridFormField(TXNom,new JLabel("Nom Epreuve* :")));
+		panelDuMilieu.add(new GridFormField(CBH1,new JLabel("Horaire Debut* :")));
+		panelDuMilieu.add(new GridFormField(CBH2,new JLabel("Horaire Fin* :")));
+        panelDuMilieu.add(new GridFormField(CBS1,new JLabel("Session* :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
         
 		add(panelDuMilieu,BorderLayout.CENTER);
@@ -67,17 +68,28 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
 
 	@Override
 	public void saveQuit() {
-		if ((TXNom.getText()==""))
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((CBH1).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((CBH2).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if ((CBS1).isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else 
-			//TODO enregistrer les information
+		Epreuve e;
+		if (!TXNom.parseField())
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
+		else if (CBH1.isSelectedNull())
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Horaire début)");
+		else if (CBH2.isSelectedNull())
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Horaire fin)");
+			e = new Epreuve(
+				TXPrenom.getSelectedText(),
+				TXNom.getSelectedText(), 
+				CMBP.getSelectedEntite()
+			);
+		else {
+			e = new Epreuve(
+				TXPrenom.getSelectedText(),
+				TXNom.getSelectedText(), 
+				CMBP.getSelectedEntite(),
+				TXBiographie.getSelectedText()
+			);
+			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			new EpreuveFrame(admin);
 			(this).dispose();
+		}
 	}
 }

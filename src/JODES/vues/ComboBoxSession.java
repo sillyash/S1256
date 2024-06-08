@@ -35,7 +35,7 @@ public class ComboBoxSession extends JComboBox<String> {
     		return false;
     }
     
-    public Entite getSelectedEntite() {
+    public Session getSelectedEntite() {
     	return listeSessions.get(this.getSelectedIndex()-1);
     }
     
