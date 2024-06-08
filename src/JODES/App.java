@@ -17,7 +17,7 @@ public class App {
 	public static void main(String args[])
 	{
 		JO2024.initialize();
-		Administrateur admin = new Administrateur("admin", "password", "Utilisateur", "Admin");
+		Administrateur admin = new Administrateur("admin@login.fr", "password1234", "John", "DOE");
 		JO2024.addUtilisateur(admin);
 		
 		new App(admin);
