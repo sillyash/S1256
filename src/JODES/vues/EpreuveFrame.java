@@ -26,7 +26,7 @@ public class EpreuveFrame extends JFrame implements RetourVue {
         //Emma ESCOFFIER
         ControleurBtnSupprEpreuve ctrlSupprEpr = new ControleurBtnSupprEpreuve(this, admin);
         ControleurBtnAjEpreuve ctrlAjEpr = new ControleurBtnAjEpreuve(this, admin);
-        ControleurBtnSelectEpreuve ctrlModEpr = new ControleurBtnSelectEpreuve(this, admin);
+        ControleurBtnModEpreuve ctrlModEpr = new ControleurBtnModEpreuve(this, admin);
         
         panelButton.boutonSupprimer.addActionListener(ctrlSupprEpr);
         panelButton.boutonAjouter.addActionListener(ctrlAjEpr);

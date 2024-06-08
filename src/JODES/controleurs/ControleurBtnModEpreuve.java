@@ -8,22 +8,21 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Epreuve;
 import JODES.vues.ModifierEpreuve;
+import JODES.vues.SelectionEpreuve;
 
 public class ControleurBtnModEpreuve implements ActionListener{
 
 	Administrateur admin;
 	protected JFrame _vue;
-	Epreuve epreuve;
 
-	public ControleurBtnModEpreuve(JFrame vue, Epreuve epreuve, Administrateur admin) {
+	public ControleurBtnModEpreuve(JFrame vue, Administrateur admin) {
 		this._vue = vue;
 		this.admin = admin;
-		this.epreuve = epreuve;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new ModifierEpreuve(epreuve, admin);
+		new SelectionEpreuve(admin);
 		((JFrame) _vue).dispose();
 	}
 

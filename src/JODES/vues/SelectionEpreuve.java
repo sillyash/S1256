@@ -85,7 +85,7 @@ public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
 		else {
 			new ModifierEpreuve((Epreuve) combo.getSelectedEntite(), admin);
-			this.dispose();	
+			this.dispose();
 		}
 	}
 }
