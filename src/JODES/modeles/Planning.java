@@ -4,7 +4,6 @@ import java.time.temporal.WeekFields;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
 import JODES.JO2024;
 
 public class Planning {
