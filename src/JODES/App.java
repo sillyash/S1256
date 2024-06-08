@@ -1,13 +1,19 @@
 package JODES;
 import javax.swing.*;
-
 import JODES.modeles.Administrateur;
 import JODES.vues.*;
+import java.awt.BorderLayout;
 
 /**
  * @author Ash Merienne
  */
-public class App {
+public class App extends JFrame {
+
+	public App(Administrateur user) {
+		super("JODES");
+		setSize(800, 450);
+        setLayout(new BorderLayout());
+	}
 	
 	public static void main(String args[])
 	{
