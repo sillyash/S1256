@@ -41,7 +41,7 @@ public class HomePageFrame extends JFrame {
 		
 		add(p);
 
-		ControleurBtnPlanning ctrlBtnPlann = new ControleurBtnPlanning(this);
+		ControleurBtnPlanning ctrlBtnPlann = new ControleurBtnPlanning(this, admin);
 		ControleurBtnEpreuve ctrlBtnEpr = new ControleurBtnEpreuve(this, admin);
 		ControleurBtnEquipe ctrlBtnEqu = new ControleurBtnEquipe(this, admin);
 		ControleurBtnSession ctrlBtnSes = new ControleurBtnSession(this, admin);
