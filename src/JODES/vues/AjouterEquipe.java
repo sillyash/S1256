@@ -15,7 +15,7 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class AjouterEquipe.
  *

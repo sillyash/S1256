@@ -10,7 +10,7 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.SessionFrame;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnSession.
  *

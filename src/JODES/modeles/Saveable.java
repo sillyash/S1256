@@ -4,7 +4,7 @@
 package JODES.modeles;
 import java.io.Serializable;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Interface Saveable.
  *

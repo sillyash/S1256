@@ -5,7 +5,7 @@ package JODES;
 import JODES.modeles.Administrateur;
 import JODES.vues.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class App.
  *

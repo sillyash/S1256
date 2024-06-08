@@ -5,7 +5,7 @@ package JODES.modeles;
 import java.time.Duration;
 import java.util.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Resultat.
  *

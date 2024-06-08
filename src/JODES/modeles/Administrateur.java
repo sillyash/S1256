@@ -5,7 +5,7 @@ package JODES.modeles;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Administrateur.
  *

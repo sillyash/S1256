@@ -5,7 +5,7 @@ package JODES.modeles;
 import java.util.*;
 import JODES.JO2024;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Utilisateur.
  *

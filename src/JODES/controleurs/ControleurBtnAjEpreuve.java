@@ -9,7 +9,7 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterEpreuve;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnAjEpreuve.
  *

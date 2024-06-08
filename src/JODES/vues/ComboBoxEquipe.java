@@ -6,7 +6,7 @@ import JODES.modeles.Equipe;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ComboBoxEquipe.
  *

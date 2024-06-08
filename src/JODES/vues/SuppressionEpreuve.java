@@ -10,7 +10,7 @@ import JODES.modeles.Administrateur;
 import java.awt.*;
 import javax.swing.*;
 
-// TODO: Auto-generated Javadoc
+
 //correct naming of class - Emma
 /**
  * The Class SuppressionEpreuve.

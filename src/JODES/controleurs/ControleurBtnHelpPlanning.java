@@ -6,7 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import JODES.vues.MessageBox;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnHelpPlanning.
  *

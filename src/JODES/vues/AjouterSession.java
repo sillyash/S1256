@@ -12,7 +12,7 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 import java.awt.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class AjouterSession.
  *

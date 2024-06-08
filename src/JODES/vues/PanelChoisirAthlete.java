@@ -10,7 +10,7 @@ import JODES.controleurs.ControleurAjtAthlete;
 import JODES.controleurs.UpdateAthlete;
 import JODES.modeles.Administrateur;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class PanelChoisirAthlete.
  *

@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.Locale;
 import JODES.modeles.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class JO2024.
  *

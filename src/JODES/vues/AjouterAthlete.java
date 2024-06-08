@@ -11,7 +11,7 @@ import java.awt.*;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class AjouterAthlete.
  *

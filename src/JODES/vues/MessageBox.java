@@ -4,7 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class MessageBox.
  *

@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterAthlete;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurAjtAthlete.
  *

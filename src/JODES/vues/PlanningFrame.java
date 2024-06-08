@@ -12,7 +12,7 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Planning;
 import JODES.modeles.Session;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class PlanningFrame.
  *

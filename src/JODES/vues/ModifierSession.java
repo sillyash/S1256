@@ -13,7 +13,7 @@ import JODES.modeles.Session;
 import java.awt.*;
 import java.time.LocalDate;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ModifierSession.
  *

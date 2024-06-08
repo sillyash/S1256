@@ -4,7 +4,7 @@
 package JODES.modeles;
 import java.util.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Equipe.
  *

@@ -8,7 +8,7 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.PlanningFrame;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnPlanning.
  *

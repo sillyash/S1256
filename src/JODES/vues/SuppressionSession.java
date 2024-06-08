@@ -10,7 +10,7 @@ import JODES.modeles.Administrateur;
 import java.awt.*;
 import javax.swing.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class SuppressionSession.
  *

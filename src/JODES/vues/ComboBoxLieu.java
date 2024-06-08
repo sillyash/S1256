@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ComboBoxLieu.
  *

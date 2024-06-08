@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnSelectEquipe.
  *

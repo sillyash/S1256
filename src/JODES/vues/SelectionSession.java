@@ -12,7 +12,7 @@ import java.awt.*;
 import javax.swing.*;
 
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class SelectionSession.
  *

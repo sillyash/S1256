@@ -15,7 +15,7 @@ import JODES.modeles.Equipe;
 import java.awt.*;
 import java.util.ArrayList;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ModifierEpreuve.
  *

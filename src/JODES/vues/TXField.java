@@ -5,7 +5,7 @@ package JODES.vues;
 import javax.swing.JTextField;
 import JODES.modeles.DataParser;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class TXField.
  *

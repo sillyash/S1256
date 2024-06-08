@@ -5,7 +5,7 @@ package JODES.controleurs;
 import javax.swing.JFrame;
 import JODES.modeles.Entite;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Controleur.
  *

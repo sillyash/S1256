@@ -5,7 +5,7 @@ package JODES.modeles;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Session.
  *

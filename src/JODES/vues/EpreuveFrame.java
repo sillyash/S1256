@@ -8,7 +8,7 @@ import JODES.modeles.Administrateur;
 import JODES.controleurs.*;
 import java.awt.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class EpreuveFrame.
  *

@@ -3,7 +3,7 @@
  */
 package JODES.modeles;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class Discipline.
  *

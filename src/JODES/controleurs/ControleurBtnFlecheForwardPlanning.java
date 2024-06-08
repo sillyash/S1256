@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import JODES.vues.PlanningFrame;
 import JODES.modeles.Planning;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnFlecheForwardPlanning.
  *

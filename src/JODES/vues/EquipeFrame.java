@@ -8,7 +8,7 @@ import JODES.modeles.Administrateur;
 
 import java.awt.*;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class EquipeFrame.
  *

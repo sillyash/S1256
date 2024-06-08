@@ -8,7 +8,7 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.EpreuveFrame;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnEpreuve.
  *

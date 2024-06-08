@@ -8,7 +8,7 @@ import javax.swing.*;
 import JODES.vues.SelectionEquipe;
 import JODES.modeles.Administrateur;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ControleurBtnModEquipe.
  *

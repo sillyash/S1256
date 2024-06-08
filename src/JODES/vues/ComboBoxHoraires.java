@@ -6,7 +6,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
-// TODO: Auto-generated Javadoc
+
 /**
  * The Class ComboBoxHoraires.
  *
