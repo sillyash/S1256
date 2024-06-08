@@ -171,6 +171,8 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		Font currentFont = help.getFont();
 		Font newFont = new Font(currentFont.getFontName(), currentFont.getStyle(), 17);
 		help.setFont(newFont); // make the help button more visible
+		ControleurBtnHelpPlanning ctrlBtnHelpPlann = new ControleurBtnHelpPlanning();
+		help.addActionListener(ctrlBtnHelpPlann);
 		
 		gradTable = new JTable(hours.length,1);
 		gradTable.setShowGrid(false);
