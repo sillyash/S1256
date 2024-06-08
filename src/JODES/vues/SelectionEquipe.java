@@ -86,11 +86,11 @@ public class SelectionEquipe extends JFrame implements RetourVue,SelectionVue {
 	public void selection() {
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
-		else 
+		else {
 			new ModifierEquipe((Equipe) combo.getSelectedEntite(), admin);
-		this.dispose();
+			this.dispose();
+		}
 	}
-	
 }
 
 
