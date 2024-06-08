@@ -15,10 +15,10 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 
 	private static final long serialVersionUID = 1L;
 	Administrateur admin;
-	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(admin);
+	PanelChoisirAthlete PCA1;
+    PanelChoisirAthlete PCA2;
+    PanelChoisirAthlete PCA3;
+    PanelChoisirAthlete PCA4;
     ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
     JTextField TXFnom = new JTextField();
 	
@@ -26,6 +26,11 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         super("JODES");
         
         this.admin = admin;
+        PCA1 = new PanelChoisirAthlete(this,admin);
+        PCA2 = new PanelChoisirAthlete(this,admin);
+        PCA3 = new PanelChoisirAthlete(this,admin);
+        PCA4 = new PanelChoisirAthlete(this,admin);
+        
         PanelTitle panelTitle = new PanelTitle("Ajouter équipe");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -63,7 +68,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 	@Override
 	public void retour() {
 		new EquipeFrame(admin);
-		(this).dispose();
+		this.dispose();
 	}
 
 	@Override

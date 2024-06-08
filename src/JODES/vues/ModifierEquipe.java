@@ -19,10 +19,10 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
 	Administrateur admin;
-	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(admin);
-    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(admin);
+	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(this,admin);
+    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(this,admin);
+    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(this,admin);
+    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(this,admin);
     ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
     JTextField TXFnom = new JTextField();
 

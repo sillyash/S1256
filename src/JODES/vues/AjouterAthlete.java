@@ -11,15 +11,15 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
 	Administrateur admin;
-	TXField TXNom = new TXField();
-	TXField TXPrenom =new TXField();
-	TXField TXBiographie =new TXField();
+	TXField TXNom = new TXField("");
+	TXField TXPrenom = new TXField("");
+	TXField TXBiographie = new TXField("");
 	ComboBoxPays CMBP = new ComboBoxPays(JO2024.getPays());
 	
 	public AjouterAthlete(Administrateur admin) {
         super("JODES");
-        
         this.admin = admin;
+        
         PanelTitle panelTitle = new PanelTitle("Ajouter athlete");
         JButton buttonSave = new JButton("Sauvegarder et quitter");
         ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
@@ -58,7 +58,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 			JO2024.addEntite(a);
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			new EpreuveFrame(admin);
-			(this).dispose();
+			this.dispose();
 		}
 		else {
 			a = new Athlete(
@@ -69,8 +69,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 			);
 			admin.creerEntite(a);
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
-			new EpreuveFrame(admin);
-			(this).dispose();
+			this.dispose();
 		}
 	}
 }

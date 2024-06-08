@@ -18,6 +18,7 @@ public class HomePageFrame extends JFrame {
 
 	public HomePageFrame(Administrateur admin){
 		this.admin = admin;
+		
 		setTitle("JODES");
 		setSize (800, 450);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,18 +1,17 @@
 package JODES;
-import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.*;
-import java.awt.BorderLayout;
 
 /**
  * @author Ash Merienne
  */
-public class App extends JFrame {
+public class App {
+	
+	protected Administrateur admin;
 
-	public App(Administrateur user) {
-		super("JODES");
-		setSize(800, 450);
-        setLayout(new BorderLayout());
+	public App(Administrateur admin) {
+        this.admin = admin;
+        new HomePageFrame(admin);
 	}
 	
 	public static void main(String args[])
@@ -20,9 +19,7 @@ public class App extends JFrame {
 		JO2024.initialize();
 		Administrateur admin = new Administrateur("admin", "password", "Utilisateur", "Admin");
 		JO2024.addUtilisateur(admin);
-
-		JFrame app = new HomePageFrame(admin);
-		app.setSize(800, 450);
-        app.setVisible(true);
+		
+		new App(admin);
 	}
 }
