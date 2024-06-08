@@ -33,7 +33,7 @@ public class ComboBoxPays extends JComboBox<String> {
     		return false;
     }
     
-    public Entite getSelectedEntite() {
+    public Pays getSelectedEntite() {
     	return listePays.get(this.getSelectedIndex()-1);
     }
 }

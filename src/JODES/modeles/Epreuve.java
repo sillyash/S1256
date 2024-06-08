@@ -12,15 +12,10 @@ public class Epreuve extends Entite {
     
     // ----------- Constructors -----------
 
-    public Epreuve(String nom, Equipe equipe, Session session) {
-        super(nom);
-        this.sesEquipes = new ArrayList<Equipe>();
-        this.sesEquipes.add(equipe);
-    }
-
-    public Epreuve(String nom, ArrayList<Equipe> equipes) {
+    public Epreuve(String nom, ArrayList<Equipe> equipes, Session session) {
         super(nom);
         this.sesEquipes = equipes;
+        this.session = session;
     }
 
     // ----------- Getters & setters -----------

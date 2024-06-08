@@ -33,7 +33,7 @@ public class ComboBoxDiscipline extends JComboBox<String> {
     		return false;
     }
     
-    public Entite getSelectedEntite() {
+    public Discipline getSelectedEntite() {
 		return disciplines.get(this.getSelectedIndex()-1);
     }
 }
