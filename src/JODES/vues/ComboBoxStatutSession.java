@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ComboBoxStatutSession extends JComboBox<String> {
     
     protected ArrayList<String> statut = new ArrayList<>();

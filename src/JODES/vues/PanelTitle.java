@@ -2,6 +2,9 @@ package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class PanelTitle extends JPanel{
 	private static final long serialVersionUID = 1L;
 	protected JLabel title;

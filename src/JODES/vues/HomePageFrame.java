@@ -1,10 +1,12 @@
-// ESCOFFIER Emma
 package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
 import JODES.modeles.Administrateur;
 import java.awt.*;
 
+/**
+ * @author Emma Escoffier
+ */
 public class HomePageFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	JPanel p = new JPanel();

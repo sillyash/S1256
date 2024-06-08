@@ -10,6 +10,9 @@ import JODES.modeles.Administrateur;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * @author Ash Merienne
+ */
 public class SuppressionSession extends JFrame implements RetourVue,SelectionVue {
     
     private static final long serialVersionUID = 1L;

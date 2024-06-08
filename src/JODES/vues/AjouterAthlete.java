@@ -8,6 +8,9 @@ import java.awt.*;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;

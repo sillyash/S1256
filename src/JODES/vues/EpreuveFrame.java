@@ -6,6 +6,9 @@ import JODES.modeles.Administrateur;
 import JODES.controleurs.*;
 import java.awt.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class EpreuveFrame extends JFrame implements RetourVue {
 	Administrateur admin;
 	public EpreuveFrame(Administrateur admin) {

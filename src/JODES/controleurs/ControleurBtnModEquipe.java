@@ -1,4 +1,3 @@
-//Emma ESCOFFIER
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,6 +5,9 @@ import javax.swing.*;
 import JODES.vues.SelectionEquipe;
 import JODES.modeles.Administrateur;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurBtnModEquipe implements ActionListener{
 
 	protected JFrame _vue;

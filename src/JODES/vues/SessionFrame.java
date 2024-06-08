@@ -4,6 +4,9 @@ import JODES.controleurs.*;
 import JODES.modeles.Administrateur;
 import java.awt.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class SessionFrame extends JFrame implements RetourVue {
 
 	Administrateur admin;

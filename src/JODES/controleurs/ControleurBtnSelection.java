@@ -2,6 +2,9 @@ package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ControleurBtnSelection implements ActionListener{
 
 	protected SelectionVue vue;

@@ -2,6 +2,9 @@ package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class GridFormField extends JPanel {
 
     protected JComponent input;

@@ -1,6 +1,4 @@
-//Emma ESCOFFIER
 package JODES.controleurs;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
@@ -8,6 +6,9 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterEpreuve;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurBtnAjEpreuve implements ActionListener {
 
 	Administrateur admin;

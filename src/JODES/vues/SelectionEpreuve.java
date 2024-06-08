@@ -12,6 +12,9 @@ import java.awt.*;
 import javax.swing.*;
 
 //correct naming of class - Emma
+/**
+ * @author Ash Merienne
+ */
 public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
 
     private static final long serialVersionUID = 1L;

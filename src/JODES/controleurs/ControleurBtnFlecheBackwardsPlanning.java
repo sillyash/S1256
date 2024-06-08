@@ -1,10 +1,12 @@
-// Emma ESCOFFIER
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import JODES.modeles.Planning;
 import JODES.vues.PlanningFrame;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurBtnFlecheBackwardsPlanning implements ActionListener{
 	protected PlanningFrame _vue;
 	protected Planning _modele;

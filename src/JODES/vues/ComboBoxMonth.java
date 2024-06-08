@@ -3,6 +3,9 @@ import java.time.Month;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
+/**
+ * @author Ash Merienne
+ */
 public class ComboBoxMonth extends JComboBox<String> {
 
 	private static final long serialVersionUID = 1L;

@@ -29,12 +29,17 @@ public class MessageBox {
     return response;
   }
 
-  //Emma ESCOFFIER
+  /**
+   * @author Emma Escoffier
+   */
   public MessageBox(String message, String title) {
 	  this.message = message;
 	  this.title = title;
   }
   
+  /**
+   * @author Emma Escoffier
+   */
   public void showMessageBoxPlann() {
       JTextPane textPane = new JTextPane();
       textPane.setContentType("text/html");

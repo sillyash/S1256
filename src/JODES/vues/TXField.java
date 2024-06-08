@@ -2,6 +2,9 @@ package JODES.vues;
 import javax.swing.JTextField;
 import JODES.modeles.DataParser;
 
+/**
+ * @author Ash Merienne
+ */
 public class TXField extends JTextField {
 	
 	private static final long serialVersionUID = 1L;

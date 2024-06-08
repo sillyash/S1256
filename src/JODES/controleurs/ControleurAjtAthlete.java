@@ -1,10 +1,12 @@
-//Emma ESCOFFIER
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterAthlete;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurAjtAthlete implements ActionListener{
 
 	Administrateur admin;

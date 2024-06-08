@@ -3,6 +3,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class DatePicker extends JPanel {
 
     ComboBoxDay comboBoxDay = new ComboBoxDay();

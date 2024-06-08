@@ -1,4 +1,3 @@
-// Emma ESCOFFIER
 package JODES.controleurs;
 
 import java.awt.event.ActionEvent;
@@ -8,6 +7,9 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.SuppressionSession;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurBtnSupprSession implements ActionListener {
 
 	Administrateur admin;

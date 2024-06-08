@@ -10,6 +10,9 @@ import JODES.modeles.Session;
 import java.awt.*;
 import java.time.LocalDate;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ModifierSession extends JFrame implements RetourVue, SauvegarderQuitter{
 
     protected Session sessionModele;

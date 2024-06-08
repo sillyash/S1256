@@ -2,6 +2,9 @@ package JODES.vues;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
+/**
+ * @author Ash Merienne
+ */
 public class ComboBoxDay extends JComboBox<String> {
 
 	private static final long serialVersionUID = 1L;

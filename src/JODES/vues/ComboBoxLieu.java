@@ -3,6 +3,9 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ComboBoxLieu extends JComboBox<String> {
     
     protected ArrayList<Lieu> listeLieux;

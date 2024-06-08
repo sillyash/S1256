@@ -5,6 +5,9 @@ import JODES.modeles.Administrateur;
 
 import java.awt.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class EquipeFrame extends JFrame implements RetourVue{
 	Administrateur admin;
     public EquipeFrame(Administrateur admin) {

@@ -12,6 +12,9 @@ import JODES.modeles.Equipe;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;

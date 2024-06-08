@@ -1,4 +1,3 @@
-// Emma ESCOFFIER
 package JODES.controleurs;
 
 import java.awt.event.ActionEvent;
@@ -8,6 +7,9 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.SessionFrame;
 
+/**
+ * @author Emma Escoffier
+ */
 public class ControleurBtnSession implements ActionListener{
 
 	Administrateur admin;
@@ -21,6 +23,6 @@ public class ControleurBtnSession implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SessionFrame(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }

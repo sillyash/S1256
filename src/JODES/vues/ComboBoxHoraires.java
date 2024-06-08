@@ -3,6 +3,9 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ComboBoxHoraires extends JComboBox<String> {
     
     protected ArrayList<String> horaires = new ArrayList<>();

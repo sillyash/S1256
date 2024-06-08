@@ -12,6 +12,9 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;

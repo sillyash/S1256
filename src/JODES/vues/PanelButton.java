@@ -3,6 +3,9 @@ package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * @author Kincy Saad
+ */
 public class PanelButton extends JPanel {
 
     protected JButton boutonAfficher;

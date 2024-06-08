@@ -9,6 +9,9 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 import java.awt.*;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuitter {
 
 	private static final long serialVersionUID = 1L;

@@ -1,4 +1,3 @@
-// Emma ESCOFFIER
 package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
@@ -11,6 +10,9 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Planning;
 import JODES.modeles.Session;
 
+/**
+ * @author Emma Escoffier & Ash Merienne
+ */
 public class PlanningFrame extends JFrame implements RetourVue{
 
 	private static final long serialVersionUID = 1L;
@@ -226,32 +228,6 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		}
 		return -1;
 	}
-    
-    public static void main(String[] args) {
-    	JO2024.initialize();
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-    	JO2024.addEntite(
-    		new Session("Truc", Session.FINALE, JO2024.Paris2024,
-    				LocalTime.parse("10:00"), LocalTime.parse("12:00"),
-    				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
-    				JO2024.getDisciplines().get(0)));
-    	JO2024.addEntite(
-        		new Session("Truc", Session.FINALE, JO2024.Paris2024,
-        				LocalTime.parse("14:00"), LocalTime.parse("14:30"),
-        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
-        				JO2024.getDisciplines().get(6)));
-    	JO2024.addEntite(
-        		new Session("Truc", Session.QUALIF, JO2024.Paris2024,
-        				LocalTime.parse("09:00"), LocalTime.parse("10:30"),
-        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
-        				JO2024.getDisciplines().get(2)));
-    	JO2024.addEntite(
-        		new Session("Truc", Session.QUART, JO2024.Paris2024,
-        				LocalTime.parse("16:00"), LocalTime.parse("18:00"),
-        				LocalDate.parse("2024-06-20"), JO2024.getLieux().get(0),
-        				JO2024.getDisciplines().get(12)));
-    	new PlanningFrame(admin);
-    }
 
     //Nicolas
 	@Override

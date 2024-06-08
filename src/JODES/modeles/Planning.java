@@ -6,6 +6,9 @@ import java.util.List;
 import java.util.Locale;
 import JODES.JO2024;
 
+/**
+ * @author Ash Merienne & Emma Escoffier
+ */
 public class Planning {
 
     protected int numSemaine;

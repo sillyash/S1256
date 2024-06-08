@@ -9,6 +9,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
+
+/**
+ * @author Ash Merienne
+ */
 public class ControleurBtnSelectEquipe implements ActionListener  {
 
     protected Equipe equipe;

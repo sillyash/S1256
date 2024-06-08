@@ -7,6 +7,9 @@ import JODES.controleurs.ControleurAjtAthlete;
 import JODES.controleurs.UpdateAthlete;
 import JODES.modeles.Administrateur;
 
+/**
+ * @author Nicolas Vouilloux
+ */
 public class PanelChoisirAthlete extends JPanel{
 
 	private static final long serialVersionUID = 1L;

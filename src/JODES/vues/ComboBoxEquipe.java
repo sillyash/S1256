@@ -3,6 +3,9 @@ import JODES.modeles.Equipe;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
+/**
+ * @author Ash Merienne
+ */
 public class ComboBoxEquipe extends JComboBox<String> {
     
     protected ArrayList<Equipe> listeEquipes;
