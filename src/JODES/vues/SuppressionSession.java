@@ -3,12 +3,9 @@ package JODES.vues;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
-import JODES.controleurs.ControleurBtnSelection;
 import JODES.controleurs.RetourVue;
-import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
-import JODES.modeles.Epreuve;
-
+import JODES.modeles.Session;
 import java.awt.*;
 import javax.swing.*;
 
@@ -36,7 +33,7 @@ public class SuppressionSession extends JFrame implements RetourVue{
         add(panelTitle);
         valider = new JButton("✔");
         
-        valider.addActionListener(new ControleurBtnSelectSession(combo, ControleurBtnSelectSession.SUPPR));
+        valider.addActionListener(new ControleurBtnSelectSession(combo, (Session)this.combo.getSelectedEntite(), admin));
         combo = new ComboBoxSession(JO2024.getSessions());
         indicationDelete = new JLabel("Veuillez sélectionner la session à supprimer :",JLabel.CENTER);
 

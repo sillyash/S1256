@@ -26,10 +26,6 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
         this.admin = admin;
     }
 
-    public ControleurBtnSelectEquipe(EquipeFrame equipeFrame) {
-        //TODO Auto-generated constructor stub
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (this.CMB.getSelectedItem() == "") {
