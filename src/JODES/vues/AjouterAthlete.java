@@ -66,6 +66,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 				CMBP.getSelectedEntite(),
 				TXBiographie.getSelectedText()
 			);
+			JO2024.addEntite(a);
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			new EpreuveFrame(admin);
 			(this).dispose();
