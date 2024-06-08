@@ -2,11 +2,12 @@ package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
 import JODES.modeles.Administrateur;
-
 import java.awt.*;
 
-public class SessionFrame extends JFrame implements RetourVue{
+public class SessionFrame extends JFrame implements RetourVue {
+
 	Administrateur admin;
+
     public SessionFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
@@ -23,9 +24,9 @@ public class SessionFrame extends JFrame implements RetourVue{
         add(panelButton, BorderLayout.CENTER);
         
         //Emma ESCOFFIER
-        ControleurBtnSupprSession ctrlSupprSes = new ControleurBtnSupprSession(this);
-        ControleurBtnAjSession ctrlAjSes = new ControleurBtnAjSession(this);
-        ControleurBtnModSession ctrlModSes = new ControleurBtnModSession(this);
+        ControleurBtnSupprSession ctrlSupprSes = new ControleurBtnSupprSession(this, admin);
+        ControleurBtnAjSession ctrlAjSes = new ControleurBtnAjSession(this, admin);
+        ControleurBtnSelectSession ctrlModSes = new ControleurBtnSelectSession(this, admin);
         
         panelButton.boutonSupprimer.addActionListener(ctrlSupprSes);
         panelButton.boutonAjouter.addActionListener(ctrlAjSes);

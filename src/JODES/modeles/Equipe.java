@@ -1,8 +1,6 @@
 package JODES.modeles;
 import java.util.*;
 
-import JODES.vues.AjouterEquipe;
-
 /**
  * @author Visual Paradigm
  */
@@ -39,13 +37,6 @@ public class Equipe extends Entite {
 
 	public void setSonPays(Pays sonPays) {
 		this.sonPays = sonPays;
-	}
-	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		new AjouterEquipe();
 	}
 
 }

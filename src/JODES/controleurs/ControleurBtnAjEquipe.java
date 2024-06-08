@@ -5,17 +5,22 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 
+import JODES.modeles.Administrateur;
 import JODES.vues.AjouterEquipe;
 
 public class ControleurBtnAjEquipe implements ActionListener{
+
 	protected JFrame _vue;
-	public ControleurBtnAjEquipe(JFrame vue) {
+	Administrateur admin;
+
+	public ControleurBtnAjEquipe(JFrame vue, Administrateur admin) {
 		this._vue = vue;
+		this.admin = admin;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new AjouterEquipe();
+		new AjouterEquipe(admin);
 		((JFrame) _vue).dispose();
 	}
 

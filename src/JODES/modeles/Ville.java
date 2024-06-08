@@ -23,14 +23,5 @@ public class Ville extends Entite {
 	public void setCodePostal(int codePostal) {
 		this.codePostal = codePostal;
 	}
-	
-	// ----------- Methods -----------
-	
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	
 
 }

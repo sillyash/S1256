@@ -7,8 +7,6 @@ import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Epreuve;
-import JODES.modeles.Equipe;
-
 import java.awt.*;
 
 public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
