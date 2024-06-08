@@ -118,7 +118,6 @@ public class JO2024 {
 	public static Entite rechercheEntite(String nomEntite, String typeEntite) {
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
-			System.out.println(entite.getClass());
 			if (entite.getClass().toString() == typeEntite)
 			{
 				if (entite.getNom().toUpperCase().contains(nomEntite))

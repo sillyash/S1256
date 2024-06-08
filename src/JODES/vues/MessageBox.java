@@ -23,24 +23,6 @@ public class MessageBox {
   public void show() {
     response = JOptionPane.showConfirmDialog(
         null, message, title, optionType);
-    handleResponse();
-  }
-
-  protected void handleResponse() {
-    switch (response) {
-      case JOptionPane.YES_OPTION:
-        System.out.println("Yes option selected.");
-        break;
-      case JOptionPane.NO_OPTION:
-        System.out.println("No option selected.");
-        break;
-      case JOptionPane.CANCEL_OPTION:
-        System.out.println("Cancel option selected.");
-        break;
-      case JOptionPane.CLOSED_OPTION:
-        System.out.println("Dialog closed without selection.");
-        break;
-    }
   }
 
   protected int getResponse() {

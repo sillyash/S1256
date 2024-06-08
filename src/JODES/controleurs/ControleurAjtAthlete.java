@@ -13,7 +13,6 @@ public class ControleurAjtAthlete implements ActionListener{
 	public ControleurAjtAthlete(UpdateAthlete vue, Administrateur admin) {
 		this.admin = admin;
 		this.vue = vue;
-		System.out.println("SaveQuit: "+admin);
 	}
 
 	@Override

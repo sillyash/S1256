@@ -90,10 +90,8 @@ public class Modification {
 			JO2024.removeEntite(sonEntite);
 		}
 		else if (this.typeModif == UPDATE) {
-			System.out.println("Entity to update: "+sonEntite.getIdEntite());
 			Entite recherche = JO2024.rechercheEntite(sonEntite.getIdEntite());
 			index = JO2024.getSesEntites().indexOf(recherche);
-			System.out.println("Entité trouvée: "+recherche);
 			JO2024.getSesEntites().set(index, entiteNew);
 		}
 		else JO2024.addEntite(sonEntite);
