@@ -13,7 +13,7 @@ import JODES.JO2024;
 /**
  * The Class Planning.
  *
- * @author Ash Merienne & Emma Escoffier
+ * @author Ash Merienne and Emma Escoffier
  */
 public class Planning {
 

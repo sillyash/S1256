@@ -16,7 +16,7 @@ import JODES.modeles.Session;
 /**
  * The Class PlanningFrame.
  *
- * @author Emma Escoffier & Ash Merienne
+ * @author Emma Escoffier and Ash Merienne
  */
 public class PlanningFrame extends JFrame implements RetourVue{
 
