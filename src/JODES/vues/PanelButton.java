@@ -1,18 +1,34 @@
+/*
+ * 
+ */
 package JODES.vues;
 
 import javax.swing.*;
 import java.awt.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class PanelButton.
+ *
  * @author Kincy Saad
  */
 public class PanelButton extends JPanel {
 
+    /** The bouton afficher. */
     protected JButton boutonAfficher;
+    
+    /** The bouton modifier. */
     protected JButton boutonModifier;
+    
+    /** The bouton ajouter. */
     protected JButton boutonAjouter;
+    
+    /** The bouton supprimer. */
     protected JButton boutonSupprimer;
 
+    /**
+     * Instantiates a new panel button.
+     */
     public PanelButton() {
         boutonAfficher = new JButton("Afficher");
         boutonModifier = new JButton("Modifier");
@@ -32,6 +48,11 @@ public class PanelButton extends JPanel {
         add(boutonSupprimer);
     }
 
+    /**
+     * Sets the button colors.
+     *
+     * @param button the new button colors
+     */
     protected void setButtonColors(JButton button) {
         button.setBackground(Color.lightGray);
         button.setForeground(Color.WHITE);

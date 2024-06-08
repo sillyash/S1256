@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
@@ -5,11 +8,22 @@ import JODES.modeles.Administrateur;
 
 import java.awt.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class EquipeFrame.
+ *
  * @author Kincy Saad
  */
 public class EquipeFrame extends JFrame implements RetourVue{
+	
+	/** The admin. */
 	Administrateur admin;
+    
+    /**
+     * Instantiates a new equipe frame.
+     *
+     * @param admin the admin
+     */
     public EquipeFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
@@ -48,7 +62,10 @@ public class EquipeFrame extends JFrame implements RetourVue{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
-    //Nicolas
+    /**
+     * Retour.
+     * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new HomePageFrame(admin);

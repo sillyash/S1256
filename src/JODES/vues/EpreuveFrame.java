@@ -1,16 +1,29 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
-import JODES.controleurs.ControleurBtnRetour;
-import JODES.controleurs.RetourVue;
+
 import JODES.modeles.Administrateur;
 import JODES.controleurs.*;
 import java.awt.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class EpreuveFrame.
+ *
  * @author Kincy Saad
  */
 public class EpreuveFrame extends JFrame implements RetourVue {
+	
+	/** The admin. */
 	Administrateur admin;
+	
+	/**
+	 * Instantiates a new epreuve frame.
+	 *
+	 * @param admin the admin
+	 */
 	public EpreuveFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
@@ -47,7 +60,11 @@ public class EpreuveFrame extends JFrame implements RetourVue {
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }
-    //Nicolas
+    
+    /**
+     * Retour.
+     * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new HomePageFrame(admin);

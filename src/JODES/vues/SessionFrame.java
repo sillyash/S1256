@@ -1,16 +1,28 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.controleurs.*;
 import JODES.modeles.Administrateur;
 import java.awt.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class SessionFrame.
+ *
  * @author Kincy Saad
  */
 public class SessionFrame extends JFrame implements RetourVue {
 
+	/** The admin. */
 	Administrateur admin;
 
+    /**
+     * Instantiates a new session frame.
+     *
+     * @param admin the admin
+     */
     public SessionFrame(Administrateur admin) {
         // Create main frame
         super("JODES");
@@ -50,7 +62,10 @@ public class SessionFrame extends JFrame implements RetourVue {
         
     }
 
-    //Nicolas
+    /**
+     * Retour.
+     * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new HomePageFrame(admin);

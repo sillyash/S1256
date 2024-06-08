@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -10,21 +13,47 @@ import JODES.modeles.Session;
 import java.awt.*;
 import java.time.LocalDate;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ModifierSession.
+ *
  * @author Nicolas Vouilloux
  */
 public class ModifierSession extends JFrame implements RetourVue, SauvegarderQuitter{
 
+    /** The session modele. */
     protected Session sessionModele;
+    
+    /** The admin. */
     Administrateur admin;
+    
+    /** The TX fnom. */
     TXField TXFnom = new TXField("");
+    
+    /** The cmbss. */
     ComboBoxStatutSession CMBSS;
+    
+    /** The D tpick. */
     DatePicker DTpick;
+    
+    /** The cmbh1. */
     ComboBoxHoraires CMBH1;
+    
+    /** The cmbh2. */
     ComboBoxHoraires CMBH2;
+    
+    /** The cmbl. */
     ComboBoxLieu CMBL;
+    
+    /** The cmbd. */
     ComboBoxDiscipline CMBD;
 
+	/**
+	 * Instantiates a new modifier session.
+	 *
+	 * @param session the session
+	 * @param admin the admin
+	 */
 	public ModifierSession(Session session, Administrateur admin) {
         super("JODES");
         this.admin = admin;
@@ -86,6 +115,9 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 	
+    /**
+     * Retour.
+     */
     //Nicolas
 	@Override
 	public void retour() {
@@ -93,6 +125,10 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 		(this).dispose();
 	}
 
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
         Session s;

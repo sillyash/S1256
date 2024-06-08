@@ -4,15 +4,33 @@ import java.awt.BorderLayout;
 
 import javax.swing.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class MessageBox.
+ *
  * @author Kincy Saad
  */
 public class MessageBox {
+  
+  /** The message. */
   protected String message;
+  
+  /** The title. */
   protected String title;
+  
+  /** The option type. */
   protected int optionType;
+  
+  /** The response. */
   protected int response;
 
+  /**
+   * Instantiates a new message box.
+   *
+   * @param message the message
+   * @param title the title
+   * @param optionType the option type
+   */
   public MessageBox(String message, String title, int optionType) {
     this.message = message;
     this.title = title;
@@ -20,17 +38,29 @@ public class MessageBox {
   }
   
 
+  /**
+   * Show.
+   */
   public void show() {
     response = JOptionPane.showConfirmDialog(
         null, message, title, optionType);
   }
 
+  /**
+   * Gets the response.
+   *
+   * @return the response
+   */
   protected int getResponse() {
     return response;
   }
 
   /**
+   * Instantiates a new message box.
+   *
    * @author Emma Escoffier
+   * @param message the message
+   * @param title the title
    */
   public MessageBox(String message, String title) {
 	  this.message = message;
@@ -38,6 +68,8 @@ public class MessageBox {
   }
   
   /**
+   * Show message box plann.
+   *
    * @author Emma Escoffier
    */
   public void showMessageBoxPlann() {

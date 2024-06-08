@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -9,21 +12,46 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 import java.awt.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AjouterSession.
+ *
  * @author Nicolas Vouilloux
  */
 public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuitter {
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The admin. */
 	Administrateur admin;
+    
+    /** The TX fnom. */
     TXField TXFnom = new TXField("");
+    
+    /** The cmbss. */
     ComboBoxStatutSession CMBSS;
+    
+    /** The D tpick. */
     DatePicker DTpick;
+    
+    /** The cmbh1. */
     ComboBoxHoraires CMBH1;
+    
+    /** The cmbh2. */
     ComboBoxHoraires CMBH2;
+    
+    /** The cmbl. */
     ComboBoxLieu CMBL;
+    
+    /** The cmbd. */
     ComboBoxDiscipline CMBD;
 
+	/**
+	 * Instantiates a new ajouter session.
+	 *
+	 * @param admin the admin
+	 */
 	public AjouterSession(Administrateur admin) {
         super("JODES");
         
@@ -67,13 +95,20 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    //Nicolas
+    /**
+     * Retour.
+     * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new SessionFrame(admin);
 		(this).dispose();
 	}
 
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
         Session s;

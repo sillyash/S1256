@@ -6,49 +6,102 @@ import java.util.Collections;
 import java.util.Locale;
 import JODES.modeles.*;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class JO2024.
+ *
  * @author Ash Merienne
  */
 public class JO2024 {
 
+	/** The ses entites. */
 	public static ArrayList<Entite> sesEntites = new ArrayList<Entite>();
+	
+	/** The ses utilisateurs. */
 	protected static ArrayList<Utilisateur> sesUtilisateurs = new ArrayList<Utilisateur>();
 	
+	/** The pays. */
 	public static ArrayList<Pays> PAYS = new ArrayList<Pays>();
+	
+	/** The disciplines. */
 	public static ArrayList<Discipline> DISCIPLINES = new ArrayList<>();
+	
+	/** The villes. */
 	public static ArrayList<Ville> VILLES = new ArrayList<>();
+	
+	/** The lieux. */
 	public static ArrayList<Lieu> LIEUX = new ArrayList<>();
 	
+	/** The Constant dateDebutJO. */
 	public static final LocalDate dateDebutJO = LocalDate.of(2024, Month.JULY, 12);
+	
+	/** The Constant dateFinJO. */
 	public static final LocalDate dateFinJO = LocalDate.of(2024, Month.JULY, 30);
+	
+	/** The Constant Paris2024. */
 	public static final Saison Paris2024 = new Saison("2024 Paris Summer Olympics", dateDebutJO, dateFinJO);
 	
 	// ----------- Getters & setters -----------
 	
+	/**
+	 * Gets the ses entites.
+	 *
+	 * @return the ses entites
+	 */
 	public static ArrayList<Entite> getSesEntites() {
 		return sesEntites;
 	}
 
+	/**
+	 * Sets the ses entites.
+	 *
+	 * @param sesEntites the new ses entites
+	 */
 	public static void setSesEntites(ArrayList<Entite> sesEntites) {
 		JO2024.sesEntites = sesEntites;
 	}
 
+	/**
+	 * Gets the ses utilisateurs.
+	 *
+	 * @return the ses utilisateurs
+	 */
 	public static ArrayList<Utilisateur> getSesUtilisateurs() {
 		return sesUtilisateurs;
 	}
 
+	/**
+	 * Sets the ses utilisateurs.
+	 *
+	 * @param sesUtilisateurs the new ses utilisateurs
+	 */
 	public static void setSesUtilisateurs(ArrayList<Utilisateur> sesUtilisateurs) {
 		JO2024.sesUtilisateurs = sesUtilisateurs;
 	}
 	
+	/**
+	 * Adds the entite.
+	 *
+	 * @param entite the entite
+	 */
 	public static void addEntite(Entite entite) {
 		sesEntites.add(entite);
 	}
 
+	/**
+	 * Adds the utilisateur.
+	 *
+	 * @param user the user
+	 */
 	public static void addUtilisateur(Utilisateur user) {
 		sesUtilisateurs.add(user);
 	}
 	
+	/**
+	 * Removes the entite.
+	 *
+	 * @param entite the entite
+	 */
 	public static void removeEntite(Entite entite) {
 		sesEntites.remove(entite);
 	}
@@ -56,7 +109,12 @@ public class JO2024 {
 	// ----------- Methods -----------
 	
 	/**
+	 * Demande connexion.
+	 *
 	 * @author Nicolas Vouilloux
+	 * @param login the login
+	 * @param motDePasse the mot de passe
+	 * @return the int
 	 */
 	public static int demandeConnexion(String login, String motDePasse) {
 		Locale unicode = Locale.FRANCE;
@@ -74,7 +132,11 @@ public class JO2024 {
 	}
 
 	/**
+	 * Recherche entite.
+	 *
 	 * @author Ash Merienne
+	 * @param nomEntite the nom entite
+	 * @return the entite
 	 */
 	public static Entite rechercheEntite(String nomEntite) {
 		nomEntite = nomEntite.toUpperCase();
@@ -87,7 +149,11 @@ public class JO2024 {
 	}
 	
 	/**
+	 * Recherche entite.
+	 *
 	 * @author Ash Merienne
+	 * @param idEntite the id entite
+	 * @return the entite
 	 */
 	public static Entite rechercheEntite(int idEntite) {
 		for (Entite entite : sesEntites) {
@@ -100,7 +166,11 @@ public class JO2024 {
 	}
 	
 	/**
+	 * Recherche utilisateur.
+	 *
 	 * @author Nicolas Vouilloux
+	 * @param login the login
+	 * @return the utilisateur
 	 */
 	public static Utilisateur rechercheUtilisateur(String login) {
 		Locale unicode = Locale.FRANCE;
@@ -113,7 +183,12 @@ public class JO2024 {
 	}
 
 	/**
+	 * Recherche entite.
+	 *
 	 * @author Ash Merienne
+	 * @param nomEntite the nom entite
+	 * @param typeEntite the type entite
+	 * @return the entite
 	 */
 	public static Entite rechercheEntite(String nomEntite, String typeEntite) {
 		nomEntite = nomEntite.toUpperCase();
@@ -130,7 +205,10 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the athletes.
+	 *
 	 * @author Ash Merienne
+	 * @return the athletes
 	 */
 	public static ArrayList<Athlete> getAthletes()
 	{
@@ -146,7 +224,10 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the sessions.
+	 *
 	 * @author Ash Merienne
+	 * @return the sessions
 	 */
 	public static ArrayList<Session> getSessions()
 	{
@@ -162,7 +243,10 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the epreuves.
+	 *
 	 * @author Ash Merienne
+	 * @return the epreuves
 	 */
 	public static ArrayList<Epreuve> getEpreuves()
 	{
@@ -178,7 +262,10 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the equipes.
+	 *
 	 * @author Ash Merienne
+	 * @return the equipes
 	 */
 	public static ArrayList<Equipe> getEquipes()
 	{
@@ -194,7 +281,10 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the pays.
+	 *
 	 * @author Ash Merienne
+	 * @return the pays
 	 */
 	public static ArrayList<Pays> getPays()
 	{
@@ -202,17 +292,28 @@ public class JO2024 {
 	}
 
 	/**
+	 * Gets the disciplines.
+	 *
 	 * @author Ash Merienne
+	 * @return the disciplines
 	 */
 	public static ArrayList<Discipline> getDisciplines()
 	{
 		return DISCIPLINES;
 	}
 
+	/**
+	 * Gets the lieux.
+	 *
+	 * @return the lieux
+	 */
 	public static ArrayList<Lieu> getLieux() {
 		return LIEUX;
 	}
 
+	/**
+	 * Initialize.
+	 */
 	public static void initialize() {
 		Collections.addAll(PAYS,
 		new Pays("Afghanistan", "AFG"),

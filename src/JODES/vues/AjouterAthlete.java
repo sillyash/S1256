@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -8,19 +11,41 @@ import java.awt.*;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AjouterAthlete.
+ *
  * @author Nicolas Vouilloux
  */
 public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The admin. */
 	Administrateur admin;
+	
+	/** The TX nom. */
 	TXField TXNom = new TXField("");
+	
+	/** The TX prenom. */
 	TXField TXPrenom = new TXField("");
+	
+	/** The TX biographie. */
 	TXField TXBiographie = new TXField("");
+	
+	/** The cmbp. */
 	ComboBoxPays CMBP;
+	
+	/** The vue. */
 	UpdateAthlete vue;
 	
+	/**
+	 * Instantiates a new ajouter athlete.
+	 *
+	 * @param vue the vue
+	 * @param admin the admin
+	 */
 	public AjouterAthlete(UpdateAthlete vue, Administrateur admin) {
         super("JODES");
         this.admin = admin;
@@ -46,6 +71,10 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
         setVisible(true);
     }
     
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
 		Athlete a;

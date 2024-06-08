@@ -1,8 +1,10 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import java.awt.*;
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.List;
 import JODES.JO2024;
 import JODES.controleurs.*;
@@ -10,12 +12,18 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Planning;
 import JODES.modeles.Session;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class PlanningFrame.
+ *
  * @author Emma Escoffier & Ash Merienne
  */
 public class PlanningFrame extends JFrame implements RetourVue{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The data. */
 	String[][] data = {
 		{ "0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0", 	"0/0/0" }, // row for dates
 		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
@@ -38,26 +46,61 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		{ "", 		"", 		"", 		"", 		"", 		"", 		"" 		},
 		{ "",	 	"", 		"", 		"", 		"", 		"", 		"" 		}
 	};
+	
+	/** The hours. */
 	String[] hours = {"09:00", "09:30", "10:00", "10:30",
 					 "11:00", "11:30", "12:00", "12:30", "13:00",
 					 "13:30", "14:00", "14:30", "15:00", "15:30",
 					 "16:00", "16:30", "17:00", "17:30", "18:00"};
+	
+	/** The grad table. */
 	JTable gradTable;
+	
+	/** The graduation. */
 	JPanel graduation = new JPanel();
+	
+	/** The next week. */
 	JButton nextWeek = new JButton("\u25BA");
+	
+	/** The previous week. */
 	JButton previousWeek = new JButton("\u25C4");
+	
+	/** The button. */
 	JButton button = new JButton("Retour" + "\u21A9");
+	
+	/** The Btn retour. */
 	ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
+	
+	/** The nav bar. */
 	JPanel navBar = new JPanel();
+    
+    /** The fenetre. */
     JFrame fenetre;
+    
+    /** The title. */
     PanelTitle title;
+    
+    /** The planning. */
     JTable planning;
+	
+	/** The modele. */
 	Planning _modele;
+	
+	/** The column names. */
 	String[] columnNames = {"LUN", "MAR", "MER", "JEU", "VEN", "SAM", "DIM"};
+	
+	/** The scroll pane. */
 	JScrollPane scrollPane;
+	
+	/** The admin. */
 	Administrateur admin;
 	// --------------------------- Constructor -----------------------------------
 
+	/**
+	 * Instantiates a new planning frame.
+	 *
+	 * @param admin the admin
+	 */
 	public PlanningFrame(Administrateur admin) {
         this.admin = admin;
 		if (JO2024.getSessions().size() != 0) {
@@ -89,10 +132,20 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 	// ------------------------- Methods ----------------------------
 
+	/**
+	 * Gets the modele.
+	 *
+	 * @return the modele
+	 */
 	public Planning get_modele() {
 		return _modele;
 	}
 	
+	/**
+	 * Sets the modele.
+	 *
+	 * @param p the new modele
+	 */
 	public void set_modele(Planning p) {
 		this._modele = p;
 		initializeDays();
@@ -100,6 +153,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		initializePlanningTable();
 	}
 	
+	/**
+	 * Parses the sessions.
+	 */
 	public void parseSessions() {
 		int indexJour = 0;
 		for (int i = 0; i<7; i++) {
@@ -145,6 +201,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		}
 	}
 	
+	/**
+	 * Initialize hours.
+	 */
 	public void initializeHours() {
 		String cellVal;
         for (int i=0; i < hours.length; i++) {
@@ -154,6 +213,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
         }
 	}
 	
+	/**
+	 * Initialize planning table.
+	 */
 	public void initializePlanningTable() {
 		planning = new JTable(data, columnNames);
 		planning.setBounds(100, 100, 600, 600);
@@ -166,6 +228,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	    fenetre.setVisible(true);
 	}
 
+	/**
+	 * Initialize grad table.
+	 */
 	public void initializeGradTable() {
 		JPanel gradPanel = new JPanel();
 		JButton help = new JButton("?");
@@ -187,12 +252,22 @@ public class PlanningFrame extends JFrame implements RetourVue{
         fenetre.add(graduation, BorderLayout.WEST);
 	}
 
+	/**
+	 * Initialize days.
+	 */
 	public void initializeDays() {
 		for (int j = 0; j < 7; j++) {
 			this.data[0][j] = _modele.getDays().get(j).toString();
 		}
 	}
 
+	/**
+	 * Gets the index of.
+	 *
+	 * @param tab the tab
+	 * @param s the s
+	 * @return the index of
+	 */
 	public int[] getIndexOf(String[][] tab, String s) {
 		int[] result = new int[2];
 		if (tab.length == 0) {
@@ -209,6 +284,9 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		return result;
 	}
 
+	/**
+	 * Initialize nav bar.
+	 */
 	public void initializeNavBar() {
 		navBar.setLayout(new BorderLayout());
         navBar.add(previousWeek, BorderLayout.WEST);
@@ -217,6 +295,13 @@ public class PlanningFrame extends JFrame implements RetourVue{
         fenetre.add(navBar, BorderLayout.NORTH);
 	}
 
+	/**
+	 * Gets the index of.
+	 *
+	 * @param tab the tab
+	 * @param s the s
+	 * @return the index of
+	 */
 	public int getIndexOf(String[] tab, String s) {
 		if (tab.length == 0) {
 			return -1;
@@ -229,7 +314,10 @@ public class PlanningFrame extends JFrame implements RetourVue{
 		return -1;
 	}
 
-    //Nicolas
+    /**
+     * Retour.
+	 * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new HomePageFrame(admin);

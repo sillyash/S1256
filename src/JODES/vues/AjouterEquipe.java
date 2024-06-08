@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -12,18 +15,37 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class AjouterEquipe.
+ *
  * @author Nicolas Vouilloux
  */
 public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, SauvegarderQuitter{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The admin. */
 	Administrateur admin;
+	
+	/** The pca4. */
 	PanelChoisirAthlete PCA1, PCA2, PCA3, PCA4;
+    
+    /** The GF fa 4. */
     GridFormField GFFa1, GFFa2, GFFa3, GFFa4;
+    
+    /** The CMB pays. */
     ComboBoxPays CMBPays;
+    
+    /** The TX fnom. */
     JTextField TXFnom = new JTextField();
 	
+    /**
+     * Instantiates a new ajouter equipe.
+     *
+     * @param admin the admin
+     */
     public AjouterEquipe(Administrateur admin) {
         super("JODES");
         
@@ -72,13 +94,20 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    //Nicolas
+    /**
+     * Retour.
+	 * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new EquipeFrame(admin);
 		this.dispose();
 	}
 
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
 		Equipe e;
@@ -129,6 +158,9 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
 		}
 	}
 
+	/**
+	 * Udpate athletes.
+	 */
 	@Override
 	public void udpateAthletes() {
 		PCA1.getCmb().setItemList(JO2024.getAthletes());

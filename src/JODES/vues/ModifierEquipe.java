@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -12,21 +15,47 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ModifierEquipe.
+ *
  * @author Nicolas Vouilloux
  */
 public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, SauvegarderQuitter{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The equipe. */
 	protected Equipe equipe;
+	
+	/** The admin. */
 	Administrateur admin;
+	
+	/** The pca1. */
 	PanelChoisirAthlete PCA1;
+    
+    /** The pca2. */
     PanelChoisirAthlete PCA2;
+    
+    /** The pca3. */
     PanelChoisirAthlete PCA3;
+    
+    /** The pca4. */
     PanelChoisirAthlete PCA4;
+    
+    /** The CMB pays. */
     ComboBoxPays CMBPays;
+    
+    /** The TX fnom. */
     JTextField TXFnom = new JTextField();
 
+	/**
+	 * Instantiates a new modifier equipe.
+	 *
+	 * @param equipe the equipe
+	 * @param admin the admin
+	 */
 	public ModifierEquipe(Equipe equipe, Administrateur admin) {
         super("JODES");
         this.equipe = equipe;
@@ -84,6 +113,9 @@ public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    /**
+     * Retour.
+     */
     //Nicolas
 	@Override
 	public void retour() {
@@ -91,6 +123,10 @@ public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, 
 		(this).dispose();
 	}
 
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
 		Equipe e;
@@ -141,6 +177,9 @@ public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, 
 		}
 	}
 	
+	/**
+	 * Udpate athletes.
+	 */
 	@Override
 	public void udpateAthletes() {
 		this.PCA1.Cmb = new ComboBoxAthlete(JO2024.getAthletes());

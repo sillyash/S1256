@@ -1,3 +1,6 @@
+/*
+ * 
+ */
 package JODES.vues;
 import javax.swing.*;
 import JODES.JO2024;
@@ -12,19 +15,41 @@ import JODES.modeles.Equipe;
 import java.awt.*;
 import java.util.ArrayList;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ModifierEpreuve.
+ *
  * @author Nicolas Vouilloux
  */
 public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
 
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
+	
+	/** The epreuve modele. */
 	protected Epreuve epreuveModele;
+	
+	/** The admin. */
 	Administrateur admin;
+	
+	/** The TX nom. */
 	TXField TXNom = new TXField("");
+	
+	/** The cbe1. */
 	ComboBoxEquipe CBE1;
+	
+	/** The cbe2. */
 	ComboBoxEquipe CBE2;
+	
+	/** The cbs. */
 	ComboBoxSession CBS;
 	
+	/**
+	 * Instantiates a new modifier epreuve.
+	 *
+	 * @param epreuve the epreuve
+	 * @param admin the admin
+	 */
 	public ModifierEpreuve(Epreuve epreuve, Administrateur admin) {
         
         super("JODES");
@@ -74,13 +99,20 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 	
-    //Nicolas
+    /**
+     * Retour.
+	 * @author Nicolas Vouilloux
+     */
 	@Override
 	public void retour() {
 		new EpreuveFrame(admin);
 		(this).dispose();
 	}
 
+	/**
+	 * @author Ash Merienne
+	 * Save quit.
+	 */
 	@Override
 	public void saveQuit() {
 		Epreuve e;

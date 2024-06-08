@@ -11,20 +11,41 @@ import JODES.modeles.Epreuve;
 import java.awt.*;
 import javax.swing.*;
 
+// TODO: Auto-generated Javadoc
 //correct naming of class - Emma
 /**
+ * The Class SelectionEpreuve.
+ *
  * @author Ash Merienne
  */
 public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
 
+    /** The Constant serialVersionUID. */
     private static final long serialVersionUID = 1L;
+    
+    /** The combo. */
     protected ComboBoxEpreuve combo;
+    
+    /** The valider. */
     protected JButton valider;
+    
+    /** The panel del. */
     protected JPanel panelDel;
+    
+    /** The indication delete. */
     protected JLabel indicationDelete;
+    
+    /** The panel indication. */
     protected JPanel panelIndication;
+    
+    /** The admin. */
     Administrateur admin;
 
+    /**
+     * Instantiates a new selection epreuve.
+     *
+     * @param admin the admin
+     */
     public SelectionEpreuve(Administrateur admin) {
         // Create main frame
         super("Selection d'une épreuve");
@@ -71,12 +92,18 @@ public class SelectionEpreuve extends JFrame implements RetourVue,SelectionVue {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+	/**
+	 * Retour.
+	 */
 	@Override
 	public void retour() {
 		new EpreuveFrame(admin);
 		this.dispose();
 	}
 
+	/**
+	 * Selection.
+	 */
 	@Override
 	public void selection() {
 		if (combo.isSelectedNull())

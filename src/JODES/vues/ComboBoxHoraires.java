@@ -1,15 +1,25 @@
+/*
+ * 
+ */
 package JODES.vues;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
+// TODO: Auto-generated Javadoc
 /**
+ * The Class ComboBoxHoraires.
+ *
  * @author Nicolas Vouilloux
  */
 public class ComboBoxHoraires extends JComboBox<String> {
     
+    /** The horaires. */
     protected ArrayList<String> horaires = new ArrayList<>();
 
+    /**
+     * Instantiates a new combo box horaires.
+     */
     public ComboBoxHoraires() {
         horaires.add("09:00");
         horaires.add("09:30");
@@ -33,6 +43,9 @@ public class ComboBoxHoraires extends JComboBox<String> {
         addItems();
     }
 
+    /**
+     * Adds the items.
+     */
     protected void addItems() {
         this.addItem("");
         for (String s : horaires) {
@@ -40,10 +53,20 @@ public class ComboBoxHoraires extends JComboBox<String> {
         }
     }
 
+    /**
+     * Gets the item list.
+     *
+     * @return the item list
+     */
     public ArrayList<String> getItemList() {
         return horaires;
     }
     
+    /**
+     * Checks if is selected null.
+     *
+     * @return true, if is selected null
+     */
     public boolean isSelectedNull() {
     	if (this.getItemCount() == 0)
     		return true;
@@ -53,6 +76,11 @@ public class ComboBoxHoraires extends JComboBox<String> {
     		return false;
     }
 
+    /**
+     * Gets the selected time.
+     *
+     * @return the selected time
+     */
     public LocalTime getSelectedTime() {
         String hor = horaires.get(getSelectedIndex()-1);
         return LocalTime.parse(hor);
