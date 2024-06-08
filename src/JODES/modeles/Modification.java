@@ -11,7 +11,6 @@ public class Modification {
 	protected LocalDate dateModif;
 	protected LocalTime heureModif;
 	protected Entite sonEntite;
-	protected int idEntite;
 	protected Administrateur sonAdmin;
 	protected String typeModif;
 	public static final String DELETE = "DELETE";
@@ -61,14 +60,6 @@ public class Modification {
 	public void setSonAdmin(Administrateur sonAdmin) {
 		this.sonAdmin = sonAdmin;
 	}
-	
-	public int getIdEntite() {
-		return idEntite;
-	}
-
-	public void setIdEntite(int idEntite) {
-		this.idEntite = idEntite;
-	}
 
 	public String getTypeModif() {
 		return typeModif;
@@ -89,7 +80,7 @@ public class Modification {
 			JO2024.removeEntite(sonEntite);
 		}
 		else if (this.typeModif == UPDATE) {
-			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
+			index = JO2024.rechercheEntite(this.sonEntite.getIdEntite()).getIdEntite();
 			JO2024.sesEntites.set(index, sonEntite);
 		}
 		else JO2024.addEntite(sonEntite);
