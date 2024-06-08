@@ -119,7 +119,7 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
                 CMBL.getSelectedEntite(),
                 CMBD.getSelectedEntite()
             );
-			admin.modifierEntite(s);
+			admin.modifierEntite(sessionModele, s);
 			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Session modifiée !");
             retour();

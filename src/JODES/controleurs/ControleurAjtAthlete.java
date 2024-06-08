@@ -2,7 +2,6 @@
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterAthlete;
 
