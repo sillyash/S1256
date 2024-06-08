@@ -4,12 +4,13 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 import java.awt.*;
 import javax.swing.*;
 
-public class SuppressionSession extends JFrame implements RetourVue{
+public class SuppressionSession extends JFrame implements RetourVue,SelectionVue {
     
     private static final long serialVersionUID = 1L;
     protected ComboBoxSession combo;
@@ -19,57 +20,52 @@ public class SuppressionSession extends JFrame implements RetourVue{
     protected JPanel panelIndication;
     Administrateur admin;
 
-
-	public SuppressionSession(Administrateur admin) {
-    	// Create main frame
+    public SuppressionSession(Administrateur admin) {
+        // Create main frame
         super("JODES");
         this.admin = admin;
         setSize(800, 450);
-        setLayout(new GridLayout (4,1));
+        setLayout(new BorderLayout());
+
+        // Title
+        PanelTitle panelTitle = new PanelTitle("Sessions");
+        add(panelTitle,BorderLayout.NORTH);
 
         // Initialize elements
-        // Création d'un nouveau panelTitle 
-        PanelTitle panelTitle = new PanelTitle("Epreuve");
-        add(panelTitle);
         valider = new JButton("✔");
         combo = new ComboBoxSession(JO2024.getSessions());
         valider.addActionListener(new ControleurBtnSelectSession(combo, admin));
-        
         indicationDelete = new JLabel("Veuillez sélectionner la session à supprimer :",JLabel.CENTER);
 
-        // Initialize the panels
+        // Panel
         panelDel = new JPanel();
-        panelDel.setLayout(new FlowLayout());
-        panelIndication = new JPanel();
-        panelIndication.setLayout(new FlowLayout());
-
-        //Add elements to panelIndication
-        panelIndication.add(indicationDelete);
+        panelDel.setLayout(new GridLayout(2,1));
+        panelDel.add(indicationDelete);
         
-        // Add elements to panelDel
-        panelDel.add(combo);
-        panelDel.add(valider);
-
-        // Add panelDel and panelIndication to frame
-        add(panelIndication);
-        add(panelDel);
+        JPanel panelChoix = new JPanel(new GridLayout(2,2));
+        panelChoix.add(combo, BorderLayout.LINE_START);
+        panelChoix.add(valider, BorderLayout.PAGE_END);
+        panelChoix.add(new JLabel()); // to create empty space
+        
+        panelDel.add(panelChoix);
+        add(panelDel,BorderLayout.CENTER);
 
         //Nicolas 
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour BtnRetour = new ControleurBtnRetour(this);
         button.addActionListener(BtnRetour);
-        add(button);//TODO mettre le bouton au bon endroit
-        //pas Nicolas
+        add(button,BorderLayout.SOUTH);
+        
         // Make the frame visible
         setSize(800, 450);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-	public Administrateur getAdministrateur() {
-		return admin;
-	}
-	
+    public static void main(String[] args) {
+    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
+        new SuppressionSession(admin);
+    }
 //Nicolas
 	@Override
 	public void retour() {
@@ -77,9 +73,12 @@ public class SuppressionSession extends JFrame implements RetourVue{
 		this.dispose();
 	}
 	
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        new SuppressionSession(admin);
-    }
-
+	@Override
+	public void selection() {
+		if (combo.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
+		else 
+			new ModifierSession((Session) combo.getSelectedEntite(), admin);
+		this.dispose();
+	}
 }
