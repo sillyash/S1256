@@ -17,6 +17,12 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
 	Administrateur admin;
+	ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
+	ComboBoxAthlete CMBA1 = new ComboBoxAthlete(JO2024.getAthletes());
+	ComboBoxAthlete CMBA2 = new ComboBoxAthlete(JO2024.getAthletes());
+	ComboBoxAthlete CMBA3 = new ComboBoxAthlete(JO2024.getAthletes());
+	ComboBoxAthlete CMBA4 = new ComboBoxAthlete(JO2024.getAthletes());
+	JTextField TXFnom = new JTextField();
 
 	public ModifierEquipe(Equipe equipe, Administrateur admin) {
         super("JODES");
@@ -28,7 +34,7 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         
         add(button, BorderLayout.SOUTH);
-        JButton buttonSave = new JButton("Sauvegarder et quitter");
+        JButton buttonSave = new JButton("Sauvegarder & Quitter" + "🖉");
         ControleurBtnSauvegarderQuitter btnSaveQuit = new ControleurBtnSauvegarderQuitter(this);
         buttonSave.addActionListener(btnSaveQuit);
         add(panelTitle, BorderLayout.NORTH);
@@ -43,12 +49,6 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
 
-        ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
-        ComboBoxAthlete CMBA1 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA2 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA3 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA4 = new ComboBoxAthlete(JO2024.getAthletes());
-        JTextField TXFnom = new JTextField();
 
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
@@ -78,7 +78,21 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 	}
 	@Override
 	public void saveQuit() {
-		// TODO Auto-generated method stub
-		
+		if (TXFnom.getText() == "")
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBPays.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBA1.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBA2.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBA3.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBA4.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else
+			// TODO add code to save modifications
+			new EquipeFrame(admin);
+			(this).dispose();
 	}
 }
