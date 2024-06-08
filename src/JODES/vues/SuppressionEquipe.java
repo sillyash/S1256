@@ -40,7 +40,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue, SelectionVue
         valider.addActionListener(contr);
         
         combo = new ComboBoxEquipe(JO2024.getEquipes());
-        valider.addActionListener(new ControleurBtnSelectEquipe(combo, ControleurBtnSelectEquipe.SUPPR, admin));
+        valider.addActionListener(new ControleurBtnSelectEquipe(this,combo, ControleurBtnSelectEquipe.SUPPR, admin));
         indicationDelete = new JLabel("Veuillez sélectionner l'équipe à suprimer :",JLabel.CENTER);
 
         // Panel

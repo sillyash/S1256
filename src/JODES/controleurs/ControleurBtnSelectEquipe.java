@@ -17,17 +17,18 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
     Administrateur admin;
+    RetourVue vue;
 
-    public ControleurBtnSelectEquipe(ComboBoxEquipe combo, int option, Administrateur admin) {
+    public ControleurBtnSelectEquipe(RetourVue vue, ComboBoxEquipe combo, int option, Administrateur admin) {
         this.combo = combo;
-        if (option == MODIF || option == SUPPR) this.option = option;
-        else this.option = MODIF;
+        this.option = option;
         this.admin = admin;
+        this.vue = vue;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.combo.getSelectedItem() == "") {
+        if (this.combo.isSelectedNull()) {
             new MessageBox(
                 "Vous devez sélectionner une équipe !",
                 "Champ obligatoire",
@@ -38,8 +39,10 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
             this.equipe = (Equipe)JO2024.rechercheEntite(id);
             if (this.option == MODIF) {
                 new ModifierEquipe(this.equipe, admin);
+                vue.retour();
             } else {
                 JO2024.removeEntite(equipe);
+                vue.retour();
             };
         }
     }

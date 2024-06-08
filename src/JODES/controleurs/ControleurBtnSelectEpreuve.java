@@ -17,17 +17,18 @@ public class ControleurBtnSelectEpreuve implements ActionListener  {
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
     Administrateur admin;
+    RetourVue vue;
 
-    public ControleurBtnSelectEpreuve(ComboBoxEpreuve combo, int option, Administrateur admin) {
+    public ControleurBtnSelectEpreuve(RetourVue vue, ComboBoxEpreuve combo, int option, Administrateur admin) {
         this.combo = combo;
-        if (option == MODIF || option == SUPPR) this.option = option;
-        else this.option = MODIF;
+        this.option = option;
         this.admin = admin;
+        this.vue = vue;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.combo.getSelectedItem() == "") {
+        if (this.combo.isSelectedNull()) {
             new MessageBox(
                 "Vous devez sélectionner une épreuve !",
                 "Champ obligatoire",
@@ -38,8 +39,10 @@ public class ControleurBtnSelectEpreuve implements ActionListener  {
             this.epreuve = (Epreuve)JO2024.rechercheEntite(id);
             if (this.option == MODIF) {
                 new ModifierEpreuve(this.epreuve, admin);
+                vue.retour();
             } else {
                 JO2024.removeEntite(epreuve);
+                vue.retour();
             }
         }
     }
