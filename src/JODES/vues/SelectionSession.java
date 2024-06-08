@@ -3,6 +3,7 @@ package JODES.vues;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
+import JODES.controleurs.ControleurBtnSelection;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
@@ -33,6 +34,10 @@ public class SelectionSession extends JFrame implements RetourVue,SelectionVue {
 
         // Initialize elements
         valider = new JButton("✔");
+        
+        ControleurBtnSelection contr = new ControleurBtnSelection(this); 
+        valider.addActionListener(contr);
+        
         combo = new ComboBoxSession(JO2024.getSessions());
         valider.addActionListener(new ControleurBtnSelectSession(combo, admin));
         indicationDelete = new JLabel("Veuillez sélectionner la session à modifier :",JLabel.CENTER);
@@ -77,8 +82,9 @@ public class SelectionSession extends JFrame implements RetourVue,SelectionVue {
 	public void selection() {
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
-		else 
+		else {
 			new ModifierSession((Session) combo.getSelectedEntite(), admin);
-		this.dispose();
+			this.dispose();
+		}
 	}
 }
