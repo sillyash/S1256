@@ -16,6 +16,6 @@ public class ControleurBtnSauvegarderQuitter extends Controleur implements Actio
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		_vue.SauvegarderQuitter();
+		_vue.saveQuit();
 	}
 }

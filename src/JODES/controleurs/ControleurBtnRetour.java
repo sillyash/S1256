@@ -13,7 +13,7 @@ public class ControleurBtnRetour extends Controleur implements ActionListener {
 	public ControleurBtnRetour(JFrame vue) {
 		super(null, vue);
 		//Nicolas
-		this._vue = (RetourVue) vue;
+		this._vue =(RetourVue) vue;
 	}
 	
 	@Override

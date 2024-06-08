@@ -10,15 +10,19 @@ public class PanelChoisirAthlete extends JPanel{
 	
 	protected JPanel panel;
 	Administrateur admin;
+	protected ComboBoxAthlete Cmb = new ComboBoxAthlete(JO2024.getAthletes());   
 	
 	public PanelChoisirAthlete(Administrateur admin) {
 		this.admin = admin;
-		this.setLayout(new GridLayout(1,2));
-		ComboBoxAthlete Cmb = new ComboBoxAthlete(JO2024.getAthletes());   
+		this.setLayout(new GridLayout(1,2)); 
 		add(Cmb);
 		JButton btn = new JButton("Créer un athlète");
 		ControleurAjtAthlete ctr = new ControleurAjtAthlete(admin);
 		btn.addActionListener(ctr);
 		add(btn);
+	}
+
+	public ComboBoxAthlete getCmb() {
+		return Cmb;
 	}
 }

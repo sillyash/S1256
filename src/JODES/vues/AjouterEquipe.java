@@ -12,8 +12,14 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 
 	private static final long serialVersionUID = 1L;
 	Administrateur admin;
+	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(admin);
+    ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
+    JTextField TXFnom = new JTextField();
 	
-	public AjouterEquipe(Administrateur admin) {
+    public AjouterEquipe(Administrateur admin) {
         super("JODES");
         
         this.admin = admin;
@@ -37,19 +43,12 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
 
-        ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
-        ComboBoxAthlete CMBA1 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA2 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA3 = new ComboBoxAthlete(JO2024.getAthletes());
-        ComboBoxAthlete CMBA4 = new ComboBoxAthlete(JO2024.getAthletes());
-        JTextField TXFnom = new JTextField();
-
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(new PanelChoisirAthlete(admin),new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA1,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA2,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA3,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA4,new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
@@ -70,7 +69,21 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 	}
 	@Override
 	public void saveQuit() {
-		// TODO Auto-generated method stub
-		
+		if ((PCA1.getCmb()).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((PCA2.getCmb()).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((PCA3.getCmb()).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((PCA4.getCmb()).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (TXFnom.getText()=="")
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if (CMBPays.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else 
+			//TODO enregistrer les information
+			new EquipeFrame(admin);
+			(this).dispose();
 	}
 }

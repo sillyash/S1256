@@ -5,6 +5,7 @@ import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.SauvegarderQuitter;
 import java.awt.*;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Epreuve;
 
 public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 
@@ -40,7 +41,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
     
 	@Override
 	public void saveQuit() {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
