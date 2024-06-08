@@ -34,8 +34,8 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
                 JOptionPane.OK_OPTION);
         }
         else {
-            String nomEquipe = combo.getSelectedEntite().getNom();
-            this.equipe = (Equipe)JO2024.rechercheEntite(nomEquipe);
+            int id = combo.getSelectedEntite().getIdEntite();
+            this.equipe = (Equipe)JO2024.rechercheEntite(id);
             if (this.option == MODIF) {
                 new ModifierEquipe(this.equipe, admin);
             } else {

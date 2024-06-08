@@ -36,11 +36,6 @@ public class Athlete extends Entite {
 		this(prenom, nom, sonPays, biographie, new ArrayList<Medaille>(),
 				new ArrayList<Equipe>(), new ArrayList<Discipline>());
 	}
-	
-	public Athlete (String prenom, String nom, Pays sonPays) {
-		this(prenom, nom, sonPays, "", new ArrayList<Medaille>(),
-				new ArrayList<Equipe>(), new ArrayList<Discipline>());
-	}
 
 	
 	// ----------- Getters & setters -----------

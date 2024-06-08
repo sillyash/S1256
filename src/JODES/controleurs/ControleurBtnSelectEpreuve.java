@@ -34,8 +34,8 @@ public class ControleurBtnSelectEpreuve implements ActionListener  {
                 JOptionPane.OK_OPTION);
         }
         else {
-            String nomEpreuve = combo.getSelectedEntite().getNom();
-            this.epreuve = (Epreuve)JO2024.rechercheEntite(nomEpreuve);
+        	int id = combo.getSelectedEntite().getIdEntite();
+            this.epreuve = (Epreuve)JO2024.rechercheEntite(id);
             if (this.option == MODIF) {
                 new ModifierEpreuve(this.epreuve, admin);
             } else {

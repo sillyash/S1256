@@ -36,7 +36,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
         panelDuMilieu.add(new GridFormField(TXNom,new JLabel("Nom* :")));
 		panelDuMilieu.add(new GridFormField(TXPrenom,new JLabel("Prenom* :")));
 		panelDuMilieu.add(new GridFormField(CMBP,new JLabel("Pays* :")));
-        panelDuMilieu.add(new GridFormField(TXBiographie,new JLabel("Biographie :")));
+        panelDuMilieu.add(new GridFormField(TXBiographie,new JLabel("Biographie* :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
@@ -52,18 +52,8 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Prénom)");
 		else if ((CMBP).isSelectedNull())
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
-		else if (!TXBiographie.parseField()) {
-			a = new Athlete(
-				TXPrenom.getSelectedText(),
-				TXNom.getSelectedText(), 
-				CMBP.getSelectedEntite()
-			);
-			admin.creerEntite(a);
-			admin.enregisterModifications();
-			JOptionPane.showMessageDialog(null, "Athlète créé !");
-			vue.udpateAthletes();
-			this.dispose();
-		}
+		else if (!TXBiographie.parseField())
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Biographie)");
 		else {
 			a = new Athlete(
 				TXPrenom.getText(),

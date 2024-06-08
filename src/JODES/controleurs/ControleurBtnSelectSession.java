@@ -32,8 +32,8 @@ public class ControleurBtnSelectSession implements ActionListener  {
                 JOptionPane.OK_OPTION);
         }
         else {
-            String nomSession = combo.getSelectedEntite().getNom();
-            this.session = (Session)JO2024.rechercheEntite(nomSession);
+        	int id = combo.getSelectedEntite().getIdEntite();
+            this.session = (Session)JO2024.rechercheEntite(id);
             if (this.option == MODIF) {
                 new ModifierSession(this.session, null);
             } else {
