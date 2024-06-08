@@ -22,7 +22,7 @@ public class PanelChoisirAthlete extends JPanel{
 		this.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
 		add(Cmb);
 		JButton btn = new JButton("Créer un athlète");
-		ControleurAjtAthlete ctr = new ControleurAjtAthlete(vue, admin);
+		ControleurAjtAthlete ctr = new ControleurAjtAthlete(this.vue, admin);
 		btn.addActionListener(ctr);
 		add(btn);
 	}
@@ -30,4 +30,9 @@ public class PanelChoisirAthlete extends JPanel{
 	public ComboBoxAthlete getCmb() {
 		return Cmb;
 	}
+	
+	public void setCmb(ComboBoxAthlete cmb) {
+		this.Cmb = cmb;
+	}
+	
 }

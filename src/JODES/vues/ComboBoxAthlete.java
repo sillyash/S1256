@@ -32,6 +32,12 @@ public class ComboBoxAthlete extends JComboBox<String> {
         return listeAthletes;
     }
     
+    public void setItemList(ArrayList<Athlete> athletes) {
+        this.listeAthletes = athletes;
+        this.removeAllItems();
+        this.addItems();
+    }
+    
     public Athlete getSelectedEntite() {
 		return listeAthletes.get(this.getSelectedIndex()-1);
     }

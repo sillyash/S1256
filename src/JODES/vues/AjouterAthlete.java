@@ -63,8 +63,8 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 			);
 			admin.creerEntite(a);
 			admin.enregisterModifications();
-			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			vue.udpateAthletes();
+			JOptionPane.showMessageDialog(null, "Athlète créé !");
 			this.dispose();
 		}
 	}

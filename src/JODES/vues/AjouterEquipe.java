@@ -16,10 +16,8 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
 
 	private static final long serialVersionUID = 1L;
 	Administrateur admin;
-	PanelChoisirAthlete PCA1;
-    PanelChoisirAthlete PCA2;
-    PanelChoisirAthlete PCA3;
-    PanelChoisirAthlete PCA4;
+	PanelChoisirAthlete PCA1, PCA2, PCA3, PCA4;
+    GridFormField GFFa1, GFFa2, GFFa3, GFFa4;
     ComboBoxPays CMBPays;
     JTextField TXFnom = new JTextField();
 	
@@ -32,6 +30,11 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
         PCA3 = new PanelChoisirAthlete(this,admin);
         PCA4 = new PanelChoisirAthlete(this,admin);
         CMBPays = new ComboBoxPays(JO2024.getPays());
+        
+        GFFa1 = new GridFormField(PCA1,new JLabel("Athlete :"));
+        GFFa2 = new GridFormField(PCA2,new JLabel("Athlete :"));
+        GFFa3 = new GridFormField(PCA3,new JLabel("Athlete :"));
+        GFFa4 = new GridFormField(PCA4,new JLabel("Athlete :"));
         
         PanelTitle panelTitle = new PanelTitle("Ajouter équipe");
         JButton button = new JButton("Retour" + "\u21A9");
@@ -55,10 +58,10 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
 
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe* :")));
 		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays* :")));
-		panelDuMilieu.add(new GridFormField(PCA1,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(PCA2,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(PCA3,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(PCA4,new JLabel("Athlete :")));
+		panelDuMilieu.add(GFFa1);
+		panelDuMilieu.add(GFFa2);
+		panelDuMilieu.add(GFFa3);
+		panelDuMilieu.add(GFFa4);
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
@@ -125,9 +128,11 @@ public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, S
 
 	@Override
 	public void udpateAthletes() {
-		this.PCA1.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
-		this.PCA2.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
-		this.PCA3.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
-		this.PCA4.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		PCA1.getCmb().setItemList(JO2024.getAthletes());
+		PCA2.getCmb().setItemList(JO2024.getAthletes());
+		PCA3.getCmb().setItemList(JO2024.getAthletes());
+		PCA4.getCmb().setItemList(JO2024.getAthletes());
+        
+        System.out.println(PCA1.getCmb().getItemList());
 	}
 }
