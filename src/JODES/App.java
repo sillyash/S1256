@@ -20,7 +20,6 @@ public class App extends JFrame {
 		JO2024.initialize();
 		Administrateur admin = new Administrateur("admin", "password", "Utilisateur", "Admin");
 		JO2024.addUtilisateur(admin);
-		JO2024.demandeConnexion(admin.getLogin(), admin.getPassword());
 
 		JFrame app = new HomePageFrame(admin);
 		app.setSize(800, 450);

@@ -166,7 +166,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 
 	public void initializeGradTable() {
 		JPanel gradPanel = new JPanel();
-		JButton help = new JButton("\u24BE");
+		JButton help = new JButton("?");
 		Font currentFont = help.getFont();
 		Font newFont = new Font(currentFont.getFontName(), currentFont.getStyle(), 17);
 		help.setFont(newFont); // make the help button more visible
