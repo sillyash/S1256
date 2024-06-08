@@ -9,7 +9,7 @@ public class DataParser {
      * @return boolean
      */
 	public static boolean isTextFieldNull(String text) {
-		return text.matches("[\\t ]+");
+		return text.equals("") || text.matches("[\\t ]+");
     }
 	
     public static boolean isInt(String s) {
@@ -67,4 +67,8 @@ public class DataParser {
     public static boolean isEpreuve(Entite e) {
         return e instanceof Session;
     }
+
+	public static boolean isEquipe(Entite e) {
+		return e instanceof Equipe;
+	}
 }

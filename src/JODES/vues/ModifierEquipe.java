@@ -1,35 +1,38 @@
 package JODES.vues;
 import javax.swing.*;
-
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
-
+import JODES.controleurs.UpdateAthlete;
 import java.awt.*;
 import java.util.ArrayList;
-
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
-public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
+public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
 	Administrateur admin;
-	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(this,admin);
-    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(this,admin);
-    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(this,admin);
-    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(this,admin);
-    ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
+	PanelChoisirAthlete PCA1;
+    PanelChoisirAthlete PCA2;
+    PanelChoisirAthlete PCA3;
+    PanelChoisirAthlete PCA4;
+    ComboBoxPays CMBPays;
     JTextField TXFnom = new JTextField();
 
 	public ModifierEquipe(Equipe equipe, Administrateur admin) {
         super("JODES");
         this.equipe = equipe;
         this.admin = admin;
+        PCA1 = new PanelChoisirAthlete(this,admin);
+        PCA2 = new PanelChoisirAthlete(this,admin);
+        PCA3 = new PanelChoisirAthlete(this,admin);
+        PCA4 = new PanelChoisirAthlete(this,admin);
+        CMBPays = new ComboBoxPays(JO2024.getPays());
         
         PanelTitle panelTitle = new PanelTitle("Modifier équipe");
         JButton button = new JButton("Retour" + "\u21A9");
@@ -129,8 +132,17 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 				athletes
 			);
 			admin.modifierEntite(e);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Équipe modifiée !");
 			retour();
 		}
+	}
+	
+	@Override
+	public void udpateAthletes() {
+		this.PCA1.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA2.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA3.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA4.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
 	}
 }

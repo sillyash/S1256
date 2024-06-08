@@ -11,19 +11,27 @@ import java.awt.*;
 
 public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuitter {
 
+	private static final long serialVersionUID = 1L;
 	Administrateur admin;
     TXField TXFnom = new TXField("");
-    ComboBoxStatutSession CMBSS = new ComboBoxStatutSession();
-    DatePicker DTpick = new DatePicker();
-    ComboBoxHoraires CMBH1 = new ComboBoxHoraires();
-    ComboBoxHoraires CMBH2 = new ComboBoxHoraires();
-    ComboBoxLieu CMBL = new ComboBoxLieu(JO2024.getLieux());
-    ComboBoxDiscipline CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
+    ComboBoxStatutSession CMBSS;
+    DatePicker DTpick;
+    ComboBoxHoraires CMBH1;
+    ComboBoxHoraires CMBH2;
+    ComboBoxLieu CMBL;
+    ComboBoxDiscipline CMBD;
 
 	public AjouterSession(Administrateur admin) {
         super("JODES");
         
         this.admin = admin;
+        CMBSS = new ComboBoxStatutSession();
+        CMBH1 = new ComboBoxHoraires();
+        CMBH2 = new ComboBoxHoraires();
+        CMBL = new ComboBoxLieu(JO2024.getLieux());
+        CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
+        DTpick = new DatePicker();
+        
         PanelTitle panelTitle = new PanelTitle("Ajouter séssion");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -93,6 +101,7 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
                 CMBD.getSelectedEntite()
             );
             admin.creerEntite(s);
+            admin.enregisterModifications();
             retour();
         }
 	}

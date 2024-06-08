@@ -31,19 +31,19 @@ public class Administrateur extends Utilisateur implements Serializable {
 	
 	public void enregisterModifications() {
 		// - Nicolas Vouilloux
-		for (Modification modif : sesModifications){
-			modif.envoyerModifServeur();
+		for (int i=0; i<sesModifications.size(); i++){
+			sesModifications.get(i).envoyerModifServeur();
+			this.sesModifications.remove(i);
 		}
 	}
 
 	public void modifierEntite(Entite entite) {
 		// - Nicolas Vouilloux
-		Entite newEntite = entite;
-		Modification Modif = new Modification(newEntite,this,Modification.UPDATE);
+		Modification Modif = new Modification(entite,this,Modification.UPDATE);
 		sesModifications.add(Modif);
 	}
 
-	public void annulerModification(Modification modification) {
+	public void annulerModifications(Modification modification) {
 		// - Nicolas Vouilloux
 		for (Modification modif : sesModifications){
 			if (modif == modification)
@@ -53,13 +53,13 @@ public class Administrateur extends Utilisateur implements Serializable {
 
 	public void creerEntite(Entite entite) {
 		// - Nicolas Vouilloux
-		Modification modif = new Modification(entite,this,Modification.UPDATE);
+		Modification modif = new Modification(entite,this,Modification.CREATE);
 		this.sesModifications.add(modif);
 	}
 
-	public void supprimerEntite(int idEntite) {
+	public void supprimerEntite(Entite entite) {
 		// - Nicolas Vouilloux
-		Modification modif = new Modification(idEntite,this);
+		Modification modif = new Modification(entite,this,Modification.DELETE);
 		this.sesModifications.add(modif);
 	}
 }

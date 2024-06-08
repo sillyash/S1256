@@ -5,13 +5,14 @@ import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.controleurs.UpdateAthlete;
 import java.awt.*;
 import java.util.ArrayList;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
-public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
+public class AjouterEquipe extends JFrame implements UpdateAthlete, RetourVue, SauvegarderQuitter{
 
 	private static final long serialVersionUID = 1L;
 	Administrateur admin;
@@ -19,7 +20,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
     PanelChoisirAthlete PCA2;
     PanelChoisirAthlete PCA3;
     PanelChoisirAthlete PCA4;
-    ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
+    ComboBoxPays CMBPays;
     JTextField TXFnom = new JTextField();
 	
     public AjouterEquipe(Administrateur admin) {
@@ -30,6 +31,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
         PCA2 = new PanelChoisirAthlete(this,admin);
         PCA3 = new PanelChoisirAthlete(this,admin);
         PCA4 = new PanelChoisirAthlete(this,admin);
+        CMBPays = new ComboBoxPays(JO2024.getPays());
         
         PanelTitle panelTitle = new PanelTitle("Ajouter équipe");
         JButton button = new JButton("Retour" + "\u21A9");
@@ -115,8 +117,17 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 				athletes
 			);
 			admin.creerEntite(e);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Équipe créée !");
 			retour();
 		}
+	}
+
+	@Override
+	public void udpateAthletes() {
+		this.PCA1.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA2.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA3.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
+		this.PCA4.Cmb = new ComboBoxAthlete(JO2024.getAthletes());
 	}
 }

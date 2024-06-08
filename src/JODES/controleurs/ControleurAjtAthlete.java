@@ -9,9 +9,9 @@ import JODES.vues.AjouterAthlete;
 public class ControleurAjtAthlete implements ActionListener{
 
 	Administrateur admin;
-	JFrame vue;
+	UpdateAthlete vue;
 
-	public ControleurAjtAthlete(JFrame vue, Administrateur admin) {
+	public ControleurAjtAthlete(UpdateAthlete vue, Administrateur admin) {
 		this.admin = admin;
 		this.vue = vue;
 		System.out.println("SaveQuit: "+admin);
@@ -19,6 +19,6 @@ public class ControleurAjtAthlete implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new AjouterAthlete(admin);
+		new AjouterAthlete(vue, admin);
 	}
 }

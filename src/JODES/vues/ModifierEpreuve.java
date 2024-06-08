@@ -18,15 +18,19 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
 	protected Epreuve epreuveModele;
 	Administrateur admin;
 	TXField TXNom = new TXField("");
-	ComboBoxEquipe CBE1 = new ComboBoxEquipe(JO2024.getEquipes());
-	ComboBoxEquipe CBE2 = new ComboBoxEquipe(JO2024.getEquipes());
-	ComboBoxSession CBS = new ComboBoxSession(JO2024.getSessions());
+	ComboBoxEquipe CBE1;
+	ComboBoxEquipe CBE2;
+	ComboBoxSession CBS;
 	
 	public ModifierEpreuve(Epreuve epreuve, Administrateur admin) {
         
         super("JODES");
         this.epreuveModele = epreuve;
         this.admin = admin;
+        CBE1 = new ComboBoxEquipe(JO2024.getEquipes());
+        CBE2 = new ComboBoxEquipe(JO2024.getEquipes());
+        CBS = new ComboBoxSession(JO2024.getSessions());
+        
         PanelTitle panelTitle = new PanelTitle("Modifier épreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -95,6 +99,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
 				CBS.getSelectedEntite()
 			);
 			admin.modifierEntite(e);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Épreuve modifiée !");
 			retour();
 		}

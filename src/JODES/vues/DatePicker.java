@@ -34,7 +34,7 @@ public class DatePicker extends JPanel {
         }
         int day = comboBoxDay.getSelectedDay();
         int month = comboBoxMonth.getSelectedMonth();
-        if(((month == 2 ||month == 4 ||month == 6|| month == 9||month == 11)&&day == 31)||month == 2 && day == 30)
+        if(((month == 2 ||month == 4 ||month == 6|| month == 9||month == 11)&&day == 31)||month == 2 && day >= 29)
         	return false;
         else
         	return true;

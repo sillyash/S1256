@@ -15,17 +15,24 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
     protected Session sessionModele;
     Administrateur admin;
     TXField TXFnom = new TXField("");
-    ComboBoxStatutSession CMBSS = new ComboBoxStatutSession();
-    DatePicker DTpick = new DatePicker();
-    ComboBoxHoraires CMBH1 = new ComboBoxHoraires();
-    ComboBoxHoraires CMBH2 = new ComboBoxHoraires();
-    ComboBoxLieu CMBL = new ComboBoxLieu(JO2024.getLieux());
-    ComboBoxDiscipline CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
+    ComboBoxStatutSession CMBSS;
+    DatePicker DTpick;
+    ComboBoxHoraires CMBH1;
+    ComboBoxHoraires CMBH2;
+    ComboBoxLieu CMBL;
+    ComboBoxDiscipline CMBD;
 
 	public ModifierSession(Session session, Administrateur admin) {
         super("JODES");
         this.admin = admin;
         this.sessionModele = session;
+        CMBSS = new ComboBoxStatutSession();
+        CMBH1 = new ComboBoxHoraires();
+        CMBH2 = new ComboBoxHoraires();
+        CMBL = new ComboBoxLieu(JO2024.getLieux());
+        CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
+        DTpick = new DatePicker();
+        
         PanelTitle panelTitle = new PanelTitle("Modifier session");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
@@ -113,6 +120,7 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
                 CMBD.getSelectedEntite()
             );
 			admin.modifierEntite(s);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Session modifiée !");
             retour();
         }

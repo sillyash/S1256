@@ -3,6 +3,7 @@ import javax.swing.*;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.SauvegarderQuitter;
+import JODES.controleurs.UpdateAthlete;
 import java.awt.*;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Athlete;
@@ -14,11 +15,14 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 	TXField TXNom = new TXField("");
 	TXField TXPrenom = new TXField("");
 	TXField TXBiographie = new TXField("");
-	ComboBoxPays CMBP = new ComboBoxPays(JO2024.getPays());
+	ComboBoxPays CMBP;
+	UpdateAthlete vue;
 	
-	public AjouterAthlete(Administrateur admin) {
+	public AjouterAthlete(UpdateAthlete vue, Administrateur admin) {
         super("JODES");
         this.admin = admin;
+        this.vue = vue;
+        CMBP = new ComboBoxPays(JO2024.getPays());
         
         PanelTitle panelTitle = new PanelTitle("Ajouter athlete");
         JButton buttonSave = new JButton("Sauvegarder et quitter");
@@ -54,10 +58,10 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 				TXNom.getSelectedText(), 
 				CMBP.getSelectedEntite()
 			);
-			System.out.println(a);
-			JO2024.addEntite(a);
+			admin.creerEntite(a);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
-			new EpreuveFrame(admin);
+			vue.udpateAthletes();
 			this.dispose();
 		}
 		else {
@@ -68,7 +72,9 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
 				TXBiographie.getText()
 			);
 			admin.creerEntite(a);
+			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Athlète créé !");
+			vue.udpateAthletes();
 			this.dispose();
 		}
 	}

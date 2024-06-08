@@ -28,14 +28,6 @@ public class Modification {
 		this.typeModif = typeModif;
 	}
 	
-	public Modification(int idEntite, Administrateur sonAdmin) {
-		this.dateModif = LocalDate.now();
-		this.heureModif = LocalTime.now();
-		this.idEntite = idEntite;
-		this.sonAdmin = sonAdmin;
-		this.typeModif = DELETE;
-	}
-	
 	// ----------- Getters & setters -----------
 	
 	public LocalDate getDateModif() {
@@ -94,13 +86,12 @@ public class Modification {
 	protected void envoyerModifServeur() {
 		int index;
 		if (this.typeModif == DELETE) {
-			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
-			JO2024.sesEntites.remove(index);
+			JO2024.removeEntite(sonEntite);
 		}
 		else if (this.typeModif == UPDATE) {
 			index = JO2024.rechercheEntite(this.idEntite).getIdEntite();
 			JO2024.sesEntites.set(index, sonEntite);
 		}
-		else JO2024.sesEntites.add(this.sonEntite);
+		else JO2024.addEntite(sonEntite);
 	}
 }

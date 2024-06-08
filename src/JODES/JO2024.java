@@ -79,10 +79,9 @@ public class JO2024 {
 	public static Entite rechercheEntite(String nomEntite) {
 		nomEntite = nomEntite.toUpperCase();
 		for (Entite entite : sesEntites) {
-			if (entite.getNom().toUpperCase().contains(nomEntite))
-			{
-				return entite;
-			}
+			if (entite.getNom() != null)
+				if (entite.getNom().toUpperCase().contains(nomEntite))
+					return entite;
 		}
 		return null;
 	}
@@ -187,7 +186,7 @@ public class JO2024 {
 		ArrayList<Equipe> equipes = new ArrayList<>();
 		for (Entite e : sesEntites)
 		{
-			if (DataParser.isEpreuve(e))
+			if (DataParser.isEquipe(e))
 			{
 				equipes.add((Equipe)e);
 			}

@@ -27,7 +27,7 @@ public class ComboBoxEpreuve extends JComboBox<String> {
     public boolean isSelectedNull() {
     	if (this.getItemCount() == 0)
     		return true;
-    	if (this.getSelectedItem()== "")
+    	if (this.getSelectedIndex() == 0)
     		return true;
     	else 
     		return false;
