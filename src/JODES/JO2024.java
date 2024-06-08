@@ -44,6 +44,10 @@ public class JO2024 {
 	public static void addEntite(Entite entite) {
 		sesEntites.add(entite);
 	}
+
+	public static void addUtilisateur(Utilisateur user) {
+		sesUtilisateurs.add(user);
+	}
 	
 	public static void removeEntite(Entite entite) {
 		sesEntites.remove(entite);

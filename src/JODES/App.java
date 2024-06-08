@@ -16,7 +16,7 @@ public class App {
 		JO2024.addUtilisateur(user);
 		JO2024.demandeConnexion(user.getLogin(), user.getPassword());
 
-		JFrame app = new HomePageFrame();
+		JFrame app = new HomePageFrame(user);
 		app.setSize(800, 450);
         app.setVisible(true);
 	}
