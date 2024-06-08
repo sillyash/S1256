@@ -5,7 +5,6 @@ import JODES.modeles.Session;
 import JODES.vues.ComboBoxSession;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierSession;
-import JODES.vues.SessionFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
