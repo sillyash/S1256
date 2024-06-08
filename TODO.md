@@ -47,3 +47,4 @@
     - [x] boolean IsValidDate()
 
 - [X] Bouton 'HELP' '?' pour rendre l'UI plus compehensible pour l'utilisateur tavu
+- [ ] Error handling if same athlete is selected more than once in Ajouter Equipe
