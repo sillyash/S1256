@@ -39,7 +39,10 @@ public class ComboBoxHoraires extends JComboBox<String> {
     public ArrayList<String> getItemList() {
         return horaires;
     }
+    
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 

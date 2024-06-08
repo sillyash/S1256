@@ -13,33 +13,28 @@ import javax.swing.JOptionPane;
 public class ControleurBtnSelectSession implements ActionListener  {
 
     protected Session session;
-    protected ComboBoxSession CMB;
+    protected ComboBoxSession combo;
     protected int option;
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
     Administrateur admin;
 
-    public ControleurBtnSelectSession(ComboBoxSession combo, Session session, Administrateur admin) {
+    public ControleurBtnSelectSession(ComboBoxSession combo, Administrateur admin) {
         this.admin = admin;
-        this.session = session;
-        this.CMB = combo;
-    }
-
-    public ControleurBtnSelectSession(SessionFrame sessionFrame, Administrateur admin2) {
-        //TODO Auto-generated constructor stub
+        this.combo = combo;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.CMB.getSelectedItem() == "") {
+        if (this.combo.isSelectedNull()) {
             new MessageBox(
                 "Vous devez sélectionner une équipe !",
                 "Champ obligatoire",
                 JOptionPane.YES_NO_CANCEL_OPTION);
         }
         else {
-            String nomEpreuve = (String)CMB.getSelectedItem();
-            this.session = (Session)JO2024.rechercheEntite(nomEpreuve);
+            String nomSession = (String)combo.getSelectedItem();
+            this.session = (Session)JO2024.rechercheEntite(nomSession);
             if (this.option == MODIF) {
                 new ModifierSession(this.session, null);
             } else {
