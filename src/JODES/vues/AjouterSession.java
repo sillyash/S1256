@@ -6,8 +6,6 @@ import JODES.controleurs.ControleurBtnSauvegarderQuitter;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 import JODES.modeles.Administrateur;
-import JODES.modeles.Session;
-
 import java.awt.*;
 
 public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuitter{

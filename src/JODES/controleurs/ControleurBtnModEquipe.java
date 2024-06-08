@@ -4,22 +4,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
 import JODES.vues.SelectionEquipe;
-
-import JODES.modeles.Entite;
-import JODES.modeles.Equipe;
-import JODES.vues.ModifierEquipe;
+import JODES.modeles.Administrateur;
 
 public class ControleurBtnModEquipe implements ActionListener{
+
 	protected JFrame _vue;
+	Administrateur admin;
 	
-	public ControleurBtnModEquipe(JFrame vue) {
+	public ControleurBtnModEquipe(JFrame vue, Administrateur admin) {
 		this._vue = vue;
+		this.admin = admin;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		new SelectionEquipe();
+		new SelectionEquipe(admin);
 		((JFrame) _vue).dispose();
 	}
-// TODO this needs to go to selectionnerEquipe Vue , which then goes to modif equipe specific vue.
 }

@@ -18,11 +18,11 @@ public class App extends JFrame {
 	public static void main(String args[])
 	{
 		JO2024.initialize();
-		Administrateur user = new Administrateur("admin", "", "Utilisateur", "Admin");
-		JO2024.addUtilisateur(user);
-		JO2024.demandeConnexion(user.getLogin(), user.getPassword());
+		Administrateur admin = new Administrateur("admin", "", "Utilisateur", "Admin");
+		JO2024.addUtilisateur(admin);
+		JO2024.demandeConnexion(admin.getLogin(), admin.getPassword());
 
-		JFrame app = new HomePageFrame(user);
+		JFrame app = new HomePageFrame(admin);
 		app.setSize(800, 450);
         app.setVisible(true);
 	}

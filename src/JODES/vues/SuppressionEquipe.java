@@ -4,7 +4,9 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectEquipe;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
+import JODES.modeles.Epreuve;
 
 import java.awt.*;
 import javax.swing.*;
@@ -31,7 +33,7 @@ public class SuppressionEquipe extends JFrame implements RetourVue{
         PanelTitle panelTitle = new PanelTitle("Equipe");
         add(panelTitle); 
         valider = new JButton("✔");
-        valider.addActionListener(new ControleurBtnSelectEquipe(equipeCMB, ControleurBtnSelectEquipe.SUPPR));
+        valider.addActionListener(new ControleurBtnSelectEquipe(equipeCMB, ControleurBtnSelectEquipe.SUPPR, admin));
         equipeCMB = new ComboBoxEquipe(JO2024.getEquipes());
         indicationDelete = new JLabel("Veuillez sélectionner l'équipe à supprimer :",JLabel.CENTER);
 

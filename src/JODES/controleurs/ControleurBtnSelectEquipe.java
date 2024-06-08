@@ -1,7 +1,9 @@
 package JODES.controleurs;
 import JODES.JO2024;
+import JODES.modeles.Administrateur;
 import JODES.modeles.Equipe;
 import JODES.vues.ComboBoxEquipe;
+import JODES.vues.EquipeFrame;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierEquipe;
 import java.awt.event.ActionEvent;
@@ -15,11 +17,17 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
     protected int option;
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
+    Administrateur admin;
 
-    public ControleurBtnSelectEquipe(ComboBoxEquipe combo, int option) {
+    public ControleurBtnSelectEquipe(ComboBoxEquipe combo, int option, Administrateur admin) {
         this.CMB = combo;
         if (option == MODIF || option == SUPPR) this.option = option;
         else this.option = MODIF;
+        this.admin = admin;
+    }
+
+    public ControleurBtnSelectEquipe(EquipeFrame equipeFrame) {
+        //TODO Auto-generated constructor stub
     }
 
     @Override
@@ -34,7 +42,7 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
             String nomEpreuve = (String)CMB.getSelectedItem();
             this.equipe = (Equipe)JO2024.rechercheEntite(nomEpreuve);
             if (this.option == MODIF) {
-                new ModifierEquipe(this.equipe);
+                new ModifierEquipe(this.equipe, admin);
             } else {
                 JO2024.removeEntite(equipe);
             };

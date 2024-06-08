@@ -31,7 +31,7 @@ public class SuppressionEpreuve extends JFrame implements RetourVue{
         PanelTitle panelTitle = new PanelTitle("Epreuve");
         add(panelTitle); 
         valider = new JButton("✔");
-        valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.SUPPR));
+        valider.addActionListener(new ControleurBtnSelectEpreuve(combo, ControleurBtnSelectEpreuve.SUPPR, admin));
         combo = new ComboBoxEpreuve(JO2024.getEpreuves());
         indicationDelete = new JLabel("Veuillez sélectionner l'épreuve à supprimer :",JLabel.CENTER);
 

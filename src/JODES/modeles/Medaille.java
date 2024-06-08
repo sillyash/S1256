@@ -39,13 +39,4 @@ public class Medaille extends Entite {
 	public void setValeur(String valeur) {
 		this.valeur = valeur;
 	}
-	
-	// ----------- Methods -----------
-
-	@Override
-	public void menuModification() {
-		return;
-	}
-
-	
 }

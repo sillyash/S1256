@@ -32,12 +32,4 @@ public class Epreuve extends Entite {
     public void setSesEquipes(ArrayList<Equipe> sesEquipes) {
         this.sesEquipes = sesEquipes;
     }
-
-    // ----------- Methods ----------
-
-    @Override
-    public void menuModification() {
-        return;
-    }
-    
 }
