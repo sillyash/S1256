@@ -3,7 +3,6 @@ import JODES.JO2024;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Equipe;
 import JODES.vues.ComboBoxEquipe;
-import JODES.vues.EquipeFrame;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierEquipe;
 import java.awt.event.ActionEvent;
@@ -24,10 +23,6 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
         if (option == MODIF || option == SUPPR) this.option = option;
         else this.option = MODIF;
         this.admin = admin;
-    }
-
-    public ControleurBtnSelectEquipe(EquipeFrame equipeFrame) {
-        //TODO Auto-generated constructor stub
     }
 
     @Override

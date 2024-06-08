@@ -25,14 +25,18 @@ public class ComboBoxSession extends JComboBox<String> {
     public ArrayList<Session> getItemList() {
         return listeSessions;
     }
+    
     public boolean isSelectedNull() {
-    	if (this.getSelectedItem()== "")
+    	if (this.getItemCount() == 0)
+    		return true;
+    	if (this.getSelectedItem() == "")
     		return true;
     	else 
     		return false;
     }
+    
     public Entite getSelectedEntite() {
-		return this.getSelectedEntite();
+    	return listeSessions.get(this.getSelectedIndex()-1);
     }
     
 }

@@ -15,7 +15,7 @@ import java.awt.*;
 import javax.swing.*;
 
 //correct naming of class - Emma
-public class SelectionEquipe extends JFrame implements RetourVue,SelectionVue {
+public class SelectionEquipe extends JFrame implements RetourVue, SelectionVue {
 
     private static final long serialVersionUID = 1L;
     protected ComboBoxEquipe combo;
@@ -71,11 +71,6 @@ public class SelectionEquipe extends JFrame implements RetourVue,SelectionVue {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        new SelectionEquipe(admin);
-    }
-
 	@Override
 	public void retour() {
 		new EquipeFrame(admin);
@@ -86,11 +81,11 @@ public class SelectionEquipe extends JFrame implements RetourVue,SelectionVue {
 	public void selection() {
 		if (combo.isSelectedNull())
 			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
-		else 
+		else {
 			new ModifierEquipe((Equipe) combo.getSelectedEntite(), admin);
-		this.dispose();
+			this.dispose();
+		}
 	}
-	
 }
 
 

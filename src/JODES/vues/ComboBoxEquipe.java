@@ -24,13 +24,17 @@ public class ComboBoxEquipe extends JComboBox<String> {
     public ArrayList<Equipe> getItemList() {
         return this.listeEquipes;
     }
+    
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 
     		return false;
     }
+    
     public Entite getSelectedEntite() {
-		return this.getSelectedEntite();
+		return listeEquipes.get(this.getSelectedIndex()-1);
     }
 }

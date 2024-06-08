@@ -34,7 +34,7 @@ public class SelectionSession extends JFrame implements RetourVue,SelectionVue {
         // Initialize elements
         valider = new JButton("✔");
         combo = new ComboBoxSession(JO2024.getSessions());
-        valider.addActionListener(new ControleurBtnSelectSession(combo, ControleurBtnSelectSession.MODIF));
+        valider.addActionListener(new ControleurBtnSelectSession(combo, admin));
         indicationDelete = new JLabel("Veuillez sélectionner la session à modifier :",JLabel.CENTER);
 
         // Panel
