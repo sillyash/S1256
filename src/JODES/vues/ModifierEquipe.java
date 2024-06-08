@@ -59,7 +59,19 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 		panelDuMilieu.add(new GridFormField(PCA4,new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
 
-        // TODO fill fields
+		try {
+			TXFnom.setText(equipe.getNom());
+			CMBPays.setSelectedIndex(CMBPays.getItemList().indexOf(equipe.getSonPays()));
+			PCA1.getCmb().setSelectedIndex(PCA1.getCmb().getItemList().indexOf(equipe.getSesAthletes().get(0)));
+			PCA2.getCmb().setSelectedIndex(PCA1.getCmb().getItemList().indexOf(equipe.getSesAthletes().get(1)));
+			if (equipe.getSesAthletes().size() > 2)
+				PCA3.getCmb().setSelectedIndex(PCA1.getCmb().getItemList().indexOf(equipe.getSesAthletes().get(2)));
+			if (equipe.getSesAthletes().size() > 3)
+				PCA4.getCmb().setSelectedIndex(PCA1.getCmb().getItemList().indexOf(equipe.getSesAthletes().get(3)));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,
+			"Erreur pendant le remplissage des champs.\nCertains champs pourraient être vides.");
+		}
       
         setSize(800, 450);
         setVisible(true);

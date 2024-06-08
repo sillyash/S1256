@@ -1,5 +1,4 @@
 package JODES.modeles;
-
 import java.util.ArrayList;
 
 /**
@@ -26,5 +25,13 @@ public class Epreuve extends Entite {
 
     public void setSesEquipes(ArrayList<Equipe> sesEquipes) {
         this.sesEquipes = sesEquipes;
+    }
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
     }
 }

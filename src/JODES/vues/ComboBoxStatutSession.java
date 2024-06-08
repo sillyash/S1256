@@ -17,6 +17,10 @@ public class ComboBoxStatutSession extends JComboBox<String> {
         addItems();
     }
 
+    public ArrayList<String> getItemList() {
+        return statut;
+    }
+
     protected void addItems() {
         this.addItem("");
         for (String s : statut)

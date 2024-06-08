@@ -8,6 +8,7 @@ import JODES.modeles.Administrateur;
 import JODES.modeles.Session;
 
 import java.awt.*;
+import java.time.LocalDate;
 
 public class ModifierSession extends JFrame implements RetourVue, SauvegarderQuitter{
 
@@ -15,7 +16,6 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
     Administrateur admin;
     TXField TXFnom = new TXField("");
     ComboBoxStatutSession CMBSS = new ComboBoxStatutSession();
-    ComboBoxPays CMBP = new ComboBoxPays(JO2024.getPays());
     DatePicker DTpick = new DatePicker();
     ComboBoxHoraires CMBH1 = new ComboBoxHoraires();
     ComboBoxHoraires CMBH2 = new ComboBoxHoraires();
@@ -44,17 +44,32 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(4,2));
-		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom :")));
-		panelDuMilieu.add(new GridFormField(CMBSS,new JLabel("Statut :")));
-		panelDuMilieu.add(new GridFormField(CMBP,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(DTpick,new JLabel("Date :")));
-		panelDuMilieu.add(new GridFormField(CMBH1,new JLabel("Horaire debut :")));
-		panelDuMilieu.add(new GridFormField(CMBH2,new JLabel("Horaire fin :")));
-		panelDuMilieu.add(new GridFormField(CMBL,new JLabel("Lieu :")));
-		panelDuMilieu.add(new GridFormField(CMBD,new JLabel("Lieu :")));
+		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom* :")));
+		panelDuMilieu.add(new GridFormField(CMBSS,new JLabel("Statut* :")));
+		panelDuMilieu.add(new GridFormField(DTpick,new JLabel("Date* :")));
+		panelDuMilieu.add(new GridFormField(CMBH1,new JLabel("Horaire début* :")));
+		panelDuMilieu.add(new GridFormField(CMBH2,new JLabel("Horaire fin* :")));
+		panelDuMilieu.add(new GridFormField(CMBL,new JLabel("Lieu* :")));
+		panelDuMilieu.add(new GridFormField(CMBD,new JLabel("Discipline* :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
 
-        // TODO fill fields
+		try {
+            ComboBoxDay CMBDay = DTpick.comboBoxDay;
+            ComboBoxMonth CMBMonth = DTpick.comboBoxMonth;
+            ComboBoxYear CMBYear = DTpick.comboBoxYear;
+            LocalDate date = sessionModele.getDate();
+
+			TXFnom.setText(sessionModele.getNom());
+            CMBSS.setSelectedIndex(CMBSS.getItemList().indexOf(sessionModele.getStatut()));
+            CMBDay.setSelectedIndex(CMBDay.getItemList().indexOf(date.getDayOfMonth()));
+            CMBMonth.setSelectedIndex(CMBMonth.getMonths().indexOf(date.getMonth()));
+            CMBYear.setSelectedIndex(CMBYear.getItemList().indexOf(date.getYear()));
+			CMBL.setSelectedIndex(CMBL.getItemList().indexOf(sessionModele.getSonLieu()));
+            CMBD.setSelectedIndex(CMBD.getItemList().indexOf(sessionModele.getSaDiscipline()));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,
+			"Erreur pendant le remplissage des champs.\nCertains champs pourraient être vides.");
+		}
       
         setSize(800, 450);
         setVisible(true);
@@ -76,8 +91,6 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
         else if (CMBSS.isSelectedNull())
             JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Statut)");
-        else if (CMBP.isSelectedNull())
-            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
         else if (DTpick.isDateValid())
             JOptionPane.showMessageDialog(null,"Erreur : champ non rempli ou erronné (Date)");
         else if (CMBH1.isSelectedNull())

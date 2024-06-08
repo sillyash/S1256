@@ -14,7 +14,6 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
 	Administrateur admin;
     TXField TXFnom = new TXField("");
     ComboBoxStatutSession CMBSS = new ComboBoxStatutSession();
-    ComboBoxPays CMBP = new ComboBoxPays(JO2024.getPays());
     DatePicker DTpick = new DatePicker();
     ComboBoxHoraires CMBH1 = new ComboBoxHoraires();
     ComboBoxHoraires CMBH2 = new ComboBoxHoraires();
@@ -45,7 +44,6 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
         panelDuMilieu.setLayout(new GridLayout(4,2));
 		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom* :")));
 		panelDuMilieu.add(new GridFormField(CMBSS,new JLabel("Statut* :")));
-		panelDuMilieu.add(new GridFormField(CMBP,new JLabel("Pays* :")));
 		panelDuMilieu.add(new GridFormField(DTpick,new JLabel("Date* :")));
 		panelDuMilieu.add(new GridFormField(CMBH1,new JLabel("Horaire début* :")));
 		panelDuMilieu.add(new GridFormField(CMBH2,new JLabel("Horaire fin* :")));
@@ -73,8 +71,6 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
 			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
         else if (CMBSS.isSelectedNull())
             JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Statut)");
-        else if (CMBP.isSelectedNull())
-            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
         else if (DTpick.isDateValid())
             JOptionPane.showMessageDialog(null,"Erreur : champ non rempli ou erronné (Date)");
         else if (CMBH1.isSelectedNull())

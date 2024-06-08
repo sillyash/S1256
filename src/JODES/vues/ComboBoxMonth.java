@@ -1,4 +1,5 @@
 package JODES.vues;
+import java.time.Month;
 import java.util.ArrayList;
 import javax.swing.JComboBox;
 
@@ -6,6 +7,7 @@ public class ComboBoxMonth extends JComboBox<String> {
 
 	private static final long serialVersionUID = 1L;
 	protected ArrayList<String> months = new ArrayList<>();
+    protected ArrayList<Month> mois = new ArrayList<>();
 
     public ComboBoxMonth() {
         addItems();
@@ -24,6 +26,20 @@ public class ComboBoxMonth extends JComboBox<String> {
         months.add("SEP");
         months.add("NOV");
         months.add("DEC");
+
+        mois.add(Month.JANUARY);
+        mois.add(Month.FEBRUARY);
+        mois.add(Month.MARCH);
+        mois.add(Month.APRIL);
+        mois.add(Month.MAY);
+        mois.add(Month.JUNE);
+        mois.add(Month.JULY);
+        mois.add(Month.AUGUST);
+        mois.add(Month.SEPTEMBER);
+        mois.add(Month.OCTOBER);
+        mois.add(Month.NOVEMBER);
+        mois.add(Month.DECEMBER);
+
         for (String months : months) {
         	this.addItem(months);
         }
@@ -31,6 +47,10 @@ public class ComboBoxMonth extends JComboBox<String> {
 
     public ArrayList<String> getItemList() {
         return months;
+    }
+
+    public ArrayList<Month> getMonths() {
+        return mois;
     }
 
     public int getSelectedMonth() {

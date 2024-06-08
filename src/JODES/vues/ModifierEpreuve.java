@@ -51,8 +51,16 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
         panelDuMilieu.add(new GridFormField(CBE1,new JLabel("Équipe 1* :")));
         panelDuMilieu.add(new GridFormField(CBE2,new JLabel("Équipe 2* :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
-
-		// TODO fill fields
+		
+		try {
+			TXNom.setText(epreuveModele.getNom());
+			CBS.setSelectedIndex(CBS.getItemList().indexOf(epreuveModele.getSession()));
+			CBE1.setSelectedIndex(CBE1.getItemList().indexOf(epreuveModele.getSesEquipes().get(0)));
+			CBE2.setSelectedIndex(CBE2.getItemList().indexOf(epreuveModele.getSesEquipes().get(1)));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null,
+			"Erreur pendant le remplissage des champs.\nCertains champs pourraient être vides.");
+		}
       
         setSize(800, 450);
         setVisible(true);
