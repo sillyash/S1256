@@ -26,5 +26,4 @@ public class App extends JFrame {
 		app.setSize(800, 450);
         app.setVisible(true);
 	}
-	
 }
