@@ -86,7 +86,6 @@ public class SelectionEquipe extends JFrame implements RetourVue, SelectionVue {
 			this.dispose();
 		}
 	}
-	
 }
 
 
