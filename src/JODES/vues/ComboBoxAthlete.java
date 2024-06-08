@@ -20,6 +20,8 @@ public class ComboBoxAthlete extends JComboBox<String> {
         }
     }
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 
@@ -30,6 +32,7 @@ public class ComboBoxAthlete extends JComboBox<String> {
     public ArrayList<Athlete> getItemList() {
         return listeAthletes;
     }
+    
     public Entite getSelectedEntite() {
 		return this.getSelectedEntite();
     }

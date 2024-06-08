@@ -25,7 +25,10 @@ public class ComboBoxYear extends JComboBox<String> {
     public int getSelectedYear() {
         return this.getSelectedIndex()+2023;
     }
+    
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 

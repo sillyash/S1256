@@ -23,7 +23,10 @@ public class ComboBoxLieu extends JComboBox<String> {
     public ArrayList<Lieu> getItemList() {
         return listeLieu;
     }
+    
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 

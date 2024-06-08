@@ -19,15 +19,14 @@ public class ControleurBtnSelectSession implements ActionListener  {
     public static final int SUPPR = 1;
     Administrateur admin;
 
-    public ControleurBtnSelectSession(ComboBoxSession combo, Session session, Administrateur admin) {
+    public ControleurBtnSelectSession(ComboBoxSession combo, Administrateur admin) {
         this.admin = admin;
-        this.session = session;
         this.combo = combo;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.combo.getSelectedItem() == "") {
+        if (this.combo.isSelectedNull()) {
             new MessageBox(
                 "Vous devez sélectionner une équipe !",
                 "Champ obligatoire",

@@ -23,7 +23,10 @@ public class ComboBoxPays extends JComboBox<String> {
     public ArrayList<Pays> getItemList() {
         return listePays;
     }
+    
     public boolean isSelectedNull() {
+    	if (this.getItemCount() == 0)
+    		return true;
     	if (this.getSelectedItem()== "")
     		return true;
     	else 

@@ -27,7 +27,9 @@ public class ComboBoxSession extends JComboBox<String> {
     }
     
     public boolean isSelectedNull() {
-    	if (this.getSelectedItem()== "")
+    	if (this.getItemCount() == 0)
+    		return true;
+    	if (this.getSelectedItem() == "")
     		return true;
     	else 
     		return false;
