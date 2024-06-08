@@ -47,10 +47,6 @@ public class SessionFrame extends JFrame implements RetourVue {
         
     }
 
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        SessionFrame Session = new SessionFrame(admin);
-    }
     //Nicolas
 	@Override
 	public void retour() {

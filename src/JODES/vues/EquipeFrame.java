@@ -44,10 +44,6 @@ public class EquipeFrame extends JFrame implements RetourVue{
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public static void main(String[] args) {
-		Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-    	EquipeFrame Equipe = new EquipeFrame(admin);    }
     
     //Nicolas
 	@Override

@@ -1,11 +1,8 @@
 // ESCOFFIER Emma
 package JODES.vues;
 import javax.swing.*;
-
-import JODES.JO2024;
 import JODES.controleurs.*;
 import JODES.modeles.Administrateur;
-
 import java.awt.*;
 
 public class HomePageFrame extends JFrame {
@@ -58,10 +55,4 @@ public class HomePageFrame extends JFrame {
 		button.setBackground(Color.lightGray);
 		button.setForeground(Color.WHITE);
 	}
-
-	public static void main(String[] args) {
-		JO2024.initialize();
-		Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-		HomePageFrame testAffichage = new HomePageFrame(admin);
-		}
 }

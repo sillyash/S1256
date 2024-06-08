@@ -44,12 +44,6 @@ public class EpreuveFrame extends JFrame implements RetourVue {
         // Exit the application when the frame is closed
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
     }
-
-    public static void main(String[] args) {
-    	//Create the mainEpreuve frame
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        EpreuveFrame Epreuve = new EpreuveFrame(admin);
-    }
     //Nicolas
 	@Override
 	public void retour() {

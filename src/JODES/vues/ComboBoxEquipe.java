@@ -1,5 +1,4 @@
 package JODES.vues;
-import JODES.modeles.Entite;
 import JODES.modeles.Equipe;
 import java.util.ArrayList;
 import javax.swing.JComboBox;

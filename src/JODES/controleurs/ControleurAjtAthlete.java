@@ -17,5 +17,4 @@ public class ControleurAjtAthlete implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		new AjouterAthlete(admin);
 	}
-// TODO this needs to go to selectionnerEquipe Vue , which then goes to modif equipe specific vue.
 }

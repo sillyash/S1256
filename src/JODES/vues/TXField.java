@@ -1,5 +1,4 @@
 package JODES.vues;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import JODES.modeles.DataParser;
 
