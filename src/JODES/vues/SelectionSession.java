@@ -4,12 +4,13 @@ import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
 import JODES.controleurs.ControleurBtnSelectSession;
 import JODES.controleurs.RetourVue;
+import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
 
 import java.awt.*;
 import javax.swing.*;
 
-public class SelectionSession extends JFrame implements RetourVue {
+public class SelectionSession extends JFrame implements RetourVue,SelectionVue {
     
     private static final long serialVersionUID = 1L;
     protected ComboBoxSession combo;
@@ -69,6 +70,13 @@ public class SelectionSession extends JFrame implements RetourVue {
 	@Override
 	public void retour() {
 		new SessionFrame(admin);
+		this.dispose();
+	}
+	public void selection() {
+		if (combo.isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null"); 
+		else 
+			new ModifierSession((Session) combo.getSelectedEntite(), admin);
 		this.dispose();
 	}
 }
