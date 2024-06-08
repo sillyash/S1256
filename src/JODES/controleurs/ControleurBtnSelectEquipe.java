@@ -12,14 +12,14 @@ import javax.swing.JOptionPane;
 public class ControleurBtnSelectEquipe implements ActionListener  {
 
     protected Equipe equipe;
-    protected ComboBoxEquipe CMB;
+    protected ComboBoxEquipe combo;
     protected int option;
     public static final int MODIF = 0;
     public static final int SUPPR = 1;
     Administrateur admin;
 
     public ControleurBtnSelectEquipe(ComboBoxEquipe combo, int option, Administrateur admin) {
-        this.CMB = combo;
+        this.combo = combo;
         if (option == MODIF || option == SUPPR) this.option = option;
         else this.option = MODIF;
         this.admin = admin;
@@ -27,15 +27,15 @@ public class ControleurBtnSelectEquipe implements ActionListener  {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (this.CMB.getSelectedItem() == "") {
+        if (this.combo.getSelectedItem() == "") {
             new MessageBox(
                 "Vous devez sélectionner une équipe !",
                 "Champ obligatoire",
-                JOptionPane.YES_NO_CANCEL_OPTION);
+                JOptionPane.OK_OPTION);
         }
         else {
-            String nomEpreuve = (String)CMB.getSelectedItem();
-            this.equipe = (Equipe)JO2024.rechercheEntite(nomEpreuve);
+            String nomEquipe = combo.getSelectedEntite().getNom();
+            this.equipe = (Equipe)JO2024.rechercheEntite(nomEquipe);
             if (this.option == MODIF) {
                 new ModifierEquipe(this.equipe, admin);
             } else {
