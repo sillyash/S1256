@@ -5,6 +5,7 @@ import JODES.modeles.Session;
 import JODES.vues.ComboBoxSession;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierSession;
+import JODES.vues.SessionFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -24,7 +25,7 @@ public class ControleurBtnSelectSession implements ActionListener  {
         this.CMB = combo;
     }
 
-    public ControleurBtnSelectSession(ComboBoxSession combo, int modif2) {
+    public ControleurBtnSelectSession(SessionFrame sessionFrame, Administrateur admin2) {
         //TODO Auto-generated constructor stub
     }
 
