@@ -8,8 +8,10 @@ import JODES.controleurs.RetourVue;
 import JODES.controleurs.SauvegarderQuitter;
 
 import java.awt.*;
+import java.util.ArrayList;
 
 import JODES.modeles.Administrateur;
+import JODES.modeles.Athlete;
 import JODES.modeles.Equipe;
 
 public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuitter{
@@ -17,12 +19,12 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 	private static final long serialVersionUID = 1L;
 	protected Equipe equipe;
 	Administrateur admin;
-	ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
-	ComboBoxAthlete CMBA1 = new ComboBoxAthlete(JO2024.getAthletes());
-	ComboBoxAthlete CMBA2 = new ComboBoxAthlete(JO2024.getAthletes());
-	ComboBoxAthlete CMBA3 = new ComboBoxAthlete(JO2024.getAthletes());
-	ComboBoxAthlete CMBA4 = new ComboBoxAthlete(JO2024.getAthletes());
-	JTextField TXFnom = new JTextField();
+	PanelChoisirAthlete PCA1 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA2 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA3 = new PanelChoisirAthlete(admin);
+    PanelChoisirAthlete PCA4 = new PanelChoisirAthlete(admin);
+    ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
+    JTextField TXFnom = new JTextField();
 
 	public ModifierEquipe(Equipe equipe, Administrateur admin) {
         super("JODES");
@@ -49,13 +51,12 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
 
-
-		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe :")));
-		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(CMBA1,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA2,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA3,new JLabel("Athlete :")));
-		panelDuMilieu.add(new GridFormField(CMBA4,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom Equipe* :")));
+		panelDuMilieu.add(new GridFormField(CMBPays,new JLabel("Pays* :")));
+		panelDuMilieu.add(new GridFormField(PCA1,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA2,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA3,new JLabel("Athlete :")));
+		panelDuMilieu.add(new GridFormField(PCA4,new JLabel("Athlete :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
 
         // TODO fill fields
@@ -76,23 +77,53 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
 		new EquipeFrame(admin);
 		(this).dispose();
 	}
+
 	@Override
 	public void saveQuit() {
-		if (TXFnom.getText() == "")
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		Equipe e;
+		ArrayList<Athlete> athletes = new ArrayList<>();
+		boolean[] boolAthletes = new boolean[4];
+		int nbAthletesNull = 0;
+
+		if ((PCA1.getCmb()).isSelectedNull())
+			boolAthletes[0] = true;
+		if ((PCA2.getCmb()).isSelectedNull())
+			boolAthletes[1] = true;
+		if ((PCA3.getCmb()).isSelectedNull())
+			boolAthletes[2] = true;
+		if ((PCA4.getCmb()).isSelectedNull())
+			boolAthletes[3] = true;
+
+		for (int i=0; i<boolAthletes.length; i++) {
+			if (boolAthletes[i] == true)
+				nbAthletesNull+=1;
+		}
+
+		if (TXFnom.getText()=="")
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
 		else if (CMBPays.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBA1.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBA2.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBA3.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBA4.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else
-			// TODO add code to save modifications
-			new EquipeFrame(admin);
-			(this).dispose();
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
+		else if (nbAthletesNull > 2)
+			JOptionPane.showMessageDialog(null,
+			"Erreur : champ(s) non rempli(s),\nil faut renseigner minimum 2 athlètes.");
+		else {
+			if (!PCA1.getCmb().isSelectedNull())
+				athletes.add(PCA1.getCmb().getSelectedEntite());
+			if (!PCA2.getCmb().isSelectedNull())
+				athletes.add(PCA2.getCmb().getSelectedEntite());
+			if (!PCA3.getCmb().isSelectedNull())
+				athletes.add(PCA3.getCmb().getSelectedEntite());
+			if (!PCA4.getCmb().isSelectedNull())
+				athletes.add(PCA4.getCmb().getSelectedEntite());
+
+			e = new Equipe(
+				TXFnom.getText(),
+				CMBPays.getSelectedEntite(),
+				athletes
+			);
+			admin.modifierEntite(e);
+			JOptionPane.showMessageDialog(null, "Équipe modifiée !");
+			retour();
+		}
 	}
 }
