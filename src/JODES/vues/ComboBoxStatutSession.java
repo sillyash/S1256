@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import javax.swing.JComboBox;
 import JODES.modeles.*;
 
-public class ComboBoxStatutSession extends JComboBox {
+public class ComboBoxStatutSession extends JComboBox<String> {
     
     protected ArrayList<String> statut = new ArrayList<>();
 
