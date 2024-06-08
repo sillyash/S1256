@@ -58,7 +58,7 @@ public class PlanningFrame extends JFrame implements RetourVue{
 	// --------------------------- Constructor -----------------------------------
 
 	public PlanningFrame(Administrateur admin) {
-        
+        this.admin = admin;
 		if (JO2024.getSessions().size() != 0) {
         	Session firstSession = JO2024.getSessions().get(0);
         	_modele = new Planning(firstSession.getDate());
