@@ -3,7 +3,6 @@ import JODES.JO2024;
 import JODES.modeles.Administrateur;
 import JODES.modeles.Epreuve;
 import JODES.vues.ComboBoxEpreuve;
-import JODES.vues.EpreuveFrame;
 import JODES.vues.MessageBox;
 import JODES.vues.ModifierEpreuve;
 import java.awt.event.ActionEvent;
