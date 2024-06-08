@@ -8,18 +8,19 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.AjouterSession;
 
-public class ControleurBtnAjSession extends Controleur implements ActionListener{
+public class ControleurBtnAjSession implements ActionListener{
 
 	Administrateur admin;
+	JFrame vue;
 
 	public ControleurBtnAjSession(JFrame vue, Administrateur admin) {
-		super(null, vue);
+		this.vue = vue;
 		this.admin = admin;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new AjouterSession(admin);
-		((JFrame) _vue).dispose();
+		vue.dispose();
 	}
 }

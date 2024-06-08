@@ -8,18 +8,19 @@ import javax.swing.*;
 import JODES.modeles.Administrateur;
 import JODES.vues.EquipeFrame;
 
-public class ControleurBtnEquipe extends Controleur implements ActionListener{
+public class ControleurBtnEquipe implements ActionListener{
 
 	Administrateur admin;
+	JFrame vue;
 
 	public ControleurBtnEquipe(JFrame vue, Administrateur admin) {
-		super(null, vue);
+		this.vue = vue;
 		this.admin = admin;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new EquipeFrame(admin);
-		((JFrame) _vue).dispose();
+		vue.dispose();
 	}
 }

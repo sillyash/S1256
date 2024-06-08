@@ -68,11 +68,6 @@ public class SuppressionEpreuve extends JFrame implements RetourVue,SelectionVue
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        new SuppressionEpreuve(admin);
-    }
-
 	@Override
 	public void retour() {
 		new EpreuveFrame(admin);

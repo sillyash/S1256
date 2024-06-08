@@ -66,11 +66,7 @@ public class SuppressionSession extends JFrame implements RetourVue,SelectionVue
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public static void main(String[] args) {
-    	Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-        new SuppressionSession(admin);
-    }
+    
     //Nicolas
 	@Override
 	public void retour() {

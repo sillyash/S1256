@@ -1,23 +1,20 @@
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 
 /**
  * @author Nicolas Vouilloux
  */
-public class ControleurBtnRetour extends Controleur implements ActionListener {
+public class ControleurBtnRetour implements ActionListener {
 	
-	protected RetourVue _vue;
+	protected RetourVue vue;
 	
-	public ControleurBtnRetour(JFrame vue) {
-		super(null, vue);
-		//Nicolas
-		this._vue =(RetourVue) vue;
+	public ControleurBtnRetour(RetourVue vue) {
+		this.vue = vue;
 	}
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		_vue.retour();
+		vue.retour();
 	}
 }

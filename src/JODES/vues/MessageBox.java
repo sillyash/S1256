@@ -71,9 +71,4 @@ public class MessageBox {
       panel.add(textPane, BorderLayout.CENTER);
       JOptionPane.showMessageDialog(null, panel, "Information", JOptionPane.INFORMATION_MESSAGE);
   }
-  
-  public static void main(String[] args) {
-    MessageBox messageBox = new MessageBox("Are you sure you want to delete?", "Confirm Deletion", JOptionPane.YES_NO_CANCEL_OPTION);
-    messageBox.show();
-  }
 }

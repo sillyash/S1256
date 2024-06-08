@@ -2,8 +2,6 @@ package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.JFrame;
-
 public class ControleurBtnSauvegarderQuitter implements ActionListener {
 	
 	protected SauvegarderQuitter _vue;

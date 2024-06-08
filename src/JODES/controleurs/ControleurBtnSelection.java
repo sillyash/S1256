@@ -1,18 +1,17 @@
 package JODES.controleurs;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JFrame;
 
-public class ControleurBtnSelection extends Controleur implements ActionListener{
-	protected SelectionVue _vue;
+public class ControleurBtnSelection implements ActionListener{
+
+	protected SelectionVue vue;
 	
-	public ControleurBtnSelection(JFrame vue) {
-		super(null,vue);
-		this._vue = (SelectionVue)vue;
+	public ControleurBtnSelection(SelectionVue vue) {
+		this.vue = vue;
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		_vue.selection();
+		vue.selection();
 	}
 }

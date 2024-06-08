@@ -77,11 +77,6 @@ public class ModifierEquipe extends JFrame implements RetourVue, SauvegarderQuit
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-	public static void main(String[] args) {
-        JO2024.initialize();
-        Administrateur admin = new Administrateur("admin", "", "tst", "ttest");
-		new ModifierEquipe(new Equipe("",null,null), admin);
-    }
 
     //Nicolas
 	@Override

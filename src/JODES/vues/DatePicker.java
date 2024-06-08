@@ -28,15 +28,6 @@ public class DatePicker extends JPanel {
         return LocalDate.of(year,month,day);
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Simple Text Date Picker");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new DatePicker());
-        frame.pack();
-        frame.setLocationRelativeTo(null);
-        frame.setVisible(true);
-    }
-
     public boolean isDateValid() {
 		if (comboBoxDay.isSelectedNull() || comboBoxMonth.isSelectedNull() || comboBoxYear.isSelectedNull()) {
             return false;
