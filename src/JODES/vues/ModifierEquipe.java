@@ -131,7 +131,7 @@ public class ModifierEquipe extends JFrame implements UpdateAthlete, RetourVue, 
 				CMBPays.getSelectedEntite(),
 				athletes
 			);
-			admin.modifierEntite(e);
+			admin.modifierEntite(equipe, e);
 			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Équipe modifiée !");
 			retour();

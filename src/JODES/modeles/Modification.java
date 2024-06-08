@@ -11,6 +11,7 @@ public class Modification {
 	protected LocalDate dateModif;
 	protected LocalTime heureModif;
 	protected Entite sonEntite;
+	protected Entite entiteNew;
 	protected Administrateur sonAdmin;
 	protected String typeModif;
 	public static final String DELETE = "DELETE";
@@ -23,6 +24,15 @@ public class Modification {
 		this.dateModif = LocalDate.now();
 		this.heureModif = LocalTime.now();
 		this.sonEntite = sonEntite;
+		this.sonAdmin = sonAdmin;
+		this.typeModif = typeModif;
+	}
+
+	public Modification(Entite entiteOld, Entite entiteNew, Administrateur sonAdmin, String typeModif) {
+		this.dateModif = LocalDate.now();
+		this.heureModif = LocalTime.now();
+		this.sonEntite = entiteOld;
+		this.entiteNew = entiteNew;
 		this.sonAdmin = sonAdmin;
 		this.typeModif = typeModif;
 	}
@@ -80,8 +90,11 @@ public class Modification {
 			JO2024.removeEntite(sonEntite);
 		}
 		else if (this.typeModif == UPDATE) {
-			index = JO2024.rechercheEntite(this.sonEntite.getIdEntite()).getIdEntite();
-			JO2024.sesEntites.set(index, sonEntite);
+			System.out.println("Entity to update: "+sonEntite.getIdEntite());
+			Entite recherche = JO2024.rechercheEntite(sonEntite.getIdEntite());
+			index = JO2024.getSesEntites().indexOf(recherche);
+			System.out.println("Entité trouvée: "+recherche);
+			JO2024.getSesEntites().set(index, entiteNew);
 		}
 		else JO2024.addEntite(sonEntite);
 	}

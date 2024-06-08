@@ -37,9 +37,9 @@ public class Administrateur extends Utilisateur implements Serializable {
 		}
 	}
 
-	public void modifierEntite(Entite entite) {
+	public void modifierEntite(Entite entiteOld, Entite entiteNew) {
 		// - Nicolas Vouilloux
-		Modification Modif = new Modification(entite,this,Modification.UPDATE);
+		Modification Modif = new Modification(entiteOld, entiteNew, this, Modification.UPDATE);
 		sesModifications.add(Modif);
 	}
 

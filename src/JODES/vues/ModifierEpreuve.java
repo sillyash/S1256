@@ -98,7 +98,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
 				equipes,
 				CBS.getSelectedEntite()
 			);
-			admin.modifierEntite(e);
+			admin.modifierEntite(epreuveModele, e);
 			admin.enregisterModifications();
 			JOptionPane.showMessageDialog(null, "Épreuve modifiée !");
 			retour();
