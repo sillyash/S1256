@@ -18,7 +18,7 @@ public class App extends JFrame {
 	public static void main(String args[])
 	{
 		JO2024.initialize();
-		Administrateur admin = new Administrateur("admin", "", "Utilisateur", "Admin");
+		Administrateur admin = new Administrateur("admin", "password", "Utilisateur", "Admin");
 		JO2024.addUtilisateur(admin);
 		JO2024.demandeConnexion(admin.getLogin(), admin.getPassword());
 
