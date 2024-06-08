@@ -20,7 +20,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
         super("JODES");
         this.epreuveModele = epreuve;
         this.admin = admin;
-        PanelTitle panelTitle = new PanelTitle("Ajouter epreuve");
+        PanelTitle panelTitle = new PanelTitle("Modifier épreuve");
         JButton button = new JButton("Retour" + "\u21A9");
         ControleurBtnRetour btnretour = new ControleurBtnRetour(this);
         
