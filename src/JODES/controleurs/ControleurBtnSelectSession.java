@@ -29,10 +29,10 @@ public class ControleurBtnSelectSession implements ActionListener  {
             new MessageBox(
                 "Vous devez sélectionner une équipe !",
                 "Champ obligatoire",
-                JOptionPane.YES_NO_CANCEL_OPTION);
+                JOptionPane.OK_OPTION);
         }
         else {
-            String nomSession = (String)combo.getSelectedItem();
+            String nomSession = combo.getSelectedEntite().getNom();
             this.session = (Session)JO2024.rechercheEntite(nomSession);
             if (this.option == MODIF) {
                 new ModifierSession(this.session, null);

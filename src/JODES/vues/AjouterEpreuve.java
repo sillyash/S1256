@@ -11,10 +11,14 @@ import java.awt.*;
 
 public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuitter{
 	Administrateur admin;
+	JTextField TXNom = new JTextField("");
+	ComboBoxHoraires CBH1 = new ComboBoxHoraires();
+	ComboBoxHoraires CBH2 = new ComboBoxHoraires();
+	ComboBoxSession CBS1 = new ComboBoxSession(JO2024.getSessions());
+	
 	public AjouterEpreuve(Administrateur admin) {
         
-        super("JODES");
-        
+		super("JODES");
         this.admin = admin;
         PanelTitle panelTitle = new PanelTitle("Ajouter épreuve");
         JButton button = new JButton("Retour" + "\u21A9");
@@ -36,10 +40,10 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(3,2));
-        panelDuMilieu.add(new GridFormField(new JTextField(""),new JLabel("Nom Epreuve :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Debut :")));
-		panelDuMilieu.add(new GridFormField(new ComboBoxHoraires(),new JLabel("Horaire Fin :")));
-        panelDuMilieu.add(new GridFormField(new ComboBoxSession(JO2024.getSessions()),new JLabel("Session :")));
+        panelDuMilieu.add(new GridFormField(TXNom,new JLabel("Nom Epreuve :")));
+		panelDuMilieu.add(new GridFormField(CBH1,new JLabel("Horaire Debut :")));
+		panelDuMilieu.add(new GridFormField(CBH2,new JLabel("Horaire Fin :")));
+        panelDuMilieu.add(new GridFormField(CBS1,new JLabel("Session :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
         
 		add(panelDuMilieu,BorderLayout.CENTER);
@@ -63,7 +67,17 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
 
 	@Override
 	public void saveQuit() {
-		// TODO Auto-generated method stub
-		
+		if ((TXNom.getText()==""))
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((CBH1).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((CBH2).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else if ((CBS1).isSelectedNull())
+			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
+		else 
+			//TODO enregistrer les information
+			new EpreuveFrame(admin);
+			(this).dispose();
 	}
 }
