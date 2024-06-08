@@ -5,5 +5,5 @@ package JODES.controleurs;
  */
 public interface SauvegarderQuitter {
 	
-	public void SauvegarderQuitter();
+	public void saveQuit();
 }

@@ -59,7 +59,7 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
 		(this).dispose();
 	}
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}

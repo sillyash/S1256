@@ -59,7 +59,7 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 	}
 
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}

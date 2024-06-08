@@ -62,7 +62,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
 	}
 
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}

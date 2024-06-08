@@ -69,7 +69,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 		(this).dispose();
 	}
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}

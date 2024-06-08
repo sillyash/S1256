@@ -56,7 +56,7 @@ public class ModifierEpreuve extends JFrame implements RetourVue, SauvegarderQui
 		(this).dispose();
 	}
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}

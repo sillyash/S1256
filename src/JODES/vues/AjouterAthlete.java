@@ -39,7 +39,7 @@ public class AjouterAthlete extends JFrame implements SauvegarderQuitter{
     }
     
 	@Override
-	public void SauvegarderQuitter() {
+	public void saveQuit() {
 		// TODO Auto-generated method stub
 		
 	}
