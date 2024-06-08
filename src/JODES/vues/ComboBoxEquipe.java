@@ -35,6 +35,6 @@ public class ComboBoxEquipe extends JComboBox<String> {
     }
     
     public Entite getSelectedEntite() {
-		return this.getSelectedEntite();
+		return listeEquipes.get(this.getSelectedIndex()-1);
     }
 }

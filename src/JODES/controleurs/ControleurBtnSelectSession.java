@@ -33,8 +33,8 @@ public class ControleurBtnSelectSession implements ActionListener  {
                 JOptionPane.YES_NO_CANCEL_OPTION);
         }
         else {
-            String nomEpreuve = (String)combo.getSelectedItem();
-            this.session = (Session)JO2024.rechercheEntite(nomEpreuve);
+            String nomSession = (String)combo.getSelectedItem();
+            this.session = (Session)JO2024.rechercheEntite(nomSession);
             if (this.option == MODIF) {
                 new ModifierSession(this.session, null);
             } else {

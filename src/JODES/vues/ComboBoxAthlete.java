@@ -34,7 +34,7 @@ public class ComboBoxAthlete extends JComboBox<String> {
     }
     
     public Entite getSelectedEntite() {
-		return this.getSelectedEntite();
+		return listeAthletes.get(this.getSelectedIndex()-1);
     }
     
 }

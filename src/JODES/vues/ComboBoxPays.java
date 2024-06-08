@@ -32,4 +32,8 @@ public class ComboBoxPays extends JComboBox<String> {
     	else 
     		return false;
     }
+    
+    public Entite getSelectedEntite() {
+    	return listePays.get(this.getSelectedIndex()-1);
+    }
 }
