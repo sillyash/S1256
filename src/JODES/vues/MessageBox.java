@@ -53,7 +53,7 @@ public class MessageBox {
 	  this.title = title;
   }
   
-  public void showMessageBox() {
+  public void showMessageBoxPlann() {
       JTextPane textPane = new JTextPane();
       textPane.setContentType("text/html");
       textPane.setText("<html><body style='text-align: center;'>" +
