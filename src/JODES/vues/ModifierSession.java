@@ -13,14 +13,14 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 
     protected Session sessionModele;
     Administrateur admin;
-    JTextField TXFNom = new JTextField();
-    ComboBoxStatutSession CMBStatSes = new ComboBoxStatutSession();
-    ComboBoxPays CMBPays = new ComboBoxPays(JO2024.getPays());
-    DatePicker DPSes = new DatePicker();
-    ComboBoxHoraires CMBDeb = new ComboBoxHoraires();
-    ComboBoxHoraires CMBFin =new ComboBoxHoraires();
-    ComboBoxLieu CMBLieu = new ComboBoxLieu(JO2024.getLieux());
-    ComboBoxDiscipline CMBDisci = new ComboBoxDiscipline(JO2024.getDisciplines());
+    TXField TXFnom = new TXField("");
+    ComboBoxStatutSession CMBSS = new ComboBoxStatutSession();
+    ComboBoxPays CMBP = new ComboBoxPays(JO2024.getPays());
+    DatePicker DTpick = new DatePicker();
+    ComboBoxHoraires CMBH1 = new ComboBoxHoraires();
+    ComboBoxHoraires CMBH2 = new ComboBoxHoraires();
+    ComboBoxLieu CMBL = new ComboBoxLieu(JO2024.getLieux());
+    ComboBoxDiscipline CMBD = new ComboBoxDiscipline(JO2024.getDisciplines());
 
 	public ModifierSession(Session session, Administrateur admin) {
         super("JODES");
@@ -44,14 +44,14 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
         
         JPanel panelDuMilieu = new JPanel();
         panelDuMilieu.setLayout(new GridLayout(4,2));
-		panelDuMilieu.add(new GridFormField(TXFNom ,new JLabel("Nom :")));
-		panelDuMilieu.add(new GridFormField(CMBStatSes ,new JLabel("Statut :")));
-		panelDuMilieu.add(new GridFormField(CMBPays ,new JLabel("Pays :")));
-		panelDuMilieu.add(new GridFormField(DPSes ,new JLabel("Date :")));
-		panelDuMilieu.add(new GridFormField(CMBDeb ,new JLabel("Horaire debut :")));
-		panelDuMilieu.add(new GridFormField(CMBFin ,new JLabel("Horaire fin :")));
-		panelDuMilieu.add(new GridFormField(CMBLieu ,new JLabel("Lieu :")));
-		panelDuMilieu.add(new GridFormField(CMBDisci ,new JLabel("Lieu :")));
+		panelDuMilieu.add(new GridFormField(TXFnom,new JLabel("Nom :")));
+		panelDuMilieu.add(new GridFormField(CMBSS,new JLabel("Statut :")));
+		panelDuMilieu.add(new GridFormField(CMBP,new JLabel("Pays :")));
+		panelDuMilieu.add(new GridFormField(DTpick,new JLabel("Date :")));
+		panelDuMilieu.add(new GridFormField(CMBH1,new JLabel("Horaire debut :")));
+		panelDuMilieu.add(new GridFormField(CMBH2,new JLabel("Horaire fin :")));
+		panelDuMilieu.add(new GridFormField(CMBL,new JLabel("Lieu :")));
+		panelDuMilieu.add(new GridFormField(CMBD,new JLabel("Lieu :")));
 		add(panelDuMilieu,BorderLayout.CENTER);
       
         setSize(800, 450);
@@ -68,29 +68,38 @@ public class ModifierSession extends JFrame implements RetourVue, SauvegarderQui
 
 	@Override
 	public void saveQuit() {
-		if (TXFNom.getText() == "")
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBStatSes.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBPays.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (DPSes.comboBoxDay.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (DPSes.comboBoxMonth.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (DPSes.comboBoxYear.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBDeb.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBFin.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBLieu.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else if (CMBDisci.isSelectedNull())
-			javax.swing.JOptionPane.showMessageDialog(null,"Erreur Entite Null");
-		else
-			//TODO add code to save modifications
-			new SessionFrame(admin);
-			(this).dispose();
+        Session s;
+
+        if (TXFnom.getText()=="")
+			JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Nom)");
+        else if (CMBSS.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Statut)");
+        else if (CMBP.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Pays)");
+        else if (DTpick.isDateValid())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli ou erronné (Date)");
+        else if (CMBH1.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Horaire début)");
+        else if (CMBH2.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Horaire fin)");
+        else if (CMBL.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Lieu)");
+        else if (CMBD.isSelectedNull())
+            JOptionPane.showMessageDialog(null,"Erreur : champ non rempli (Discipline)");
+        else {
+            s = new Session(
+                TXFnom.getText(),
+                CMBSS.getSelectedItem().toString(),
+                JO2024.Paris2024,
+                CMBH1.getSelectedTime(),
+                CMBH2.getSelectedTime(),
+                DTpick.getSelectedDate(),
+                CMBL.getSelectedEntite(),
+                CMBD.getSelectedEntite()
+            );
+			admin.modifierEntite(s);
+			JOptionPane.showMessageDialog(null, "Session modifiée !");
+            retour();
+        }
 	}
 }

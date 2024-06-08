@@ -96,7 +96,7 @@ public class AjouterSession extends JFrame implements RetourVue, SauvegarderQuit
                 CMBL.getSelectedEntite(),
                 CMBD.getSelectedEntite()
             );
-            JO2024.addEntite(s);
+            admin.creerEntite(s);
             retour();
         }
 	}

@@ -85,7 +85,7 @@ public class AjouterEpreuve extends JFrame implements RetourVue, SauvegarderQuit
 				equipes,
 				CBS.getSelectedEntite()
 			);
-			JO2024.addEntite(e);
+			admin.creerEntite(e);
 			JOptionPane.showMessageDialog(null, "Épreuve créée !");
 			retour();
 		}

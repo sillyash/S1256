@@ -109,7 +109,7 @@ public class AjouterEquipe extends JFrame implements RetourVue, SauvegarderQuitt
 				CMBPays.getSelectedEntite(),
 				athletes
 			);
-			JO2024.addEntite(e);
+			admin.creerEntite(e);
 			JOptionPane.showMessageDialog(null, "Équipe créée !");
 			retour();
 		}

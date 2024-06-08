@@ -29,21 +29,21 @@ public class Administrateur extends Utilisateur implements Serializable {
 	
 	// ----------- Methods -----------
 	
-	protected void enregisterModifications() {
+	public void enregisterModifications() {
 		// - Nicolas Vouilloux
 		for (Modification modif : sesModifications){
 			modif.envoyerModifServeur();
 		}
 	}
 
-	protected void modifierEntite(Entite entite) {
+	public void modifierEntite(Entite entite) {
 		// - Nicolas Vouilloux
 		Entite newEntite = entite;
 		Modification Modif = new Modification(newEntite,this,Modification.UPDATE);
 		sesModifications.add(Modif);
 	}
 
-	protected void annulerModification(Modification modification) {
+	public void annulerModification(Modification modification) {
 		// - Nicolas Vouilloux
 		for (Modification modif : sesModifications){
 			if (modif == modification)
@@ -51,13 +51,13 @@ public class Administrateur extends Utilisateur implements Serializable {
 		}
 	}
 
-	protected void creerEntite(Entite entite) {
+	public void creerEntite(Entite entite) {
 		// - Nicolas Vouilloux
 		Modification modif = new Modification(entite,this,Modification.UPDATE);
 		this.sesModifications.add(modif);
 	}
 
-	protected void supprimerEntite(int idEntite) {
+	public void supprimerEntite(int idEntite) {
 		// - Nicolas Vouilloux
 		Modification modif = new Modification(idEntite,this);
 		this.sesModifications.add(modif);
