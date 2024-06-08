@@ -1,7 +1,6 @@
 //correct package - Emma
 package JODES.vues;
 import java.awt.BorderLayout;
-import java.awt.Font;
 
 import javax.swing.*;
 

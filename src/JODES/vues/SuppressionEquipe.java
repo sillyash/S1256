@@ -2,13 +2,11 @@
 package JODES.vues;
 import JODES.JO2024;
 import JODES.controleurs.ControleurBtnRetour;
-import JODES.controleurs.ControleurBtnSelectEpreuve;
 import JODES.controleurs.ControleurBtnSelectEquipe;
 import JODES.controleurs.ControleurBtnSelection;
 import JODES.controleurs.RetourVue;
 import JODES.controleurs.SelectionVue;
 import JODES.modeles.Administrateur;
-import JODES.modeles.Epreuve;
 import JODES.modeles.Equipe;
 import java.awt.*;
 import javax.swing.*;
