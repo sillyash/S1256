@@ -19,6 +19,6 @@ public class ControleurBtnModSession implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SelectionSession(admin); // will need to modif after ash and nico modif
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }

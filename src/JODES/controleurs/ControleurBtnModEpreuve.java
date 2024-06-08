@@ -19,7 +19,7 @@ public class ControleurBtnModEpreuve implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SelectionEpreuve(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 
 }

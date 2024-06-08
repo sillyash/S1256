@@ -21,6 +21,6 @@ public class ControleurBtnSupprSession implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SuppressionSession(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }

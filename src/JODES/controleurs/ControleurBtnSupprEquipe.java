@@ -21,6 +21,6 @@ public class ControleurBtnSupprEquipe implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SuppressionEquipe(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }

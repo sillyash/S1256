@@ -21,7 +21,7 @@ public class ControleurBtnAjEpreuve implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new AjouterEpreuve(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 
 }

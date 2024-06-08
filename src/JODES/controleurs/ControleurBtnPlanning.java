@@ -19,6 +19,6 @@ public class ControleurBtnPlanning implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new PlanningFrame(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }

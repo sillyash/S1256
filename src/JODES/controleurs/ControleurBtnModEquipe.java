@@ -19,6 +19,6 @@ public class ControleurBtnModEquipe implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		new SelectionEquipe(admin);
-		((JFrame) _vue).dispose();
+		_vue.dispose();
 	}
 }
